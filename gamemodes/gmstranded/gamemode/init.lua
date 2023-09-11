@@ -584,6 +584,8 @@ function GM:PlayerSpawn( ply )
 		
 		ply.basewalk = ply:GetWalkSpeed()
 		ply.baserun = ply:GetRunSpeed()
+
+		ply.last_world_change = CurTime()
 	end
 
 end

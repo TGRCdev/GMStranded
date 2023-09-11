@@ -1,7 +1,7 @@
 
 function EFFECT:Init( data )
 	self.Entity = data:GetEntity()
-	self:SetParent( Entity )
+	self:SetParent( self.Entity )
 
 	self.Origin = data:GetOrigin()
 	self.StartTime = CurTime()
