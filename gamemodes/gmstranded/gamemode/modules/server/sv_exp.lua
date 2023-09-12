@@ -197,24 +197,19 @@ function PlayerMeta:AddExp( skill, amt, shared )
 			amt = math.ceil(amt)
 		end
 
-		if GAMEMODE.Tribes:GetTribeLevel( self ) >= 3 then
-			if math.random( 1, 4 ) == 1 then
-				local amt2 = math.ceil( amt / 10 )
-				local plys = GAMEMODE.Tribes:GetOnlineClanMates( self )
-				for k, v in pairs( plys ) do
-					if v:GetPos():DistToSqr(self:GetPos()) <= 11183968 then
-						v:AddExp( skill, amt2, true )
-					end
-				end
+		if GAMEMODE.Tribes:GetPlayersTribe( self ) != nil then
+			-- Tribe EXP share
+			local modifier = 0.05 -- 5%
+			if GAMEMODE.Tribes:GetTribeLevel( self ) >= 3 then
+				modifier = 0.1 -- 10%
 			end
-		elseif GAMEMODE.Tribes:GetTribeLevel( self ) >= 1 then
-			if math.random( 1, 8 ) == 1 then
-				local amt2 = math.ceil( amt / 20 )
-				local plys = GAMEMODE.Tribes:GetOnlineClanMates( self )
-				for k, v in pairs( plys ) do
-					if v:GetPos():DistToSqr(self:GetPos()) <= 11183968 then
-						v:AddExp( skill, amt2, true )
-					end
+
+			local amt2 = math.ceil(amt * modifier)
+
+			local plys = GAMEMODE.Tribes:GetOnlineClanMates( self )
+			for k, v in pairs( plys ) do
+				if v:GetPos():DistToSqr(self:GetPos()) <= 11183968 then
+					v:AddExp( skill, amt2, true )
 				end
 			end
 		end

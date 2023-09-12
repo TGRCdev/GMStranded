@@ -78,10 +78,6 @@ if !file.Exists( "sgstranded/saves/tools", "DATA" ) then
 	file.CreateDir( "sgstranded/saves/tools" )
 end
 
-if !file.Exists( "g4p/gtokens", "DATA" ) then
-	file.CreateDir( "g4p/gtokens" )
-end
-
 for k, v in pairs(SGS.pma) do
 	player_manager.TranslatePlayerModel( v )
 end
