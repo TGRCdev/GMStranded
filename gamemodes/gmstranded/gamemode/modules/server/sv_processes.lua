@@ -3703,7 +3703,7 @@ function SGS_Smelt_Stop(ply, ore, modi)
 	
 	local chance = ( math.random( 1, 100 ) * modi ) * lvlmodi
 	
-	if chance > 35 then
+	if chance > 25 then
 		ply:SendMessage("You smelted " .. CapAll(string.gsub(ore.title, "_", " ")) .. "!", 60, Color(0, 255, 0, 255))
 		ply:AddExp( "smithing", ore.xp )
 		for k, v in pairs(ore.gives) do
@@ -3869,26 +3869,16 @@ function SGS_AidCraft_Stop(ply, recipee, modi)
 		return
 	end
 	
-	local lvlmodi = ( ply.level[ "alchemy" ] * 0.05 ) + 1
-	
-	local chance = ( math.random( 1, 100 ) * modi ) * lvlmodi
-	
-	if chance > 30 then
-		ply:SendMessage("You crafted a/an " .. CapAll(string.gsub(recipee.title, "_", " ")) .. "!", 60, Color(0, 255, 0, 255))
-		ply:AddExp( "alchemy", recipee.xp )
-		ply:AddStat( "alchemy1", 1 )
-		for k, v in pairs(recipee.gives) do
-			ply:AddResource( k, v )
-		end
-		for k, v in pairs( recipee.cost ) do
-			ply:SubResource( k, v )
-		end	
-	else
-		ply:SendMessage("The " .. CapAll(string.gsub(recipee.title, "_", " ")) .. " didn't turn out quite right!", 60, Color(255, 0, 0, 255))
-		for k, v in pairs( recipee.cost ) do
-			ply:SubResource( k, math.random(math.ceil(v/2), v) )
-		end
+	ply:SendMessage("You crafted a/an " .. CapAll(string.gsub(recipee.title, "_", " ")) .. "!", 60, Color(0, 255, 0, 255))
+	ply:AddExp( "alchemy", recipee.xp )
+	ply:AddStat( "alchemy1", 1 )
+	for k, v in pairs(recipee.gives) do
+		ply:AddResource( k, v )
 	end
+	for k, v in pairs( recipee.cost ) do
+		ply:SubResource( k, v )
+	end
+
 	ply:RandomFindChance()
 end
 
@@ -3960,7 +3950,7 @@ function SGS_Brew_Stop(ply, potion, modi)
 	
 	local chance = ( math.random( 1, 100 ) * modi ) * lvlmodi
 	
-	if chance > 30 then
+	if chance > 20 then
 		ply:SendMessage("You brewed a/an " .. CapAll(string.gsub(potion.title, "_", " ")) .. "!", 60, Color(0, 255, 0, 255))
 		ply:AddExp( "alchemy", potion.xp )
 		ply:AddStat( "alchemy1", 1 )
@@ -4638,8 +4628,10 @@ function SGS_Extract_Stop(ply, ent, lvl, mod)
 	ply.processtype = "idle"
 	ply:SetNWString("action", "Idle")
 	ply.ps = false
+
+	local lvlmodi = ( ply.level[ "farming" ] * 0.05 ) + 1
 	
-	local chance = math.random(1,100) * mod
+	local chance = ( math.random(1,100) * mod ) * lvlmodi
 	
 	if chance >= 35 then
 		ply:SendMessage("Extraction successful!", 60, Color(0, 255, 0, 255))
