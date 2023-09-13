@@ -1,8 +1,9 @@
 function SGS_LoadWorlds()
 	SGS.WorldEntities = {}
 	for w_id, _ in pairs( GAMEMODE.Worlds.tblWorlds ) do
-		if file.Exists("sgstranded/mapsaves/" .. game.GetMap() .. "_world_" .. tostring(w_id) .. ".txt", "DATA") then 
-			SGS.WorldEntities[w_id] = util.JSONToTable( file.Read("sgstranded/mapsaves/" .. game.GetMap() .. "_world_" .. tostring(w_id) .. ".txt", "DATA") )
+		local data_path = "sgstranded/mapsaves/" .. game.GetMap() .. "/world_" .. tostring(w_id) .. ".txt"
+		if file.Exists(data_path, "DATA") then 
+			SGS.WorldEntities[w_id] = util.JSONToTable( file.Read(data_path, "DATA") )
 		end
 	end
 	--[[
