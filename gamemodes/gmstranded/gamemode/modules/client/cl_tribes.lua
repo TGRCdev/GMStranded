@@ -248,11 +248,14 @@ function PANEL:Init()
 	if not GAMEMODE.Tribes:PlayerInTribe( LocalPlayer() ) then
 		self:SetSize( 800, 600 )
 	else
+		/*
 		if LocalPlayer():GetTribe().level == 0 then
 			self:SetSize( 800, 600 )
 		else
 			self:SetSize( 1000, 600 )
 		end
+		*/
+		self:SetSize(800,600)
 	end
     self:Center()
 	self:DrawFrame()
@@ -418,11 +421,13 @@ function PANEL:DrawFrame()
 	end
 	if not GAMEMODE.Tribes:PlayerInTribe( LocalPlayer() ) then
 		btn_achievements:Remove()
+	/*
 	else
 		if LocalPlayer():GetTribe().level == 0 then
 			btn_achievements:Disable( true )
 			btn_achievements:SetTooltip( "Level 0 tribes are not eligible for perks.\nPlease upgrade your tribe to enable this menu." )
 		end
+	*/
 	end
 	
 	local r_panel = vgui.Create( "DPanel", self )

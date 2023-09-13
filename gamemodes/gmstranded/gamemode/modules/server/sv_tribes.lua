@@ -41,8 +41,8 @@ function GM.Tribes:InsertTribe( t_id, tribe_table )
 	self.tblTribes[t_id] = tribe_table
 	self.tblTribes[t_id].index = self.tblTribes[t_id].index or t_id
 	self.tblTribes[t_id].members = self.tblTribes[t_id].members or {}
-	self.tblTribes[t_id].level = self.tblTribes[t_id].level or 0
-	self.tblTribes[t_id].perma = self.tblTribes[t_id].perma or false
+	self.tblTribes[t_id].level = self.tblTribes[t_id].level or 1
+	self.tblTribes[t_id].perma = self.tblTribes[t_id].perma or true
 	
 	if self.tblTribes[t_id].admins == nil then
 		self.tblTribes[t_id].admins = {}
@@ -303,12 +303,12 @@ function GM.Tribes:UpgradeTribe( ply )
 	if not self:IsValid( t_id ) then return end
 	
 	self.tblTribes[ t_id ].perma = true
-	self.tblTribes[ t_id ].level = self.tblTribes[ t_id ].level + 1
+	--self.tblTribes[ t_id ].level = self.tblTribes[ t_id ].level + 1
 	self:NetworkTribe( nil, t_id )
 	
 	local online_players = self:GetOnlinePlayersInTribe( t_id )
 	for k, v in pairs( online_players ) do
-		v:SendMessage("Your tribe has been upgraded!", 60, Color(50, 255, 100, 255))
+		v:SendMessage("Your tribe is now permanent!", 60, Color(50, 255, 100, 255))
 	end
 	self:SaveTribes()
 end

@@ -132,7 +132,7 @@ GM.Tribes.PlayerExpCap = 10000
 GM.Tribes.LevelPerks = {
 	[1] = {
 		name 	= 	"Experience Share 1",
-		desc 	= 	"Chance for nearby tribe members to gain 5% of the experience you earn.",
+		desc 	= 	"Nearby tribe members gain 5% of the experience you earn.",
 	},
 	[2] = {
 		name 	= 	"Experience Boost 1",
@@ -140,7 +140,7 @@ GM.Tribes.LevelPerks = {
 	},
 	[3] = {
 		name 	= 	"Experience Share 2",
-		desc 	= 	"Chance for nearby tribe members to gain 10% of the experience you earn.",
+		desc 	= 	"Nearby tribe members gain 10% of the experience you earn. (Replaces Experience Share 1)",
 	},
 	[4] = {
 		name 	= 	"Death Item Protection",
