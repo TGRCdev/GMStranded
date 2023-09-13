@@ -3612,25 +3612,23 @@ function SGS_Sift_Stop(ply, modi)
 	ply:SetNWString("action", "Idle")
 	ply.sound:Stop()
 	
-	local chance = ( math.random(1,100) * modi )
+	local chance = math.min( ( math.random(1,100) * modi ) / 100, 1.0 );
+	local amt = math.ceil( 3 * chance )
 	
-	if chance >= 40 then		
-		/* check to see if we found a relic instead of a seed */
-		if math.random(1, 800) == 1 then
-			ply:FoundRelic()
-			return --Break out of the function so we don't find a seed as well
-		end
-		
-		/* check to see if we found an artifact */
-		if math.random(1, 800) == 1 then
-			ply:FoundArtifact()
-			return --Break out of the function so we don't find a seed as well
-		end
-		ply:SendMessage("You collected some pure sand!", 60, Color(0, 255, 0, 255))
-		ply:AddResource( "sand", math.random(1,3) )
-	else
-		ply:SendMessage("This sand is too impure.", 60, Color(255, 255, 0, 255))
+	/* check to see if we found a relic instead of a seed */
+	if math.random(1, 800) == 1 then
+		ply:FoundRelic()
+		return --Break out of the function so we don't find a seed as well
 	end
+	
+	/* check to see if we found an artifact */
+	if math.random(1, 800) == 1 then
+		ply:FoundArtifact()
+		return --Break out of the function so we don't find a seed as well
+	end
+	ply:SendMessage("You collected some pure sand!", 60, Color(0, 255, 0, 255))
+	ply:AddResource( "sand", amt )
+
 	ply:CheckBot()
 	--ply:RandomFindChance()
 end

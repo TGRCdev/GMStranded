@@ -44,7 +44,7 @@ hook.Add( "DayLightChangeTime", "BloodMoonCheck", function( min )
 		end
 	end
 
-	if min == 1280 and math.random(5) == 1 and GAMEMODE.Worlds.lastbloodmoon == 0 then
+	if min == 1280 and math.random(10) == 1 and GAMEMODE.Worlds.lastbloodmoon == 0 then
 		GAMEMODE.Worlds:StartBloodMoon()
 		GAMEMODE.Worlds.lastbloodmoon = 4
 	end
