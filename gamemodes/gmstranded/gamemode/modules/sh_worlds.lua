@@ -5,12 +5,13 @@ function GM.Worlds:RegisterWorld( world )
 	table.insert( self.tblWorlds, world )
 end
 
-local files, dirs = file.Find("gmstranded/gamemode/modules/worlds/*.lua", "LUA")
+local files, dirs = file.Find("gmstranded/gamemode/modules/worlds/" .. game.GetMap() .. "/*.lua", "LUA")
 for k, v in pairs( files ) do
+	local world_path = "gmstranded/gamemode/modules/worlds/" .. game.GetMap() .. "/" .. v
 	print("Stranded: Loading World (" .. v .. ")")
-	include( "gmstranded/gamemode/modules/worlds/" .. v )
+	include( world_path )
 	if SERVER then
-		AddCSLuaFile( "gmstranded/gamemode/modules/worlds/" .. v )
+		AddCSLuaFile( world_path )
 	end
 end
 
