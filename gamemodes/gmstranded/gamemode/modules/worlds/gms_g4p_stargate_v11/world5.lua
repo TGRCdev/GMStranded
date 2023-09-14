@@ -12,6 +12,11 @@ world.ZombieSpawns	= false
 world.Secret 		= true
 world.Entities	= {
 }
+world.Gates = {
+	floating_islands = {
+		Position = Vector ( -14240.144531, -3840.368164, 8848.031250 )
+	}
+}
 --[[ World Weather ]]--
 world.Weather = {
 	Current = nil,

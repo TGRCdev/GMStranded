@@ -84,6 +84,18 @@ world.BreakableStructuresTbl = {
 	}
 world.Entities	= {
 }
+world.Gates = {
+	pvp1 = {
+		Position = Vector ( 7679.735840, -352.001526, 6448.031250 ),
+		Angles = Angle ( 0, -90, 0 ),
+		Name = "PVP World (Gate 1)"
+	},
+	pvp2 = {
+		Position = Vector ( 7679.954102, -8862.233398, 6448.031250 ),
+		Angles = Angle ( 0, 90, 0 ),
+		Name = "PVP World (Gate 2)"
+	}
+}
 world.SkyObjects = {
 	{
 		ClassName = "CPlanet", --Class name, this one is a planet

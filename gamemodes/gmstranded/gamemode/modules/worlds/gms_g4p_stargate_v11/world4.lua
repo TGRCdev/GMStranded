@@ -15,6 +15,12 @@ world.Gravity		= 1.0
 world.ZombieSpawns	= true
 world.Entities	= {
 }
+world.Gates = {
+	pyramid = {
+		Position = Vector( 10661.154297, -10239.729492, 3392.031250 ),
+		Angles = Angle ( 0, 180, 0)
+	}
+}
 world.expmod = 1.1
 world.SkyObjects = {
 	{

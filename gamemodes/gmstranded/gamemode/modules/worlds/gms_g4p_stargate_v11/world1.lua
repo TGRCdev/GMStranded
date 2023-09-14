@@ -11,7 +11,13 @@ world.Gravity		= 1.0
 world.ZombieSpawns	= false
 world.Entities	= {
 }
-world.expmod = 0.6
+world.Gates = {
+	spawn = {
+		Position = Vector ( 10367.823242, 13440.448242, 9480.031250 ),
+		Angles = Angle ( 0, -90, 0 )
+	}
+}
+world.expmod = 0.85
 --[[ World Skybox ]]--
 world.SkyObjects = {
 	{

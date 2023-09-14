@@ -11,6 +11,11 @@ world.Gravity		= 1.0
 world.ZombieSpawns	= true
 world.Entities	= {
 }
+world.Gates = {
+	islands = {
+		Position = Vector ( 2910.052734, 10751.789063, 2008.031250 )
+	}
+}
 world.SkyObjects = {
 	{
 		ClassName = "CPlanet", --Class name, this one is a planet

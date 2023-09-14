@@ -20,6 +20,11 @@ world.AllowedUnpackEntities = {
 }
 world.Entities	= {
 }
+world.Gates = {
+	arena = {
+		Position = Vector( -15522.287109, 2047.927002, 8192.031250 )
+	}
+}
 world.SpawningItemsBlocked = true
 world.SkyObjects = {
 	{

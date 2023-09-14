@@ -549,6 +549,7 @@ function SGS_SetUpTablesShared()
 	SGS.proplist["easteregg"] = "models/props_phx/misc/egg.mdl"
 	SGS.proplist["totem"] = "models/props_rooftop/roof_vent003.mdl"
 	SGS.proplist["bed"] = "models/bed/bed.mdl"
+	SGS.proplist["portal_pad"] = "models/props_trainstation/trainstation_clock001.mdl"
 
 	--WEP MODELS--
 	SGS.proplist["fishingrod_w"] = "models/Weapons/w_crowbar.mdl"

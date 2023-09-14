@@ -11,6 +11,11 @@ world.Gravity		= 1.0
 world.ZombieSpawns	= true
 world.Entities	= {
 }
+world.Gates = {
+	cave = {
+		Position = Vector ( -13984.649414, -10368.489258, 1424.031250 )
+	}
+}
 --[[ World Skybox ]]--
 world.SkyObjects = {
 	{
