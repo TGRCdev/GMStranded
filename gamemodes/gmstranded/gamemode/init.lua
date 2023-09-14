@@ -363,9 +363,9 @@ end
 
 function PlayerMeta:SetSick( val )
 	self.sick = val
-	self.settings["melonaids"] = val
-	self:SendMessage("You've been infected with Melonaids!", 60, Color(255, 0, 0, 255))
-	self:SendLua("LocalPlayer().melonaids = true")
+	self.settings["melonitis"] = val
+	self:SendMessage("You've been infected with Melonitis!", 60, Color(255, 0, 0, 255))
+	self:SendLua("LocalPlayer().melonitis = true")
 end
 
 --DEFAULT GAMEMODE FUNCTIONS--
@@ -594,7 +594,7 @@ function SGS_PlayerDies( ply, weapon, killer )
 	ply:AddTool( ply.equippedtool )
 	ply.sick = 0
 	
-	ply:SendLua("LocalPlayer().melonaids = false")
+	ply:SendLua("LocalPlayer().melonitis = false")
 	ply.equippedtool = "NONE"
 	SGS_CancelProcess(ply, _, _)
 	ply:AddStat( "general5", 1 )
@@ -3730,23 +3730,23 @@ function SGS_SickTick()
 			ply:EmitSound(Sound("player/pl_drown3.wav"), 65, math.random(70, 130))
 			ply:SendMessage("The sickness is taking its toll on your health.", 60, Color(255, 0, 0, 255))
 			ply.sick = ply.sick - 1
-			ply.settings["melonaids"] = ply.sick
+			ply.settings["melonitis"] = ply.sick
 			if ply.sick == 0 then
 				ply:SendMessage("You are feeling better.", 60, Color(0, 255, 0, 255))
-				ply.settings["melonaids"] = -1
+				ply.settings["melonitis"] = -1
 				
-				ply:SendLua("LocalPlayer().melonaids = false")
+				ply:SendLua("LocalPlayer().melonitis = false")
 			end
 			if ply:Health() <= 0 then
-				ply.killstring = "Melonaids"
+				ply.killstring = "Melonitis"
 				ply:Kill()
-				SGS_Log( ply:Nick() .. " died of Melonaids." )
+				SGS_Log( ply:Nick() .. " died of Melonitis." )
 				ply.sick = 0
 				ply:AddStat( "general9", 1 )
-				ply.settings["melonaids"] = -1
-				ply:SendLua("LocalPlayer().melonaids = false")
+				ply.settings["melonitis"] = -1
+				ply:SendLua("LocalPlayer().melonitis = false")
 				for _, v in pairs( player.GetAll() ) do
-					v:SendMessage("" .. ply:Nick() .. " died of Melonaids... :(", 60, Color(255, 0, 255, 255))
+					v:SendMessage("" .. ply:Nick() .. " died of Melonitis... :(", 60, Color(255, 0, 255, 255))
 				end
 			end
 		end
@@ -4928,8 +4928,8 @@ function SGS_PotionDrink( ply, potion )
 		if potion.value == "illness" then
 			ply:SendMessage("You are feeling better.", 60, Color(0, 255, 0, 255))
 			ply.sick = 0
-			ply.settings["melonaids"] = -1
-			ply:SendLua("LocalPlayer().melonaids = false")
+			ply.settings["melonitis"] = -1
+			ply:SendLua("LocalPlayer().melonitis = false")
 			return
 		end
 	end

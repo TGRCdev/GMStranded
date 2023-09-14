@@ -15,12 +15,12 @@ end
 SGS_RegisterStat( "general", "general1", "Water Drank" ) --Done
 SGS_RegisterStat( "general", "general2", "Berries Eaten" ) --Done
 SGS_RegisterStat( "general", "general3", "Times Slept" ) --Done
-SGS_RegisterStat( "general", "general4", "Melonaids Contracted" ) --Done
+SGS_RegisterStat( "general", "general4", "Melonitis Contracted" ) --Done
 SGS_RegisterStat( "general", "general5", "Deaths" ) --Done
 SGS_RegisterStat( "general", "general6", "Deaths by Hunger" ) --Done
 SGS_RegisterStat( "general", "general7", "Deaths by Thirst" ) --Done
 SGS_RegisterStat( "general", "general8", "Deaths by Falling" ) --Done
-SGS_RegisterStat( "general", "general9", "Deaths by Melonaids" ) --Done
+SGS_RegisterStat( "general", "general9", "Deaths by Melonitis" ) --Done
 SGS_RegisterStat( "general", "general10", "Deaths by Drowning" ) --Done
 SGS_RegisterStat( "general", "general11", "Relics Used" ) --Done
 SGS_RegisterStat( "general", "general12", "Artifacts Used" ) --Done

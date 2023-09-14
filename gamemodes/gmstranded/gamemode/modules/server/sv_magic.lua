@@ -719,8 +719,8 @@ SPELL.func = function( self )
 	
 	self:SendMessage("You are feeling better.", 60, Color(0, 255, 0, 255))
 	self.sick = 0
-	self.settings["melonaids"] = -1
-	self:SendLua("LocalPlayer().melonaids = false")
+	self.settings["melonitis"] = -1
+	self:SendLua("LocalPlayer().melonitis = false")
 	
 	local ent = ents.Create("gms_heal")
 		ent.ply = self
@@ -820,8 +820,8 @@ SPELL.func = function( self )
 	
 	tarply:SendMessage("You were cured by " .. self:Nick(), 60, Color(0, 255, 0, 255))
 	tarply.sick = 0
-	tarply.settings["melonaids"] = -1
-	tarply:SendLua("LocalPlayer().melonaids = false")
+	tarply.settings["melonitis"] = -1
+	tarply:SendLua("LocalPlayer().melonitis = false")
 	
 	local ent = ents.Create("gms_heal")
 		ent.ply = tarply

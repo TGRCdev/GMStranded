@@ -757,7 +757,7 @@ potionIcon = Material( "vgui/hud/potion.png" )
 houseIcon = Material( "vgui/hud/house.png" )
 bleedIcon = Material( "vgui/hud/blood.png" )
 brokenIcon = Material( "vgui/hud/brokenbone.png" )
-melonaidsIcon = Material( "vgui/hud/melonaids.png" )
+melonitisIcon = Material( "vgui/hud/melonaids.png" )
 function SGS_AllThingsHUD()
 	if SGS.accepttos == false then return end
 	if LocalPlayer().showKeybinds == nil then LocalPlayer().showKeybinds = true end
@@ -845,9 +845,9 @@ function SGS_AllThingsHUD()
 		surface.DrawTexturedRect( 70 , y - 175, 24, 24 )
 	end
 	
-	if LocalPlayer().melonaids then
+	if LocalPlayer().melonitis then
 		surface.SetDrawColor( 255, 255, 255, 200 )
-		surface.SetMaterial( melonaidsIcon	)
+		surface.SetMaterial( melonitisIcon	)
 		surface.DrawTexturedRect( 100 , y - 175, 24, 24 )
 	end
 	

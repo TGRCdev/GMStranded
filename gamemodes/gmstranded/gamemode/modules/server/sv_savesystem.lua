@@ -338,9 +338,9 @@ function SGS_LoadPlayer( ply )
 	end
 	
 	
-	if ply.settings["melonaids"] == nil then ply.settings["melonaids"] = 0 end
-	if ply.settings["melonaids"] > 0 then
-		ply:SetSick( tonumber(ply.settings["melonaids"]) )
+	if ply.settings["melonitis"] == nil then ply.settings["melonitis"] = 0 end
+	if ply.settings["melonitis"] > 0 then
+		ply:SetSick( tonumber(ply.settings["melonitis"]) )
 	end
 	ply:AddStat("time3")
 
