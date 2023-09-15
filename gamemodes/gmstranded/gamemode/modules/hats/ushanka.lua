@@ -1,4 +1,4 @@
-local hatname = "steamgroup"
+local hatname = "ushanka"
 local hat = {
 	model="models/workshop/player/items/sniper/dec2014_hunter_ushanka/dec2014_hunter_ushanka.mdl", 
 	offsets={

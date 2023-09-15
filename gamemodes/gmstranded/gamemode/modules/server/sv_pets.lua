@@ -461,7 +461,7 @@ function SGS_PetDieAge( pet )
 
 	if IsValid(pet.owner) then
 		pet.owner:SendMessage("Your pet " .. pet:GetNWString("petname") .. " has died of old age.",3,Color(255,80,80,255))
-		local rtokenamt = math.random(50,300)
+		local rtokenamt = math.random(250,1500)
 		pet.owner:SendMessage("You are awarded (" .. rtokenamt .. ") GTokens." ,3,Color(255,80,80,255))
 		pet.owner:GiveGTokens( rtokenamt )
 		pet.owner:AddStat( "general13", rtokenamt )

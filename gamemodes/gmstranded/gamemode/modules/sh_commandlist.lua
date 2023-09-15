@@ -216,10 +216,10 @@ CMD.achreq = "3yearhat"
 Menu_RegisterCommand( "hats", CMD )
 
 local CMD = {}
-CMD.title = "Equip Community Hat"
-CMD.description = "Requires the 'Community Member' Achievement."
-CMD.command = {"sgs_equiphat", "steamgroup"}
-CMD.achreq = "steamgroup"
+CMD.title = "Equip Ushanka"
+CMD.description = "Requires the 'I'm a Survivor' Achievement"
+CMD.command = {"sgs_equiphat", "ushanka"}
+CMD.achreq = "starter"
 Menu_RegisterCommand( "hats", CMD )
 
 local CMD = {}

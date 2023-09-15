@@ -213,13 +213,9 @@ function PlayerMeta:RandomFindChance()
 		chance = chance - luck
 	end
 	if math.random(1,chance) == 1 then
-		rnd = math.random(1,10)
+		rnd = math.random(15,100)
 		self:GiveGTokens( rnd )
-		if rnd == 1 then
-			self:SendMessage( "1x GToken Found!", 60, Color(0, 255, 0, 255))
-		else
-			self:SendMessage( tostring(rnd) .. "x GTokens Found!", 60, Color(0, 255, 0, 255))
-		end
+		self:SendMessage( tostring(rnd) .. "x GTokens Found!", 60, Color(0, 255, 0, 255))
 		self:AddStat( "general13", rnd )
 		self:CheckForAchievements("presshat")
 	end
@@ -5334,6 +5330,10 @@ function PlayerMeta:SetAch( ach )
 				self:ConCommand(v.cc)
 			end
 
+			if v.sfunc then
+				v.sfunc( self )
+			end
+
 			if v.at then
 				GAMEMODE.colorSay(self, { Color(255,255,255), v.at } )
 			end
@@ -5377,6 +5377,13 @@ end
 
 function PlayerMeta:CheckForAchievements( ach )
 
+	if ach == "starter" or ach == "all" then
+		if not self:GetAch("starter") then
+			if self:GetLevel("survival") >= 5 then
+				self:SetAch("starter")
+			end
+		end
+	end
 	if ach == "mininghat" or ach == "all" then
 		if not self:GetAch("mininghat") then
 			if self:GetStat("mining8") >= 500 then
@@ -5565,21 +5572,6 @@ function PlayerMeta:CheckForAchievements( ach )
 		end
 	end
 end
-
-hook.Add( "communityAPIInGroup", "communityAPICheckGroup", function( ply, inGroup)
-	if not IsValid( ply ) then return end
-	if ply:GetAch("steamgroup") then
-		if not inGroup then
-			ply:RemoveAch("steamgroup")
-			ply:RemoveGToken( 2500, true )
-		end
-		return
-	end
-	if inGroup and ply:GetLevel("survival") >= 5 then
-		ply:SetAch("steamgroup")
-		ply:GiveGTokens( 2500 )
-	end
-end )
 
 function PlayerMeta:SetSetting( set, val )
 

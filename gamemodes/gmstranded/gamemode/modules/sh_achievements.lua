@@ -423,13 +423,17 @@ Achievement_RegisterAchievement( ACH )
 ]]
 
 local ACH = {}
-ACH.short = "steamgroup"
-ACH.long = "Community Member"
+ACH.short = "starter"
+ACH.long = "I'm a Survivor"
 ACH.show = true
-ACH.displaytext = "Join the G4P Group on Steam (Requires Survival Level 5+)"
-ACH.cc = "sgs_equiphat steamgroup"
-ACH.at = "Access Q > Options menu to equip your new hat."
-ACH.reward = "Community Hat / 2500 GTokens"
+ACH.displaytext = "Reach Survival Level 5"
+ACH.cc = "sgs_equiphat ushanka"
+if SERVER then
+	ACH.sfunc = function( ply )
+		ply:GiveGTokens(2500)
+	end
+end
+ACH.reward = "Ushanka Hat / 2500 GTokens"
 Achievement_RegisterAchievement( ACH )
 
 local ACH = {}

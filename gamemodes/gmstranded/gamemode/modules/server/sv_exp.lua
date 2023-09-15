@@ -286,7 +286,7 @@ function PlayerMeta:AddExp( skill, amt, shared )
 		self:LevelUpSurvivalEffect()
 		self:SetSurvivalLevelStats()
 		self:SaveCharacter()
-		self:CheckForAchievements( "steamgroup" )
+		self:CheckForAchievements( "starter" )
 
 		if nslvl == 10 or nslvl == 20 or nslvl == 30 or nslvl == SGS.maxlevelsurvival then
 			self:AnnounceMilestone( nslvl )
@@ -345,7 +345,7 @@ function PlayerMeta:AddExp2( skill, amt )
 		self:LevelUpSurvivalEffect()
 		self:SetSurvivalLevelStats()
 		self:SaveCharacter()
-		self:CheckForAchievements( "steamgroup" )
+		self:CheckForAchievements( "starter" )
 
 		if nslvl == 10 or nslvl == 20 or nslvl == 30 or nslvl == SGS.maxlevelsurvival then
 			self:AnnounceMilestone( nslvl )
