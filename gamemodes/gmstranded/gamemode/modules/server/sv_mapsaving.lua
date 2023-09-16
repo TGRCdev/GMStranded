@@ -98,7 +98,7 @@ function SGS_SaveMap()
 					savegame[k] = entry
 				end
 			end
-			file.Write("sgstranded/mapsaves/" .. game.GetMap() .. "_world_" .. tostring(i) .. ".txt",util.TableToJSON(savegame, true))
+			file.Write("sgstranded/mapsaves/" .. game.GetMap() .. "/world_" .. tostring(i) .. ".txt",util.TableToJSON(savegame, true))
 		end
 end
 

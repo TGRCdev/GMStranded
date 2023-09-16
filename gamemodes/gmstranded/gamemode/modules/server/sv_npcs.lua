@@ -127,11 +127,11 @@ function SGS_MakeCreature( npcclass, loc, aggrotable, parent )
 			end
 			
 			if GAMEMODE.Worlds.BloodMoon then
-				npc:SetMaxHealth(hp * 3)
-				npc:SetHealth(hp * 3)
-				npc:SetNWInt("maxhp", hp * 3)
+				npc:SetMaxHealth(hp * 1.5)
+				npc:SetHealth(hp * 1.5)
+				npc:SetNWInt("maxhp", hp * 1.5)
 				npc:SetNWString("name", "Blood " .. npctable.name)
-				npc.dmg = dmg * 3
+				npc.dmg = dmg * 1.5
 				npc.bloodmoon_spawned = true
 			end
 			hook.Add("Think", npc, ZombieThink)

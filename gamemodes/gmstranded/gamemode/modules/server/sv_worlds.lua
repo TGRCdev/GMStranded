@@ -49,7 +49,7 @@ hook.Add( "DayLightChangeTime", "BloodMoonCheck", function( min )
 		GAMEMODE.Worlds.lastbloodmoon = 4
 	end
 	
-	if min == 300 and GAMEMODE.Worlds.BloodMoon then
+	if min >= 300 and min < 1280 and GAMEMODE.Worlds.BloodMoon then
 		GAMEMODE.Worlds:StopBloodMoon()
 	end
 end )
@@ -79,3 +79,19 @@ hook.Add("PlayerInitialSpawn", "NetworkBloodmoonOnJoin", function( ply )
 		if IsValid(ply) then GAMEMODE.Worlds:NetworkBloodmoon( ply ) end
 	end )
 end )
+
+concommand.Add("sgs_togglebloodmoon", function( ply )
+	if not ply:IsValid() then return end
+
+	if not (ply:IsAdmin() or ply:IsSuperAdmin()) then
+		ply:SendMessage("This command is for admins only.")
+		return
+	end
+
+	if GAMEMODE.Worlds.BloodMoon then
+		GAMEMODE.Worlds:StopBloodMoon()
+	else
+		GAMEMODE.Worlds:StartBloodMoon()
+		GAMEMODE.Worlds.lastbloodmoon = 4
+	end
+end)
