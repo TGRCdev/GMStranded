@@ -5532,42 +5532,26 @@ function PlayerMeta:CheckForAchievements( ach )
 		end
 	end
 	if ach == "time" or ach == "all" then
-		if not self:GetAch("time1") then
-			if self:GetStat("time1") >= 60 then
+		if not self:GetAch("time1") and self:GetStat("time1") >= 60 then
 				self:SetAch("time1")
-			end
 		end
-	end
-	if ach == "time" or ach == "all" then
-		if not self:GetAch("time2") then
-			if self:GetStat("time1") >= 600 then
-				self:SetAch("time2")
-			end
+
+		if not self:GetAch("time2") and self:GetStat("time1") >= 600 then
+			self:SetAch("time2")
 		end
-	end
-	if ach == "time" or ach == "all" then
-		if not self:GetAch("time3") then
-			if self:GetStat("time1") >= 3000 then
-				self:SetAch("time3")
-			end
+
+		if not self:GetAch("time3") and self:GetStat("time1") >= 3000 then
+			self:SetAch("time3")
 		end
-	end
-	if ach == "time" or ach == "all" then
-		if not self:GetAch("time4") then
-			if self:GetStat("time1") >= 6000 then
-				self:SetAch("time4")
-			end
+
+		if not self:GetAch("time4") and self:GetStat("time1") >= 6000 then
+			self:SetAch("time4")
 		end
-	end
-	if ach == "time" or ach == "all" then
-		if not self:GetAch("time5") then
-			if self:GetStat("time1") >= 9000 then
-				self:SetAch("time5")
-				if not self:IsDonator() then
-					if self:GetAch("time5") and ( self:IsUserGroup( "member" ) or self:IsUserGroup( "user" ) ) then
-						SGS_SetUpTeams(self)
-					end
-				end
+
+		if not self:GetAch("time5") and self:GetStat("time1") >= 9000 then
+			self:SetAch("time5")
+			if not self:IsDonator() and self:GetAch("time5") and ( self:IsUserGroup( "member" ) or self:IsUserGroup( "user" ) ) then
+				SGS_SetUpTeams(self)
 			end
 		end
 	end

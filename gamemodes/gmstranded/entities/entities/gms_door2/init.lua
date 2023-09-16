@@ -13,7 +13,6 @@ end
 
 function ENT:Initialize()
 	self:SetModel("models/props_phx/construct/metal_plate1x2.mdl")
-	self:SetAngles(Angle(0,0,90))
 	self:PhysicsInit( SOLID_VPHYSICS )
 	self:SetMoveType( MOVETYPE_VPHYSICS )
 	self:SetSolid( SOLID_VPHYSICS )

@@ -16,11 +16,13 @@ function GM.Tribes:GetPermissionType( t_id )
 end
 
 function GM.Tribes:GetPlayersTribe( ply )
-	for t_id, _ in pairs( self.tblTribes ) do
-		for k, v in pairs( self.tblTribes[ t_id ].members ) do
-			if ply:SteamID() == k then
-				return t_id
-			end
+	return self:GetSteamIDTribe( ply:SteamID() )
+end
+
+function GM.Tribes:GetSteamIDTribe( id )
+	for t_id, tribe in pairs( self.tblTribes ) do
+		if tribe.members[id] then
+			return t_id
 		end
 	end
 	return nil

@@ -13,7 +13,6 @@ end
 
 function ENT:Initialize()
 	self:SetModel("models/props_c17/fence01b.mdl")
-	self:SetAngles(Angle(0,0,90))
 	self:PhysicsInit( SOLID_VPHYSICS )
 	self:SetMoveType( MOVETYPE_VPHYSICS )
 	self:SetSolid( SOLID_VPHYSICS )
