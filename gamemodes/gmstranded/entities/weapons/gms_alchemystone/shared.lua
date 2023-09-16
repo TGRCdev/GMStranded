@@ -70,7 +70,7 @@ function SWEP:PrimaryAttack()
     if CLIENT then return end
     self.Weapon:SetNextPrimaryFire(CurTime() + 2)
 	self.Weapon:SendWeaponAnim(ACT_VM_HITCENTER)
-	local pl = self.Owner
+	local pl = self:GetOwner()
 	
 	pl:SendLua( "SGS_AlchemyMenu()")
 

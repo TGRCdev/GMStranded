@@ -23,18 +23,18 @@ SWEP.WElements = {
 	PrimaryAttack
 ---------------------------------------------------------*/
 function SWEP:PrimaryAttack()
-	self.Owner:SetAnimation( PLAYER_ATTACK1 )
+	self:GetOwner():SetAnimation( PLAYER_ATTACK1 )
 	self:SendWeaponAnim( ACT_VM_MISSCENTER )
 	if IsFirstTimePredicted() then
-		self.Owner:SetAnimation( PLAYER_ATTACK1 )
+		self:GetOwner():SetAnimation( PLAYER_ATTACK1 )
 	end
     self.Weapon:SetNextPrimaryFire(CurTime() + 3.2)
 	if CLIENT then return end
-	if self.Owner:GetLevel("fishing") < 15 then
-		self.Owner:SendMessage("This tool requires fishing level 15 or higher.", 60, Color(255, 125, 0, 255))
+	if self:GetOwner():GetLevel("fishing") < 15 then
+		self:GetOwner():SendMessage("This tool requires fishing level 15 or higher.", 60, Color(255, 125, 0, 255))
 		return
 	end
-	SGS_Fish_Start( self.Owner, 3.2, 2 )
+	SGS_Fish_Start( self:GetOwner(), 3.2, 2 )
 end
 
 function SWEP:SecondaryAttack()

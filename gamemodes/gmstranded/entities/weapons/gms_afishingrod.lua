@@ -24,15 +24,15 @@ SWEP.WElements = {
 	PrimaryAttack
 ---------------------------------------------------------*/
 function SWEP:PrimaryAttack()
-	self.Owner:SetAnimation( PLAYER_ATTACK1 )
+	self:GetOwner():SetAnimation( PLAYER_ATTACK1 )
 	self:SendWeaponAnim( ACT_VM_MISSCENTER )
 	if IsFirstTimePredicted() then
-		self.Owner:SetAnimation( PLAYER_ATTACK1 )
+		self:GetOwner():SetAnimation( PLAYER_ATTACK1 )
 	end
     self.Weapon:SetNextPrimaryFire(CurTime() + 2)
 	if CLIENT then return end
 		
-	SGS_AdvancedFish_Start( self.Owner, 2.6, 3 )
+	SGS_AdvancedFish_Start( self:GetOwner(), 2.6, 3 )
 end
 
 function SWEP:SecondaryAttack()

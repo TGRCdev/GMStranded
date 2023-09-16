@@ -42,7 +42,7 @@ function SGS_CookingMenu()
 		for k2, v2 in pairs(SGS.Food[k]) do
 			local icon = vgui.Create( "DImageButton", IconList )
 			icon:SetImage( v2.material )
-			icon:SetToolTip( SGS_ToolTip(v2) )
+			icon:SetTooltip( SGS_ToolTip(v2) )
 			icon:SetSize(64, 64)
 			IconList:AddItem( icon )
 			icon.PaintOver = function()

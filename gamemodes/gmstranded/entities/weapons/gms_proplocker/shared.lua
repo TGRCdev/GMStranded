@@ -54,7 +54,7 @@ end
 ---------------------------------------------------------*/
 function SWEP:Reload()
 
-	local ply = self.Owner
+	local ply = self:GetOwner()
 	
 	if CLIENT then return end
 
@@ -118,7 +118,7 @@ end
 	PrimaryAttack
 ---------------------------------------------------------*/
 function SWEP:PrimaryAttack()
-	local ply = self.Owner
+	local ply = self:GetOwner()
     if CLIENT then return end
     self.Weapon:SetNextPrimaryFire(CurTime() + 0.5)
 
@@ -159,7 +159,7 @@ end
 	SecondaryAttack
 ---------------------------------------------------------*/
 function SWEP:SecondaryAttack()
-	local ply = self.Owner
+	local ply = self:GetOwner()
 	
 	if CLIENT then return end
     self.Weapon:SetNextSecondaryFire(CurTime() + 0.5)

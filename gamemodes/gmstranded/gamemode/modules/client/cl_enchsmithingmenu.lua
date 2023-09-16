@@ -38,7 +38,7 @@ function SGS_EnchantedSmithingMenu()
 		for k2, v2 in pairs(SGS.Tools[k]) do
 			local icon = vgui.Create( "DImageButton", IconList )
 			icon:SetMaterial( v2.icon )
-			icon:SetToolTip( SGS_ToolTip(v2) )
+			icon:SetTooltip( SGS_ToolTip(v2) )
 			icon:SetSize( 64, 64 )
 			IconList:Add( icon )
 			icon.PaintOver = function()

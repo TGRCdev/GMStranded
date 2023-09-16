@@ -131,7 +131,7 @@ local function CreateVoiceVGUI()
 	g_VoicePanelList:ParentToHUD()
 	g_VoicePanelList:SetPos( ScrW() - 250, 100 )
 	g_VoicePanelList:SetSize( 250, ScrH() - 300 )
-		g_VoicePanelList:SetDrawBackground( false )
+		g_VoicePanelList:SetPaintBackground( false )
 
 end
 hook.Add( "InitPostEntity", "CreateVoiceVGUI", CreateVoiceVGUI )

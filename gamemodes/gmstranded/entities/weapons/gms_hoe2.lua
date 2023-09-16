@@ -26,11 +26,11 @@ SWEP.WElements = {
 	PrimaryAttack
 ---------------------------------------------------------*/
 function SWEP:PrimaryAttack()
-	local ply = self.Owner
-	self.Owner:SetAnimation( PLAYER_ATTACK1 )
+	local ply = self:GetOwner()
+	self:GetOwner():SetAnimation( PLAYER_ATTACK1 )
 	self:SendWeaponAnim( ACT_VM_MISSCENTER )
 	if IsFirstTimePredicted() then
-		self.Owner:SetAnimation( PLAYER_ATTACK1 )
+		self:GetOwner():SetAnimation( PLAYER_ATTACK1 )
 	end
 
 	local modi = 1.6

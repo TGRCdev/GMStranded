@@ -1,5 +1,5 @@
 include "shared.lua"
-CreateClientConVar( "sgs_tv_volume", "8", true, false )
+sgs_tv_volume = CreateClientConVar( "sgs_tv_volume", "8", true, false )
 
 -- ----------------------------------------------------------------
 -- Netcode
@@ -113,7 +113,7 @@ function ENT:Initialize()
 end
 
 function ENT:Reload()
-	if ValidPanel( self.m_pnlWebPage ) then
+	if IsValid( self.m_pnlWebPage ) then
 		self.m_pnlWebPage:Remove()
 	end
 
@@ -123,7 +123,7 @@ function ENT:Reload()
 	self.m_pnlWebPage:SetScrollbars( false )
 	self.m_pnlWebPage:SetAllowLua( true )
 	self.m_pnlWebPage:SetMouseInputEnabled( false )
-	self.m_pnlWebPage:SetKeyBoardInputEnabled( false )
+	self.m_pnlWebPage:SetKeyboardInputEnabled( false )
 end
 
 function ENT:OnRemove()
@@ -236,12 +236,12 @@ function ENT:StopVideo()
 end
 
 function ENT:GetMaxVolume()
-	return GetConVarNumber( "sgs_tv_volume" ) or 50
+	return sgs_tv_volume:GetFloat()
 end
 
 function ENT:UpdateVolume()
 	if not self:HasPlayer() then return end
-	if not ValidPanel( self.m_pnlWebPage ) then return end
+	if not IsValid( self.m_pnlWebPage ) then return end
 	if not self:IsVideoLoaded() then return end
 	
 	local vol
@@ -266,7 +266,7 @@ end
 function ENT:Draw()
 	self:DrawModel()
 
-	if not ValidPanel( self.m_pnlWebPage ) then 
+	if not IsValid( self.m_pnlWebPage ) then 
 		self:ReloadPlayer()
 		return
 	end
@@ -301,7 +301,7 @@ function ENT:Draw()
 end
 
 function ENT:Think()
-	if not ValidPanel( self.m_pnlWebPage ) then return end
+	if not IsValid( self.m_pnlWebPage ) then return end
 	if not self:HasPlayer() then return end
 	
 	if self:IsPlayingVideo() then

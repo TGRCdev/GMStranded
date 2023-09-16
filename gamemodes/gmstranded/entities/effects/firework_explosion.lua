@@ -44,7 +44,7 @@ local function RenderScreenspaceEffects() -- I should probably be using EFFECT:R
 		local Eye_Origin = EyePos()
 		
 		local FadeOut = ( (CurTime() - Time)/3 ) * FadeOutTimeMult
-		local Fade = -math.max( Eye_Angles:Forward():DotProduct( ( Position - Eye_Origin ):GetNormal() ) - FadeOut, 0 ) + 1
+		local Fade = -math.max( Eye_Angles:Forward():Dot( ( Position - Eye_Origin ):GetNormal() ) - FadeOut, 0 ) + 1
 
 		local Mult = ( (-Fade+1)*0.25 )
 		local Bright = 0.25

@@ -137,10 +137,8 @@ function DayLight:Init()
 	DayLight:BuildLightTable()
 
 	if REALTIME:GetBool() then
-		DayLight.Minute = tonumber((os.date("%H")))*60+tonumber((os.date("%M")))
-		if GetConVarNumber( "DayLight_RealTime" ) == 1 then
-			DayLight.Day = tonumber( os.date( "%w" ) )
-		end
+		DayLight.Minute = tonumber( os.date("%H") )*60+tonumber( os.date("%M") )
+		DayLight.Day = tonumber( os.date( "%w" ) )
 	end
 
 	DayLight.NextThink = 0

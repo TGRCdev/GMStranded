@@ -23,14 +23,14 @@ SWEP.WElements = {
 local SwingSound = Sound( "weapons/slam/throw.wav" )
 local Mins, Maxs = Vector(-12, -12, -12), Vector(12, 12, 12)
 function SWEP:PrimaryAttack( right )
-	local ply = self.Owner
-	self.Owner:SetAnimation( PLAYER_ATTACK1 )
+	local ply = self:GetOwner()
+	self:GetOwner():SetAnimation( PLAYER_ATTACK1 )
 	self:SendWeaponAnim( ACT_VM_MISSCENTER )
 	if IsFirstTimePredicted() then
-		self.Owner:SetAnimation( PLAYER_ATTACK1 )
+		self:GetOwner():SetAnimation( PLAYER_ATTACK1 )
 	end
 
-	force = self.Owner:EyeAngles():Forward()
+	force = self:GetOwner():EyeAngles():Forward()
 	local td = {}
  
 	self.Weapon:SetNextPrimaryFire(CurTime() + 0.8)

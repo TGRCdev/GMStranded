@@ -21,7 +21,7 @@ function SGS_StatsPanel( who )
 	local PanelList = vgui.Create( "DPanelList", DermaPanel)
 	PanelList:SetPos(10, 30)
 	PanelList:SetSize( 580,  ScrH() * 0.75 - 50)
-	PanelList:SetDrawBackground( true )
+	PanelList:SetPaintBackground( true )
 	PanelList:SetSpacing( 2 )
 	PanelList:EnableVerticalScrollbar( true )
 	

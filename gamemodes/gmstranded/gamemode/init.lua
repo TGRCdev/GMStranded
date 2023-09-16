@@ -100,7 +100,7 @@ function Init_Gamemode()
 	SGS_PreCacheMessage()
 
 	timer.Simple(1, function() SGS_LoadCrashFile() end)
-	timer.Destroy("sgs_makesuregamemodeinit")
+	timer.Remove("sgs_makesuregamemodeinit")
 
 end
 hook.Add( "Initialize", "initializing", Init_Gamemode )
@@ -4602,7 +4602,7 @@ function SGS_CancelProcess( ply, _, _ )
 	if ply.sound then
 		ply.sound:Stop()
 	end
-	timer.Destroy(ply:UniqueID() .. "processtimer")
+	timer.Remove(ply:UniqueID() .. "processtimer")
 
 	ply:ScreenFade( SCREENFADE.PURGE, Color(0,0,0), 0, 0 )
 	RDRemoveRagdollEntity( ply )
@@ -5054,7 +5054,7 @@ function SGS_StopElixirEffect( ply )
 		ply:SendMessage("The effects of the " .. Cap(ply.elixir) .. " elixir has worn off!", 60, Color(255, 255, 0, 255))
 		ply.elixir = "NONE"
 		ply.elixirval = 1
-		timer.Destroy(ply:UniqueID() .. "elixirtimer")
+		timer.Remove(ply:UniqueID() .. "elixirtimer")
 	end
 
 
@@ -6049,7 +6049,7 @@ function SGS_GrowUpPlant( plant )
 
 	if newsize < 1 then
 	else
-		timer.Destroy( tostring(plant:EntIndex()) .. "_growthtimer" )
+		timer.Remove( tostring(plant:EntIndex()) .. "_growthtimer" )
 		plant:SpawnFruit()
 	end
 

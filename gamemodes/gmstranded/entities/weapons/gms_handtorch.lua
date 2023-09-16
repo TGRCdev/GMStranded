@@ -31,7 +31,7 @@ end
 
 function SWEP:SecondaryAttack()
 
-	local ply = self.Owner
+	local ply = self:GetOwner()
     if CLIENT then return end
     self.Weapon:SetNextSecondaryFire(CurTime() + 0.5)
 	self.Weapon:SendWeaponAnim(ACT_VM_HITCENTER)

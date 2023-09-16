@@ -168,7 +168,7 @@ function PANEL:DrawFrame()
 	GAMEMODE.newQMenu.btn_props.OnMousePressed = function()
 		DeactivateAllQButtons()
 		GAMEMODE.newQMenu.btn_props.active = true
-		if ValidPanel(self.content) then self.content:Remove() end
+		if IsValid(self.content) then self.content:Remove() end
 		self.content = vgui.Create( "qmenu_props", GAMEMODE.newQMenu.contentPanel )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )
@@ -181,7 +181,7 @@ function PANEL:DrawFrame()
 	GAMEMODE.newQMenu.btn_structures.OnMousePressed = function()
 		DeactivateAllQButtons()
 		GAMEMODE.newQMenu.btn_structures.active = true
-		if ValidPanel(self.content) then self.content:Remove() end
+		if IsValid(self.content) then self.content:Remove() end
 		self.content = vgui.Create( "qmenu_structures", GAMEMODE.newQMenu.contentPanel )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )
@@ -194,7 +194,7 @@ function PANEL:DrawFrame()
 	GAMEMODE.newQMenu.btn_farming.OnMousePressed = function()
 		DeactivateAllQButtons()
 		GAMEMODE.newQMenu.btn_farming.active = true
-		if ValidPanel(self.content) then self.content:Remove() end
+		if IsValid(self.content) then self.content:Remove() end
 		self.content = vgui.Create( "qmenu_farming", GAMEMODE.newQMenu.contentPanel )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )
@@ -207,7 +207,7 @@ function PANEL:DrawFrame()
 	GAMEMODE.newQMenu.btn_tools.OnMousePressed = function()
 		DeactivateAllQButtons()
 		GAMEMODE.newQMenu.btn_tools.active = true
-		if ValidPanel(self.content) then self.content:Remove() end
+		if IsValid(self.content) then self.content:Remove() end
 		self.content = vgui.Create( "qmenu_tools", GAMEMODE.newQMenu.contentPanel )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )
@@ -220,7 +220,7 @@ function PANEL:DrawFrame()
 	GAMEMODE.newQMenu.btn_resources.OnMousePressed = function()
 		DeactivateAllQButtons()
 		GAMEMODE.newQMenu.btn_resources.active = true
-		if ValidPanel(self.content) then self.content:Remove() end
+		if IsValid(self.content) then self.content:Remove() end
 		self.content = vgui.Create( "qmenu_resources", GAMEMODE.newQMenu.contentPanel )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )
@@ -233,7 +233,7 @@ function PANEL:DrawFrame()
 	GAMEMODE.newQMenu.btn_spells.OnMousePressed = function()
 		DeactivateAllQButtons()
 		GAMEMODE.newQMenu.btn_spells.active = true
-		if ValidPanel(self.content) then self.content:Remove() end
+		if IsValid(self.content) then self.content:Remove() end
 		self.content = vgui.Create( "qmenu_spells", GAMEMODE.newQMenu.contentPanel )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )
@@ -246,7 +246,7 @@ function PANEL:DrawFrame()
 	GAMEMODE.newQMenu.btn_options.OnMousePressed = function()
 		DeactivateAllQButtons()
 		GAMEMODE.newQMenu.btn_options.active = true
-		if ValidPanel(self.content) then self.content:Remove() end
+		if IsValid(self.content) then self.content:Remove() end
 		self.content = vgui.Create( "qmenu_options", GAMEMODE.newQMenu.contentPanel )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )
@@ -259,7 +259,7 @@ function PANEL:DrawFrame()
 	GAMEMODE.newQMenu.btn_pmodel.OnMousePressed = function()
 		DeactivateAllQButtons()
 		GAMEMODE.newQMenu.btn_pmodel.active = true
-		if ValidPanel(self.content) then self.content:Remove() end
+		if IsValid(self.content) then self.content:Remove() end
 		self.content = vgui.Create( "qmenu_pmodel", GAMEMODE.newQMenu.contentPanel )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )
@@ -272,7 +272,7 @@ function PANEL:DrawFrame()
 	GAMEMODE.newQMenu.btn_pprotect.OnMousePressed = function()
 		DeactivateAllQButtons()
 		GAMEMODE.newQMenu.btn_pprotect.active = true
-		if ValidPanel(self.content) then self.content:Remove() end
+		if IsValid(self.content) then self.content:Remove() end
 		self.content = vgui.Create( "qmenu_pprotect", GAMEMODE.newQMenu.contentPanel )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )
@@ -285,7 +285,7 @@ function PANEL:DrawFrame()
 	GAMEMODE.newQMenu.btn_vchannel.OnMousePressed = function()
 		DeactivateAllQButtons()
 		GAMEMODE.newQMenu.btn_vchannel.active = true
-		if ValidPanel(self.content) then self.content:Remove() end
+		if IsValid(self.content) then self.content:Remove() end
 		self.content = vgui.Create( "qmenu_vchannel", GAMEMODE.newQMenu.contentPanel )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )
@@ -295,7 +295,7 @@ function PANEL:DrawFrame()
 	if self.firsttime then
 		DeactivateAllQButtons()
 		GAMEMODE.newQMenu.btn_resources.active = true
-		if ValidPanel(self.content) then self.content:Remove() end
+		if IsValid(self.content) then self.content:Remove() end
 		self.content = vgui.Create( "qmenu_resources", GAMEMODE.newQMenu.contentPanel )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )
@@ -357,7 +357,7 @@ function FARMING_TAB:DrawFrame()
 					if SGS.resources[ v.resource ] >= 1 then
 						local SeedButton = vgui.Create( "DImageButton", SeedsPanel)
 						SeedButton:SetMaterial( v.icon )
-						SeedButton:SetToolTip( v.title .. "\nFarming Level: " .. tostring(v.reqlvl["farming"]) )
+						SeedButton:SetTooltip( v.title .. "\nFarming Level: " .. tostring(v.reqlvl["farming"]) )
 						SeedButton:SetSize( 40, 40 )
 						SeedButton.DoClick = function( SeedButton )
 							RunConsoleCommand("sgs_plant", v.resource)
@@ -391,7 +391,7 @@ function FARMING_TAB:DrawFrame()
 					if SGS.resources[ v.resource ] >= 1 then
 						local SeedButton = vgui.Create( "DImageButton", SeedsPanel)
 						SeedButton:SetMaterial( v.icon )
-						SeedButton:SetToolTip( v.title .. "\nFarming Level: " .. tostring(v.reqlvl["farming"]) )
+						SeedButton:SetTooltip( v.title .. "\nFarming Level: " .. tostring(v.reqlvl["farming"]) )
 						SeedButton:SetSize( 40, 40 )
 						SeedButton.DoClick = function( SeedButton )
 							RunConsoleCommand("sgs_planttree", v.resource)
@@ -425,7 +425,7 @@ function FARMING_TAB:DrawFrame()
 					if SGS.resources[ v.resource ] >= 1 then
 						local SeedButton = vgui.Create( "DImageButton", SeedsPanel)
 						SeedButton:SetMaterial( v.icon )
-						SeedButton:SetToolTip( v.title .. "\nFarming Level: " .. tostring(v.reqlvl["farming"]) )
+						SeedButton:SetTooltip( v.title .. "\nFarming Level: " .. tostring(v.reqlvl["farming"]) )
 						SeedButton:SetSize( 40, 40 )
 						SeedButton.DoClick = function( SeedButton )
 							RunConsoleCommand("sgs_plantfood", v.resource)
@@ -459,7 +459,7 @@ function FARMING_TAB:DrawFrame()
 					if SGS.resources[ v.resource ] >= 1 then
 						local SeedButton = vgui.Create( "DImageButton", SeedsPanel)
 						SeedButton:SetMaterial( v.icon )
-						SeedButton:SetToolTip( v.title .. "\nFarming Level: " .. tostring(v.reqlvl["farming"]) )
+						SeedButton:SetTooltip( v.title .. "\nFarming Level: " .. tostring(v.reqlvl["farming"]) )
 						SeedButton:SetSize( 40, 40 )
 						SeedButton.DoClick = function( SeedButton )
 							RunConsoleCommand("sgs_plantfood", v.resource)
@@ -535,7 +535,7 @@ function SPELLS_TAB:DrawFrame()
 			
 			local SpellButton = vgui.Create( "menu_qSpellButton", SpellList)
 			SpellButton.iconimage = v.material
-			SpellButton:SetToolTip( SGS_SpellToolTip(v) )
+			SpellButton:SetTooltip( SGS_SpellToolTip(v) )
 			SpellButton:SetSize( 140, 34 )
 			SpellButton:SetButtonText(v.name)
 			SpellButton:Droppable("HotbarDrop")
@@ -651,7 +651,7 @@ function TOOLS_TAB:DrawFrame()
 
 						local icon = vgui.Create( "menu_qButton2", ToolContainerButtons)
 						icon:SetSize( 120, 24 )
-						icon:SetToolTip( SGS_ToolTipShort(v2) )
+						icon:SetTooltip( SGS_ToolTipShort(v2) )
 						icon:SetButtonText( v2.title )
 						icon:Droppable("HotbarDrop")
 						icon.dropType = "tool"
@@ -840,7 +840,7 @@ function PROPS_TAB:DrawFrame()
 		
 				local icon = vgui.Create( "menu_qPropButton", PropContainerButtons)
 				icon:SetSize( 186, 30 )
-				icon:SetToolTip( SGS_ToolTip(prop) )
+				icon:SetTooltip( SGS_ToolTip(prop) )
 				icon:SetButtonText( prop.title )
 				icon.SetTextOffsetY = 1
 				icon.model = prop.model
@@ -929,7 +929,7 @@ function STRUCTURES_TAB:DrawFrame()
 		
 				local icon = vgui.Create( "menu_qPropButton", PropContainerButtons)
 				icon:SetSize( 186, 30 )
-				icon:SetToolTip( SGS_ToolTip(prop) )
+				icon:SetTooltip( SGS_ToolTip(prop) )
 				icon:SetButtonText( prop.title )
 				icon.SetTextOffsetY = 1
 				icon.model = prop.model
@@ -1021,7 +1021,7 @@ function OPTIONS_TAB:DrawFrame()
 		for _, v in pairs( SGS.Commands[ "game" ] ) do
 			local icon = vgui.Create( "menu_qButton2", OptionContainerButtons)
 			icon:SetSize( 120, 20 )
-			icon:SetToolTip( SGS_ToolTipShort(v) )
+			icon:SetTooltip( SGS_ToolTipShort(v) )
 			icon:SetButtonText(  v.title )
 			icon.SetTextOffsetY = 2
 			OptionContainerButtons:Add( icon )
@@ -1048,7 +1048,7 @@ function OPTIONS_TAB:DrawFrame()
 			if SGS_GetAch(v.achreq) then
 				local icon = vgui.Create( "menu_qButton2", OptionContainerButtons)
 				icon:SetSize( 120, 20 )
-				icon:SetToolTip( SGS_ToolTipShort(v) )
+				icon:SetTooltip( SGS_ToolTipShort(v) )
 				icon:SetButtonText(  v.title )
 			icon.SetTextOffsetY = 2
 				OptionContainerButtons:Add( icon )
@@ -1075,7 +1075,7 @@ function OPTIONS_TAB:DrawFrame()
 		for _, v in pairs( SGS.Commands[ "toggles" ] ) do
 			local icon = vgui.Create( "menu_qButton2", OptionContainerButtons)
 			icon:SetSize( 120, 20 )
-			icon:SetToolTip( SGS_ToolTipShort(v) )
+			icon:SetTooltip( SGS_ToolTipShort(v) )
 			icon:SetButtonText(  v.title )
 			icon.SetTextOffsetY = 2
 			OptionContainerButtons:Add( icon )
@@ -1101,7 +1101,7 @@ function OPTIONS_TAB:DrawFrame()
 		for _, v in pairs( SGS.Commands[ "pets" ] ) do
 			local icon = vgui.Create( "menu_qButton2", OptionContainerButtons)
 			icon:SetSize( 120, 20 )
-			icon:SetToolTip( SGS_ToolTipShort(v) )
+			icon:SetTooltip( SGS_ToolTipShort(v) )
 			icon:SetButtonText(  v.title )
 			icon.SetTextOffsetY = 2
 			OptionContainerButtons:Add( icon )
@@ -1127,7 +1127,7 @@ function OPTIONS_TAB:DrawFrame()
 		for _, v in pairs( SGS.Commands[ "special" ] ) do
 			local icon = vgui.Create( "menu_qButton2", OptionContainerButtons)
 			icon:SetSize( 120, 20 )
-			icon:SetToolTip( SGS_ToolTipShort(v) )
+			icon:SetTooltip( SGS_ToolTipShort(v) )
 			icon:SetButtonText(  v.title )
 			icon.SetTextOffsetY = 2
 			OptionContainerButtons:Add( icon )
@@ -1153,7 +1153,7 @@ function OPTIONS_TAB:DrawFrame()
 		for _, v in pairs( SGS.Commands[ "client" ] ) do
 			local icon = vgui.Create( "menu_qButton2", OptionContainerButtons)
 			icon:SetSize( 120, 20 )
-			icon:SetToolTip( SGS_ToolTipShort(v) )
+			icon:SetTooltip( SGS_ToolTipShort(v) )
 			icon:SetButtonText(  v.title )
 			icon.SetTextOffsetY = 2
 			OptionContainerButtons:Add( icon )
@@ -1248,7 +1248,7 @@ function PMODEL_TAB:DrawFrame()
 			for k, v in pairs(SGS.pmlist1) do
 				local icon = vgui.Create( "SpawnIcon", pModelContainerButtons)
 				icon:SetModel( player_manager.TranslatePlayerModel(v) )
-				icon:SetToolTip( v )
+				icon:SetTooltip( v )
 				pModelContainerButtons:Add( icon )
 				icon.DoClick = function ( icon ) 
 					surface.PlaySound( "ui/buttonclickrelease.wav" ) 
@@ -1272,7 +1272,7 @@ function PMODEL_TAB:DrawFrame()
 			for k, v in pairs(SGS.pmlist2) do
 				local icon = vgui.Create( "SpawnIcon", pModelContainerButtons)
 				icon:SetModel( player_manager.TranslatePlayerModel(v) )
-				icon:SetToolTip( v )
+				icon:SetTooltip( v )
 				pModelContainerButtons:Add( icon )
 				icon.DoClick = function ( icon ) 
 					surface.PlaySound( "ui/buttonclickrelease.wav" ) 
@@ -1296,7 +1296,7 @@ function PMODEL_TAB:DrawFrame()
 			for k, v in pairs(SGS.pmlist3) do
 				local icon = vgui.Create( "SpawnIcon", pModelContainerButtons)
 				icon:SetModel( player_manager.TranslatePlayerModel(v) )
-				icon:SetToolTip( v )
+				icon:SetTooltip( v )
 				pModelContainerButtons:Add( icon )
 				icon.DoClick = function ( icon ) 
 					surface.PlaySound( "ui/buttonclickrelease.wav" ) 
@@ -1320,7 +1320,7 @@ function PMODEL_TAB:DrawFrame()
 			for k, v in pairs(SGS.pmlist4) do
 				local icon = vgui.Create( "SpawnIcon", pModelContainerButtons)
 				icon:SetModel( player_manager.TranslatePlayerModel(v) )
-				icon:SetToolTip( v )
+				icon:SetTooltip( v )
 				pModelContainerButtons:Add( icon )
 				icon.DoClick = function ( icon ) 
 					surface.PlaySound( "ui/buttonclickrelease.wav" ) 
@@ -1344,7 +1344,7 @@ function PMODEL_TAB:DrawFrame()
 			for k, v in pairs(SGS.pmlistd) do
 				local icon = vgui.Create( "SpawnIcon", pModelContainerButtons)
 				icon:SetModel( player_manager.TranslatePlayerModel(v) )
-				icon:SetToolTip( v )
+				icon:SetTooltip( v )
 				pModelContainerButtons:Add( icon )
 				icon.DoClick = function ( icon ) 
 					surface.PlaySound( "ui/buttonclickrelease.wav" ) 
@@ -1368,7 +1368,7 @@ function PMODEL_TAB:DrawFrame()
 			for k, v in pairs(SGS.pmlistm) do
 				local icon = vgui.Create( "SpawnIcon", pModelContainerButtons)
 				icon:SetModel( player_manager.TranslatePlayerModel(v) )
-				icon:SetToolTip( v )
+				icon:SetTooltip( v )
 				pModelContainerButtons:Add( icon )
 				icon.DoClick = function ( icon ) 
 					surface.PlaySound( "ui/buttonclickrelease.wav" ) 
@@ -1392,7 +1392,7 @@ function PMODEL_TAB:DrawFrame()
 			for k, v in pairs(SGS.pmlista) do
 				local icon = vgui.Create( "SpawnIcon", pModelContainerButtons)
 				icon:SetModel( player_manager.TranslatePlayerModel(v) )
-				icon:SetToolTip( v )
+				icon:SetTooltip( v )
 				pModelContainerButtons:Add( icon )
 				icon.DoClick = function ( icon ) 
 					surface.PlaySound( "ui/buttonclickrelease.wav" ) 

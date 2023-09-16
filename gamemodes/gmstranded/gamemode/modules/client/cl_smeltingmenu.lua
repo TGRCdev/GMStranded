@@ -37,7 +37,7 @@ function SGS_SmeltingMenu()
 		for k2, v2 in pairs(SGS.Smelting[k]) do
 			local icon = vgui.Create( "DImageButton", IconList )
 			icon:SetMaterial( v2.material )
-			icon:SetToolTip( SGS_ToolTip(v2) )
+			icon:SetTooltip( SGS_ToolTip(v2) )
 			icon:SetSize(64, 64)
 			IconList:AddItem( icon )
 			icon.PaintOver = function()

@@ -5,6 +5,11 @@
 	By: Ultra
 ]]--
 
+rain_volume = GetConVar("sgs_rain_volume")
+if not rain_volume then
+	rain_volume = CreateClientConVar( "sgs_rain_volume", "1", true, false )
+end
+
 local vector_up, vector_down = Vector( 0, 0, 1 ), Vector( 0, 0, -1 )
 
 local Rain = {}
@@ -271,7 +276,7 @@ function Rain:UpdateRainSounds( intScaler )
 	if not self.m_pRainSound:IsPlaying() then
 		self.m_pRainSound:PlayEx( 0, 100 )
 	else
-		self.m_pRainSound:ChangeVolume( self.m_intCurVolume *GetConVarNumber("sgs_rain_volume"), 0 )
+		self.m_pRainSound:ChangeVolume( self.m_intCurVolume * rain_volume:GetFloat(), 0 )
 		self.m_pRainSound:ChangePitch( self.m_intCurPitch, 0 )
 	end
 end

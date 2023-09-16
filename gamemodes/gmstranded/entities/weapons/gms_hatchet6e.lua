@@ -19,7 +19,7 @@ end
 ---------------------------------------------------------*/
 function SWEP:Deploy()
 	
-	self.Owner:GetViewModel():SetPlaybackRate(1.3)
+	self:GetOwner():GetViewModel():SetPlaybackRate(1.3)
 	self:SendWeaponAnim(ACT_VM_DRAW)
 	return true
 	
@@ -31,14 +31,14 @@ local SwingSound = Sound( "weapons/slam/throw.wav" )
 ---------------------------------------------------------*/
 function SWEP:PrimaryAttack()
 
-	self.Owner:SetAnimation( PLAYER_ATTACK1 )
+	self:GetOwner():SetAnimation( PLAYER_ATTACK1 )
 	local anim = { "swingdown", "swingleft" }
-	local vm = self.Owner:GetViewModel()
+	local vm = self:GetOwner():GetViewModel()
 	vm:SendViewModelMatchingSequence( vm:LookupSequence( table.Random(anim) ) )
 	self:EmitSound( SwingSound )
 	
 	if CLIENT then return end
-	local ply = self.Owner
+	local ply = self:GetOwner()
 	
     self.Weapon:SetNextPrimaryFire(CurTime() + 0.1)
 	

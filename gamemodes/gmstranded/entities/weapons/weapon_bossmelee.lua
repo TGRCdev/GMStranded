@@ -43,15 +43,15 @@ function SWEP:SetupDataTables()
 end
 
 function SWEP:UpdateNextIdle()
-	local vm = self.Owner:GetViewModel()
+	local vm = self:GetOwner():GetViewModel()
 	self:SetNextIdle( CurTime() + vm:SequenceDuration() )
 end
  
 local Mins, Maxs = Vector(-12, -12, -12), Vector(12, 12, 12)
 function SWEP:PrimaryAttack( right )
 
-	local ply = self.Owner
-	force = self.Owner:EyeAngles():Forward()
+	local ply = self:GetOwner()
+	force = self:GetOwner():EyeAngles():Forward()
 	local td = {}
  
 	ply:SetAnimation( PLAYER_ATTACK1 )
@@ -67,9 +67,9 @@ function SWEP:PrimaryAttack( right )
 	ply:EmitSound( SwingSound )
 
 	if ply:GetLevel("combat") >= 35 then
-		td.start = self.Owner:GetShootPos()
+		td.start = self:GetOwner():GetShootPos()
 		td.endpos = td.start + force * 100
-		td.filter = self.Owner
+		td.filter = self:GetOwner()
 		td.mins = Mins
 		td.maxs = Maxs
 	
@@ -91,15 +91,15 @@ function SWEP:PrimaryAttack( right )
 					dmg:SetDamageType( DMG_DISSOLVE )
 					dmg:SetDamage( math.random(60,74) )
 					
-					dmg:SetAttacker(self.Owner)
-					dmg:SetInflictor(self.Owner)
+					dmg:SetAttacker(self:GetOwner())
+					dmg:SetInflictor(self:GetOwner())
 					ent:TakeDamageInfo(dmg)
 				end		
 			end
 			SGS_EmitHitSound( tr.MatType, tr.HitPos )
 		end
 		
-		self.Owner:ViewPunch(Angle(math.Rand(-2, 0), 5, math.Rand(-2, 2)))
+		self:GetOwner():ViewPunch(Angle(math.Rand(-2, 0), 5, math.Rand(-2, 2)))
 	else
 		ply:SendMessage("This weapon requires a level 35 or higher in combat.", 60, Color(255, 125, 0, 255))
 	end

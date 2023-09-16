@@ -13,7 +13,7 @@ surface.CreateFont( "achtitle2", {
 	
 function SGS_AchievementsMenu()
 
-	if ValidPanel(SGS.achmenu) then SGS.achmenu:Remove() end
+	if IsValid(SGS.achmenu) then SGS.achmenu:Remove() end
 
 	SGS.achmenu = vgui.Create( "DFrame" )
 	SGS.achmenu:ShowCloseButton(true)

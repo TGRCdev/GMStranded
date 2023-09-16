@@ -101,7 +101,7 @@ end
 	Reload does nothing
 -----------------------------------------------------------]]
 function SWEP:Reload()
-	self:SetZoom( self.Owner:GetInfoNum( "fov_desired", 70 ) )
+	self:SetZoom( self:GetOwner():GetInfoNum( "fov_desired", 70 ) )
 	self:SetRoll( 0 )
 		
 end
@@ -114,7 +114,7 @@ function SWEP:DoShootEffect()
 
 	self.Weapon:EmitSound( self.ShootSound )
 	self.Weapon:SendWeaponAnim( ACT_VM_PRIMARYATTACK )
-	self.Owner:SetAnimation( PLAYER_ATTACK1 )
+	self:GetOwner():SetAnimation( PLAYER_ATTACK1 )
 
 	if ( SERVER && !game.SinglePlayer() ) then
 
@@ -123,13 +123,13 @@ function SWEP:DoShootEffect()
 		-- shown to other players!
 		--
 
-		local vPos = self.Owner:GetShootPos()
-		local vForward = self.Owner:GetAimVector()
+		local vPos = self:GetOwner():GetShootPos()
+		local vForward = self:GetOwner():GetAimVector()
 
 		local trace = {}
 			trace.start = vPos
 			trace.endpos = vPos + vForward * 256
-			trace.filter = self.Owner
+			trace.filter = self:GetOwner()
 
 		tr = util.TraceLine( trace )
 
@@ -152,7 +152,7 @@ function SWEP:PrimaryAttack()
 	if ( !game.SinglePlayer() && SERVER ) then return end
 	if ( CLIENT && !IsFirstTimePredicted() ) then return end
 	
-	self.Owner:ConCommand( "jpeg" )
+	self:GetOwner():ConCommand( "jpeg" )
 	
 end
 
@@ -170,7 +170,7 @@ end
 -----------------------------------------------------------]]
 function SWEP:Tick()
 
-	local cmd = self.Owner:GetCurrentCommand()
+	local cmd = self:GetOwner():GetCurrentCommand()
 	
 	local fDelta = 0.05
 
@@ -210,7 +210,7 @@ if ( CLIENT ) then
 	function SWEP:FreezeMovement()
 
 		-- Don't aim if we're holding the right mouse button
-		if ( self.Owner:KeyDown( IN_ATTACK2 ) || self.Owner:KeyReleased( IN_ATTACK2 ) ) then 
+		if ( self:GetOwner():KeyDown( IN_ATTACK2 ) || self:GetOwner():KeyReleased( IN_ATTACK2 ) ) then 
 			return true 
 		end
 
@@ -230,7 +230,7 @@ if ( CLIENT ) then
 	
 	function SWEP:AdjustMouseSensitivity()
 
-		if ( self.Owner:KeyDown( IN_ATTACK2 )  ) then return 1 end
+		if ( self:GetOwner():KeyDown( IN_ATTACK2 )  ) then return 1 end
 
 		return 1 * ( self:GetZoom() / 80 )
 	
@@ -268,7 +268,7 @@ end
 --
 function SWEP:Deploy()
 
-	self.Owner:DrawViewModel( false )
+	self:GetOwner():DrawViewModel( false )
 
 end
 

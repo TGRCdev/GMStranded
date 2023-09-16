@@ -33,7 +33,7 @@ function SWEP:PrimaryAttack()
     if CLIENT then return end
     self:SetNextPrimaryFire(CurTime() + 1.4)
 	self:SendWeaponAnim(ACT_VM_HITCENTER)
-	local pl = self.Owner
+	local pl = self:GetOwner()
 	
 	local tr = pl:TraceFromEyes(130)
 	if tr.HitWorld then

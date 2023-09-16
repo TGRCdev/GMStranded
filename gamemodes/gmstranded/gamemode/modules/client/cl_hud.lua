@@ -72,7 +72,7 @@ function PANEL:Init()
 	
 	SGS.hotbarinit = true
 	function ReloadHotBar()
-		if ValidPanel(self) then self:DrawOthers() end
+		if IsValid(self) then self:DrawOthers() end
 	end
 	concommand.Add( "sgs_refreshhotbar", ReloadHotBar )
 	
@@ -89,7 +89,7 @@ function PANEL:Paint()
 end
 
 function PANEL:DrawOthers()
-	if ValidPanel( SGS.HotBarContainer ) then SGS.HotBarContainer:Remove() end
+	if IsValid( SGS.HotBarContainer ) then SGS.HotBarContainer:Remove() end
 
 	SGS.HotBarContainer = vgui.Create( "DIconLayout", self)
 	SGS.HotBarContainer:SetSize( 688, 48 )
@@ -232,7 +232,7 @@ function PANEL:SetupButton( x, y, x2, y2, item, index, btype )
 		self:SetMaterial( item.material )
 	end
 	self:SetSize( x2, y2 )
-	self:SetToolTip( SGS_ToolTipShort(item) )
+	self:SetTooltip( SGS_ToolTipShort(item) )
 	
 	self.item = item
 	self.index = index

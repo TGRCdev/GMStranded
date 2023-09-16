@@ -64,7 +64,7 @@ end
 ---------------------------------------------------------*/
 local restricted_entities = { "gms_tribecache" }
 function SWEP:PrimaryAttack()
-	local ply = self.Owner
+	local ply = self:GetOwner()
     if CLIENT then return end
     self.Weapon:SetNextPrimaryFire(CurTime() + 1)
 
@@ -98,7 +98,7 @@ end
 ---------------------------------------------------------*/
 function SWEP:SecondaryAttack()
 
-	local ply = self.Owner
+	local ply = self:GetOwner()
     if CLIENT then return end
     self.Weapon:SetNextPrimaryFire(CurTime() + 1)
 
@@ -129,7 +129,7 @@ end
 	Reload
 ---------------------------------------------------------*/
 function SWEP:Reload()
-	local ply = self.Owner
+	local ply = self:GetOwner()
 	if CLIENT then return end
 	
 	if CurTime() < ply.lastuse + 0.5 then return end

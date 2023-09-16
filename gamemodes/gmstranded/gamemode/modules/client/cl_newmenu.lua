@@ -89,7 +89,7 @@ function PANEL:DrawFrame()
 		DeactivateAllButtons()
 		GAMEMODE.NewMenu.btn_option1.active = true
 		
-		if ValidPanel(self.content) then self.content:Remove() end
+		if IsValid(self.content) then self.content:Remove() end
 		self.content = vgui.Create( "motd_panel", content_window )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )
@@ -103,7 +103,7 @@ function PANEL:DrawFrame()
 		DeactivateAllButtons()
 		GAMEMODE.NewMenu.btn_option2.active = true
 		
-		if ValidPanel(self.content) then self.content:Remove() end
+		if IsValid(self.content) then self.content:Remove() end
 		self.content = vgui.Create( "wiki_panel", content_window )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )
@@ -117,7 +117,7 @@ function PANEL:DrawFrame()
 		DeactivateAllButtons()
 		GAMEMODE.NewMenu.btn_option3.active = true
 		
-		if ValidPanel(self.content) then self.content:Remove() end
+		if IsValid(self.content) then self.content:Remove() end
 		self.content = vgui.Create( "guide_panel", content_window )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )
@@ -131,7 +131,7 @@ function PANEL:DrawFrame()
 		DeactivateAllButtons()
 		GAMEMODE.NewMenu.btn_option9.active = true
 		
-		if ValidPanel(self.content) then self.content:Remove() end
+		if IsValid(self.content) then self.content:Remove() end
 		self.content = vgui.Create( "forums_panel", content_window )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )
@@ -145,7 +145,7 @@ function PANEL:DrawFrame()
 		DeactivateAllButtons()
 		GAMEMODE.NewMenu.btn_option5.active = true
 		
-		if ValidPanel(self.content) then self.content:Remove() end
+		if IsValid(self.content) then self.content:Remove() end
 		self.content = vgui.Create( "achievements_panel", content_window )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )
@@ -168,7 +168,7 @@ function PANEL:DrawFrame()
 		DeactivateAllButtons()
 		GAMEMODE.NewMenu.btn_option7.active = true
 		
-		if ValidPanel(self.content) then self.content:Remove() end
+		if IsValid(self.content) then self.content:Remove() end
 		self.content = vgui.Create( "donate_panel", content_window )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )
@@ -182,7 +182,7 @@ function PANEL:DrawFrame()
 		DeactivateAllButtons()
 		GAMEMODE.NewMenu.btn_option8.active = true
 		
-		if ValidPanel(self.content) then self.content:Remove() end
+		if IsValid(self.content) then self.content:Remove() end
 		self.content = vgui.Create( "leaderboard_panel", content_window )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )
@@ -191,7 +191,7 @@ function PANEL:DrawFrame()
 	if self.firsttime then
 		DeactivateAllButtons()
 		GAMEMODE.NewMenu.btn_option1.active = true
-		if ValidPanel(self.content) then self.content:Remove() end
+		if IsValid(self.content) then self.content:Remove() end
 		self.content = vgui.Create( "motd_panel", content_window )
 		self.content:Dock( FILL )
 		self.content:DockMargin( 0, 0, 0, 0 )

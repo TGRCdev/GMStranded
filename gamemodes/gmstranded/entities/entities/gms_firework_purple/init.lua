@@ -225,15 +225,15 @@ end
 
 function ENT:TriggerInput( iname, value )
 
-	if ( iname == 'Launch' && util.tobool( value )) then
+	if ( iname == 'Launch' && tobool( value )) then
 	
 		self:Launch()
 	
-	elseif ( iname == 'Start Fuse' && util.tobool( value )) then
+	elseif ( iname == 'Start Fuse' && tobool( value )) then
 	
 		self:StartFuse()
 	
-	elseif ( iname == 'Explode' && util.tobool( value )) then
+	elseif ( iname == 'Explode' && tobool( value )) then
 
 		SafeExplode( self )
 	

@@ -29,11 +29,11 @@ end
 	PrimaryAttack
 ---------------------------------------------------------*/
 function SWEP:PrimaryAttack()
-	local ply = self.Owner
+	local ply = self:GetOwner()
     
-	self.Owner:SetAnimation( PLAYER_ATTACK1 )
+	self:GetOwner():SetAnimation( PLAYER_ATTACK1 )
 	local anim = "swing"
-	local vm = self.Owner:GetViewModel()
+	local vm = self:GetOwner():GetViewModel()
 	vm:SendViewModelMatchingSequence( vm:LookupSequence( anim ) )
 	self:EmitSound( SwingSound )
 	

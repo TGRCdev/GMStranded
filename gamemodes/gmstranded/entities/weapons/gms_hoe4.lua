@@ -26,11 +26,11 @@ SWEP.WElements = {
 	PrimaryAttack
 ---------------------------------------------------------*/
 function SWEP:PrimaryAttack()
-	local ply = self.Owner
-	self.Owner:SetAnimation( PLAYER_ATTACK1 )
+	local ply = self:GetOwner()
+	self:GetOwner():SetAnimation( PLAYER_ATTACK1 )
 	self:SendWeaponAnim( ACT_VM_MISSCENTER )
 	if IsFirstTimePredicted() then
-		self.Owner:SetAnimation( PLAYER_ATTACK1 )
+		self:GetOwner():SetAnimation( PLAYER_ATTACK1 )
 	end
 
 	local modi = 2.4
@@ -38,8 +38,8 @@ function SWEP:PrimaryAttack()
     self.Weapon:SetNextPrimaryFire(CurTime() + ( 3 - timemodi ) )
 	if CLIENT then return end
 	
-	if self.Owner:GetLevel("farming") < 25 then
-		self.Owner:SendMessage("This tool requires farming level 25 or higher.", 60, Color(255, 125, 0, 255))
+	if self:GetOwner():GetLevel("farming") < 25 then
+		self:GetOwner():SendMessage("This tool requires farming level 25 or higher.", 60, Color(255, 125, 0, 255))
 		return
 	end
 	

@@ -434,8 +434,8 @@ function SGS_VortWander()
 	if not IsValid(SGS.shopent) then return end
 	local npc = SGS.shopent	
 	npc.status = "wander"
-	timer.Destroy("shopwanderreset")
-	timer.Destroy("shopeatfruit")
+	timer.Remove("shopwanderreset")
+	timer.Remove("shopeatfruit")
 end
 
 function SGS_VortEatPlant()
@@ -661,7 +661,7 @@ function SGS_VortyKillsPlayer( ply, weapon, npc )
 	if npc == SGS.shopent then
 	
 		SGS_VortChat( "Maybe next time," .. ply:Nick() .. ", you'll know not to mess with me..." )
-		timer.Destroy("resethostile_" .. ply:EntIndex())
+		timer.Remove("resethostile_" .. ply:EntIndex())
 		npc:AddEntityRelationship(ply, D_LI, 999 )
 		npc:SetNPCState(1)
 		npc:PlayScene ('scenes/npc/vortigaunt/cavechant.vcd', 100 )
@@ -808,7 +808,7 @@ function SGS_KlienerKillsPlayer( ply, weapon, npc )
 	if npc:GetClass() == "npc_sniper" then
 	
 		SGS_KlienerChat( "Boom! Headshot!" )
-		timer.Destroy("resetklienerhostile")
+		timer.Remove("resetklienerhostile")
 
 		SGS_KlienerSetNeutral( SGS.shopent3 )
 		

@@ -88,16 +88,16 @@ function SGS_ConsumeTree( ply, tree )
 	for k, v in pairs(SGS.trees) do
 		if v == tree:GetClass() then
 			if timer.Exists("tree_consume_"..tostring(ply:GetPlayerID())) then
-				timer.Destroy("tree_consume_"..tostring(ply:GetPlayerID()))
+				timer.Remove("tree_consume_"..tostring(ply:GetPlayerID()))
 			end
 			
 			local mult = 1
 			timer.Create("tree_consume_"..tostring(ply:GetPlayerID()), 0.4, 6, function()
 				if not IsValid( tree ) then
-					timer.Destroy("tree_consume_"..tostring(ply:GetPlayerID()))
+					timer.Remove("tree_consume_"..tostring(ply:GetPlayerID()))
 				end
 				if tree.rtotal <= 1 then
-					timer.Destroy("tree_consume_"..tostring(ply:GetPlayerID()))
+					timer.Remove("tree_consume_"..tostring(ply:GetPlayerID()))
 				end
 				
 				local ED = EffectData()
@@ -125,7 +125,7 @@ function SGS_ConsumeTree( ply, tree )
 					end
 					SGS_RemoveAResource(tree)
 					tree:EmitSound("physics/wood/wood_box_break2.wav", 60, math.random(80,120))		
-					timer.Destroy("tree_consume_"..tostring(ply:GetPlayerID()))					
+					timer.Remove("tree_consume_"..tostring(ply:GetPlayerID()))					
 				end
 			end )
 		break
