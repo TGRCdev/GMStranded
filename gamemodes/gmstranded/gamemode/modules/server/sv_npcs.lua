@@ -63,7 +63,7 @@ function SGS_MakeCreature( npcclass, loc, aggrotable, parent )
 		npc:AddRelationship("npc_seagull D_LI 99")
 		npc:AddRelationship("npc_hunter D_LI 99")
 		
-		npc:SetNetworkedString("Owner", "World")
+		npc:SetNWString("Owner", "World")
 		
 		if GAMEMODE.Worlds:GetVectorWorldSpace( loc ).Name == "Arena" then
 			npc:AddRelationship("player D_HT 999")
@@ -612,7 +612,7 @@ function SGS_NPCLoot( ltype, npc, ply )
 			end
 		end
 		
-		ent:SetNetworkedString("Owner", "World")
+		ent:SetNWString("Owner", "World")
 		
 		local npo = ent:GetPhysicsObject()
 		npo:Wake()
@@ -701,7 +701,7 @@ function SGS_NPCLoot( ltype, npc, ply )
 		/* Random Structure */
 		if math.random(1,5) == 1 then ent:SetResourceDropInfo( SGS.AllowedPackage[math.random(#SGS.AllowedPackage)], 1 ) end
 		
-		ent:SetNetworkedString("Owner", "World")
+		ent:SetNWString("Owner", "World")
 		
 		local npo = ent:GetPhysicsObject()
 		npo:Wake()

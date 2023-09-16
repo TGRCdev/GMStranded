@@ -41,7 +41,7 @@ function ENT:SpawnFruit()
 		ent.growth = 0.1
 		ent:Spawn()
 		ent:SetModelScale( ent.growth, 0 )
-		ent:SetNetworkedString("Owner", "World")
+		ent:SetNWString("Owner", "World")
 		ent.parent = self
 		--ent:SetParent(self)
 		--i = i + 1

@@ -1035,7 +1035,7 @@ function SGS_BuildAResource( rPos, rAng, rEnt )
 	ent:SetPos( rPos )
 	ent:SetAngles( rAng )
 	ent:Spawn()
-	ent:SetNetworkedString("Owner", "World")
+	ent:SetNWString("Owner", "World")
 	ent.w_id = GAMEMODE.Worlds:GetVectorWorldSpaceID( rPos )
 
 	if rEnt == "gms_tree" or rEnt == "gms_tree2" or rEnt == "gms_tree3" or rEnt == "gms_tree4" or rEnt == "gms_tree5" or rEnt == "gms_tree6" or rEnt == "gms_tree7" then
@@ -3803,8 +3803,8 @@ end
 concommand.Add("sgs_pbm_menu", SGS_Con_OpenPBM)
 
 function big_gms_combineresource( ent_a, ent_b )
-	local ent_a_owner = ent_a:GetNetworkedString("Owner")
-	local ent_b_owner = ent_b:GetNetworkedString("Owner")
+	local ent_a_owner = ent_a:GetNWString("Owner")
+	local ent_b_owner = ent_b:GetNWString("Owner")
 
 	local ply = ent_a:CPPIGetOwner()
 
@@ -6438,7 +6438,7 @@ function SGS_SpawnMeteor()
 	local meteor = ents.Create( "gms_meteornode" )
 	meteor:SetPos( coords )
 	meteor:Spawn()
-	meteor:SetNetworkedString("Owner", "World")
+	meteor:SetNWString("Owner", "World")
 	meteor:EmitSound( "ambient/explosions/exp1.wav", 300, 90, 1, CHAN_AUTO )
 
 	local meteor_world = GAMEMODE.Worlds:GetEntityWorldSpace( meteor )
@@ -6779,7 +6779,7 @@ function PlayerMeta:CreateRagdoll()
 	Ent:Spawn()
 	Ent:SetCollisionGroup( COLLISION_GROUP_WEAPON )
 
-	Ent:SetNetworkedString("Owner", "World")
+	Ent:SetNWString("Owner", "World")
 
 	Ent.CanConstrain	= false
 	Ent.CanTool			= false
@@ -6802,7 +6802,7 @@ function PlayerMeta:CreateRagdoll()
 
 	end
 
-	self:SetNetworkedEntity( "m_hRagdollEntity", Ent )
+	self:SetNWEntity( "m_hRagdollEntity", Ent )
 	self.m_hRagdollEntity = Ent
 	
 	hook.Call( "CreatePlayerRagdoll", GAMEMODE, self, Ent )
@@ -6812,7 +6812,7 @@ end
 
 function PlayerMeta:GetRagdollEntity()
 
-	return self:GetNetworkedEntity( "m_hRagdollEntity" )
+	return self:GetNWEntity( "m_hRagdollEntity" )
 
 end
 

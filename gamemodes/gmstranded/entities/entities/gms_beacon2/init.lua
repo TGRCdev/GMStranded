@@ -32,7 +32,7 @@ function ENT:SpawnOrb()
 	self.light = ents.Create( "gms_beaconorb" )
 	self.light:SetPos(self:GetPos() + Vector(0,0,30))
 	self.light:Spawn()
-	self.light:SetNetworkedString("Owner", "World")
+	self.light:SetNWString("Owner", "World")
 	self.light:SetColor(Color(80, 255, 80, 255))
 end
 

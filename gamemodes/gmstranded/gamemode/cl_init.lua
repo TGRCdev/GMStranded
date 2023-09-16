@@ -1829,11 +1829,11 @@ function SGS_HUD_Main()
 	if(tr.HitNonWorld) then
 		if(tr.Entity:IsValid() and !tr.Entity:IsPlayer() and !LocalPlayer():InVehicle()) then
 			local PropOwner = "Owner: "
-			local OwnerObj = tr.Entity:GetNetworkedEntity("OwnerObj", false)
+			local OwnerObj = tr.Entity:GetNWEntity("OwnerObj", false)
 			if(OwnerObj and OwnerObj:IsValid() and OwnerObj:IsPlayer()) then
 				PropOwner = PropOwner..OwnerObj:Name()
 			else
-				OwnerObj = tr.Entity:GetNetworkedString("Owner", "N/A")
+				OwnerObj = tr.Entity:GetNWString("Owner", "N/A")
 				if(type(OwnerObj) == "string") then
 					PropOwner = PropOwner..OwnerObj
 				elseif(IsValid(OwnerObj) and OwnerObj:IsPlayer()) then
@@ -2011,7 +2011,7 @@ matproxy.Add(
 
 function PlayerMeta:GetRagdollEntity()
 
-	return self:GetNetworkedEntity( "m_hRagdollEntity" )
+	return self:GetNWEntity( "m_hRagdollEntity" )
 
 end
 

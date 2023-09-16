@@ -119,7 +119,7 @@ function SGS_SpawnHealer( boss, pos )
 	
 	healer:AddEntityRelationship(boss, D_HT, 999 )
 	
-	healer:SetNetworkedString("Owner", "World")
+	healer:SetNWString("Owner", "World")
 	local npctable = SGS_ReverseNPCLookup("npc_antlion_w")
 	healer.ispet = false
 		

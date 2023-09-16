@@ -119,7 +119,7 @@ function ENT:GrowPlant()
 		ent.slab = self.parent
 	end
 	ent:Spawn()
-	ent:SetNetworkedString("Owner", "World")
+	ent:SetNWString("Owner", "World")
 	ent:SetParent(self.parent)
 	self:Remove()
 end
@@ -129,7 +129,7 @@ function ENT:GrowGold()
 	ent.owner = self.owner
 	ent:SetPos( self:GetPos() )
 	ent:Spawn()
-	ent:SetNetworkedString("Owner", "World")
+	ent:SetNWString("Owner", "World")
 	if not self.parent == "none" then
 		ent:SetParent(self.parent)
 	end

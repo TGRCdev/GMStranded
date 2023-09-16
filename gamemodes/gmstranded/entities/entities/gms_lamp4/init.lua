@@ -35,7 +35,7 @@ function ENT:SpawnOrb()
 	self.light:SetPos( self:LocalToWorld(Vector(0,0,30) ) )
 	self.light:Spawn()
 	self.light:SetParent( self )
-	self.light:SetNetworkedString("Owner", "World")
+	self.light:SetNWString("Owner", "World")
 end
 
 

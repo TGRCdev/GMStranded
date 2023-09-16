@@ -92,8 +92,8 @@ function SPropProtection.PlayerMakePropOwner(ply, ent)
 		SteamID64 = ply:GetPlayerID(),
 		Name = ply:Nick()
 	}
-	ent:SetNetworkedString("Owner", ply:Nick())
-	ent:SetNetworkedEntity("OwnerObj", ply)
+	ent:SetNWString("Owner", ply:Nick())
+	ent:SetNWEntity("OwnerObj", ply)
 	gamemode.Call("CPPIAssignOwnership", ply, ent)
 	ply:SendPropCount()
 	ply:SendStructureCount()
@@ -162,8 +162,8 @@ function SPropProtection.PlayerCanTouch(ply, ent)
 	end
 	
 	if(string.find(ent:GetClass(), "stone_") == 1 or string.find(ent:GetClass(), "rock_") == 1 or string.find(ent:GetClass(), "stargate_") == 0 or string.find(ent:GetClass(), "dhd_") == 0 or ent:GetClass() == "flag" or ent:GetClass() == "item") then
-		if(!ent:GetNetworkedString("Owner") or ent:GetNetworkedString("Owner") == "") then
-			ent:SetNetworkedString("Owner", "World")
+		if(!ent:GetNWString("Owner") or ent:GetNWString("Owner") == "") then
+			ent:SetNWString("Owner", "World")
 		end
 		if(ply:GetActiveWeapon():GetClass() != "weapon_physgun" and ply:GetActiveWeapon():GetClass() != "gmod_tool") then
 			return true
@@ -171,11 +171,11 @@ function SPropProtection.PlayerCanTouch(ply, ent)
 	end
 	
 	-- DarkRPer
-	if(string.lower(ent:GetNetworkedString("Owner", "")) == "shared" or ent:GetNWEntity("owning_ent") == ply) then
+	if(string.lower(ent:GetNWString("Owner", "")) == "shared" or ent:GetNWEntity("owning_ent") == ply) then
 		return true
 	end
 
-	if(!ent:GetNetworkedString("Owner", "") or ent:GetNetworkedString("Owner", "") == "" and !ent:IsPlayer()) then
+	if(!ent:GetNWString("Owner", "") or ent:GetNWString("Owner", "") == "" and !ent:IsPlayer()) then
 		if ( IsValid(ply:GetActiveWeapon()) and ply:GetActiveWeapon():GetClass() ~= "weapon_physcannon" ) or not IsValid(ply:GetActiveWeapon()) then
 			SPropProtection.PlayerMakePropOwner(ply, ent)
 			SPropProtection.Nofity(ply, "You now own this prop")
@@ -183,7 +183,7 @@ function SPropProtection.PlayerCanTouch(ply, ent)
 		end
 	end
 	
-	if(ent:GetNetworkedString("Owner") == "World") then
+	if(ent:GetNWString("Owner") == "World") then
 		if(ply:IsAdmin() and tonumber(SPropProtection.Config["awp"]) == 1 and tonumber(SPropProtection.Config["admin"]) == 1) then
 			return true
 		end
@@ -363,7 +363,7 @@ function SPropProtection.PlayerUse(ply, ent)
 		return
 	end
 	if(ent:IsValid() and tonumber(SPropProtection.Config["use"]) == 1) then
-		if(!SPropProtection.PlayerCanTouch(ply, ent) and ent:GetNetworkedString("Owner") != "World") then
+		if(!SPropProtection.PlayerCanTouch(ply, ent) and ent:GetNWString("Owner") != "World") then
 			return false
 		end
 	end
@@ -597,8 +597,8 @@ hook.Add( 'EntityKeyValue', 'SPropProtection.CheckKeyvalue', SPropProtection.Che
 function SPropProtection.WorldOwner()
 	local WorldEnts = 0
 	for k,v in pairs(ents.FindByClass("*")) do
-		if(!v:IsPlayer() and !v:GetNetworkedString("Owner", false)) then
-			v:SetNetworkedString("Owner", "World")
+		if(!v:IsPlayer() and !v:GetNWString("Owner", false)) then
+			v:SetNWString("Owner", "World")
 			WorldEnts = WorldEnts + 1
 		end
 	end

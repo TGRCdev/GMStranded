@@ -29,7 +29,7 @@ function SGS_LoadEggList()
 
 	if not file.Exists("sgstranded/egglist.txt", "DATA") then return end
 	ServerLog("Loading Egg List\n")
-	SGS.eggtable = util.JSONToTable(file.Read("sgstranded/egglist.txt", “DATA”))
+	SGS.eggtable = util.JSONToTable(file.Read("sgstranded/egglist.txt", ï¿½DATAï¿½))
 
 end
 timer.Simple( 1, SGS_LoadEggList )
@@ -66,7 +66,7 @@ function SGS_SpawnEgg()
 	egg:SetPos(pos)
 	egg:SetAngles(ang)
 	egg:Spawn()
-	egg:SetNetworkedString("Owner", "World")
+	egg:SetNWString("Owner", "World")
 	ServerLog("Placing egg at location: " .. tostring(egg:GetPos()) .. "\n")
 	SafeRemoveEntityDelayed( egg, 300 )
 

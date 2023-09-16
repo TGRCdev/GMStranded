@@ -51,7 +51,7 @@ function Entity:CPPIGetOwner()
 		return true, CPPI_NOTIMPLEMENTED
 	end
 	
-	local Player = self:GetNetworkedEntity("OwnerObj", false)
+	local Player = self:GetNWEntity("OwnerObj", false)
 	
 	if(SERVER) then
 		if(SPropProtection.Props[self:EntIndex()]) then
@@ -83,10 +83,10 @@ if(SERVER) then
 	function Entity:CPPISetOwnerless(Bool)
 		self.SPPOwnerless = Bool
 		if(Bool) then
-			self:SetNetworkedString("Owner", "Ownerless")
-			self:SetNetworkedEntity("OwnerObj", game.GetWorld())
+			self:SetNWString("Owner", "Ownerless")
+			self:SetNWEntity("OwnerObj", game.GetWorld())
 		else
-			self:SetNetworkedString("Owner", "N/A")
+			self:SetNWString("Owner", "N/A")
 		end
 	end
 	

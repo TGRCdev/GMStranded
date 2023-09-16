@@ -33,7 +33,7 @@ function SGS_SignMenu()
 	button:SetPos( 10, 165 )
 	button:SetText( "Set" )
 	button.DoClick = function( button )
-		RunConsoleCommand("sgs_setsign", line1:GetValue(), line2:GetValue(), line3:GetValue(), line4:GetValue(), line5:GetValue(), LocalPlayer():GetNetworkedInt( "sign", 0 ))
+		RunConsoleCommand("sgs_setsign", line1:GetValue(), line2:GetValue(), line3:GetValue(), line4:GetValue(), line5:GetValue(), LocalPlayer():GetNWInt( "sign", 0 ))
 		SignMenu:SetVisible(false)
 	end
 		

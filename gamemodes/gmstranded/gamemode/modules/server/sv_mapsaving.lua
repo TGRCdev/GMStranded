@@ -52,7 +52,7 @@ function SGS_LoadMapEntity( tbl, max, cur, w_id)
 	ent:SetPos(pos)
 	ent:SetAngles(ang)
 	ent:Spawn()
-	ent:SetNetworkedString("Owner", "World")
+	ent:SetNWString("Owner", "World")
 	ent.w_id = w_id
 
 	if cur >= max then

@@ -45,7 +45,7 @@ function ENT:CreateForgeEffect( len )
 	self.orb:SetPos( self:LocalToWorld(Vector(12,0,18) ) )
 	self.orb:Spawn()
 	self.orb:SetParent( self )
-	self.orb:SetNetworkedString("Owner", "World")
+	self.orb:SetNWString("Owner", "World")
 	
 	timer.Simple( len, function () SafeRemoveEntity( self.orb ) end )
 	

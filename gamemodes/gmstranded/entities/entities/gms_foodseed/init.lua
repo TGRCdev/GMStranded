@@ -112,7 +112,7 @@ function ENT:GrowPlant()
 		ent.oid = self.oid
 	end
 	
-	ent:SetNetworkedString("Owner", "World")
+	ent:SetNWString("Owner", "World")
 	self:Remove()
 end
 

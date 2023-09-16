@@ -6,7 +6,7 @@ function SGS_ClaimShopNPC()
 		SGS.shopent = v
 		SGS.shopentstart = v:GetPos()
 		
-		SGS.shopent:SetNetworkedString("Owner", "World")
+		SGS.shopent:SetNWString("Owner", "World")
 		timer.Remove( "checkShop" )
 		timer.Create( "checkShop", 5, 1, function() SGS_CheckOnShop() end )
 		--End Joke--
@@ -39,7 +39,7 @@ function SGS_ClaimSpecialNPC()
 		SGS.shopent2 = v
 		SGS.shopent2start = v:GetPos()
 		
-		SGS.shopent2:SetNetworkedString("Owner", "World")
+		SGS.shopent2:SetNWString("Owner", "World")
 		timer.Simple( 5, function() SGS_CheckOnShop2() end )
 
 		SGS.shopent2.status = "wander"
@@ -68,7 +68,7 @@ function SGS_ClaimHatNPC()
 		SGS.shopent3 = v
 		SGS.shopent3start = v:GetPos()
 		
-		SGS.shopent3:SetNetworkedString("Owner", "World")
+		SGS.shopent3:SetNWString("Owner", "World")
 		timer.Simple( 5, function() SGS_CheckOnShop3() end )
 
 		SGS.shopent3.status = "wander"
@@ -362,7 +362,7 @@ function SGS_VortPlantSeed()
 			ent.owner = worldspawn
 			ent:Spawn()
 			--SPP MAKE PLAYER OWNER--
-			ent:SetNetworkedString("Owner", "World")
+			ent:SetNWString("Owner", "World")
 			-------------------------
 	elseif wtp >= 6 and wtp < 9 then
 		local ent = ents.Create("gms_seed")
@@ -377,7 +377,7 @@ function SGS_VortPlantSeed()
 			ent.owner = worldspawn
 			ent:Spawn()
 			--SPP MAKE PLAYER OWNER--
-			ent:SetNetworkedString("Owner", "World")
+			ent:SetNWString("Owner", "World")
 			-------------------------
 	else
 		local ent = ents.Create("gms_foodseed")
@@ -390,7 +390,7 @@ function SGS_VortPlantSeed()
 			ent.owner = worldspawn
 			ent:Spawn()
 			--SPP MAKE PLAYER OWNER--
-			ent:SetNetworkedString("Owner", "World")
+			ent:SetNWString("Owner", "World")
 			-------------------------
 	end
 end
@@ -798,7 +798,7 @@ function SGS_SpawnSniper( ply, pos )
 	sniper:AddRelationship("npc_seagull D_LI 99")
 	sniper:AddRelationship("npc_hunter D_LI 99")
 	
-	sniper:SetNetworkedString("Owner", "World")
+	sniper:SetNWString("Owner", "World")
 	
 	sniper:AddEntityRelationship(ply, D_HT, 999 )
 end

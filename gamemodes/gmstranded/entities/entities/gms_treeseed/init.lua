@@ -98,7 +98,7 @@ function ENT:GrowPlant()
 	ent:Spawn()
 	ent.respawn = false
 	ent:SetModelScale( ent.growth, 0 )
-	ent:SetNetworkedString("Owner", "World")
+	ent:SetNWString("Owner", "World")
 	timer.Simple( 1, function() SGS_BroadcastTreeTable( nil ) end )
 	self:Remove()
 end

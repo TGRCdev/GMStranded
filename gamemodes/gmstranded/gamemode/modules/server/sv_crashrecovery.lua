@@ -84,8 +84,8 @@ function SGS_CrashRecoveryInitialSpawn()
 							SteamID64 = item.steamid64,
 							Name = data.name
 						}
-						err_ent:SetNetworkedString("Owner", data.name)
-						err_ent:SetNetworkedEntity("OwnerObj", NULL)
+						err_ent:SetNWString("Owner", data.name)
+						err_ent:SetNWEntity("OwnerObj", NULL)
 						gamemode.Call("CPPIAssignOwnership", NULL, err_ent)
 
 						if err_ent.OnCrashRecovery then
@@ -106,8 +106,8 @@ function SGS_CrashRecoveryInitialSpawn()
 							SteamID64 = item.steamid64,
 							Name = data.name
 						}
-						err_ent:SetNetworkedString("Owner", data.name)
-						err_ent:SetNetworkedEntity("OwnerObj", NULL)
+						err_ent:SetNWString("Owner", data.name)
+						err_ent:SetNWEntity("OwnerObj", NULL)
 
 						err_ent:SetNWBool("shared", item.shared)
 
