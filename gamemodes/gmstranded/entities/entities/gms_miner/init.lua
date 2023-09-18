@@ -3,27 +3,27 @@ AddCSLuaFile( "shared.lua" )
 include( "shared.lua" )
 
 local allowed_rocks = {
-	"gms_stonenode",
-	"gms_ironnode",
-	"gms_coalnode",
-	"gms_silvernode",
-	"gms_naquadahnode",
-	"gms_triniumnode",
-	"gms_goldnode",
-	"gms_mithrilnode",
-	"gms_platinumnode",
+	"stone",
+	"iron",
+	"coal",
+	"silver",
+	"naquadah",
+	"trinium",
+	"gold",
+	"mithril",
+	"platinum",
 }
 
 local rock_chances = {}
-rock_chances["gms_stonenode"] = 1
-rock_chances["gms_ironnode"] = 2
-rock_chances["gms_coalnode"] = 3
-rock_chances["gms_silvernode"] = 5
-rock_chances["gms_naquadahnode"] = 5
-rock_chances["gms_triniumnode"] = 7
-rock_chances["gms_goldnode"] = 9
-rock_chances["gms_mithrilnode"] = 10
-rock_chances["gms_platinumnode"] = 12
+rock_chances["stone"] = 1
+rock_chances["iron"] = 2
+rock_chances["coal"] = 3
+rock_chances["silver"] = 5
+rock_chances["naquadah"] = 5
+rock_chances["trinium"] = 7
+rock_chances["gold"] = 9
+rock_chances["mithril"] = 10
+rock_chances["platinum"] = 12
 
 function ENT:Initialize()
 	self:SetModel(SGS.proplist["harvester"])
@@ -83,15 +83,12 @@ function ENT:GetAttachedEnt()
 end
 
 function ENT:Mine( rock )
-	local res = rock.rgives
+	local res = rock.resource.rgives
 	self.inventory[res] = self.inventory[res] + 1
 	self.inventory["total"] = self.inventory["total"] + 1
 	rock.rtotal = rock.rtotal - 1
 	if rock.rtotal <= 0 then
-		rock.depleted = true
-		rock:RespawnTimer()
-		rock:EmitSound("physics/concrete/concrete_break3.wav", 60, math.random(80,120))
-		rock:SetColor(Color(20, 20, 20, 255))
+		rock:Deplete()
 	end
 	
 	if math.random(100) == 1 then
@@ -126,12 +123,13 @@ function ENT:Think()
 			if self:GetInventoryTotal() >= self.maxinventory then
 				self:EmitSound( "buttons/blip1.wav", 75, 90, 1, CHAN_AUTO )
 			else
-				local att_ent = self:GetAttachedEnt():GetClass()
-				if table.HasValue( allowed_rocks, att_ent ) then
+				local att_ent = self:GetAttachedEnt()
+				if IsValid(att_ent) and att_ent.resource and table.HasValue( allowed_rocks, att_ent.resource.id ) then
+					local res_id = att_ent.resource.id
 					if self:GetAttachedEnt().rtotal <= 0 then
 						self:EmitSound( "physics/cardboard/cardboard_box_impact_soft2.wav", 75, math.random(90,110), 1, CHAN_AUTO )
 					else
-						if math.random( rock_chances[ att_ent ] ) == 1 then
+						if math.random( rock_chances[ res_id ] ) == 1 then
 							self:EmitSound( "physics/concrete/rock_impact_hard3.wav", 75, math.random(70,110), 1, CHAN_AUTO )
 							self:Mine( self:GetAttachedEnt() )
 						else
@@ -156,9 +154,9 @@ function ENT:Spark()
 	local fx = EffectData();
 	fx:SetOrigin(self:GetPos());
 	fx:SetNormal(Vector(0,0,1));
-	fx:SetEntity(self.Entity);
+	fx:SetEntity(self);
 	fx:SetScale(-1);
-	fx:SetAngles(Angle(self.Entity:GetColor()));
+	fx:SetAngles(Angle(self:GetColor()));
 	util.Effect("cball_explode",fx,true,true);
 end
 

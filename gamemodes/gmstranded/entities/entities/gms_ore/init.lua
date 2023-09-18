@@ -12,31 +12,40 @@ end
 --Return: Nothing
 
 function ENT:Initialize()
-	self:SetModel("models/ore_nodes/gold_node/gold_node.mdl")
+	if self.level == 1 then
+		self:SetModel(SGS.proplist["rock_chunk3"])
+	elseif self.level == 2 then
+		self:SetModel(SGS.proplist["rock_chunk2"])
+	elseif self.level == 3 then
+		self:SetModel(SGS.proplist["rock_chunk1"])
+	end
+
+	self:SetMaterial(self.resource.rmat or "models/props_foliage/tree_deciduous_01a_trunk")
  	self:PhysicsInit( SOLID_VPHYSICS )
 	self:SetMoveType( MOVETYPE_VPHYSICS )
 	self:SetSolid( SOLID_VPHYSICS )
-	self:SetColor(Color(114, 192, 248, 255))
-	self:SetUseType(3)
-	
-	self.depleted = false
-	self.respawn = CurTime()	
-	self.rtotal = math.random(6, 12)
-	self.baselen = 4
-	local phys = self:GetPhysicsObject()
-	if phys and phys:IsValid() then
-		phys:EnableMotion(false) -- Freezes the object in place.
+	self:SetCollisionGroup( COLLISION_GROUP_WEAPON )
+	if self.resource.rcolor then
+		self:SetColor(self.resource.rcolor)
 	end
-	self.rgives = "silver_ore"
-end
-
-function ENT:RespawnTimer()
-	self.respawn = CurTime() + math.random(150, 270)
+	
+	self.decaytime = CurTime() + 120
+	self.unowntime = self.decaytime - 30
+	
+	self.owned = true
 end
 
 function ENT:Use( ply )
-	if ply.foragetoggle then return end
-	SGS_Mine( ply, self, 0, 1, nil, nil )
+
+	if CurTime() > ply.lastuse + 0.333 then
+	
+		ply:AddResource( self.resource.rgives, self.level )
+		ply:AddStat( self.resource.stat, self.level )
+		self:Remove()
+		ply.lastuse = CurTime()
+		
+	end
+	
 end
 
 function ENT:AcceptInput(input, ply)
@@ -70,17 +79,16 @@ end
 --Called when the SENT thinks.
 --Return: Nothing
 function ENT:Think()
+	if CurTime() >= self.unowntime and self.owned then
+		self:CPPISetOwnerless(true)
+		self.owned = false
+	end
 
-	if self.depleted == true then
-		if CurTime() >= self.respawn then
-			self.rtotal = math.random(6, 12)
-			self.depleted = false
-			self:SetColor(Color(114, 192, 248, 255))
-		end
+	if CurTime() >= self.decaytime then
+		self:Remove()
 	end
 	self:NextThink(CurTime() + 1)
 	return true
-
 end
 
 --Called when an entity touches this SENT.

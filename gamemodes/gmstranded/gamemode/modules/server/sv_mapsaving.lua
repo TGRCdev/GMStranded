@@ -47,10 +47,12 @@ function SGS_LoadMapEntity( tbl, max, cur, w_id)
 	local pos = item.pos
 	local ang = item.angles
 	
-	local doIt = true
-	
 	ent:SetPos(pos)
 	ent:SetAngles(ang)
+	if ent.LoadMapEntity then
+		ent:LoadMapEntity(item)
+	end
+	
 	ent:Spawn()
 	ent:SetNWString("Owner", "World")
 	ent.w_id = w_id
@@ -95,6 +97,9 @@ function SGS_SaveMap()
 					entry["class"] = ent:GetClass()
 					entry["pos"] = ent:GetPos()
 					entry["angles"] = ent:GetAngles()
+					if ent.SaveMapEntity then
+						ent:SaveMapEntity(entry)
+					end
 					savegame[k] = entry
 				end
 			end

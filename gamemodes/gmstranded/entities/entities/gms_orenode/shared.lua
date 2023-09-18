@@ -1,8 +1,8 @@
 ENT.Type = "anim"
 ENT.Base = "base_anim"
 
-ENT.PrintName = "Tree" --The name of the SENT.
-ENT.Author = "Mr.President" --Your name.
+ENT.PrintName = "Ore Node" --The name of the SENT.
+ENT.Author = "TGRCDev" --Your name.
 ENT.Contact = "" --EMail address.
 ENT.Purpose = "" --The purpose of this SENT.
 ENT.Instructions = "" --Instructions

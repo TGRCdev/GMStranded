@@ -11,7 +11,7 @@ function ENT:Draw()
 		return 
 	end
 	self:CreateShadow()
-	self.Entity:DrawModel()
+	self:DrawModel()
 end
 
 --Called when the SENT is spawned

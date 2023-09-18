@@ -3,7 +3,7 @@ include("shared.lua")
 --Called when it's time to draw the entity.
 --Return: Nothing
 function ENT:Draw()
-	self.Entity:DrawModel()
+	self:DrawModel()
 end
 
 --Called when the SENT is spawned

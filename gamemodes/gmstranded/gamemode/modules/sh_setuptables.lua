@@ -8,15 +8,7 @@ function SGS_SetUpTablesShared()
 		"gms_tree5",
 		"gms_tree6",
 		"gms_tree7",
-		"gms_ironnode", 
-		"gms_stonenode", 
-		"gms_coalnode", 
-		"gms_silvernode", 
-		"gms_naquadahnode",
-		"gms_triniumnode",
-		"gms_goldnode",
-		"gms_mithrilnode",
-		"gms_platinumnode",
+		"gms_orenode",
 		"npc_vortigaunt",
 		"npc_breen",
 		"npc_kleiner",
@@ -31,22 +23,8 @@ function SGS_SetUpTablesShared()
 		"gms_tree5",
 		"gms_tree6",
 		"gms_tree7"
-	}
-						
-	SGS.rocks = {
-		"gms_stonenode",
-		"gms_ironnode",
-		"gms_coalnode",
-		"gms_silvernode",
-		"gms_triniumnode",
-		"gms_naquadahnode",
-		"gms_goldnode",
-		"gms_mithrilnode",
-		"gms_platinumnode",
-		"gms_meteornode",
-	}
-					
-						
+	}		
+
 	SGS.restrictedphysgun = { 	
 		"gms_tree", 
 		"gms_tree2", 
@@ -55,15 +33,7 @@ function SGS_SetUpTablesShared()
 		"gms_tree5",
 		"gms_tree6",
 		"gms_tree7",
-		"gms_ironnode", 
-		"gms_stonenode", 
-		"gms_coalnode", 
-		"gms_silvernode", 
-		"gms_naquadahnode",
-		"gms_triniumnode",
-		"gms_goldnode",
-		"gms_mithrilnode",
-		"gms_platinumnode",
+		"gms_orenode",
 		"gms_fruit", 
 		"gms_seed",
 		"gms_treeseed",

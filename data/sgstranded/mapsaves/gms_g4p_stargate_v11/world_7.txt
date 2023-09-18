@@ -334,241 +334,281 @@
 	{
 		"pos": "[5433.9878 14048.6641 1916.1631]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"57": 
 	{
 		"pos": "[5485.6182 14001.9482 1916.8459]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"58": 
 	{
 		"pos": "[12202.5918 13443.6006 1923.634]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"59": 
 	{
 		"pos": "[12421.7676 13319.0049 1929.4373]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"60": 
 	{
 		"pos": "[12221.4023 13355.6475 1948.6836]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"61": 
 	{
 		"pos": "[12049.709 13428.9355 1923.8009]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"62": 
 	{
 		"pos": "[12384.0654 13218.8682 1921.8889]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"63": 
 	{
 		"pos": "[13278.583 11640.8516 1938.109]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"64": 
 	{
 		"pos": "[12810.6816 11749.9502 1978.4995]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"65": 
 	{
 		"pos": "[13135.7598 11705.29 1973.53]",
 		"angles": "{-0 0.5975 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"66": 
 	{
 		"pos": "[13255.0996 12860.54 1913.29]",
 		"angles": "{3.7526 37.7551 1.285}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"67": 
 	{
 		"pos": "[13281.4912 12833.002 1923.0471]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"68": 
 	{
 		"pos": "[13431.7285 12389.7793 1929.4773]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"69": 
 	{
 		"pos": "[13459.0781 12419.5977 1948.4207]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"70": 
 	{
 		"pos": "[13201.6816 13646.2852 2641.3335]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"71": 
 	{
 		"pos": "[13181.0254 13602.0146 2647.489]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"72": 
 	{
 		"pos": "[10799.8965 13698.8477 2631.5957]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"73": 
 	{
 		"pos": "[10830.335 13772.6729 2592.0276]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"74": 
 	{
 		"pos": "[14131.3262 11155.9365 2468.2764]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"75": 
 	{
 		"pos": "[14109.4688 11111.1387 2466.2161]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"76": 
 	{
 		"pos": "[7607.1211 8355.333 2577.5996]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"77": 
 	{
 		"pos": "[7521.6572 8500.7617 2503.3655]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"78": 
 	{
 		"pos": "[7628.2051 8457.3418 2467.7734]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"79": 
 	{
 		"pos": "[8663.2236 6075.2568 2816.9858]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"80": 
 	{
 		"pos": "[8086.4834 5382.2637 2860.5217]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"81": 
 	{
 		"pos": "[8162.6553 5490.0737 2866.9272]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"82": 
 	{
 		"pos": "[6897.4263 8664.6895 2937.4336]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"83": 
 	{
 		"pos": "[6769.4312 8713.9951 2910.5627]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"84": 
 	{
 		"pos": "[13458.248 6634.9971 1909.0918]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"85": 
 	{
 		"pos": "[11985.4707 4301.0112 1912.6782]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"86": 
 	{
 		"pos": "[13382.6465 6762.1968 1944.5321]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"87": 
 	{
 		"pos": "[11997.4863 4402.7148 1927.2819]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"88": 
 	{
 		"pos": "[11949.2207 4234.7852 1908.1851]",
 		"angles": "{0 0 0}",
-		"class": "gms_coalnode"
+		"class": "gms_orenode",
+		"resource": "coal"
 	},
 	"89": 
 	{
 		"pos": "[7211.0698 4772.5298 1867.8]",
 		"angles": "{-0 0.5121 0}",
-		"class": "gms_coalnode"
+		"class": "gms_orenode",
+		"resource": "coal"
 	},
 	"90": 
 	{
 		"pos": "[7160.0698 4731.0898 1862.5294]",
 		"angles": "{-0 2.3047 0}",
-		"class": "gms_coalnode"
+		"class": "gms_orenode",
+		"resource": "coal"
 	},
 	"91": 
 	{
 		"pos": "[7277.6343 4727.7026 1874.0271]",
 		"angles": "{0 0 0}",
-		"class": "gms_coalnode"
+		"class": "gms_orenode",
+		"resource": "coal"
 	},
 	"92": 
 	{
 		"pos": "[7222.6895 4698.8892 1878.3479]",
 		"angles": "{0 0 0}",
-		"class": "gms_coalnode"
+		"class": "gms_orenode",
+		"resource": "coal"
 	},
 	"93": 
 	{
 		"pos": "[7550.8599 8584.7002 2600.1699]",
 		"angles": "{-0 -4.2679 0}",
-		"class": "gms_coalnode"
+		"class": "gms_orenode",
+		"resource": "coal"
 	},
 	"94": 
 	{
 		"pos": "[8543.8994 6048.4497 2782.1899]",
 		"angles": "{-0 -9.9017 0}",
-		"class": "gms_coalnode"
+		"class": "gms_orenode",
+		"resource": "coal"
 	},
 	"95": 
 	{
 		"pos": "[6878.2759 8613.0986 2910.1211]",
 		"angles": "{0 0 0}",
-		"class": "gms_coalnode"
+		"class": "gms_orenode",
+		"resource": "coal"
 	},
 	"96": 
 	{

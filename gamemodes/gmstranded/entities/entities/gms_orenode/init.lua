@@ -12,26 +12,52 @@ end
 --Return: Nothing
 
 function ENT:Initialize()
-	self:SetModel("models/ore_nodes/mith_node/mith_node.mdl")
+	local res = self.resource
+	res.color = res.color or Color(255,255,255,255)
+
+	self:SetModel(res.model)
+	self:SetColor(res.color)
  	self:PhysicsInit( SOLID_VPHYSICS )
 	self:SetMoveType( MOVETYPE_VPHYSICS )
 	self:SetSolid( SOLID_VPHYSICS )
-	self:SetRenderMode( RENDERMODE_TRANSALPHA )
-	self:SetUseType(3)
+	self:SetUseType( SIMPLE_USE )
+	if res.depleted_color.a < 255 or res.color.a < 255 then
+		self:SetRenderMode(RENDERMODE_TRANSCOLOR)
+	end
 	
 	self.depleted = false
-	self.respawn = CurTime()	
-	self.rtotal = math.random(1, 4)
-	self.baselen = 5
+	self.respawn = CurTime()
+	self.rtotal = math.random(res.amt_min, res.amt_max)
 	local phys = self:GetPhysicsObject()
 	if phys and phys:IsValid() then
 		phys:EnableMotion(false) -- Freezes the object in place.
 	end
-	self.rgives = "mithril_ore"
 end
 
-function ENT:RespawnTimer()
-	self.respawn = CurTime() + math.random(210, 330)
+function ENT:LoadMapEntity(entry)
+	if not entry.resource then
+		print("ERROR: gms_orenode spawned with no \"resource\" key")
+		return
+	end
+	self:SetNWString("resource_id", entry.resource)
+	local res = SGS_LookupResource(entry.resource)
+	if not res then
+		print("ERROR: Unknown resource \"" .. entry.resource .. "\"")
+		return
+	end
+
+	self.resource = res
+end
+
+function ENT:SaveMapEntity(entry)
+	entry.resource = self.resource.id
+end
+
+function ENT:Deplete()
+	self.depleted = true
+	self:EmitSound("physics/concrete/concrete_break3.wav", 60, math.random(80,120))
+	self:SetColor(self.resource.depleted_color)
+	self.respawn = CurTime() + math.random(self.resource.respawn_min, self.resource.respawn_max)
 end
 
 function ENT:Use( ply )
@@ -73,7 +99,7 @@ function ENT:Think()
 
 	if self.depleted == true then
 		if CurTime() >= self.respawn then
-			self.rtotal = math.random(1, 4)
+			self.rtotal = math.random(self.resource.amt_min, self.resource.amt_max)
 			self.depleted = false
 			self:SetColor(Color(255, 255, 255, 255))
 		end

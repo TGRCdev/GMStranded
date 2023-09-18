@@ -47,7 +47,7 @@ function SWEP:PrimaryAttack()
 		self.Weapon:SetNextPrimaryFire(CurTime() + 0.8)
 		return
 	end
-	if not ( table.HasValue(SGS.rocks, trace.Entity:GetClass() ) ) then
+	if trace.Entity:GetClass() != "gms_orenode" and trace.Entity:GetClass() != "gms_meteornode" then
 		ply:SendMessage("You need to swing this at a rock!", 60, Color(255, 0, 0, 255))
 		self.Weapon:SetNextPrimaryFire(CurTime() + 0.8)
 		return

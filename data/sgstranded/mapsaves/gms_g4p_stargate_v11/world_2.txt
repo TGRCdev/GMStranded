@@ -412,420 +412,490 @@
 	{
 		"pos": "[-9397.9971 -11202.1758 1362.7292]",
 		"angles": "{-0 3.5845 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"70": 
 	{
 		"pos": "[-9506.9902 -11282.3301 1333.8799]",
 		"angles": "{-0 1.5366 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"71": 
 	{
 		"pos": "[-6568.0039 -11388.6416 1291.736]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"72": 
 	{
 		"pos": "[-6541.1665 -11319.2314 1303.0244]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"73": 
 	{
 		"pos": "[-5036.1724 -9019.9863 1291.0173]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"74": 
 	{
 		"pos": "[-4927.6001 -9089.3701 1280]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"75": 
 	{
 		"pos": "[-4927.6001 -9089.3701 1280]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"76": 
 	{
 		"pos": "[-4780.6133 -11201.6055 1310.427]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"77": 
 	{
 		"pos": "[-4834.7798 -11071.8096 1359.3378]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"78": 
 	{
 		"pos": "[-3989.7363 -9120.0898 2339.5298]",
 		"angles": "{0 -14.0827 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"79": 
 	{
 		"pos": "[-4074.3982 -9068.9482 2320.6453]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"80": 
 	{
 		"pos": "[-3704.3779 -13085.374 2489.98]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"81": 
 	{
 		"pos": "[-3849.8916 -13371.1436 2536.3054]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"82": 
 	{
 		"pos": "[-4076.4583 -13557.6191 2554.1895]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"83": 
 	{
 		"pos": "[-3758.8604 -12863.2422 2483.095]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"84": 
 	{
 		"pos": "[-3697.8638 -13216.749 2513.4016]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"85": 
 	{
 		"pos": "[-3922.978 -13556.1641 2556.2078]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"86": 
 	{
 		"pos": "[-4227.5469 -13483.0537 2513.3115]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"87": 
 	{
 		"pos": "[-6647.5288 -13462.6279 2321.2778]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"88": 
 	{
 		"pos": "[-6617.6807 -13417.2666 2329.4797]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"89": 
 	{
 		"pos": "[-6895.3623 -11859.5967 2304.1096]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"90": 
 	{
 		"pos": "[-6763.2197 -11863.6787 2337.6272]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"91": 
 	{
 		"pos": "[-4774.0503 -11002.1387 1279.0153]",
 		"angles": "{-0 2.7848 0}",
-		"class": "gms_coalnode"
+		"class": "gms_orenode",
+		"resource": "coal"
 	},
 	"92": 
 	{
 		"pos": "[-6693.4165 -11302.6406 1288.5059]",
 		"angles": "{-0 1.0235 0}",
-		"class": "gms_coalnode"
+		"class": "gms_orenode",
+		"resource": "coal"
 	},
 	"93": 
 	{
 		"pos": "[-5901.896 -11253.4658 1295.8826]",
 		"angles": "{0 2.9002 0}",
-		"class": "gms_coalnode"
+		"class": "gms_orenode",
+		"resource": "coal"
 	},
 	"94": 
 	{
 		"pos": "[-4825.9463 -9170.1055 1280]",
 		"angles": "{0 0 0}",
-		"class": "gms_coalnode"
+		"class": "gms_orenode",
+		"resource": "coal"
 	},
 	"95": 
 	{
 		"pos": "[-6922.9565 -11695.627 2305.5071]",
 		"angles": "{0 0 0}",
-		"class": "gms_coalnode"
+		"class": "gms_orenode",
+		"resource": "coal"
 	},
 	"96": 
 	{
 		"pos": "[-6505.0127 -13471.9941 2353.6536]",
 		"angles": "{0 0 0}",
-		"class": "gms_coalnode"
+		"class": "gms_orenode",
+		"resource": "coal"
 	},
 	"97": 
 	{
 		"pos": "[-3881.7427 -13474.041 2542.7825]",
 		"angles": "{0 0 0}",
-		"class": "gms_coalnode"
+		"class": "gms_orenode",
+		"resource": "coal"
 	},
 	"98": 
 	{
 		"pos": "[-3782.439 -13264.082 2518.0728]",
 		"angles": "{0 0 0}",
-		"class": "gms_coalnode"
+		"class": "gms_orenode",
+		"resource": "coal"
 	},
 	"99": 
 	{
 		"pos": "[-4153.6865 -11674.5449 2360.1882]",
 		"angles": "{0 0 0}",
-		"class": "gms_coalnode"
+		"class": "gms_orenode",
+		"resource": "coal"
 	},
 	"100": 
 	{
 		"pos": "[-3919.8254 -9162.3291 2309.3564]",
 		"angles": "{0 0 0}",
-		"class": "gms_coalnode"
+		"class": "gms_orenode",
+		"resource": "coal"
 	},
 	"101": 
 	{
 		"pos": "[-4197.3359 -9102.04 2304]",
 		"angles": "{0 0 0}",
-		"class": "gms_silvernode"
+		"class": "gms_orenode",
+		"resource": "silver"
 	},
 	"102": 
 	{
 		"pos": "[-4061.2131 -11941.1465 2389.8127]",
 		"angles": "{0 0 0}",
-		"class": "gms_silvernode"
+		"class": "gms_orenode",
+		"resource": "silver"
 	},
 	"103": 
 	{
 		"pos": "[-5806.77 -13210.3994 2374.5498]",
 		"angles": "{-5.2802 -1.0879 -25.5359}",
-		"class": "gms_silvernode"
+		"class": "gms_orenode",
+		"resource": "silver"
 	},
 	"104": 
 	{
 		"pos": "[-6984.8794 -11928.9414 2313.0798]",
 		"angles": "{0 0 0}",
-		"class": "gms_silvernode"
+		"class": "gms_orenode",
+		"resource": "silver"
 	},
 	"105": 
 	{
 		"pos": "[-6407.877 -11394.5313 1313.4468]",
 		"angles": "{0 0 0}",
-		"class": "gms_silvernode"
+		"class": "gms_orenode",
+		"resource": "silver"
 	},
 	"106": 
 	{
 		"pos": "[-5157.8042 -9042.5059 1286.9761]",
 		"angles": "{0 0 0}",
-		"class": "gms_silvernode"
+		"class": "gms_orenode",
+		"resource": "silver"
 	},
 	"107": 
 	{
 		"pos": "[-5344.0298 -9179.3594 1427.4802]",
 		"angles": "{48.9269 81.1463 128.8557}",
-		"class": "gms_naquadahnode"
+		"class": "gms_orenode",
+		"resource": "naquadah"
 	},
 	"108": 
 	{
 		"pos": "[-4923.5913 -11259.1729 1285.3799]",
 		"angles": "{-0 3.0725 0}",
-		"class": "gms_naquadahnode"
+		"class": "gms_orenode",
+		"resource": "naquadah"
 	},
 	"109": 
 	{
 		"pos": "[-5215.7983 -11660.4238 2304]",
 		"angles": "{0 0 0}",
-		"class": "gms_naquadahnode"
+		"class": "gms_orenode",
+		"resource": "naquadah"
 	},
 	"110": 
 	{
 		"pos": "[-4128.2915 -10193.0186 2304]",
 		"angles": "{0 0 0}",
-		"class": "gms_naquadahnode"
+		"class": "gms_orenode",
+		"resource": "naquadah"
 	},
 	"111": 
 	{
 		"pos": "[-6324.9854 -13334.7031 2304]",
 		"angles": "{0 0 0}",
-		"class": "gms_naquadahnode"
+		"class": "gms_orenode",
+		"resource": "naquadah"
 	},
 	"112": 
 	{
 		"pos": "[-6833.7393 -11289.6523 1290.704]",
 		"angles": "{0 0 0}",
-		"class": "gms_naquadahnode"
+		"class": "gms_orenode",
+		"resource": "naquadah"
 	},
 	"113": 
 	{
 		"pos": "[-4962.6196 -9179.5146 1280]",
 		"angles": "{0 0 0}",
-		"class": "gms_goldnode"
+		"class": "gms_orenode",
+		"resource": "gold"
 	},
 	"114": 
 	{
 		"pos": "[-6247.9351 -11327.2656 1280.3588]",
 		"angles": "{0 0 0}",
-		"class": "gms_goldnode"
+		"class": "gms_orenode",
+		"resource": "gold"
 	},
 	"115": 
 	{
 		"pos": "[-4122.3359 -9144.0674 2304]",
 		"angles": "{0 0 0}",
-		"class": "gms_goldnode"
+		"class": "gms_orenode",
+		"resource": "gold"
 	},
 	"116": 
 	{
 		"pos": "[-4108.4878 -10252.3398 2304]",
 		"angles": "{0 0 0}",
-		"class": "gms_goldnode"
+		"class": "gms_orenode",
+		"resource": "gold"
 	},
 	"117": 
 	{
 		"pos": "[-6953.9414 -11944.6201 2304.1191]",
 		"angles": "{0 0 0}",
-		"class": "gms_goldnode"
+		"class": "gms_orenode",
+		"resource": "gold"
 	},
 	"118": 
 	{
 		"pos": "[-6940.9766 -11648.667 2306.2612]",
 		"angles": "{0 0 0}",
-		"class": "gms_goldnode"
+		"class": "gms_orenode",
+		"resource": "gold"
 	},
 	"119": 
 	{
 		"pos": "[-10999.1504 -12886.6191 2304.0002]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"120": 
 	{
 		"pos": "[-10964.71 -12864.5293 2307.9492]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"121": 
 	{
 		"pos": "[-9585.2295 -8259.3096 1448.54]",
 		"angles": "{-6.1354 27.3359 -5.5901}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"122": 
 	{
 		"pos": "[-9630.3418 -8160.0757 1451.2482]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"123": 
 	{
 		"pos": "[-8074.2695 -6874.1587 1280.3374]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"124": 
 	{
 		"pos": "[-8159.0322 -6935.6514 1289.9451]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"125": 
 	{
 		"pos": "[-12137.958 -4438.1025 1225.429]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"126": 
 	{
 		"pos": "[-12084.3682 -4328.7627 1249.6953]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"127": 
 	{
 		"pos": "[-6910.353 -5158.3135 1282.9801]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"128": 
 	{
 		"pos": "[-6875.167 -5071.4072 1281.967]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"129": 
 	{
 		"pos": "[-3261.2253 -6346.7607 2430.668]",
 		"angles": "{29.2758 71.4746 -40.284}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"130": 
 	{
 		"pos": "[-3354.29 -6314.8623 2400.3152]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"131": 
 	{
 		"pos": "[-6277.5352 -9271.251 4540.9668]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"132": 
 	{
 		"pos": "[-6087.7266 -9187.5527 4537.3633]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"133": 
 	{
 		"pos": "[-6374.957 -9396.6484 4518.188]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	},
 	"134": 
 	{
 		"pos": "[-8026.5791 -13194.6455 2304]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"135": 
 	{
 		"pos": "[-8127.5796 -13509.1348 2304]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"136": 
 	{
 		"pos": "[-8030.375 -13421.0664 2304]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"137": 
 	{
 		"pos": "[-8099.6045 -13287.5244 2304.4072]",
 		"angles": "{0 0 0}",
-		"class": "gms_stonenode"
+		"class": "gms_orenode",
+		"resource": "stone"
 	},
 	"138": 
 	{
 		"pos": "[-8190.4976 -13185.5225 2379.0537]",
 		"angles": "{0 0 0}",
-		"class": "gms_ironnode"
+		"class": "gms_orenode",
+		"resource": "iron"
 	}
 }
