@@ -1884,8 +1884,12 @@ function SGS_HUD_Main()
 	if(tr.HitNonWorld) then
 		if tr.Entity:IsValid() then
 			if tr.Entity:GetPos():DistToSqr( LocalPlayer():GetPos() ) <= 62500 then
-				local rname = tr.Entity:GetNWString("resource_id", nil) or tr.Entity:GetClass()
-				local res = SGS_LookupResource( rname )
+				local res = nil
+				if tr.Entity:GetClass() == "gms_orenode" then
+					res = SGS_LookupResource(tr.Entity:GetNWString("resource_id"))
+				else
+					res = SGS_LookupResource(tr.Entity:GetClass())
+				end
 				if res then
 					draw.SimpleTextOutlined(res.name, "SGS_HUD2", ( ScrW() / 2 ) , ( ScrH() / 2 ) + 52, Color(255, 100, 100, 255), 1, 1, 1, Color(0,0,0,255))
 					draw.SimpleTextOutlined("Required Level: " .. res.rlvl, "SGS_HUD2", ( ScrW() / 2 ) , ( ScrH() / 2 ) + 66, Color(255, 255, 255, 255), 1, 1, 1, Color(0,0,0,255))
