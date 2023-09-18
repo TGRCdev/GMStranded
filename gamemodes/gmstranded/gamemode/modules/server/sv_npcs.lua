@@ -136,8 +136,9 @@ function SGS_MakeCreature( npcclass, loc, aggrotable, parent )
 			end
 			hook.Add("Think", npc, ZombieThink)
 		end
-
+		return npc
 	end
+	return nil
 end
 
 function ZombieThink( ent )

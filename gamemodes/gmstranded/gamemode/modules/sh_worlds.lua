@@ -1,8 +1,12 @@
 GM.Worlds = GM.Worlds or {}
 GM.Worlds.tblWorlds = GM.Worlds.tblWorlds or {}
+GM.Worlds.Arenas = GM.Worlds.Arenas or {}
 
 function GM.Worlds:RegisterWorld( world )
 	table.insert( self.tblWorlds, world )
+	if world.BossSpawnPos then
+		table.insert( GM.Worlds.Arenas, world )
+	end
 end
 
 local files, dirs = file.Find("gmstranded/gamemode/modules/worlds/" .. game.GetMap() .. "/*.lua", "LUA")

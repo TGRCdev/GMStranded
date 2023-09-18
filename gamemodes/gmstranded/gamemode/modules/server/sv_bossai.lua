@@ -1,6 +1,7 @@
 local PlayerMeta = FindMetaTable("Player")
 
 hook.Add( "DayLightChangeTime", "DayChangeBossCheck", function( time )
+	if not GAMEMODE.Worlds.Arenas then return end
 	if not SGS.bossspawnedtoday then SGS.bossspawnedtoday = false end
 	if (DayLight.Day ~= 5) and SGS.bossspawnedtoday then SGS.bossspawnedtoday = false end
 	if SGS.bossspawnedtoday then return end
@@ -21,14 +22,18 @@ function SGS_SpawnRandomBoss()
 end
 
 function SGS_SpawnAntlionBoss()
-	SGS_MakeCreature( "npc_antlionguard", GAMEMODE.Worlds.tblWorlds[2].BossSpawnPos + Vector(200,0,0), nil )
+	local arena = GAMEMODE.Worlds.Arenas[math.random(#GAMEMODE.Worlds.Arenas)]
+	local boss = SGS_MakeCreature( "npc_antlionguard", arena.BossSpawnPos, nil )
+	boss.arena = arena
 	for k, v in pairs(player.GetAll()) do
 		v:SendMessage("The Antlion Boss emerges in the Arena!", 60, Color(255, 255, 0, 255))
 	end
 end
 
 function SGS_SpawnHunterBoss()
-	SGS_MakeCreature( "npc_hunter", GAMEMODE.Worlds.tblWorlds[2].BossSpawnPos + Vector(200,0,0), nil )
+	local arena = GAMEMODE.Worlds.Arenas[math.random(#GAMEMODE.Worlds.Arenas)]
+	local boss = SGS_MakeCreature( "npc_hunter", arena.BossSpawnPos, nil )
+	boss.arena = arena
 	for k, v in pairs(player.GetAll()) do
 		v:SendMessage("The Hunter Boss has arrived in the Arena!", 60, Color(255, 255, 0, 255))
 	end
@@ -261,32 +266,9 @@ function SGS_BossUnLevitatePlayer( ply )
 	ply:SetMoveType( MOVETYPE_WALK ) 
 end
 
-function SGS_TeleportBoss( npc, radius )
-	local curpos = npc:GetPos()
-	local newpos = curpos + Vector(math.random(-radius,radius), math.random(-radius,radius), 800)
-	local trace = {}
-	trace.start = newpos
-	trace.endpos = trace.start + Vector(0,0,-1000)
-	trace.mask = bit.bor(MASK_SOLID)
-	trace.filter = npc
-	
-	local tr = util.TraceLine(trace)
-	if tr.Hit then
-		local newpos = tr.HitPos
-		
-		local ED = EffectData()
-		ED:SetOrigin( npc:GetPos() )
-		ED:SetStart(Vector(255,255,0))
-		local effect = util.Effect( 'boss_teleport', ED, true, true )
-		
-		npc:EmitSound( "ambient/voices/squeal1.wav", 125, math.random( 75,150 ), 1, CHAN_AUTO )
-		npc:SetPos( newpos + Vector(0,0,20) )
-	end
-end
-
 function SGS_TeleportBossArena( npc )
 	if npc:GetNWBool("enraged", false) then return end
-	local newpos = Vector(math.random(-1850, 1850), math.random(-1850, 1850), 4300)
+	local newpos = npc.arena.BossSpawnPos + Vector(math.random(-2000,2000), math.random(-2000,2000), 500)
 		
 	local ED = EffectData()
 	ED:SetOrigin( npc:GetPos() )
@@ -295,7 +277,7 @@ function SGS_TeleportBossArena( npc )
 	
 	local trace = {}
 	trace.start = newpos
-	trace.endpos = trace.start + Vector(0,0,-2000)
+	trace.endpos = trace.start + Vector(0,0,-1000)
 	trace.mask = bit.bor(MASK_SOLID)
 	trace.filter = npc
 	
