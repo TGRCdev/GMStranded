@@ -1075,11 +1075,6 @@ function SGS_UseKey( ply, key )
 		mattype = ply:CheckMat(300)
 	end
 
-	if ply:WaterLevel() >= 1 or ply:CheckWater(140) then
-		ply:DrinkWater(300)
-		return
-	end
-
 	local tr = ply:TraceFromEyes(140)
 	if tr.HitWorld then
 		if mattype == MAT_DIRT or mattype == MAT_SAND or mattype == MAT_GRASS or mattype == MAT_SNOW then --Checks to see if user presses use on a sand or dirt or grass texture
@@ -1089,11 +1084,24 @@ function SGS_UseKey( ply, key )
 					return
 				end
 			end
-			if ply.foragetoggle then return end
-			SGS_Forage_Start(ply, 3, 1)
+			if not ply.foragetoggle then
+				SGS_Forage_Start(ply, 3, 1)
+				return
+			end
+
+			if ply:WaterLevel() == 3 or ply:CheckWater(140) then
+				ply:DrinkWater(300)
+				return
+			end
+
 			ply.lastuse = CurTime()
 			return
 		else
+			if ply:WaterLevel() == 3 or ply:CheckWater(140) then
+				ply:DrinkWater(300)
+				return
+			end
+
 			ply.lastuse = CurTime()
 			return
 		end
@@ -1126,6 +1134,11 @@ function SGS_UseKey( ply, key )
 					return
 				end
 			end
+		end
+
+		if ply:WaterLevel() == 3 or ply:CheckWater(140) then
+			ply:DrinkWater(300)
+			return
 		end
 	end
 

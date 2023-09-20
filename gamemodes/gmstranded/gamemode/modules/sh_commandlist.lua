@@ -363,13 +363,6 @@ CMD.achreq = "cowboyhat"
 Menu_RegisterCommand( "hats", CMD )
 
 local CMD = {}
-CMD.title = "Equip Chief Hat"
-CMD.description = "Purchased from Doctor K."
-CMD.command = {"sgs_equiphat", "chiefhat"}
-CMD.achreq = "chiefhat"
-Menu_RegisterCommand( "hats", CMD )
-
-local CMD = {}
 CMD.title = "Equip Flaminco Hat"
 CMD.description = "Purchased from Doctor K."
 CMD.command = {"sgs_equiphat", "flamincohat"}

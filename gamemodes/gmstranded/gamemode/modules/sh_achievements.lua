@@ -294,13 +294,6 @@ ACH.at = "Access Q > Options menu to equip your new hat."
 Achievement_RegisterAchievement( ACH )
 
 local ACH = {}
-ACH.short = "chiefhat"
-ACH.long = "Cowboy Hat"
-ACH.cc = "sgs_equiphat chiefhat"
-ACH.at = "Access Q > Options menu to equip your new hat."
-Achievement_RegisterAchievement( ACH )
-
-local ACH = {}
 ACH.short = "flamincohat"
 ACH.long = "Flaminco Hat"
 ACH.cc = "sgs_equiphat flamincohat"

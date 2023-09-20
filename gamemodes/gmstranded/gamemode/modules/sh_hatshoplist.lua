@@ -121,14 +121,6 @@ HAT.description = "*Click for more info*"
 Shop_RegisterHat( "hats", HAT )
 
 local HAT = {}
-HAT.model = "models/player/items/heavy/heavy_big_chief.mdl"
-HAT.price = 1000
-HAT.name = "Indian Chief Hat"
-HAT.ach = "chiefhat"
-HAT.description = "*Click for more info*"
-Shop_RegisterHat( "hats", HAT )
-
-local HAT = {}
 HAT.model = "models/player/items/pyro/fwk_pyro_flamenco.mdl"
 HAT.price = 1000
 HAT.name = "Flaminco Hat"

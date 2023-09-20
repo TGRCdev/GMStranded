@@ -101,7 +101,7 @@ function ENT:Think()
 		if CurTime() >= self.respawn then
 			self.rtotal = math.random(self.resource.amt_min, self.resource.amt_max)
 			self.depleted = false
-			self:SetColor(Color(255, 255, 255, 255))
+			self:SetColor(self.resource.color or Color(255, 255, 255, 255))
 		end
 	end
 	self:NextThink(CurTime() + 1)
