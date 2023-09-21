@@ -30,7 +30,19 @@ function SGS_Lumber( ply, tree, timemodi, modi, gem, void )
 end
 
 function SGS_Mine( ply, rock, timemodi, modi, gem, void, autosmelt )
+	if rock:GetClass() == "gms_meteornode" then
+		local newtime = rock.baselen - timemodi
+		if modi >= 2.8 then
+			SGS_MeteorMine_Start( ply, rock, newtime, modi, gem, true )
+		else
+			ply:SendMessage("This pickaxe won't work...", 60, Color(255, 125, 0, 255))
+		end
+		return
+	end
+
 	local res = rock.resource
+	local newtime = res.baselen - timemodi
+	
 	if not res then
 		print("ERROR: gms_orenode is missing its \"resource\" table")
 		return
@@ -39,17 +51,8 @@ function SGS_Mine( ply, rock, timemodi, modi, gem, void, autosmelt )
 		ply:SendMessage("This rock requires level " .. tostring(res.rlvl) .. " or greater to mine.", 60, Color(255, 125, 0, 255))
 		return
 	end
-	local newtime = res.baselen - timemodi
-
-	if rock:GetClass() == "gms_meteornode" then
-		if modi >= 2.8 then
-			SGS_MeteorMine_Start( ply, rock, newtime, modi, gem, true )
-		else
-			ply:SendMessage("This pickaxe won't work...", 60, Color(255, 125, 0, 255))
-		end
-	else
-		SGS_Mine_Start( ply, rock, newtime, modi, gem, void, autosmelt )
-	end
+	
+	SGS_Mine_Start( ply, rock, newtime, modi, gem, void, autosmelt )
 end
 
 
