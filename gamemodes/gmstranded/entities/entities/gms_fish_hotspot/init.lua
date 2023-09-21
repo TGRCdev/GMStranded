@@ -8,24 +8,19 @@ include("shared.lua")
 
 function ENT:Initialize()
 	self.nextSplash = CurTime()
-	self.lastRipple = CurTime()
+	self.nextRipple = CurTime()
 
 	self:DeactivateHotspot()
 end
 
 function ENT:DeactivateHotspot()
 	self.hotspotActive = false
-	self.startTime = CurTime() + math.random(120, 420) -- Hotspot activates every 2-7 minutes
+	self.startTime = CurTime() + math.random(300, 900) -- Hotspot activates every 5-15 minutes
 end
 
 function ENT:ActivateHotspot()
 	self.hotspotActive = true
-	self.endTime = CurTime() + math.random(120, 240) -- Hotspot runs for 2-4 minutes
-	self:NextSplash()
-end
-
-function ENT:NextSplash()
-	self.nextSplash = CurTime() + math.random(2,10) -- Splash every 2-10 seconds
+	self.endTime = CurTime() + math.random(90, 180) -- Hotspot runs for 1.5-3 minutes
 end
 
 function ENT:Think()
@@ -42,13 +37,13 @@ function ENT:Think()
 			effect:SetOrigin( self:GetPos() + Vector(math.random(-25,25), math.random(-25,25), 0) )
 			effect:SetScale(5)
 			util.Effect("watersplash", effect)
-			self:NextSplash()
-		elseif CurTime() > self.lastRipple then
+			self.nextSplash = CurTime() + math.random(5,25) -- Splash every 5-25 seconds
+		elseif CurTime() >= self.nextRipple then
 			local effect = EffectData()
 			effect:SetOrigin( self:GetPos() + Vector(math.random(-25,25), math.random(-25,25), 0) )
 			effect:SetScale(10)
 			util.Effect("waterripple", effect)
-			self.lastRipple = CurTime()
+			self.nextRipple = CurTime() + 0.25 -- Ripple every 0.25 seconds
 		end
 	elseif CurTime() >= self.startTime then
 		self:ActivateHotspot()
