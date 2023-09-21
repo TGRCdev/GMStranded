@@ -1,525 +1,487 @@
-
-{
-	"1": 
+[
+	{
+		"pos": "[8931.6436 -5579.6899 6272.0313]",
+		"angles": "{0 0 0}",
+		"class": "gms_fish_hotspot"
+	},
+	{
+		"pos": "[9797.4697 -4106.7437 6272.0313]",
+		"angles": "{0 0 0}",
+		"class": "gms_fish_hotspot"
+	},
+	{
+		"pos": "[8974.6172 -2513.7126 6272.0313]",
+		"angles": "{0 0 0}",
+		"class": "gms_fish_hotspot"
+	},
+	{
+		"pos": "[7201.853 -2983.0898 6272.0313]",
+		"angles": "{0 0 0}",
+		"class": "gms_fish_hotspot"
+	},
+	{
+		"pos": "[7108.7822 -4174.2056 6272.0313]",
+		"angles": "{0 0 0}",
+		"class": "gms_fish_hotspot"
+	},
+	{
+		"pos": "[7675.437 -4627.9253 6272.0313]",
+		"angles": "{0 0 0}",
+		"class": "gms_fish_hotspot"
+	},
+	{
+		"pos": "[5040.8164 -3293.5645 6272.0313]",
+		"angles": "{0 0 0}",
+		"class": "gms_fish_hotspot"
+	},
+	{
+		"pos": "[5749.2007 -5913.2305 6272.0313]",
+		"angles": "{0 0 0}",
+		"class": "gms_fish_hotspot"
+	},
 	{
 		"pos": "[10330.9697 -1699.52 6369.2002]",
-		"angles": "{0 -162 0}",
+		"angles": "{0 -124 0}",
 		"class": "gms_tree5"
 	},
-	"2": 
 	{
 		"pos": "[6331.1396 -3799.5698 6299.7905]",
-		"angles": "{0 132 0}",
+		"angles": "{0 180 0}",
 		"class": "gms_tree5"
 	},
-	"3": 
 	{
 		"pos": "[5927.2363 -7906.3018 6330.2573]",
-		"angles": "{0 -127 0}",
+		"angles": "{0 95 0}",
 		"class": "gms_tree5"
 	},
-	"4": 
 	{
 		"pos": "[9695.4775 -6271.0859 6309.6689]",
-		"angles": "{0 -128 0}",
+		"angles": "{0 176 0}",
 		"class": "gms_tree5"
 	},
-	"5": 
 	{
 		"pos": "[12034.9648 -8950.3213 6297.1304]",
-		"angles": "{0 67 0}",
+		"angles": "{0 -130 0}",
 		"class": "gms_tree5"
 	},
-	"6": 
 	{
 		"pos": "[3614.6799 -744.85 6302.6499]",
-		"angles": "{0 -70 0}",
+		"angles": "{0 -69 0}",
 		"class": "gms_tree5"
 	},
-	"7": 
 	{
 		"pos": "[4771.3262 541.8716 6293.5952]",
-		"angles": "{0 47 0}",
+		"angles": "{0 43 0}",
 		"class": "gms_tree6"
 	},
-	"8": 
 	{
 		"pos": "[7020.1255 -5744.5059 6289.811]",
-		"angles": "{0 15 0}",
+		"angles": "{0 146 0}",
 		"class": "gms_tree6"
 	},
-	"9": 
 	{
 		"pos": "[4359.5093 -9069.4395 6350.3613]",
-		"angles": "{0 -115 0}",
+		"angles": "{0 138 0}",
 		"class": "gms_tree6"
 	},
-	"10": 
 	{
 		"pos": "[10166.7295 -9771.5693 6292.3901]",
-		"angles": "{0 90 0}",
+		"angles": "{0 73 0}",
 		"class": "gms_tree6"
 	},
-	"11": 
 	{
 		"pos": "[11601.1602 -6428.3594 6302.3311]",
-		"angles": "{0 -122 0}",
+		"angles": "{0 -92 0}",
 		"class": "gms_tree6"
 	},
-	"12": 
 	{
 		"pos": "[12472.9189 -3013.968 6281.186]",
-		"angles": "{0 132 0}",
+		"angles": "{0 -29 0}",
 		"class": "gms_tree7"
 	},
-	"13": 
 	{
 		"pos": "[11030.6602 509.5696 6279.1963]",
-		"angles": "{0 -4 0}",
+		"angles": "{0 35 0}",
 		"class": "gms_tree7"
 	},
-	"14": 
 	{
 		"pos": "[6069.7798 -1301.03 6336.1602]",
-		"angles": "{0 103 0}",
+		"angles": "{0 141 0}",
 		"class": "gms_tree7"
 	},
-	"15": 
 	{
 		"pos": "[4219.8394 -5608.0156 6374.2256]",
-		"angles": "{0 58 0}",
+		"angles": "{0 4 0}",
 		"class": "gms_tree7"
 	},
-	"16": 
 	{
 		"pos": "[8044.7007 -6895.6401 6273.4595]",
-		"angles": "{0 -164 0}",
+		"angles": "{0 -104 0}",
 		"class": "gms_tree7"
 	},
-	"17": 
 	{
 		"pos": "[12645.4502 -7673.1265 6276.6851]",
-		"angles": "{0 -167 0}",
+		"angles": "{0 158 0}",
 		"class": "gms_tree7"
 	},
-	"18": 
 	{
+		"resource": "coal",
 		"pos": "[7837.1475 -9855.0293 6300.168]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"19": 
 	{
+		"resource": "coal",
 		"pos": "[10437.7354 -9029.4521 6319.0225]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"20": 
 	{
+		"resource": "coal",
 		"pos": "[12550.8535 -9700.0186 6345.207]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"21": 
 	{
+		"resource": "coal",
 		"pos": "[11211.5459 -6323.0337 6337.3662]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"22": 
 	{
+		"resource": "coal",
 		"pos": "[11713.5176 -3840.2598 6294.0376]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"23": 
 	{
+		"resource": "coal",
 		"pos": "[12815.3105 -1729.4609 6331.6831]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"24": 
 	{
+		"resource": "coal",
 		"pos": "[10283.29 -1771.5261 6368.2178]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"25": 
 	{
+		"resource": "coal",
 		"pos": "[9216.8418 567.7208 6321.1104]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"26": 
 	{
+		"resource": "coal",
 		"pos": "[6204.0415 -1686.3905 6309.8267]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"27": 
 	{
+		"resource": "coal",
 		"pos": "[5907.3296 708.9882 6330.7813]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"28": 
 	{
+		"resource": "coal",
 		"pos": "[3646.3704 -863.5211 6307.2695]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"29": 
 	{
+		"resource": "coal",
 		"pos": "[3796.6362 -2180.2517 6340.7314]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"30": 
 	{
+		"resource": "coal",
 		"pos": "[3930.5474 -3305.219 6287.2847]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"31": 
 	{
+		"resource": "coal",
 		"pos": "[4321.729 -5325.6191 6360.1348]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"32": 
 	{
+		"resource": "coal",
 		"pos": "[2487.5774 -7342.3774 6289.8218]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"33": 
 	{
+		"resource": "coal",
 		"pos": "[2620.9287 -9582.3623 6321.5977]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"34": 
 	{
+		"resource": "coal",
 		"pos": "[3873.8538 -8854.0391 6323.9067]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"35": 
 	{
+		"resource": "coal",
 		"pos": "[4267.5811 -7683.4727 6304.7031]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"36": 
 	{
+		"resource": "coal",
 		"pos": "[5401.2632 -7548.6719 6351.6782]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"37": 
 	{
+		"resource": "coal",
 		"pos": "[6690.7646 -6239.272 6282.9814]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"38": 
 	{
+		"resource": "coal",
 		"pos": "[8648.418 -4340.2627 6304.0894]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"39": 
 	{
+		"resource": "coal",
 		"pos": "[8050.9229 -1892.1372 6321.2031]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"40": 
 	{
+		"resource": "coal",
 		"pos": "[8369.5176 -8760.0078 6314.0366]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"41": 
 	{
+		"resource": "coal",
 		"pos": "[6268.5635 -7881.458 6326.27]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "coal"
+		"class": "gms_orenode"
 	},
-	"42": 
 	{
+		"resource": "silver",
 		"pos": "[10849.2783 -8419.1406 6318.4224]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "silver"
+		"class": "gms_orenode"
 	},
-	"43": 
 	{
+		"resource": "silver",
 		"pos": "[11207.0078 -4093.2354 6304.1943]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "silver"
+		"class": "gms_orenode"
 	},
-	"44": 
 	{
+		"resource": "silver",
 		"pos": "[11201.873 174.8065 6268.3711]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "silver"
+		"class": "gms_orenode"
 	},
-	"45": 
 	{
+		"resource": "silver",
 		"pos": "[6270.0767 -1064.1934 6340.0024]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "silver"
+		"class": "gms_orenode"
 	},
-	"46": 
 	{
+		"resource": "silver",
 		"pos": "[4858.5537 -5580.5371 6337.126]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "silver"
+		"class": "gms_orenode"
 	},
-	"47": 
 	{
+		"resource": "silver",
 		"pos": "[3296.7246 -9391.6465 6325.2505]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "silver"
+		"class": "gms_orenode"
 	},
-	"48": 
 	{
+		"resource": "gold",
 		"pos": "[4548.5581 -9394.4824 6345.0649]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "gold"
+		"class": "gms_orenode"
 	},
-	"49": 
 	{
+		"resource": "gold",
 		"pos": "[2844.4124 -2929.0232 6296.6553]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "gold"
+		"class": "gms_orenode"
 	},
-	"50": 
 	{
+		"resource": "gold",
 		"pos": "[10701.9531 -6378.1895 6329.3779]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "gold"
+		"class": "gms_orenode"
 	},
-	"51": 
 	{
+		"resource": "gold",
 		"pos": "[10752.21 -1867.3837 6341.9629]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "gold"
+		"class": "gms_orenode"
 	},
-	"52": 
 	{
+		"resource": "stone",
 		"pos": "[7760.7583 -3983.0393 6263.856]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "stone"
+		"class": "gms_orenode"
 	},
-	"53": 
 	{
+		"resource": "stone",
 		"pos": "[7998.2754 -4190.6904 6285.9771]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "stone"
+		"class": "gms_orenode"
 	},
-	"54": 
 	{
+		"resource": "stone",
 		"pos": "[7563.0708 -3726.6255 6243.3818]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "stone"
+		"class": "gms_orenode"
 	},
-	"55": 
 	{
+		"resource": "stone",
 		"pos": "[8166.002 -3845.9807 6317.895]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "stone"
+		"class": "gms_orenode"
 	},
-	"56": 
 	{
+		"resource": "stone",
 		"pos": "[8335.0381 -3441.2615 6367.0166]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "stone"
+		"class": "gms_orenode"
 	},
-	"57": 
 	{
+		"resource": "stone",
 		"pos": "[7282.3945 -3960.719 6237.4336]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "stone"
+		"class": "gms_orenode"
 	},
-	"58": 
 	{
+		"resource": "stone",
 		"pos": "[7036.5005 -4447.2065 6241.7993]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "stone"
+		"class": "gms_orenode"
 	},
-	"59": 
 	{
+		"resource": "trinium",
 		"pos": "[8366.1299 -3317.8799 6363.77]",
 		"angles": "{0 -3.6705 0}",
-		"class": "gms_orenode",
-		"resource": "trinium"
+		"class": "gms_orenode"
 	},
-	"60": 
 	{
+		"resource": "trinium",
 		"pos": "[6974.3711 -4532.4053 6245.1401]",
 		"angles": "{-0.1849 -0.7109 -0.518}",
-		"class": "gms_orenode",
-		"resource": "trinium"
+		"class": "gms_orenode"
 	},
-	"61": 
 	{
+		"resource": "trinium",
 		"pos": "[7688.3398 -4065.8599 6245.8501]",
 		"angles": "{-0 0.5121 0}",
-		"class": "gms_orenode",
-		"resource": "trinium"
+		"class": "gms_orenode"
 	},
-	"62": 
 	{
+		"resource": "trinium",
 		"pos": "[7137.29 -3857.8699 6232.23]",
 		"angles": "{0 -0.5121 0}",
-		"class": "gms_orenode",
-		"resource": "trinium"
+		"class": "gms_orenode"
 	},
-	"63": 
 	{
+		"resource": "naquadah",
 		"pos": "[8054.8169 -3797.4199 6370.9102]",
 		"angles": "{-21.2273 66.3989 -60.7795}",
-		"class": "gms_orenode",
-		"resource": "naquadah"
+		"class": "gms_orenode"
 	},
-	"64": 
 	{
+		"resource": "naquadah",
 		"pos": "[7681.2832 -4014.3301 6330.6699]",
 		"angles": "{-35.5357 149.4576 -76.2188}",
-		"class": "gms_orenode",
-		"resource": "naquadah"
+		"class": "gms_orenode"
 	},
-	"65": 
 	{
+		"resource": "naquadah",
 		"pos": "[7457.019 -3674.3633 6299.4604]",
 		"angles": "{-37.726 61.6109 -64.4077}",
-		"class": "gms_orenode",
-		"resource": "naquadah"
+		"class": "gms_orenode"
 	},
-	"66": 
 	{
+		"resource": "mithril",
 		"pos": "[7345.5776 -4032.2952 6241.1602]",
 		"angles": "{-0 6.4309 0}",
-		"class": "gms_orenode",
-		"resource": "mithril"
+		"class": "gms_orenode"
 	},
-	"67": 
 	{
+		"resource": "mithril",
 		"pos": "[8060.543 -4119.3774 6294.356]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "mithril"
+		"class": "gms_orenode"
 	},
-	"68": 
 	{
+		"resource": "mithril",
 		"pos": "[8319.0693 -3515.27 6381.02]",
 		"angles": "{4.2366 -102.4703 -1.8633}",
-		"class": "gms_orenode",
-		"resource": "mithril"
+		"class": "gms_orenode"
 	},
-	"69": 
 	{
+		"resource": "platinum",
 		"pos": "[7976.9214 -4226.1299 6360.3794]",
 		"angles": "{4.9599 -3.7502 16.6892}",
-		"class": "gms_orenode",
-		"resource": "platinum"
+		"class": "gms_orenode"
 	},
-	"70": 
 	{
+		"resource": "platinum",
 		"pos": "[8236.4395 -3393.5698 6436.9199]",
 		"angles": "{-34.5303 -6.0083 -10.7883}",
-		"class": "gms_orenode",
-		"resource": "platinum"
+		"class": "gms_orenode"
 	},
-	"71": 
 	{
+		"resource": "silver",
 		"pos": "[8232.9258 -3729.5134 6333.0498]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "silver"
+		"class": "gms_orenode"
 	},
-	"72": 
 	{
+		"resource": "silver",
 		"pos": "[7304.8174 -3837.4675 6235.9395]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "silver"
+		"class": "gms_orenode"
 	},
-	"73": 
 	{
+		"resource": "silver",
 		"pos": "[7072.5796 -4360.1465 6238.7524]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "silver"
+		"class": "gms_orenode"
 	},
-	"74": 
 	{
+		"resource": "silver",
 		"pos": "[7936.2314 -4255.979 6278.8843]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "silver"
+		"class": "gms_orenode"
 	},
-	"75": 
 	{
+		"resource": "gold",
 		"pos": "[7490.541 -3950.5911 6240.7549]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "gold"
+		"class": "gms_orenode"
 	},
-	"76": 
 	{
+		"resource": "gold",
 		"pos": "[7735.9697 -3866.8013 6339.2832]",
 		"angles": "{0 0 0}",
-		"class": "gms_orenode",
-		"resource": "gold"
+		"class": "gms_orenode"
 	},
-	"77": 
 	{
+		"resource": "gold",
 		"pos": "[8441.2998 -3437.4399 6448.46]",
 		"angles": "{-0 2.6462 0}",
-		"class": "gms_orenode",
-		"resource": "gold"
+		"class": "gms_orenode"
 	}
-}
+]

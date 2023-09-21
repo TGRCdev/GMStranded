@@ -12,7 +12,8 @@ function SGS_SetUpTablesShared()
 		"npc_vortigaunt",
 		"npc_breen",
 		"npc_kleiner",
-		"gms_antlionspawner"
+		"gms_antlionspawner",
+		"gms_fish_hotspot"
 	}
 						
 	SGS.trees = {

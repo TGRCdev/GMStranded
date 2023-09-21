@@ -1638,14 +1638,24 @@ function SGS_Fish_Start(ply, len, modi, void)
 	effectdata:SetOrigin( tr.HitPos )
 	effectdata:SetScale( 2 )
 	util.Effect( "waterripple", effectdata )
-	
-	
-	
+
+	local msg = "You cast out your line..."
+
+	-- Check for an active hotspot
+	for _, ent in ipairs(ents.FindInSphere(tr.HitPos, 250)) do
+		if ent:GetClass() == "gms_fish_hotspot" and ent.hotspotActive then
+			len = len * 0.7
+			modi = modi * 1.5
+			msg = "You cast your line into the hotspot..."
+			break
+		end
+	end
 	
 	local txt = "Fishing..."
 	ply:SetNWString("action", txt)
 	SGS_StartTimer( ply, txt, len, "fishing" )
-	ply:SendMessage("You cast out your line...", 60, Color(255, 255, 0, 255))
+	
+	ply:SendMessage(msg, 60, Color(255, 255, 0, 255))
 	timer.Create( ply:UniqueID() .. "processtimer", len, 1, function() SGS_Fish_Stop( ply, modi, void ) end )
 
 end
@@ -1705,7 +1715,7 @@ function SGS_Fish_Stop(ply, modi, void)
 				break
 			end
 		end
-		fnum = math.ceil(fnum * 1.5)
+		fnum = math.ceil(fnum * 1.3)
 		local catch = SGS.Fish[math.Clamp(math.random( 1, fnum ), 1, #SGS.Fish)]
 		if catch.reqlvl <= ply:GetLevel( "fishing" ) then
 			ply:SendMessage("You caught a " .. CapAll(string.gsub(catch.name, "_", " ")) .. "!", 60, Color(0, 255, 0, 255))
