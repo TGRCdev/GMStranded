@@ -30,7 +30,7 @@ function SWEP:PrimaryAttack()
 		self:GetOwner():SetAnimation( PLAYER_ATTACK1 )
 	end
 	
-    self.Weapon:SetNextPrimaryFire(CurTime() + 3.6)
+    self:SetNextPrimaryFire(CurTime() + 0.1)
 	
 	if CLIENT then return end
 	SGS_Fish_Start( self:GetOwner(), 3.6, 1.6 )

@@ -29,7 +29,7 @@ function SWEP:PrimaryAttack()
 	if IsFirstTimePredicted() then
 		self:GetOwner():SetAnimation( PLAYER_ATTACK1 )
 	end
-    self.Weapon:SetNextPrimaryFire(CurTime() + 1.5)
+    self:SetNextPrimaryFire(CurTime() + 0.1)
 	if CLIENT then return end
 	if self:GetOwner():GetLevel("fishing") < 55 then
 		self:GetOwner():SendMessage("This tool requires fishing level 55 or higher.", 60, Color(255, 125, 0, 255))

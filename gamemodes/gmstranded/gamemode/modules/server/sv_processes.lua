@@ -1715,7 +1715,7 @@ function SGS_Fish_Stop(ply, modi, void)
 				break
 			end
 		end
-		fnum = math.ceil(fnum * 1.3)
+		fnum = math.ceil(fnum * 1.2)
 		local catch = SGS.Fish[math.Clamp(math.random( 1, fnum ), 1, #SGS.Fish)]
 		if catch.reqlvl <= ply:GetLevel( "fishing" ) then
 			ply:SendMessage("You caught a " .. CapAll(string.gsub(catch.name, "_", " ")) .. "!", 60, Color(0, 255, 0, 255))
