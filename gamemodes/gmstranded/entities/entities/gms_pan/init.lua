@@ -50,7 +50,12 @@ function ENT:Use( ply )
 			if self.owner == ply then
 				ply:AddExp( "cooking", food.xp )
 			end
-			ply:AddResource( food.name, 1 )
+			
+			if ply.burntoggle == true then
+				ply:AddResource( "burned_" .. food.sname, 1 )
+			else
+				ply:AddResource( food.name, 1 )
+			end
 			ply:RandomFindChance()
 			
 			if food.sname == "fish" then ply:AddStat( "cooking1", 1 ) end
@@ -62,7 +67,11 @@ function ENT:Use( ply )
 			ply:CheckForAchievements( "chefhat" )
 			ply:CheckForAchievements( "cookingmaster" )
 		else
-			ply:AddResource( "burned_" ..food.sname, 1 )
+			if self.owner == ply then
+				ply:AddExp( "cooking", food.xp / 2 ) -- Learn from your mistakes
+			end
+
+			ply:AddResource( "burned_" .. food.sname, 1 )
 		
 			if food.sname == "fish" then ply:AddStat( "cooking5", 1 ) end
 			if food.sname == "pie" then ply:AddStat( "cooking6", 1 ) end

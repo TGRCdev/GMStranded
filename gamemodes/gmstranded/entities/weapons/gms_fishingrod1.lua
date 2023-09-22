@@ -31,7 +31,7 @@ function SWEP:PrimaryAttack()
 	end
 	
 	
-    self:SetNextPrimaryFire(CurTime() + 4)
+    self:SetNextPrimaryFire(CurTime() + 0.1)
 	if CLIENT then return end
 	SGS_Fish_Start( self:GetOwner(), 4, 1.2 )
 end
