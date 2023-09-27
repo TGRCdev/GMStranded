@@ -16,6 +16,19 @@ world.Gates = {
 		Position = Vector ( 2910.052734, 10751.789063, 2008.031250 )
 	}
 }
+world.Events = {
+	sailors = {
+		boat = {
+			pos = Vector ( 3465.018311, 13636.764648, 1863.747803 ),
+			angles = Angle ( 0, -90, 0 )
+		},
+		sailor = {
+			name = "Patchy",
+			pos = Vector ( 3468.070557, 13602.458984, 1850.060669 ),
+			angles = Angle ( 0, -90, 0 )
+		}
+	}
+}
 world.SkyObjects = {
 	{
 		ClassName = "CPlanet", --Class name, this one is a planet
