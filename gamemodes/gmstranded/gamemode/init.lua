@@ -5115,13 +5115,15 @@ concommand.Add( "sgs_unpack", SGS_ConUnpack )
 birds = { "models/crow.mdl", "models/seagull.mdl", "models/pigeon.mdl" }
 function SGS_AdminMode( ply, _, args )
 		local birdtype = 1
-		if tonumber(args[1]) == 2 then
-			birdtype = 2
-		elseif tonumber(args[1]) == 3 then
-			birdtype = 3
+		if args and #args > 0 then
+			if tonumber(args[1]) == 2 then
+				birdtype = 2
+			elseif tonumber(args[1]) == 3 then
+				birdtype = 3
+			end
 		end
 
-		if !ply:IsAdmin() then
+		if not ply:IsAdmin() then
 			ply:SendMessage("This command is reserved for administrators!", 60, Color(255, 0, 0, 255))
 			return
 		end
@@ -5135,6 +5137,7 @@ function SGS_AdminMode( ply, _, args )
 			ply:SetWalkSpeed( ply.basewalk )
 			ply:SetRunSpeed( ply.baserun )
 			ply:SetNoTarget( false )
+			ply:SetMoveType(MOVETYPE_WALK)
 		else
 			if ply:GetGroundEntity() == NULL then
 				ply:SendMessage("You can't enter admin mode while falling/flying.", 60, Color(255, 0, 0, 255))
@@ -6918,4 +6921,14 @@ function GM.getUser( target )
 	end
 
 	return plyMatch
+end
+
+function GM:PlayerNoClip(ply, noclip)
+	if noclip then
+		if ply:IsAdmin() and ply.amode then
+			ply:SetMoveType(MOVETYPE_NOCLIP)
+		end
+	else
+		ply:SetMoveType(MOVETYPE_WALK)
+	end
 end
