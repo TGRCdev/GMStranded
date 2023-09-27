@@ -64,28 +64,34 @@ end
 
 function SGS_ClaimHatNPC()
 	for _, v in pairs(ents.FindByClass("npc_kleiner")) do
-		
-		SGS.shopent3 = v
-		SGS.shopent3start = v:GetPos()
-		
-		SGS.shopent3:SetNWString("Owner", "World")
-		timer.Simple( 5, function() SGS_CheckOnShop3() end )
+		if not IsValid(SGS.shopent3) then
+			SGS.shopent3 = v
+			SGS.shopent3start = v:GetPos()
+			
+			SGS.shopent3:SetNWString("Owner", "World")
+			timer.Simple( 5, function() SGS_CheckOnShop3() end )
 
-		SGS.shopent3.status = "wander"
-		SGS.shop3startpos = SGS.shopent3:GetPos()
-		SGS.shopent3.spawn = SGS.shopent3:GetPos()
+			SGS.shopent3.status = "wander"
+			SGS.shop3startpos = SGS.shopent3:GetPos()
+			SGS.shopent3.spawn = SGS.shopent3:GetPos()
 
-		timer.Simple(1, function() SGS.shopent:EquipHat("toweringhat") end )
-		SGS.shopent3:AddRelationship("npc_antlion D_LI 99")
-		SGS.shopent3:AddRelationship("npc_antlionguard D_LI 99")
-		SGS.shopent3:AddRelationship("npc_headcrab D_LI 99")
-		SGS.shopent3:AddRelationship("npc_headcrab_fast D_LI 99")
-		SGS.shopent3:AddRelationship("npc_headcrab_black D_LI 99")
-		SGS.shopent3:AddRelationship("npc_strider D_LI 99")
-		SGS.shopent3:AddRelationship("npc_kleiner D_LI 99")
-		return
+			timer.Simple(1, function() SGS.shopent:EquipHat("toweringhat") end )
+			SGS.shopent3:AddRelationship("npc_antlion D_LI 99")
+			SGS.shopent3:AddRelationship("npc_antlionguard D_LI 99")
+			SGS.shopent3:AddRelationship("npc_headcrab D_LI 99")
+			SGS.shopent3:AddRelationship("npc_headcrab_fast D_LI 99")
+			SGS.shopent3:AddRelationship("npc_headcrab_black D_LI 99")
+			SGS.shopent3:AddRelationship("npc_strider D_LI 99")
+			SGS.shopent3:AddRelationship("npc_kleiner D_LI 99")
+		else
+			if v != SGS.shopent3 then
+				v:Remove()
+			end
+		end
 	end
-	timer.Simple(5, SGS_ClaimHatNPC)
+	if not IsValid(SGS.shopent3) then
+		timer.Simple(5, SGS_ClaimHatNPC)
+	end
 end
 timer.Simple(5, SGS_ClaimHatNPC)
 
