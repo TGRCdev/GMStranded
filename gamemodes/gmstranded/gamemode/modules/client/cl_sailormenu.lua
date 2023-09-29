@@ -128,6 +128,12 @@ function PANEL:DrawFrame()
     tradetab.ask = "These seas are rough, and keeping our bucket of bolts floating is no small task. If you're lookin' for something to bump your levels, check our requisitions and see if anything catches your eye!"
     tabs:AddSheet("Requisitions", tradetab, "icon16/arrow_switch.png")
 
+    local wip_label = vgui.Create("DLabel")
+    wip_label:SetText("WORK IN PROGRESS :(")
+    wip_label:SetTextColor(Color(255,0,0,255))
+    wip_label:SetFont("DermaLarge")
+    tradetab:Add(wip_label)
+
     function tabs:OnActiveTabChanged(old, new)
         speech:SetText(new:GetPanel().ask)
     end
