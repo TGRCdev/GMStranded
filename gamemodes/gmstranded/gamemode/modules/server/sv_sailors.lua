@@ -192,7 +192,7 @@ concommand.Add("sgs_sailor_purchase", SGS_Sailor_Purchase)
 
 function SGS_CheckSailors(min)
     local sailors = GAMEMODE.Events.Sailors
-    if not IsValid(sailors.days) then
+    if not sailors.day then
         SGS_NextSailorAppearance()
     end
 
