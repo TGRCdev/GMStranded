@@ -3,7 +3,7 @@ GM.Events.Sailors = GM.Events.Sailors or {}
 GM.Events.Sailors.PlayerStocks = GM.Events.Sailors.PlayerStocks or {}
 
 function SGS_NextSailorAppearance()
-    GAMEMODE.Events.Sailors.day = math.random(3, 5) -- Appear every 3-5 days
+    GAMEMODE.Events.Sailors.day = math.random(2, 4) -- Appear every 2-4 days
 end
 
 function SGS_CalcSailorStock()
@@ -11,8 +11,8 @@ function SGS_CalcSailorStock()
     for category_name, items in pairs(GAMEMODE.Events.Sailors.Stock) do
         local category = {}
         for item_id, item in pairs(items) do
-            item.amt = math.random(0,item.maxstock)
-            if item.amt > 0 then
+            if not item.chance or math.random(1,100) <= item.chance then
+                item.amt = math.random(1,item.maxstock)
                 category[item_id] = item
             end
         end
@@ -52,7 +52,7 @@ function SGS_StartSailors()
 	end
 
     SGS_SpawnSailors(world)
-    sailors.day = 3 -- Leave after 3 days
+    sailors.day = 1 -- Leave after 1 day
 end
 
 function SGS_SpawnSailors(world)
@@ -197,9 +197,8 @@ function SGS_CheckSailors(min)
     end
 
     if min == 500 then
-        if sailors.day > 0 then
-            sailors.day = sailors.day - 1
-        else
+        sailors.day = sailors.day - 1
+        if sailors.day <= 0 then
             if sailors.active then
                 SGS_EndSailors()
             else

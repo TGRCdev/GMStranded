@@ -8,6 +8,9 @@ function Sailors_RegisterShopItem(category, item)
     Stock[category][item.uid] = item
 end
 
+-- TODO: Actually set up loot tables and distributions and whatnot
+-- This chance system is embarassing
+
 -- Possible item stocks
 
 -- RELICS --
@@ -20,6 +23,7 @@ ITEM.cost = 325
 ITEM.gives = { mining_relic_3 = 1}
 ITEM.material = "vgui/relic_png.png"
 ITEM.maxstock = 3
+ITEM.chance = 40
 Sailors_RegisterShopItem( "relics", ITEM )
 
 ITEM = {}
@@ -30,6 +34,7 @@ ITEM.cost = 325
 ITEM.gives = { woodcutting_relic_3 = 1}
 ITEM.material = "vgui/relic_png.png"
 ITEM.maxstock = 3
+ITEM.chance = 40
 Sailors_RegisterShopItem( "relics", ITEM )
 
 ITEM = {}
@@ -40,6 +45,7 @@ ITEM.cost = 325
 ITEM.gives = { fishing_relic_3 = 1}
 ITEM.material = "vgui/relic_png.png"
 ITEM.maxstock = 3
+ITEM.chance = 40
 Sailors_RegisterShopItem( "relics", ITEM )
 
 ITEM = {}
@@ -50,6 +56,7 @@ ITEM.cost = 325
 ITEM.gives = { farming_relic_3 = 1}
 ITEM.material = "vgui/relic_png.png"
 ITEM.maxstock = 3
+ITEM.chance = 40
 Sailors_RegisterShopItem( "relics", ITEM )
 
 ITEM = {}
@@ -60,6 +67,7 @@ ITEM.cost = 325
 ITEM.gives = { construction_relic_3 = 1}
 ITEM.material = "vgui/relic_png.png"
 ITEM.maxstock = 3
+ITEM.chance = 40
 Sailors_RegisterShopItem( "relics", ITEM )
 
 ITEM = {}
@@ -70,6 +78,7 @@ ITEM.cost = 325
 ITEM.gives = { smithing_relic_3 = 1}
 ITEM.material = "vgui/relic_png.png"
 ITEM.maxstock = 3
+ITEM.chance = 40
 Sailors_RegisterShopItem( "relics", ITEM )
 
 ITEM = {}
@@ -80,6 +89,7 @@ ITEM.cost = 325
 ITEM.gives = { cooking_relic_3 = 1}
 ITEM.material = "vgui/relic_png.png"
 ITEM.maxstock = 3
+ITEM.chance = 40
 Sailors_RegisterShopItem( "relics", ITEM )
 
 ITEM = {}
@@ -90,6 +100,7 @@ ITEM.cost = 325
 ITEM.gives = { alchemy_relic_3 = 1}
 ITEM.material = "vgui/relic_png.png"
 ITEM.maxstock = 3
+ITEM.chance = 40
 Sailors_RegisterShopItem( "relics", ITEM )
 
 ITEM = {}
@@ -100,6 +111,7 @@ ITEM.cost = 325
 ITEM.gives = { combat_relic_3 = 1}
 ITEM.material = "vgui/relic_png.png"
 ITEM.maxstock = 3
+ITEM.chance = 40
 Sailors_RegisterShopItem( "relics", ITEM )
 
 -- RESOURCES
