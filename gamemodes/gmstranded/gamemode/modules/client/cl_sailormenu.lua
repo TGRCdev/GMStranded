@@ -63,10 +63,7 @@ function PANEL:DrawFrame()
     name:Dock(FILL)
     name:SetTextColor(Color(210,210,0,255))
     name:SetFont("DermaLarge")
-    self._name = name
-    function PANEL:SetName(newname)
-        self._name:SetText("Sailor " .. newname)
-    end
+    name:SetText("Sailor " .. SGS.sailor:GetNWString("Name", "Null"))
 
     local speechbg = vgui.Create("DPanel", left)
     speechbg:Dock(FILL)
@@ -85,7 +82,7 @@ function PANEL:DrawFrame()
     
     shop:SetBackgroundColor(Color(0,0,0,0))
     
-    tabs:AddSheet("Shop", shop, "icon16/basket.png")
+    tabs:AddSheet("Shop", shop, "icon16/coins.png")
     for category, items in pairs(SGS.sailor_stock) do
         local cat_panel = shop:Add(Cap(category))
         local item_list = vgui.Create("DIconLayout")
@@ -105,18 +102,6 @@ function PANEL:DrawFrame()
                     color = Color(255,0,0,255)
 				end
                 draw.SimpleTextOutlined(tostring(stock_left) .. "/" .. tostring(item.amt), "DermaDefault", 9, 9, color, 0, 0, 2, Color(0,0,0,255))
-                /*
-                if stock_left > 0 then
-                    draw.SimpleText(tostring(stock_left) .. "/" .. tostring(item.amt), "DermaDefault", 9, 9)
-                else
-                    draw.RoundedBoxEx( 2, 5, 5, 54, 20, Color(255, 80, 80, 150), false, false, false, false )
-                    draw.SimpleText("OUT OF STOCK", "proplisticons", 11, 11, Color(0, 0, 0, 255), 0, 0)
-                    --draw.SimpleText("STOCK", "proplisticons", 25, 15, Color(0, 0, 0, 255), 0, 0)
-                    function self:OnCursorEntered()
-                        return true
-                    end -- function()
-				end -- if then
-                */
                 if SGS.gtokens < item.cost then
                     draw.RoundedBoxEx( 2, 5, 39, 54, 20, Color(255, 255, 50, 150), false, false, false, false )
                     draw.SimpleText("INSUFFICIENT", "proplisticons", 7, 41, Color(0, 0, 0, 255), 0, 0)
@@ -137,7 +122,6 @@ function PANEL:DrawFrame()
         --item_list:InvalidateLayout(true)
 
     end -- for do
-
     shop:InvalidateLayout(true)
 
     local tradetab = vgui.Create("DListLayout", tabs, "Sailor Requisitions")
@@ -162,8 +146,8 @@ end)
 vgui.Register("sgs_sailormenu", PANEL, "DFrame")
 
 function SGS_SailorMenu(sailor)
+    SGS.sailor = sailor
     SGS.sailormenu = vgui.Create("sgs_sailormenu")
-    SGS.sailormenu:SetName(sailor:GetNWString("Name", "Null"))
     SGS.sailormenu:MakePopup()
     SGS.sailormenu:SetVisible(true)
 end
@@ -179,15 +163,15 @@ net.Receive("sgs_sailormenu", function()
 
     SGS_SailorMenu(sailor)
 end)
+net.Receive("sgs_sailor_syncstockleft", function()
+    local len = net.ReadUInt(32)
+    SGS.sailor_stockleft = util.JSONToTable(util.Decompress(net.ReadData(len)))
+end)
 
 net.Receive("sgs_endsailors", function()
     if IsValid(SGS.sailormenu) then
         SGS.sailormenu:Close()
     end
+    SGS.sailor_stock = {}
     SGS.sailor_stockleft = {}
-end)
-
-net.Receive("sgs_sailor_syncstockleft", function()
-    local len = net.ReadUInt(32)
-    SGS.sailor_stockleft = util.JSONToTable(util.Decompress(net.ReadData(len)))
 end)

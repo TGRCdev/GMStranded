@@ -31,12 +31,12 @@ function DrawSailorNames()
 
 		local textalign = TEXT_ALIGN_CENTER
 
-		if trace.HitWorld or (dist > 600 and dist <= 2000) then
-			-- Draw indicator box over NPC
-			draw.RoundedBoxEx(2, pos.x - 4, pos.y - 4, 8, 8, Color(100,200,200,255), true, true, true, true)
-		elseif dist <= 600 then
+		if not trace.HitWorld and dist <= 600 then
 			draw.SimpleTextOutlined( "Sailor " .. sailor:GetNWString("Name", "Null"), "SGS_HUD3", pos.x, pos.y, Color(100,200,200,255), textalign, 1,1,Color(0,0,0,255))
 			draw.SimpleTextOutlined("[Trades and Requisitions]", "SGS_HUD3", pos.x, pos.y + 10, Color(100,200,200,255),textalign,1,1,Color(0,0,0,255))
+		elseif dist < 2000 then
+			-- Draw indicator box over NPC
+			draw.RoundedBoxEx(2, pos.x - 4, pos.y - 4, 8, 8, Color(100,200,200,255), true, true, true, true)
 		end
 	end
 end
