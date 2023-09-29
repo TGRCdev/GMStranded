@@ -129,3 +129,9 @@ SGS_RegisterStat( "bloodmoon", "bloodmoon1", "Blood Moons Survived" ) --Done
 SGS_RegisterStat( "bloodmoon", "bloodmoon2", "Blood Zombies Killed" ) --Done
 SGS_RegisterStat( "bloodmoon", "bloodmoon3", "Deaths by Blood Zombies" ) --Done
 SGS_RegisterStat( "bloodmoon", "bloodmoon4", "Times bled to death" ) --Done
+
+/* === Sailor Stats === */
+SGS_RegisterStat("sailors", "sailor_tokens_spent", "GTokens Spent with Sailors")
+SGS_RegisterStat("sailors", "sailor_requisitions", "Requisitions Completed")
+SGS_RegisterStat("sailors", "sailor_requisitions_xp", "XP Gained from Requisitions")
+SGS_RegisterStat("sailors", "sailor_requisitions_gtokens", "GTokens Gained from Requisitons")

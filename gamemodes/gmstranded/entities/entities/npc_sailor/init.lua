@@ -20,8 +20,25 @@ function ENT:Initialize()
 	end)
 end
 
+util.AddNetworkString("sgs_sailormenu")
+util.AddNetworkString("sgs_sailor_syncstockleft")
 function ENT:Use( ply )
-	ply:SendMessage("Hello, " .. ply:GetName() .. "!")
+	local stock = ply:SailorStock()
+	if stock then
+		net.Start("sgs_sailor_syncstockleft")
+			local data = util.Compress(util.TableToJSON(stock))
+			local len = #data
+			net.WriteUInt(len, 32)
+			net.WriteData(data, len)
+		net.Send(ply)
+	end
+	net.Start("sgs_sailormenu")
+		net.WriteEntity(self)
+		local data = util.Compress(util.TableToJSON(GAMEMODE.Events.Sailors.CurStocks))
+		local len = #data
+		net.WriteUInt(len, 32)
+		net.WriteData(data, len)
+	net.Send(ply)
 end
 
 --Called when something hurts the entity.

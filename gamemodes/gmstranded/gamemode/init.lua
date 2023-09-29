@@ -2440,26 +2440,23 @@ concommand.Add( "sgs_buy", SGS_ConBuy )
 
 function PlayerMeta:Buy( item )
 
-	local can = true
 	local cost = item.cost
 	if GAMEMODE.Tribes:GetTribeLevel( self ) >= 10 then
 		cost = math.ceil(cost * 0.9)
 	end
 	if self:GTokens() < cost then
-		can = false
 		self:SendMessage("You do not have enough GTokens.", 60, Color(255, 0, 0, 255))
-		return
+		return false, -1
 	end
 
-	if can then
-		self:RemoveGToken( cost )
-		self:AddStat( "general14", cost )
+	self:RemoveGToken( cost )
+	self:AddStat( "general14", cost )
 
-		for k, v in pairs(item.gives) do
-			self:AddResource( k, v )
-		end
+	for k, v in pairs(item.gives) do
+		self:AddResource( k, v )
 	end
 
+	return true, cost
 end
 
 function SGS_ReverseShopLookup( tEnt )

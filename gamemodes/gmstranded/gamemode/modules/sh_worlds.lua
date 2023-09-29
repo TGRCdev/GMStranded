@@ -2,9 +2,9 @@ GM.Worlds = GM.Worlds or {}
 GM.Worlds.tblWorlds = GM.Worlds.tblWorlds or {}
 GM.Worlds.Arenas = GM.Worlds.Arenas or {}
 
-GM.Worlds.Events = GM.Worlds.Events or {}
-GM.Worlds.Events.Sailors = GM.Worlds.Events.Sailors or {}
-GM.Worlds.Events.Sailors.Worlds = GM.Worlds.Events.Sailors.Worlds or {}
+GM.Events = GM.Events or {}
+GM.Events.Sailors = GM.Events.Sailors or {}
+GM.Events.Sailors.Worlds = GM.Events.Sailors.Worlds or {}
 
 function GM.Worlds:RegisterWorld( world )
 	table.insert( self.tblWorlds, world )
@@ -12,7 +12,7 @@ function GM.Worlds:RegisterWorld( world )
 		table.insert( GM.Worlds.Arenas, world )
 	end
 	if world.Events and world.Events.sailors then
-		table.insert( GM.Worlds.Events.Sailors.Worlds, world )
+		table.insert( GM.Events.Sailors.Worlds, world )
 	end
 end
 
