@@ -24,6 +24,7 @@ resource.AddWorkshop( "194010712" ) --Content Pack 1
 resource.AddWorkshop( "484763066" ) --Content Pack 2
 resource.AddWorkshop( "842705900" ) --Content Pack 3
 resource.AddWorkshop( "249121668" ) --Hat Pack
+resource.AddWorkshop( "3043296099" ) -- SGS Content Pack 1
 
 resource.AddSingleFile( "particles/thw_river.pcf" )
 
