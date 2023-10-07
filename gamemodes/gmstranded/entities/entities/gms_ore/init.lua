@@ -12,22 +12,18 @@ end
 --Return: Nothing
 
 function ENT:Initialize()
-	if self.level == 1 then
+	if self.amount == 1 then
 		self:SetModel(SGS.proplist["rock_chunk3"])
-	elseif self.level == 2 then
+	elseif self.amount == 2 then
 		self:SetModel(SGS.proplist["rock_chunk2"])
-	elseif self.level == 3 then
+	elseif self.amount == 3 then
 		self:SetModel(SGS.proplist["rock_chunk1"])
 	end
 
-	self:SetMaterial(self.resource.rmat or "models/props_foliage/tree_deciduous_01a_trunk")
  	self:PhysicsInit( SOLID_VPHYSICS )
 	self:SetMoveType( MOVETYPE_VPHYSICS )
 	self:SetSolid( SOLID_VPHYSICS )
 	self:SetCollisionGroup( COLLISION_GROUP_WEAPON )
-	if self.resource.rcolor then
-		self:SetColor(self.resource.rcolor)
-	end
 	
 	self.decaytime = CurTime() + 120
 	self.unowntime = self.decaytime - 30
@@ -35,12 +31,22 @@ function ENT:Initialize()
 	self.owned = true
 end
 
+function ENT:SetResource(res)
+	self._resource = res
+	self:SetMaterial(res.rmat or "models/props_foliage/tree_deciduous_01a_trunk")
+	self:SetColor(res.rcolor or Color(255,255,255,255))
+end
+
+function ENT:GetResource()
+	return self._resource
+end
+
 function ENT:Use( ply )
 
 	if CurTime() > ply.lastuse + 0.333 then
-	
-		ply:AddResource( self.resource.rgives, self.level )
-		ply:AddStat( self.resource.stat, self.level )
+		local res = self:GetResource()
+		ply:AddResource( res.rgives, self.amount )
+		ply:AddStat( res.stat, self.amount )
 		self:Remove()
 		ply.lastuse = CurTime()
 		

@@ -83,7 +83,7 @@ function ENT:GetAttachedEnt()
 end
 
 function ENT:Mine( rock )
-	local res = rock.resource.rgives
+	local res = rock:GetResource().rgives
 	self.inventory[res] = self.inventory[res] + 1
 	self.inventory["total"] = self.inventory["total"] + 1
 	rock.rtotal = rock.rtotal - 1
@@ -124,8 +124,8 @@ function ENT:Think()
 				self:EmitSound( "buttons/blip1.wav", 75, 90, 1, CHAN_AUTO )
 			else
 				local att_ent = self:GetAttachedEnt()
-				if IsValid(att_ent) and att_ent.resource and table.HasValue( allowed_rocks, att_ent.resource.id ) then
-					local res_id = att_ent.resource.id
+				if IsValid(att_ent) and att_ent:IsRock() and table.HasValue( allowed_rocks, att_ent:GetResource().id ) then
+					local res_id = att_ent:GetResource().id
 					if self:GetAttachedEnt().rtotal <= 0 then
 						self:EmitSound( "physics/cardboard/cardboard_box_impact_soft2.wav", 75, math.random(90,110), 1, CHAN_AUTO )
 					else

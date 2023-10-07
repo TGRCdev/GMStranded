@@ -52,6 +52,12 @@ SGS_RegisterStat( "pets", "pets12", "Teal Eggs Hatched" ) --Done
 
 /* === Woodcutting Stats === */
 SGS_RegisterStat( "woodcutting", "woodcutting1", "Wood Collected" ) --Done
+SGS_RegisterStat( "woodcutting", "woodcutting_oak", "Oak Wood Collected" )
+SGS_RegisterStat( "woodcutting", "woodcutting_maple", "Maple Wood Collected" )
+SGS_RegisterStat( "woodcutting", "woodcutting_pine", "Pine Wood Collected" )
+SGS_RegisterStat( "woodcutting", "woodcutting_yew", "Yew Wood Collected" )
+SGS_RegisterStat( "woodcutting", "woodcutting_buckeye", "Buckeye Wood Collected" )
+SGS_RegisterStat( "woodcutting", "woodcutting_palm", "Palm Wood Collected" )
 SGS_RegisterStat( "woodcutting", "woodcutting2", "Trees Felled" ) --Done
 SGS_RegisterStat( "woodcutting", "woodcutting3", "Enchanted Wood Found" ) --Done
 

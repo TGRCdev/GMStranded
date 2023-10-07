@@ -6,31 +6,20 @@ function ENT:Draw()
 	local pl = LocalPlayer()
 	local dis = pl:GetPos():DistToSqr(self:GetPos())
 	if SGS.drawdistance == nil then return end
-	if dis > SGS.drawdistance then 
+		if dis > SGS.drawdistance then 
 		self:DestroyShadow()
-		return false
+		return
 	end
 	self:CreateShadow()
-	self.Entity:DrawModel()
-end
-
---Called when the SENT is spawned
---Return: Nothing
-function ENT:Initialize()
-	self:SetLOD( -1 )
+	self:DrawModel()
 end
 
 --Return true if this entity is translucent.
 --Return: Boolean
 function ENT:IsTranslucent()
+	return false
 end
 
---Called when a save-game is loaded.
---Return: Nothing
-function ENT:OnRestore()
-end
-
---Called when the SENT thinks.
---Return: Nothing
-function ENT:Think()
+function ENT:Initialize()
+	self:SetResource(SGS_LookupResource(self:GetResourceID()))
 end

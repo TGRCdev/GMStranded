@@ -1,27 +1,41 @@
 ENT.Type = "anim"
 ENT.Base = "base_anim"
 
-ENT.PrintName = "Tree" --The name of the SENT.
-ENT.Author = "Mr.President" --Your name.
-ENT.Contact = "" --EMail address.
+ENT.PrintName = "Tree Node" --The name of the SENT.
+ENT.Author = "TGRCDev" --Your name.
+ENT.Contact = "tgrc@tgrc.dev" --EMail address.
 ENT.Purpose = "" --The purpose of this SENT.
 ENT.Instructions = "" --Instructions
 
 ENT.Spawnable = false --Can the clients spawn this SENT?
 ENT.AdminSpawnable = false --Can the admins spawn this SENT?
 
---Called when the SENT is removed
---Return: Nothing
-function ENT:OnRemove()
+function ENT:SetupDataTables()
+    self:NetworkVar("String", 0, "ResourceID")
+
+    if CLIENT then
+        self:NetworkVarNotify("ResourceID", function(tree, name, old, new)
+            if name == "ResourceID" then
+                if old == new then return end
+                local res = SGS_LookupResource(new)
+                if not res then
+                    print("Entity " .. tree:GetEntIndex() .. " was given invalid resource ID \"" .. new .. "\"")
+                end
+                tree:SetResource(res)
+            end
+        end)
+    end
 end
 
---Controls what a scripted entity does during a collison.
---Return: Nothing
---Notes: tblData contains: HitEntity (Entity), HitPos (Vector), OurOldVelocity (Vector), HitObject (PhysObj), DeltaTime (number), TheirOldVelocity (Vector), Speed (number?) and HitNormal (Vector).
-function ENT:PhysicsCollide(tblData)
+function ENT:GetResource()
+    return self._resource
 end
 
---Called when physics are updated?
---Return: Nothing
-function ENT:PhysicsUpdate(pobPhysics)
+function ENT:SetResource(res)
+    self._resource = res
+    if SERVER then
+        self:SetModel(res.model)
+        self:SetColor(res.color or Color(255,255,255,255))
+        self:SetResourceID(res.id)
+    end
 end

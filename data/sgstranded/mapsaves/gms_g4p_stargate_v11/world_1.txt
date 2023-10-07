@@ -2,87 +2,104 @@
 	{
 		"pos": "[8118.1699 9287.7197 9593.5]",
 		"angles": "{0 -26 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	{
 		"pos": "[8655.6895 9801.6201 9589.8301]",
 		"angles": "{0 -163 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	{
 		"pos": "[9574.9893 9835.6797 9594.29]",
 		"angles": "{0 -107 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	{
 		"pos": "[8709.0205 8968.4326 9589.6699]",
 		"angles": "{0 169 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	{
 		"pos": "[8013.6699 12863.6494 10042.0098]",
 		"angles": "{0 125 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	{
 		"pos": "[8522 12735.4102 9862.4199]",
 		"angles": "{0 -113 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	{
 		"pos": "[8299.3594 11983.5498 9922.2197]",
 		"angles": "{0 -26 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	{
 		"pos": "[13573.2588 13998.96 10018.1602]",
 		"angles": "{0 178 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	{
 		"pos": "[12527.8096 12183.3398 10115.1396]",
 		"angles": "{0 -136 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	{
 		"pos": "[12276.9316 13356.8125 9995.6396]",
 		"angles": "{0 -161 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	{
 		"pos": "[9025.75 14688.5 9549.6104]",
 		"angles": "{0 18 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	{
 		"pos": "[11086.3457 14582.6475 9443.0332]",
 		"angles": "{0 142 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	{
 		"pos": "[11370.6494 12624.3496 9470.9688]",
 		"angles": "{0 44 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	{
 		"pos": "[10156.3301 14439.1895 9455.7402]",
 		"angles": "{0 0 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	{
 		"pos": "[9432.1895 14111.1201 9434.5195]",
 		"angles": "{0 -113 0}",
-		"class": "gms_tree2"
+		"class": "gms_tree",
+		"resource": "oak_tree"
 	},
 	{
 		"pos": "[8216.0898 12939.1602 9968.29]",
 		"angles": "{0 38 0}",
-		"class": "gms_tree2"
+		"class": "gms_tree",
+		"resource": "oak_tree"
 	},
 	{
 		"pos": "[13704.5498 13312.8496 10104.2695]",
 		"angles": "{0 -157 0}",
-		"class": "gms_tree2"
+		"class": "gms_tree",
+		"resource": "oak_tree"
 	},
 	{
 		"resource": "stone",

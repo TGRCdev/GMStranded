@@ -17,19 +17,11 @@ end
 --Called when the SENT is spawned
 --Return: Nothing
 function ENT:Initialize()
+	self:SetResource(SGS_LookupResource(self:GetResourceID()))
 end
 
 --Return true if this entity is translucent.
 --Return: Boolean
 function ENT:IsTranslucent()
-end
-
---Called when a save-game is loaded.
---Return: Nothing
-function ENT:OnRestore()
-end
-
---Called when the SENT thinks.
---Return: Nothing
-function ENT:Think()
+	return self:GetColor().a < 255
 end

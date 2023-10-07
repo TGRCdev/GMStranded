@@ -42,87 +42,104 @@
 	{
 		"pos": "[10330.9697 -1699.52 6369.2002]",
 		"angles": "{0 -124 0}",
-		"class": "gms_tree5"
+		"class": "gms_tree",
+		"resource": "yew_tree"
 	},
 	{
 		"pos": "[6331.1396 -3799.5698 6299.7905]",
 		"angles": "{0 180 0}",
-		"class": "gms_tree5"
+		"class": "gms_tree",
+		"resource": "yew_tree"
 	},
 	{
 		"pos": "[5927.2363 -7906.3018 6330.2573]",
 		"angles": "{0 95 0}",
-		"class": "gms_tree5"
+		"class": "gms_tree",
+		"resource": "yew_tree"
 	},
 	{
 		"pos": "[9695.4775 -6271.0859 6309.6689]",
 		"angles": "{0 176 0}",
-		"class": "gms_tree5"
+		"class": "gms_tree",
+		"resource": "yew_tree"
 	},
 	{
 		"pos": "[12034.9648 -8950.3213 6297.1304]",
 		"angles": "{0 -130 0}",
-		"class": "gms_tree5"
+		"class": "gms_tree",
+		"resource": "yew_tree"
 	},
 	{
 		"pos": "[3614.6799 -744.85 6302.6499]",
 		"angles": "{0 -69 0}",
-		"class": "gms_tree5"
+		"class": "gms_tree",
+		"resource": "yew_tree"
 	},
 	{
 		"pos": "[4771.3262 541.8716 6293.5952]",
 		"angles": "{0 43 0}",
-		"class": "gms_tree6"
+		"class": "gms_tree",
+		"resource": "buckeye_tree"
 	},
 	{
 		"pos": "[7020.1255 -5744.5059 6289.811]",
 		"angles": "{0 146 0}",
-		"class": "gms_tree6"
+		"class": "gms_tree",
+		"resource": "buckeye_tree"
 	},
 	{
 		"pos": "[4359.5093 -9069.4395 6350.3613]",
 		"angles": "{0 138 0}",
-		"class": "gms_tree6"
+		"class": "gms_tree",
+		"resource": "buckeye_tree"
 	},
 	{
 		"pos": "[10166.7295 -9771.5693 6292.3901]",
 		"angles": "{0 73 0}",
-		"class": "gms_tree6"
+		"class": "gms_tree",
+		"resource": "buckeye_tree"
 	},
 	{
 		"pos": "[11601.1602 -6428.3594 6302.3311]",
 		"angles": "{0 -92 0}",
-		"class": "gms_tree6"
+		"class": "gms_tree",
+		"resource": "buckeye_tree"
 	},
 	{
 		"pos": "[12472.9189 -3013.968 6281.186]",
 		"angles": "{0 -29 0}",
-		"class": "gms_tree7"
+		"class": "gms_tree",
+		"resource": "palm_tree"
 	},
 	{
 		"pos": "[11030.6602 509.5696 6279.1963]",
 		"angles": "{0 35 0}",
-		"class": "gms_tree7"
+		"class": "gms_tree",
+		"resource": "palm_tree"
 	},
 	{
 		"pos": "[6069.7798 -1301.03 6336.1602]",
 		"angles": "{0 141 0}",
-		"class": "gms_tree7"
+		"class": "gms_tree",
+		"resource": "palm_tree"
 	},
 	{
 		"pos": "[4219.8394 -5608.0156 6374.2256]",
 		"angles": "{0 4 0}",
-		"class": "gms_tree7"
+		"class": "gms_tree",
+		"resource": "palm_tree"
 	},
 	{
 		"pos": "[8044.7007 -6895.6401 6273.4595]",
 		"angles": "{0 -104 0}",
-		"class": "gms_tree7"
+		"class": "gms_tree",
+		"resource": "palm_tree"
 	},
 	{
 		"pos": "[12645.4502 -7673.1265 6276.6851]",
 		"angles": "{0 158 0}",
-		"class": "gms_tree7"
+		"class": "gms_tree",
+		"resource": "palm_tree"
 	},
 	{
 		"resource": "coal",

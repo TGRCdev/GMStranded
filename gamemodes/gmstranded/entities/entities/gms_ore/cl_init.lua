@@ -22,6 +22,7 @@ end
 --Return true if this entity is translucent.
 --Return: Boolean
 function ENT:IsTranslucent()
+	return false
 end
 
 --Called when a save-game is loaded.

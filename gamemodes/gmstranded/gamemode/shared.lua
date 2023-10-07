@@ -353,13 +353,15 @@ end
 hook.Add("PhysgunPickup", "SGS_LockedPropsPhysgun", SGS_LockedPropsPhysgun)
 
 function meta:IsTree()
-	
-	local class = self:GetClass()
-	if (string.sub(string.lower(class), 1, 8) == "gms_tree") then
-		return true
-	end
-	return false
+	return self:GetClass() == "gms_tree"
+end
 
+function meta:IsOre()
+	return self:GetClass() == "gms_orenode"
+end
+
+function meta:HasResource()
+	return self.GetResource != nil
 end
 
 function SGS_AddLockedProp( ent )

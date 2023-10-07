@@ -20,13 +20,14 @@ function SGS_Lumber( ply, tree, timemodi, modi, gem, void )
 		ply:SendMessage("Be patient, you can't cut down seeds!", 60, Color(255, 125, 0, 255))
 		return
 	end
-	local rlvl = SGS_LookupResource( tree:GetClass() ).rlvl
+	local res = tree:GetResource()
+	local rlvl = res.rlvl
 	if ply:GetLevel("woodcutting") < rlvl then
 		ply:SendMessage("This tree requires level " .. tostring(rlvl) .. " or greater to cut.", 60, Color(255, 125, 0, 255))
 		return
 	end
-	local newtime = tree.baselen - timemodi
-	SGS_Lumber_Start( ply, tree, newtime, tree.lvl, modi, gem, void )
+	local newtime = res.baselen - timemodi
+	SGS_Lumber_Start( ply, tree, newtime, modi, gem, void )
 end
 
 function SGS_Mine( ply, rock, timemodi, modi, gem, void, autosmelt )
@@ -40,7 +41,7 @@ function SGS_Mine( ply, rock, timemodi, modi, gem, void, autosmelt )
 		return
 	end
 
-	local res = rock.resource
+	local res = rock:GetResource()
 	local newtime = res.baselen - timemodi
 	
 	if not res then
@@ -60,7 +61,7 @@ end
 --LUMBERING--
 -------------
 
-function SGS_Lumber_Start(ply, tree, len, lvl, modi, gem, void)
+function SGS_Lumber_Start(ply, tree, len, modi, gem, void)
 	if ply.inprocess == true then
 		return
 	end
@@ -108,11 +109,11 @@ function SGS_Lumber_Start(ply, tree, len, lvl, modi, gem, void)
 	local txt = "Lumbering..."
 	ply:SetNWString("action", txt)
 	SGS_StartTimer( ply, txt, len, "woodcutting" )
-	timer.Create( ply:UniqueID() .. "processtimer", len, 1, function() SGS_Lumber_Stop( ply, tree, lvl, modi, gem, void ) end )
+	timer.Create( ply:UniqueID() .. "processtimer", len, 1, function() SGS_Lumber_Stop( ply, tree, modi, gem, void ) end )
 
 end
 
-function SGS_Lumber_Stop(ply, tree, lvl, modi, gem, void)
+function SGS_Lumber_Stop(ply, tree, modi, gem, void)
 
 	if not ply:IsValid() then return end
 	
@@ -139,43 +140,10 @@ function SGS_Lumber_Stop(ply, tree, lvl, modi, gem, void)
 	end
 	
 	local npos = ( (ply:GetPos() + (ply:GetAngles():Forward() * 20)) + (ply:GetAngles():Right() * math.random(-20,20)) ) + Vector(0,0,70)
-	local xp = 25
-	local modifier = 1
-	local seedtype = "tree_seed"
-	
-	if lvl == 1 then
-		xp = 12
-		modifier = 1
-		seedtype = "tree_seed"
-	elseif lvl == 2 then
-		xp = 19
-		modifier = 1.2
-		seedtype = "oak_seed"
-	elseif lvl == 3 then
-		xp = 34
-		modifier = 1.4
-		seedtype = "maple_seed"
-	elseif lvl == 4 then
-		xp = 50
-		modifier = 1.6
-		seedtype = "pine_seed"
-	elseif lvl == 5 then
-		xp = 75
-		modifier = 1.8
-		seedtype = "yew_seed"
-	elseif lvl == 6 then
-		xp = 120
-		modifier = 2
-		seedtype = "buckeye_seed"
-	elseif lvl == 7 then
-		xp = 210
-		modifier = 2.2
-		seedtype = "palm_seed"
-	end
 	
 	local lvlmodi = ( ply.level[ "woodcutting" ] * 0.05 ) + 1
 	
-	if ( math.random(1,100) * modi ) * lvlmodi * modifier >= 40 then		
+	if ( math.random(1,100) * modi ) * lvlmodi >= 40 then		
 		/* check to see if we found a relic instead of a seed */
 		local chance = 600
 		if gem == "d" then chance = 500 end
@@ -209,8 +177,11 @@ function SGS_Lumber_Stop(ply, tree, lvl, modi, gem, void)
 		
 		local size = math.random(1,100)
 		local ent = {}
+		local res = tree:GetResource()
+		local xp = res.xp
 		if not ply:InGrindMode() then
 			ent = ents.Create( "gms_wood" )
+			ent:SetResource(res)
 		end
 		if size < 70 then
 			if not ply:InGrindMode() then
@@ -219,7 +190,7 @@ function SGS_Lumber_Stop(ply, tree, lvl, modi, gem, void)
 				ply:SendMessage("You are in grinding mode. Resources are not dropped.", 60, Color(0, 255, 0, 255))
 			end
 			xp = math.ceil( xp )
-			ent.level = 1
+			ent.amount = 1
 		end
 		if size >= 70 and size < 92 then
 			if not ply:InGrindMode() then
@@ -228,7 +199,7 @@ function SGS_Lumber_Stop(ply, tree, lvl, modi, gem, void)
 				ply:SendMessage("You are in grinding mode. Resources are not dropped.", 60, Color(0, 255, 0, 255))
 			end
 			xp = math.ceil( xp * 1.2 )
-			ent.level = 2
+			ent.amount = 2
 		end
 		if size >= 92 then
 			if not ply:InGrindMode() then
@@ -237,7 +208,7 @@ function SGS_Lumber_Stop(ply, tree, lvl, modi, gem, void)
 				ply:SendMessage("You are in grinding mode. Resources are not dropped.", 60, Color(0, 255, 0, 255))
 			end
 			xp = math.ceil( xp * 1.5 )
-			ent.level = 3
+			ent.amount = 3
 		end
 		
 		if gem == "s" then
@@ -256,9 +227,7 @@ function SGS_Lumber_Stop(ply, tree, lvl, modi, gem, void)
 		
 		end
 		
-		
-		ent.wtype = lvl
-		tree.rtotal = tree.rtotal - ent.level
+		tree.rtotal = tree.rtotal - ent.amount
 		if not ply:InGrindMode() then
 			ent:SetPos( npos )
 			ent:Spawn()
@@ -275,8 +244,8 @@ function SGS_Lumber_Stop(ply, tree, lvl, modi, gem, void)
 					ply:SendMessage("The encrusted ruby glows brightly!", 60, Color(0, 255, 255, 255))
 					local npos = ( (ply:GetPos() + (ply:GetAngles():Forward() * 20)) + (ply:GetAngles():Right() * math.random(-20,20)) ) + Vector(0,0,70)
 					local ent = ents.Create( "gms_wood" )
-					ent.level = math.random(1,2)
-					ent.wtype = lvl
+					ent:SetResource(res)
+					ent.amount = math.random(1,2)
 					ent:SetPos( npos )
 					ent:Spawn()
 					--SPP MAKE PLAYER OWNER--
@@ -303,12 +272,12 @@ function SGS_Lumber_Stop(ply, tree, lvl, modi, gem, void)
 		
 		local chance = 2
 		if gem == "d" then chance = 10 end
-		if math.random(1,140 + (lvl * 15)) <= chance then --Find a seed!
+		if math.random(1,140 + res.seed_rarity) <= chance then --Find a seed!
 			ply:SendMessage("You have managed to find a seed.", 60, Color(0, 255, 0, 255))
-			ply:AddResource( seedtype, 1 )
+			ply:AddResource( res.seedtype, 1 )
 		end
 		
-		if lvl >= 3 then
+		if res.can_find_enchanted then
 			local chance = 500
 			if gem == "d" then chance = 400 end
 			if ply.luck then
@@ -403,7 +372,7 @@ function SGS_Mine_Stop(ply, rock, modi, gem, void, autosmelt)
 	
 	local npos = ( (ply:GetPos() + (ply:GetAngles():Forward() * 20)) + (ply:GetAngles():Right() * math.random(-20,20)) ) + Vector(0,0,70)
 	
-	local res = rock.resource
+	local res = rock:GetResource()
 	local xp = res.xp
 	
 	local lvlmodi = ( ply.level[ "mining" ] * 0.05 ) + 1
@@ -431,7 +400,7 @@ function SGS_Mine_Stop(ply, rock, modi, gem, void, autosmelt)
 		local ent = {}
 		if ( not ply:InGrindMode() ) and ( not autosmelt ) then
 			ent = ents.Create( "gms_ore" )
-			ent.resource = res
+			ent:SetResource(res)
 		end
 		if size < 60 then
 			if ( not ply:InGrindMode() ) and ( not autosmelt ) then
@@ -440,7 +409,7 @@ function SGS_Mine_Stop(ply, rock, modi, gem, void, autosmelt)
 				ply:SendMessage("You are in grinding mode. Resources are not dropped.", 60, Color(0, 255, 0, 255))
 			end
 			xp = math.ceil( xp )
-			ent.level = 1
+			ent.amount = 1
 		end
 		if size >= 60 and size < 90 then
 			if ( not ply:InGrindMode() ) and ( not autosmelt ) then
@@ -449,7 +418,7 @@ function SGS_Mine_Stop(ply, rock, modi, gem, void, autosmelt)
 				ply:SendMessage("You are in grinding mode. Resources are not dropped.", 60, Color(0, 255, 0, 255))
 			end
 			xp = math.ceil( xp * 1.2 )
-			ent.level = 2
+			ent.amount = 2
 		end
 		if size >= 90 then
 			if ( not ply:InGrindMode() ) and ( not autosmelt ) then
@@ -458,7 +427,7 @@ function SGS_Mine_Stop(ply, rock, modi, gem, void, autosmelt)
 				ply:SendMessage("You are in grinding mode. Resources are not dropped.", 60, Color(0, 255, 0, 255))
 			end
 			xp = math.ceil( xp * 1.5 )
-			ent.level = 3
+			ent.amount = 3
 		end
 		
 		if gem == "s" then
@@ -470,7 +439,7 @@ function SGS_Mine_Stop(ply, rock, modi, gem, void, autosmelt)
 		
 		ply:AddExp( "mining", xp )
 
-		rock.rtotal = rock.rtotal - ent.level
+		rock.rtotal = rock.rtotal - ent.amount
 		if ( not ply:InGrindMode() ) and ( not autosmelt ) then
 			ent:SetPos( npos ) 
 			ent:Spawn()
@@ -485,8 +454,8 @@ function SGS_Mine_Stop(ply, rock, modi, gem, void, autosmelt)
 					ply:SendMessage("The encrusted ruby glows brightly!", 60, Color(0, 255, 255, 255))
 					local npos = ( (ply:GetPos() + (ply:GetAngles():Forward() * 20)) + (ply:GetAngles():Right() * math.random(-20,20)) ) + Vector(0,0,70)
 					local ent = ents.Create( "gms_ore" )
-					ent.resource = res
-					ent.level = math.random(1,2)
+					ent:SetResource(res)
+					ent.amount = math.random(1,2)
 					ent:SetPos( npos )
 					ent:Spawn()
 					--SPP MAKE PLAYER OWNER--
@@ -500,7 +469,7 @@ function SGS_Mine_Stop(ply, rock, modi, gem, void, autosmelt)
 		
 		if autosmelt then
 			ply:SendMessage("The heat of your pickaxe gives you something different.", 60, Color(0, 255, 0, 255))
-			ply:AddResource( res.autosmelt_type, ent.level )
+			ply:AddResource( res.autosmelt_type, ent.amount )
 		end
 		
 		if res.gem_chance and res.gem_chance > 0 then

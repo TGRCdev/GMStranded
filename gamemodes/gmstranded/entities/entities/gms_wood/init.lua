@@ -13,11 +13,11 @@ end
 
 function ENT:Initialize()
 
-	if self.level == 1 then
+	if self.amount == 1 then
 		self:SetModel(SGS.proplist["tree_chunk1"])
-	elseif self.level == 2 then
+	elseif self.amount == 2 then
 		self:SetModel(SGS.proplist["tree_chunk2"])
-	elseif self.level == 3 then
+	elseif self.amount == 3 then
 		self:SetModel(SGS.proplist["tree_chunk3"])
 	end
  	self:PhysicsInit( SOLID_VPHYSICS )
@@ -30,49 +30,28 @@ function ENT:Initialize()
 	self.unowntime = self.decaytime - 30
 	
 	self.owned = true
-	
-	if self.wtype == 1 then
-		self.gives = "wood"
-	elseif self.wtype == 2 then
-		self.gives = "oak_wood"
-	elseif self.wtype == 3 then
-		self.gives = "maple_wood"
-	elseif self.wtype == 4 then
-		self.gives = "pine_wood"
-	elseif self.wtype == 5 then
-		self.gives = "yew_wood"
-	elseif self.wtype == 6 then
-		self.gives = "buckeye_wood"
-	elseif self.wtype == 7 then
-		self.gives = "palm_wood"
-	end
 end
 
 function ENT:Use( ply )
 
-	if CurTime() > ply.lastuse + 0.5 then
+	if CurTime() > ply.lastuse + 0.333 then
 	
-		if self.wtype == 1 then
-			ply:AddResource( "wood", self.level )
-		elseif self.wtype == 2 then
-			ply:AddResource( "oak_wood", self.level )
-		elseif self.wtype == 3 then
-			ply:AddResource( "maple_wood", self.level )
-		elseif self.wtype == 4 then
-			ply:AddResource( "pine_wood", self.level )
-		elseif self.wtype == 5 then
-			ply:AddResource( "yew_wood", self.level )
-		elseif self.wtype == 6 then
-			ply:AddResource( "buckeye_wood", self.level )
-		elseif self.wtype == 7 then
-			ply:AddResource( "palm_wood", self.level )
-		end
-		ply:AddStat( "woodcutting1", self.level )
+		local res = self:GetResource()
 		self:Remove()
+		ply:AddResource( res.rgives, self.amount )
+		ply:AddStat( res.stat, self.amount )
 		ply.lastuse = CurTime()
 		
 	end
 	
+end
+
+function ENT:GetResource()
+	return self.resource
+end
+
+function ENT:SetResource(res)
+	self.resource = res
 end
 
 function ENT:AcceptInput(input, ply)

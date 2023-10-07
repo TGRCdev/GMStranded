@@ -179,6 +179,7 @@ SEED.title = "Tree Seed"
 SEED.buttontext = "Plant Tree Seed"
 SEED.resource = "tree_seed"
 SEED.entity = "gms_tree"
+SEED.tree = "tree"
 SEED.experience = 100
 SEED.reqlvl = { farming = 32 }
 SEED.lvl = 1
@@ -190,7 +191,8 @@ SEED = {}
 SEED.title = "Oak Seed"
 SEED.buttontext = "Plant Oak Seed"
 SEED.resource = "oak_seed"
-SEED.entity = "gms_tree2"
+SEED.entity = "gms_tree"
+SEED.tree = "oak_tree"
 SEED.experience = 130
 SEED.reqlvl = { farming = 38 }
 SEED.lvl = 2
@@ -202,7 +204,8 @@ SEED = {}
 SEED.title = "Maple Seed"
 SEED.buttontext = "Plant Maple Seed"
 SEED.resource = "maple_seed"
-SEED.entity = "gms_tree3"
+SEED.entity = "gms_tree"
+SEED.tree = "maple_tree"
 SEED.experience = 160
 SEED.reqlvl = { farming = 45 }
 SEED.lvl = 3
@@ -214,7 +217,8 @@ SEED = {}
 SEED.title = "Pine Seed"
 SEED.buttontext = "Plant Pine Seed"
 SEED.resource = "pine_seed"
-SEED.entity = "gms_tree4"
+SEED.entity = "gms_tree"
+SEED.tree = "pine_tree"
 SEED.experience = 190
 SEED.reqlvl = { farming = 50 }
 SEED.lvl = 4
@@ -226,7 +230,8 @@ SEED = {}
 SEED.title = "Yew Seed"
 SEED.buttontext = "Plant Yew Seed"
 SEED.resource = "yew_seed"
-SEED.entity = "gms_tree5"
+SEED.entity = "gms_tree"
+SEED.tree = "yew_tree"
 SEED.experience = 220
 SEED.reqlvl = { farming = 55 }
 SEED.lvl = 5
@@ -238,7 +243,8 @@ SEED = {}
 SEED.title = "Buckeye Seed"
 SEED.buttontext = "Plant Buckeye Seed"
 SEED.resource = "buckeye_seed"
-SEED.entity = "gms_tree6"
+SEED.entity = "gms_tree"
+SEED.tree = "buckeye_tree"
 SEED.experience = 300
 SEED.reqlvl = { farming = 65 }
 SEED.lvl = 6
@@ -250,7 +256,8 @@ SEED = {}
 SEED.title = "Palm Seed"
 SEED.buttontext = "Plant Palm Seed"
 SEED.resource = "palm_seed"
-SEED.entity = "gms_tree7"
+SEED.entity = "gms_tree"
+SEED.tree = "palm_tree"
 SEED.experience = 500
 SEED.reqlvl = { farming = 74 }
 SEED.lvl = 7

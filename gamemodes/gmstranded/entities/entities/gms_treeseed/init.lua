@@ -83,7 +83,8 @@ function ENT:Think()
 end
 
 function ENT:GrowPlant()
-	local ent = ents.Create(self.tree)
+	local ent = ents.Create("gms_tree")
+	ent:SetResource(self.tree)
 	ent:SetPos( self:GetPos() + Vector(0,0,-10) )
 	ent.growth = 0.1
 	ent.issap = true

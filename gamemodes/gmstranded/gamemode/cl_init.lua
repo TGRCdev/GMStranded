@@ -1862,8 +1862,7 @@ function SGS_HUD_Main()
 	end
 
 	--TREE OWNER DISPLAY--
-	local tr = util.TraceLine(util.GetPlayerTrace(LocalPlayer()))
-	if(tr.HitNonWorld) then
+	if tr.HitNonWorld then
 		if tr.Entity:IsValid() and tr.Entity:IsTree() then
 			if tr.Entity:GetPos():DistToSqr( LocalPlayer():GetPos() ) <= 62500 then
 				local PropOwner = "Planted By: "
@@ -1880,20 +1879,12 @@ function SGS_HUD_Main()
 	end
 
 	--TRANSLATED RESOURCE DISPLAY--
-	local tr = util.TraceLine(util.GetPlayerTrace(LocalPlayer()))
-	if(tr.HitNonWorld) then
-		if tr.Entity:IsValid() then
-			if tr.Entity:GetPos():DistToSqr( LocalPlayer():GetPos() ) <= 62500 then
-				local res = nil
-				if tr.Entity:GetClass() == "gms_orenode" then
-					res = SGS_LookupResource(tr.Entity:GetNWString("resource_id"))
-				else
-					res = SGS_LookupResource(tr.Entity:GetClass())
-				end
-				if res then
-					draw.SimpleTextOutlined(res.name, "SGS_HUD2", ( ScrW() / 2 ) , ( ScrH() / 2 ) + 52, Color(255, 100, 100, 255), 1, 1, 1, Color(0,0,0,255))
-					draw.SimpleTextOutlined("Required Level: " .. res.rlvl, "SGS_HUD2", ( ScrW() / 2 ) , ( ScrH() / 2 ) + 66, Color(255, 255, 255, 255), 1, 1, 1, Color(0,0,0,255))
-				end
+	if tr.HitNonWorld then
+		if tr.Entity:IsValid() and tr.Entity:HasResource() and tr.Entity:GetPos():DistToSqr( LocalPlayer():GetPos() ) <= 62500 then
+			local res = tr.Entity:GetResource()
+			if res then
+				draw.SimpleTextOutlined(res.name, "SGS_HUD2", ( ScrW() / 2 ) , ( ScrH() / 2 ) + 52, Color(255, 100, 100, 255), 1, 1, 1, Color(0,0,0,255))
+				draw.SimpleTextOutlined("Required Level: " .. res.rlvl, "SGS_HUD2", ( ScrW() / 2 ) , ( ScrH() / 2 ) + 66, Color(255, 255, 255, 255), 1, 1, 1, Color(0,0,0,255))
 			end
 		end
 	end

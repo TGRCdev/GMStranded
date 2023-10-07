@@ -1018,28 +1018,30 @@ function SGS_RemoveAResource(res)
 		local rPos = res:GetPos()
 		local rAng = res:GetAngles()
 		local rEnt = res:GetClass()
+		local rRes = res:GetResource()
 
 		if res.respawntime == nil then
 			res.respawntime = math.random(60, 180)
 		end
-		timer.Simple(res.respawntime, function() SGS_BuildAResource(rPos, rAng, rEnt) end)
+		timer.Simple(res.respawntime, function() SGS_BuildAResource(rPos, rAng, rEnt, rRes) end)
 		res:Remove()
 	else
 		res:Remove()
 	end
 end
 
-function SGS_BuildAResource( rPos, rAng, rEnt )
+function SGS_BuildAResource( rPos, rAng, rEnt, rRes )
 	GAMEMODE.Worlds:CheckEmptyWorlds()
 	if GAMEMODE.Worlds:GetVectorWorldSpace( rPos ).occupied == false then return end
 	local ent = ents.Create( rEnt )
 	ent:SetPos( rPos )
 	ent:SetAngles( rAng )
+	ent:SetResource( rRes )
 	ent:Spawn()
 	ent:SetNWString("Owner", "World")
 	ent.w_id = GAMEMODE.Worlds:GetVectorWorldSpaceID( rPos )
 
-	if rEnt == "gms_tree" or rEnt == "gms_tree2" or rEnt == "gms_tree3" or rEnt == "gms_tree4" or rEnt == "gms_tree5" or rEnt == "gms_tree6" or rEnt == "gms_tree7" then
+	if rEnt == "gms_tree" then
 		ent.growth = 0.1
 		ent:SetModelScale(ent.growth, 0)
 		ent.issap = true
@@ -1562,7 +1564,7 @@ function PlayerMeta:PlantTreeSeed( sType )
 						ent.owner = self
 						ent.oid = self:GetPlayerID()
 						ent.ownerStr = self:Nick()
-						ent.tree = v.entity
+						ent.tree = SGS_LookupResource(v.tree)
 						ent:Spawn()
 						self:AddStat( "farming1", 1 )
 						self:CheckForAchievements("farmingmaster")

@@ -1402,877 +1402,1023 @@
 	{
 		"pos": "[-8186.5698 -7075.3599 -3.85]",
 		"angles": "{0 32 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-5848.6001 -9176.75 -3.26]",
 		"angles": "{0 112 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-5553.73 -5931.2798 -6.11]",
 		"angles": "{0 178 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-4427.9897 -6602.6396 -7.41]",
 		"angles": "{0 147 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-4962.8647 -3129.0051 -7.5435]",
 		"angles": "{0 172 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-4022.0598 -2060.1099 -3.76]",
 		"angles": "{0 99 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-2852.8499 -3971.1699 -4.62]",
 		"angles": "{0 -12 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-1885.2 -5895.8301 -4.55]",
 		"angles": "{0 109 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-1051.139 -7700.1895 -7.97]",
 		"angles": "{0 102 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-2465.45 -10014.2695 -5.15]",
 		"angles": "{0 166 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-3167.54 -8892.1602 -7.57]",
 		"angles": "{0 -34 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[1863.9236 -7698.0977 -9.8]",
 		"angles": "{0 -50 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[1147.6299 -5906.8594 -8.4393]",
 		"angles": "{0 -168 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[3061.5598 -5760.1997 -6.46]",
 		"angles": "{0 115 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[1208.14 -4581.52 -6.4]",
 		"angles": "{0 168 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[1651.6199 -3119.79 -4.3001]",
 		"angles": "{0 -88 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[3225.95 -2960.77 -4.66]",
 		"angles": "{0 -70 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[2414.8899 -1050.53 -6.62]",
 		"angles": "{0 -74 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[2291.79 848.55 -5.12]",
 		"angles": "{0 -123 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-288.95 -1859.26 -9.59]",
 		"angles": "{0 -151 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[483.28 60.45 -6.35]",
 		"angles": "{0 106 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-1554.6774 285.0173 -6.4299]",
 		"angles": "{0 101 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-249.32 1540.0499 -6.49]",
 		"angles": "{0 61 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-3277.8901 -1175.3263 507.554]",
 		"angles": "{0 23 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-2412.1299 -485.4498 491.3298]",
 		"angles": "{0 149 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-3892.968 -211.6361 990.66]",
 		"angles": "{0 175 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-4738.6997 -1266.14 1012.34]",
 		"angles": "{0 -69 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-6623.0093 -1705.7705 -34.0008]",
 		"angles": "{0 20 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-8071.0298 -2286.26 -8]",
 		"angles": "{0 132 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-8342.4502 -416.65 -5.09]",
 		"angles": "{0 -156 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-7123.1299 104.77 -11.28]",
 		"angles": "{0 86 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-7623.02 1872.9298 -8.96]",
 		"angles": "{0 178 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-5621.2212 1510.0658 -7.11]",
 		"angles": "{0 29 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-3587.2 1381.4099 -8.15]",
 		"angles": "{0 -15 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-5520.5962 2735.4099 1352.51]",
 		"angles": "{0 121 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-6039.0103 3944.3196 1441.9]",
 		"angles": "{0 166 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-5729.6099 5105.0801 1420.12]",
 		"angles": "{0 -97 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-6198.7026 6112.9551 1299.47]",
 		"angles": "{0 -131 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-8226.71 3845.99 -9.1]",
 		"angles": "{0 24 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-7594.9399 5529.02 -8.46]",
 		"angles": "{0 -56 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-7807.7778 6850.7813 -8.0598]",
 		"angles": "{0 109 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-6442.9731 7852.376 -9.31]",
 		"angles": "{0 -28 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-5171.48 7025.3896 -3.03]",
 		"angles": "{0 88 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-3691.26 8529.9199 -7.42]",
 		"angles": "{0 127 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-2559.8999 7056.3896 -9.02]",
 		"angles": "{0 -165 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-2243.53 7056.1099 -7.8]",
 		"angles": "{0 30 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-1275.6838 8345.0996 -8.82]",
 		"angles": "{0 59 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-48.51 8054.4897 -6.1]",
 		"angles": "{0 9 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[165.8551 7560.0679 -7.1243]",
 		"angles": "{0 -95 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-673.621 7345.9766 -6.99]",
 		"angles": "{0 -117 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[2005.9999 8340.1895 -11.7803]",
 		"angles": "{0 -107 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[3134.3799 7048.46 -8.4899]",
 		"angles": "{0 61 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[4946.229 8508.3877 -8.21]",
 		"angles": "{0 -67 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[6646.29 7172.1899 -8.4099]",
 		"angles": "{0 133 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[8139.0498 6998.73 -3.58]",
 		"angles": "{0 -180 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[8172.9829 5533.1392 -8.3796]",
 		"angles": "{0 -175 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[9062.7959 4094.6912 -6.0599]",
 		"angles": "{0 32 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[8133.708 2846.6108 -10.7]",
 		"angles": "{0 -102 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[8175.7197 1106.27 -6.55]",
 		"angles": "{0 -105 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[8181.0298 -440.14 -8.12]",
 		"angles": "{0 -35 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[8732.2002 -1669.21 -4.31]",
 		"angles": "{0 130 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[8154.9805 -2923.9214 -6.9078]",
 		"angles": "{0 144 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[8448.4609 -4254.0747 -4.63]",
 		"angles": "{0 147 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[8361.7939 -5962.4395 -4.8677]",
 		"angles": "{0 169 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[7414.3496 -7138.3301 -9.39]",
 		"angles": "{0 56 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[6113.02 -7059.5996 -5.33]",
 		"angles": "{0 138 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[4277.6597 -8294.2803 -6.36]",
 		"angles": "{0 -35 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[3136.8599 -7256.3398 -8.2302]",
 		"angles": "{0 82 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[4805.0601 -6126.02 503.1]",
 		"angles": "{0 -160 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[6972.8848 -6306.5913 504.87]",
 		"angles": "{0 162 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[4947.29 -4102.3999 514.7]",
 		"angles": "{0 100 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[6704.8301 -2970.73 527.23]",
 		"angles": "{0 -56 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[6836.7856 -3289.3591 525.1835]",
 		"angles": "{0 -126 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[4883.4297 -1247.23 507.59]",
 		"angles": "{0 32 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[5509.4644 -347.7705 539.3329]",
 		"angles": "{0 128 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[6402.1099 632.87 667.65]",
 		"angles": "{0 80 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[7269.5801 1648.85 507.43]",
 		"angles": "{0 90 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[5471.0337 2301.1013 569.7617]",
 		"angles": "{0 86 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[6210.71 3409.1599 559.9399]",
 		"angles": "{0 166 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[3915.8657 3188.6353 536.0801]",
 		"angles": "{0 126 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[4537.5396 4656.4434 549.7393]",
 		"angles": "{0 43 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[5148.3809 5873.6875 546.2701]",
 		"angles": "{0 14 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[3562.3088 5812.1377 519.9805]",
 		"angles": "{0 -158 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[2268.6799 4472.5498 629.72]",
 		"angles": "{0 -163 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[1677.8503 4844.5605 589.7993]",
 		"angles": "{0 -132 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[726.8002 5190.0488 592.74]",
 		"angles": "{0 -129 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-272.97 5900.3101 525.46]",
 		"angles": "{0 106 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-1651.9498 6003.0156 524.9716]",
 		"angles": "{0 108 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-2870.8491 5879.1978 517.9633]",
 		"angles": "{0 -52 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-4226.7798 5335.4199 558.2199]",
 		"angles": "{0 -106 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-4776.1001 6070.3398 515.55]",
 		"angles": "{0 -140 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-2492.3999 4299.6899 577.4399]",
 		"angles": "{0 -87 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-1763.77 3595.48 657.33]",
 		"angles": "{0 -107 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-505.7425 3190.7927 577.5801]",
 		"angles": "{0 162 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[780.46 3384.0598 549.0699]",
 		"angles": "{0 -91 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[788.04 2403.1099 582.4999]",
 		"angles": "{0 65 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[679.97 2300.8474 596.291]",
 		"angles": "{0 -71 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-278.06 2433.75 506.1801]",
 		"angles": "{0 -108 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-2348.9199 2405.05 515.7201]",
 		"angles": "{0 24 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-3641.2998 2290.1499 508.69]",
 		"angles": "{0 21 0}",
-		"class": "gms_tree"
+		"class": "gms_tree",
+		"resource": "tree"
 	},
 	
 	{
 		"pos": "[-4921.0498 -6120.5498 -7.0299]",
 		"angles": "{0 174 0}",
-		"class": "gms_tree2"
+		"class": "gms_tree",
+		"resource": "oak_tree"
 	},
 	
 	{
 		"pos": "[-1139.28 -7164.4399 -12.67]",
 		"angles": "{0 -56 0}",
-		"class": "gms_tree2"
+		"class": "gms_tree",
+		"resource": "oak_tree"
 	},
 	
 	{
 		"pos": "[-3964.71 -3383.5317 -7.6317]",
 		"angles": "{0 -49 0}",
-		"class": "gms_tree2"
+		"class": "gms_tree",
+		"resource": "oak_tree"
 	},
 	
 	{
 		"pos": "[-2443.3499 -1269.3199 495.19]",
 		"angles": "{0 78 0}",
-		"class": "gms_tree2"
+		"class": "gms_tree",
+		"resource": "oak_tree"
 	},
 	
 	{
 		"pos": "[-6168.7466 -662.006 -107.4601]",
 		"angles": "{0 172 0}",
-		"class": "gms_tree2"
+		"class": "gms_tree",
+		"resource": "oak_tree"
 	},
 	
 	{
 		"pos": "[-7858.6997 4587.0898 -8.66]",
 		"angles": "{0 54 0}",
-		"class": "gms_tree2"
+		"class": "gms_tree",
+		"resource": "oak_tree"
 	},
 	
 	{
 		"pos": "[-5898.4297 5421.29 1412.9301]",
 		"angles": "{0 -88 0}",
-		"class": "gms_tree2"
+		"class": "gms_tree",
+		"resource": "oak_tree"
 	},
 	
 	{
 		"pos": "[-3895.6299 5935.9297 509.49]",
 		"angles": "{0 -84 0}",
-		"class": "gms_tree2"
+		"class": "gms_tree",
+		"resource": "oak_tree"
 	},
 	
 	{
 		"pos": "[1617.6411 7602.2524 -8.2098]",
 		"angles": "{0 -118 0}",
-		"class": "gms_tree2"
+		"class": "gms_tree",
+		"resource": "oak_tree"
 	},
 	
 	{
 		"pos": "[6098.6206 5960.0996 527.8541]",
 		"angles": "{0 98 0}",
-		"class": "gms_tree2"
+		"class": "gms_tree",
+		"resource": "oak_tree"
 	},
 	
 	{
 		"pos": "[7240.6499 3396.3699 482.5601]",
 		"angles": "{0 -57 0}",
-		"class": "gms_tree2"
+		"class": "gms_tree",
+		"resource": "oak_tree"
 	},
 	
 	{
 		"pos": "[7032.1206 -217.4894 537.5305]",
 		"angles": "{0 -53 0}",
-		"class": "gms_tree2"
+		"class": "gms_tree",
+		"resource": "oak_tree"
 	},
 	
 	{
 		"pos": "[8241.5596 -3682.5881 -10.4697]",
 		"angles": "{0 -144 0}",
-		"class": "gms_tree2"
+		"class": "gms_tree",
+		"resource": "oak_tree"
 	},
 	
 	{
 		"pos": "[6074.23 -5591.0298 505.5099]",
 		"angles": "{0 -59 0}",
-		"class": "gms_tree2"
+		"class": "gms_tree",
+		"resource": "oak_tree"
 	},
 	
 	{
 		"pos": "[3722.9988 -6767.1777 -16.5159]",
 		"angles": "{0 77 0}",
-		"class": "gms_tree2"
+		"class": "gms_tree",
+		"resource": "oak_tree"
 	},
 	
 	{
 		"pos": "[3470.5898 -3813.4099 -14.06]",
 		"angles": "{0 -72 0}",
-		"class": "gms_tree2"
+		"class": "gms_tree",
+		"resource": "oak_tree"
 	},
 	
 	{
 		"pos": "[-2953.0117 -3050.1348 -10.24]",
 		"angles": "{0 77 0}",
-		"class": "gms_tree3"
+		"class": "gms_tree",
+		"resource": "maple_tree"
 	},
 	
 	{
 		"pos": "[-7153.5601 -2239.3699 -7.45]",
 		"angles": "{0 -34 0}",
-		"class": "gms_tree3"
+		"class": "gms_tree",
+		"resource": "maple_tree"
 	},
 	
 	{
 		"pos": "[-8193.1797 2273.1099 -8.74]",
 		"angles": "{0 127 0}",
-		"class": "gms_tree3"
+		"class": "gms_tree",
+		"resource": "maple_tree"
 	},
 	
 	{
 		"pos": "[-4204.1294 2972.6003 632.0095]",
 		"angles": "{0 115 0}",
-		"class": "gms_tree3"
+		"class": "gms_tree",
+		"resource": "maple_tree"
 	},
 	
 	{
 		"pos": "[-822.81 7860.8896 -7.87]",
 		"angles": "{0 -54 0}",
-		"class": "gms_tree3"
+		"class": "gms_tree",
+		"resource": "maple_tree"
 	},
 	
 	{
 		"pos": "[5529.77 7597.1196 -8.93]",
 		"angles": "{0 -74 0}",
-		"class": "gms_tree3"
+		"class": "gms_tree",
+		"resource": "maple_tree"
 	},
 	
 	{
 		"pos": "[8439.0371 3828.0637 -13.6063]",
 		"angles": "{0 -135 0}",
-		"class": "gms_tree3"
+		"class": "gms_tree",
+		"resource": "maple_tree"
 	},
 	
 	{
 		"pos": "[4879.4199 -1802.71 499.42]",
 		"angles": "{0 22 0}",
-		"class": "gms_tree3"
+		"class": "gms_tree",
+		"resource": "maple_tree"
 	},
 	
 	{
 		"pos": "[-2721.24 -9618.0293 -4.77]",
 		"angles": "{0 -113 0}",
-		"class": "gms_tree3"
+		"class": "gms_tree",
+		"resource": "maple_tree"
 	},
 	
 	{
 		"pos": "[-1610.7896 -6570.1748 -10.0604]",
 		"angles": "{0 -141 0}",
-		"class": "gms_tree3"
+		"class": "gms_tree",
+		"resource": "maple_tree"
 	},
 	
 	{
 		"pos": "[2119.2261 2507.043 517.866]",
 		"angles": "{0 -36 0}",
-		"class": "gms_tree4"
+		"class": "gms_tree",
+		"resource": "pine_tree"
 	},
 	
 	{
 		"pos": "[2501.5999 2407.8398 556.48]",
 		"angles": "{0 -35 0}",
-		"class": "gms_tree4"
+		"class": "gms_tree",
+		"resource": "pine_tree"
 	},
 	
 	{
 		"pos": "[2765.3999 2085.1799 491.33]",
 		"angles": "{0 13 0}",
-		"class": "gms_tree4"
+		"class": "gms_tree",
+		"resource": "pine_tree"
 	},
 	
 	{
 		"pos": "[414.4898 2290.1399 539.4]",
 		"angles": "{0 88 0}",
-		"class": "gms_tree4"
+		"class": "gms_tree",
+		"resource": "pine_tree"
 	},
 	
 	{
 		"pos": "[-1343.88 2173.0701 497.3999]",
 		"angles": "{0 -5 0}",
-		"class": "gms_tree4"
+		"class": "gms_tree",
+		"resource": "pine_tree"
 	},
 	
 	{
 		"pos": "[-3002.1499 2160.3101 496.46]",
 		"angles": "{0 -102 0}",
-		"class": "gms_tree4"
+		"class": "gms_tree",
+		"resource": "pine_tree"
 	},
 	
 	{
 		"pos": "[-4001.21 2253.25 502.9]",
 		"angles": "{0 -14 0}",
-		"class": "gms_tree4"
+		"class": "gms_tree",
+		"resource": "pine_tree"
 	},
 	
 	{
 		"pos": "[-1871.2438 -3701.2996 -22.249]",
 		"angles": "{0 41 0}",
-		"class": "gms_tree5"
+		"class": "gms_tree",
+		"resource": "yew_tree"
 	},
 	
 	{
 		"pos": "[9436.1494 -1976.6799 -20.56]",
 		"angles": "{0 -74 0}",
-		"class": "gms_tree5"
+		"class": "gms_tree",
+		"resource": "yew_tree"
 	},
 	
 	{
 		"pos": "[8933.5 1695.6899 -36.37]",
 		"angles": "{0 162 0}",
-		"class": "gms_tree5"
+		"class": "gms_tree",
+		"resource": "yew_tree"
 	},
 	
 	{
 		"pos": "[4401.46 9158.9297 -7.63]",
 		"angles": "{0 -76 0}",
-		"class": "gms_tree5"
+		"class": "gms_tree",
+		"resource": "yew_tree"
 	},
 	
 	{
 		"pos": "[-2876.3433 9254.5811 -33.14]",
 		"angles": "{0 58 0}",
-		"class": "gms_tree5"
+		"class": "gms_tree",
+		"resource": "yew_tree"
 	},
 	
 	{
 		"pos": "[2130.3379 3853.4412 615.3427]",
 		"angles": "{0 100 0}",
-		"class": "gms_tree6"
+		"class": "gms_tree",
+		"resource": "buckeye_tree"
 	},
 	
 	{
 		"pos": "[-5747.46 3340.53 1486.95]",
 		"angles": "{0 25 0}",
-		"class": "gms_tree6"
+		"class": "gms_tree",
+		"resource": "buckeye_tree"
 	},
 	
 	{
 		"pos": "[-5561.3999 6190.6797 1295.64]",
 		"angles": "{0 71 0}",
-		"class": "gms_tree6"
+		"class": "gms_tree",
+		"resource": "buckeye_tree"
 	},
 	
 	{
 		"pos": "[-3126.1799 489.85 -6.35]",
 		"angles": "{0 -21 0}",
-		"class": "gms_tree6"
+		"class": "gms_tree",
+		"resource": "buckeye_tree"
 	},
 	
 	{
 		"pos": "[-8998.5645 -4564.6377 -10.44]",
 		"angles": "{0 -136 0}",
-		"class": "gms_tree6"
+		"class": "gms_tree",
+		"resource": "buckeye_tree"
 	},
 	
 	{
 		"pos": "[-8737.6602 -4338.4097 -14.08]",
 		"angles": "{0 23 0}",
-		"class": "gms_tree7"
+		"class": "gms_tree",
+		"resource": "palm_tree"
 	},
 	
 	{
 		"pos": "[-2867.1194 -9266.3193 -11.1568]",
 		"angles": "{0 74 0}",
-		"class": "gms_tree7"
+		"class": "gms_tree",
+		"resource": "palm_tree"
 	},
 	
 	{
 		"pos": "[-4699.4399 -6523.9199 -5.8]",
 		"angles": "{0 22 0}",
-		"class": "gms_tree7"
+		"class": "gms_tree",
+		"resource": "palm_tree"
 	},
 	
 	{
