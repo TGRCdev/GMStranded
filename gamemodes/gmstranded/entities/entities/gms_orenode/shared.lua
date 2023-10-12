@@ -15,13 +15,13 @@ function ENT:SetupDataTables()
 
     if CLIENT then
         self:NetworkVarNotify("ResourceID", function(rock, name, old, new)
-            print("ResourceID Updated (" .. old .. ", " .. new .. ")")
+            print("Entity(" .. rock:EntIndex() .. ") ResourceID Updated (\"" .. old .. "\" -> \"" .. new .. "\")")
             if old == new then return end
             local res = SGS_LookupResource(new)
             if not res then
-                print("Entity " .. rock:GetEntIndex() .. " was given invalid resource ID \"" .. new .. "\"")
+                print("Entity " .. rock:EntIndex() .. " was given invalid resource ID \"" .. new .. "\"")
             end
-            rock._resource = res
+            rock:SetResource(res)
         end)
     end
 end

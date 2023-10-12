@@ -15,14 +15,13 @@ function ENT:SetupDataTables()
 
     if CLIENT then
         self:NetworkVarNotify("ResourceID", function(tree, name, old, new)
-            if name == "ResourceID" then
-                if old == new then return end
-                local res = SGS_LookupResource(new)
-                if not res then
-                    print("Entity " .. tree:GetEntIndex() .. " was given invalid resource ID \"" .. new .. "\"")
-                end
-                tree:SetResource(res)
+            print("Entity(" .. tree:EntIndex() .. ") ResourceID Updated (\"" .. old .. "\" -> \"" .. new .. "\")")
+            if old == new then return end
+            local res = SGS_LookupResource(new)
+            if not res then
+                print("Entity " .. tree:EntIndex() .. " was given invalid resource ID \"" .. new .. "\"")
             end
+            tree:SetResource(res)
         end)
     end
 end
@@ -37,5 +36,6 @@ function ENT:SetResource(res)
         self:SetModel(res.model)
         self:SetColor(res.color or Color(255,255,255,255))
         self:SetResourceID(res.id)
+        self:UpdatePhysicsModel()
     end
 end
