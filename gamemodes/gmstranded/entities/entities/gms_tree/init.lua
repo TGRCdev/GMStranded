@@ -52,6 +52,15 @@ function ENT:Use( ply )
 	SGS_Lumber( ply, self, 0, 1, nil, nil )
 end
 
+function ENT:UpdatePhysicsModel()
+	self:PhysicsInit( SOLID_VPHYSICS )
+	self:SetMoveType( MOVETYPE_VPHYSICS )
+	local phys = self:GetPhysicsObject()
+	if IsValid(phys) then
+		phys:EnableMotion(false)
+	end
+end
+
 function ENT:AcceptInput(input, ply)
 end
 
