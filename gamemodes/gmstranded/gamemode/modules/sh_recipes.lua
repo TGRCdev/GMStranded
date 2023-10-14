@@ -141,7 +141,7 @@ function SGS_RegisterRecipe(structure_id, recipe)
 
     local recipe_id = sql.SQLStr(recipe.id)
     sql.Query(Format("INSERT OR REPLACE INTO sgs_recipe (RecipeId, Category, Icon, Title, Description) VALUES (%s, %s, %s, %s, %s)", recipe_id, SqlOrDefault(recipe.category, "'misc'"), SqlOrNull(recipe.icon), SqlOrNull(recipe.title), SqlOrNull(recipe.description)))
-    sql.Query(Format("INSERT OR REPLACE INTO sgs_structure_recipe (StructureId, RecipeId) VALUES (%s, %s)", sql.SQLStr(structure_id), sql.SQLStr(recipe_id)))
+    sql.Query(Format("INSERT OR REPLACE INTO sgs_structure_recipe (StructureId, RecipeId) VALUES (%s, %s)", sql.SQLStr(structure_id), recipe_id))
     for skill, req in pairs(recipe.lvl_reqs or {}) do
         sql.Query(Format("INSERT OR REPLACE INTO sgs_recipe_level_req (RecipeId, Skill, Level) VALUES (%s, %s, %s)", recipe_id, sql.SQLStr(skill), sql.SQLStr(req)))
     end
@@ -190,7 +190,8 @@ function SGS_QueryRecipe(recipe_id)
             RecipeId as id,
             Category as category,
             Icon as icon,
-            Title as title
+            Title as title,
+            Description as description
         FROM sgs_recipe
         WHERE id == %s
     ]], recipe_id))
@@ -206,7 +207,7 @@ function SGS_QueryRecipe(recipe_id)
     if lvl_reqs then
         recipe.lvl_reqs = {}
         for _, row in ipairs(lvl_reqs) do
-            recipe.lvl_reqs[row.Skill] = row.Level
+            recipe.lvl_reqs[row.Skill] = tonumber(row.Level)
         end
     end
 
@@ -220,7 +221,7 @@ function SGS_QueryRecipe(recipe_id)
     if item_cost then
         recipe.item_cost = {}
         for _, row in ipairs(item_cost) do
-            recipe.item_cost[row.ResourceId] = row.Amount
+            recipe.item_cost[row.ResourceId] = tonumber(row.Amount)
         end
     end
 
@@ -234,7 +235,7 @@ function SGS_QueryRecipe(recipe_id)
     if tool_cost then
         recipe.tool_cost = {}
         for _, row in ipairs(tool_cost) do
-            recipe.tool_cost[row.ToolId] = row.Amount
+            recipe.tool_cost[row.ToolId] = tonumber(row.Amount)
         end
     end
 
@@ -248,7 +249,7 @@ function SGS_QueryRecipe(recipe_id)
     if gives_item then
         recipe.gives_items = {}
         for _, row in ipairs(gives_item) do
-            recipe.gives_items[row.ResourceId] = row.Amount
+            recipe.gives_items[row.ResourceId] = tonumber(row.Amount)
         end
     end
 
@@ -262,7 +263,7 @@ function SGS_QueryRecipe(recipe_id)
     if gives_tool then
         recipe.gives_tools = {}
         for _, row in ipairs(gives_tool) do
-            recipe.gives_tools[row.ToolId] = row.Amount
+            recipe.gives_tools[row.ToolId] = tonumber(row.Amount)
         end
     end
 
@@ -276,11 +277,130 @@ function SGS_QueryRecipe(recipe_id)
     if gives_xp then
         recipe.gives_xp = {}
         for _, row in ipairs(gives_xp) do
-            recipe.gives_xp[row.Skill] = row.Amount
+            recipe.gives_xp[row.Skill] = tonumber(row.Amount)
         end
     end
 
     return recipe
+end
+
+function SGS_StructureRecipes(structure_id)
+    EnsureRecipeTables()
+
+    local structure_id = sql.SQLStr(structure_id)
+
+    -- Check that a structure exists with this ID
+    if sql.QueryValue(Format("SELECT EXISTS(SELECT 1 FROM sgs_structure_recipe WHERE StructureId == %s)", structure_id)) != "1" then
+        return nil
+    end
+
+    -- Basic information
+    local recipes = sql.Query(Format([[
+        SELECT
+            RecipeId as id,
+            Icon as icon,
+            Category as category,
+            Title as title,
+            Description as description
+        FROM sgs_recipe NATURAL JOIN sgs_structure_recipe
+        WHERE StructureId == %s
+    ]], structure_id))
+
+    -- Level requirements
+    local lvl_reqs_rows = sql.Query(Format([[
+        SELECT
+            RecipeId, Skill, Level
+        FROM sgs_recipe_level_req
+            NATURAL JOIN sgs_structure_recipe
+        WHERE StructureId == %s
+    ]], structure_id))
+    local lvl_reqs = {}
+    for _, row in ipairs(lvl_reqs_rows or {}) do
+        lvl_reqs[row.RecipeId] = lvl_reqs[row.RecipeId] or {}
+        lvl_reqs[row.RecipeId][row.Skill] = tonumber(row.Level)
+    end
+
+    -- Item costs
+    local item_cost_rows = sql.Query(Format([[
+        SELECT
+            RecipeId, ResourceId, Amount
+        FROM sgs_recipe_item_cost
+            NATURAL JOIN sgs_structure_recipe
+        WHERE StructureId == %s
+    ]], structure_id))
+    local item_costs = {}
+    for _, row in ipairs(item_cost_rows or {}) do
+        item_costs[row.RecipeId] = item_costs[row.RecipeId] or {}
+        item_costs[row.RecipeId][row.ResourceId] = tonumber(row.Amount)
+    end
+
+    -- Tool costs
+    local tool_cost_rows = sql.Query(Format([[
+        SELECT
+            RecipeId, ToolId, Amount
+        FROM sgs_recipe_tool_cost
+            NATURAL JOIN sgs_structure_recipe
+        WHERE StructureId == %s
+    ]], structure_id))
+    local tool_costs = {}
+    for _, row in ipairs(tool_cost_rows or {}) do
+        tool_costs[row.RecipeId] = tool_costs[row.RecipeId] or {}
+        tool_costs[row.RecipeId][row.ToolId] = tonumber(row.Amount)
+    end
+
+    -- Gives items
+    local gives_item_rows = sql.Query(Format([[
+        SELECT
+            RecipeId, ResourceId, Amount
+        FROM sgs_recipe_gives_item
+            NATURAL JOIN sgs_structure_recipe
+        WHERE StructureId == %s
+    ]], structure_id))
+    local gives_items = {}
+    for _, row in ipairs(gives_item_rows or {}) do
+        gives_items[row.RecipeId] = gives_items[row.RecipeId] or {}
+        gives_items[row.RecipeId][row.ResourceId] = tonumber(row.Amount)
+    end
+
+    -- Gives tools
+    local gives_tool_rows = sql.Query(Format([[
+        SELECT
+            RecipeId, ToolId, Amount
+        FROM sgs_recipe_gives_tool
+            NATURAL JOIN sgs_structure_recipe
+        WHERE StructureId == %s
+    ]], structure_id))
+    local gives_tools = {}
+    for _, row in ipairs(gives_tool_rows or {}) do
+        gives_tools[row.RecipeId] = gives_tools[row.RecipeId] or {}
+        gives_tools[row.RecipeId][row.ToolId] = tonumber(row.Amount)
+    end
+
+    -- Gives xp
+    local gives_xp_rows = sql.Query(Format([[
+        SELECT
+            RecipeId, Skill, Amount
+        FROM sgs_recipe_gives_xp
+            NATURAL JOIN sgs_structure_recipe
+        WHERE StructureId == %s
+    ]], structure_id))
+    local gives_xp = {}
+    for _, row in ipairs(gives_xp_rows or {}) do
+        gives_xp[row.RecipeId] = gives_xp[row.RecipeId] or {}
+        gives_xp[row.RecipeId][row.Skill] = tonumber(row.Amount)
+    end
+
+    -- Final assembly of recipe list
+    for _, recipe in ipairs(recipes) do
+        recipe.lvl_reqs = lvl_reqs[recipe.id]
+        recipe.item_cost = item_costs[recipe.id]
+        recipe.tool_cost = tool_costs[recipe.id]
+        recipe.gives_items = gives_items[recipe.id]
+        recipe.gives_tools = gives_tools[recipe.id]
+        recipe.gives_xp = gives_xp[recipe.id]
+    end
+
+    return recipes
 end
 
 -- Test Recipe
