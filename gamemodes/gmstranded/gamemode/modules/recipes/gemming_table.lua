@@ -5,6 +5,7 @@ SGS_BeginRecipeCommit()
 
 RECIPE = {}
 RECIPE.title = "Stone Hatchet (s)"
+RECIPE.category = "woodcutting-sapphire"
 RECIPE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
 RECIPE.item_cost = { sapphire = 1 }
 RECIPE.lvl_reqs = { smithing = 40}
@@ -18,6 +19,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Iron Hatchet (s)"
+RECIPE.category = "woodcutting-sapphire"
 RECIPE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
 RECIPE.item_cost = { sapphire = 2 }
 RECIPE.lvl_reqs = { smithing = 44}
@@ -31,6 +33,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Steel Hatchet (s)"
+RECIPE.category = "woodcutting-sapphire"
 RECIPE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 15"
 RECIPE.item_cost = { sapphire = 3 }
 RECIPE.lvl_reqs = { smithing = 48}
@@ -44,6 +47,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Silver Hatchet (s)"
+RECIPE.category = "woodcutting-sapphire"
 RECIPE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 25"
 RECIPE.item_cost = { sapphire = 4 }
 RECIPE.lvl_reqs = { smithing = 52}
@@ -57,6 +61,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Trinium Hatchet (s)"
+RECIPE.category = "woodcutting-sapphire"
 RECIPE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 35"
 RECIPE.item_cost = { sapphire = 5 }
 RECIPE.lvl_reqs = { smithing = 56}
@@ -70,6 +75,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Naquadah Hatchet (s)"
+RECIPE.category = "woodcutting-sapphire"
 RECIPE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 45"
 RECIPE.item_cost = { sapphire = 6 }
 RECIPE.lvl_reqs = { smithing = 60}
@@ -83,6 +89,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Mithril Hatchet (s)"
+RECIPE.category = "woodcutting-sapphire"
 RECIPE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 55"
 RECIPE.item_cost = { sapphire = 8 }
 RECIPE.lvl_reqs = { smithing = 65}
@@ -96,6 +103,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Platinum Hatchet (s)"
+RECIPE.category = "woodcutting-sapphire"
 RECIPE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 65"
 RECIPE.item_cost = { sapphire = 8 }
 RECIPE.lvl_reqs = { smithing = 71}
@@ -109,6 +117,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Enchanted Hatchet (s)"
+RECIPE.category = "woodcutting-sapphire"
 RECIPE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
 RECIPE.item_cost = { sapphire = 24 }
 RECIPE.lvl_reqs = { smithing = 70}
@@ -127,6 +136,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Stone Hatchet (e)"
+RECIPE.category = "woodcutting-emerald"
 RECIPE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
 RECIPE.item_cost = { emerald = 1 }
 RECIPE.lvl_reqs = { smithing = 40}
@@ -140,6 +150,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Iron Hatchet (e)"
+RECIPE.category = "woodcutting-emerald"
 RECIPE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
 RECIPE.item_cost = { emerald = 2 }
 RECIPE.lvl_reqs = { smithing = 44}
@@ -153,6 +164,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Steel Hatchet (e)"
+RECIPE.category = "woodcutting-emerald"
 RECIPE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 15"
 RECIPE.item_cost = { emerald = 3 }
 RECIPE.lvl_reqs = { smithing = 48}
@@ -166,6 +178,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Silver Hatchet (e)"
+RECIPE.category = "woodcutting-emerald"
 RECIPE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 25"
 RECIPE.item_cost = { emerald = 4 }
 RECIPE.lvl_reqs = { smithing = 52}
@@ -179,6 +192,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Trinium Hatchet (e)"
+RECIPE.category = "woodcutting-emerald"
 RECIPE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 35"
 RECIPE.item_cost = { emerald = 5 }
 RECIPE.lvl_reqs = { smithing = 56}
@@ -192,6 +206,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Naquadah Hatchet (e)"
+RECIPE.category = "woodcutting-emerald"
 RECIPE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 45"
 RECIPE.item_cost = { emerald = 6 }
 RECIPE.lvl_reqs = { smithing = 60}
@@ -205,6 +220,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Mithril Hatchet (e)"
+RECIPE.category = "woodcutting-emerald"
 RECIPE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 55"
 RECIPE.item_cost = { emerald = 8 }
 RECIPE.lvl_reqs = { smithing = 65}
@@ -218,6 +234,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Platinum Hatchet (e)"
+RECIPE.category = "woodcutting-emerald"
 RECIPE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 65"
 RECIPE.item_cost = { emerald = 8 }
 RECIPE.lvl_reqs = { smithing = 71}
@@ -231,6 +248,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Enchanted Hatchet (e)"
+RECIPE.category = "woodcutting-emerald"
 RECIPE.description = "This tool has the emerald enchantment\nOccasionally will be faster!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
 RECIPE.item_cost = { emerald = 24 }
 RECIPE.lvl_reqs = { smithing = 70}
@@ -249,6 +267,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Stone Hatchet (r)"
+RECIPE.category = "woodcutting-ruby"
 RECIPE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
 RECIPE.item_cost = { ruby = 1 }
 RECIPE.lvl_reqs = { smithing = 40}
@@ -262,6 +281,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Iron Hatchet (r)"
+RECIPE.category = "woodcutting-ruby"
 RECIPE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
 RECIPE.item_cost = { ruby = 2 }
 RECIPE.lvl_reqs = { smithing = 44}
@@ -275,6 +295,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Steel Hatchet (r)"
+RECIPE.category = "woodcutting-ruby"
 RECIPE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 15"
 RECIPE.item_cost = { ruby = 3 }
 RECIPE.lvl_reqs = { smithing = 48}
@@ -288,6 +309,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Silver Hatchet (r)"
+RECIPE.category = "woodcutting-ruby"
 RECIPE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 25"
 RECIPE.item_cost = { ruby = 4 }
 RECIPE.lvl_reqs = { smithing = 52}
@@ -301,6 +323,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Trinium Hatchet (r)"
+RECIPE.category = "woodcutting-ruby"
 RECIPE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 35"
 RECIPE.item_cost = { ruby = 5 }
 RECIPE.lvl_reqs = { smithing = 56}
@@ -314,6 +337,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Naquadah Hatchet (r)"
+RECIPE.category = "woodcutting-ruby"
 RECIPE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 45"
 RECIPE.item_cost = { ruby = 6 }
 RECIPE.lvl_reqs = { smithing = 60}
@@ -327,6 +351,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Mithril Hatchet (r)"
+RECIPE.category = "woodcutting-ruby"
 RECIPE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 55"
 RECIPE.item_cost = { ruby = 8 }
 RECIPE.lvl_reqs = { smithing = 65}
@@ -340,6 +365,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Platinum Hatchet (r)"
+RECIPE.category = "woodcutting-ruby"
 RECIPE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 65"
 RECIPE.item_cost = { ruby = 8 }
 RECIPE.lvl_reqs = { smithing = 71}
@@ -353,6 +379,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Enchanted Hatchet (r)"
+RECIPE.category = "woodcutting-ruby"
 RECIPE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
 RECIPE.item_cost = { ruby = 24 }
 RECIPE.lvl_reqs = { smithing = 70}
@@ -370,6 +397,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Stone Hatchet (d)"
+RECIPE.category = "woodcutting-diamond"
 RECIPE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
 RECIPE.item_cost = { diamond = 1 }
 RECIPE.lvl_reqs = { smithing = 40}
@@ -383,6 +411,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Iron Hatchet (d)"
+RECIPE.category = "woodcutting-diamond"
 RECIPE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
 RECIPE.item_cost = { diamond = 2 }
 RECIPE.lvl_reqs = { smithing = 44}
@@ -396,6 +425,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Steel Hatchet (d)"
+RECIPE.category = "woodcutting-diamond"
 RECIPE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 15"
 RECIPE.item_cost = { diamond = 3 }
 RECIPE.lvl_reqs = { smithing = 48}
@@ -409,6 +439,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Silver Hatchet (d)"
+RECIPE.category = "woodcutting-diamond"
 RECIPE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 25"
 RECIPE.item_cost = { diamond = 4 }
 RECIPE.lvl_reqs = { smithing = 52}
@@ -422,6 +453,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Trinium Hatchet (d)"
+RECIPE.category = "woodcutting-diamond"
 RECIPE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 35"
 RECIPE.item_cost = { diamond = 5 }
 RECIPE.lvl_reqs = { smithing = 56}
@@ -435,6 +467,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Naquadah Hatchet (d)"
+RECIPE.category = "woodcutting-diamond"
 RECIPE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 45"
 RECIPE.item_cost = { diamond = 6 }
 RECIPE.lvl_reqs = { smithing = 60}
@@ -448,6 +481,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Mithril Hatchet (d)"
+RECIPE.category = "woodcutting-diamond"
 RECIPE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 55"
 RECIPE.item_cost = { diamond = 8 }
 RECIPE.lvl_reqs = { smithing = 65}
@@ -461,6 +495,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Platinum Hatchet (d)"
+RECIPE.category = "woodcutting-diamond"
 RECIPE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 65"
 RECIPE.item_cost = { diamond = 8 }
 RECIPE.lvl_reqs = { smithing = 71}
@@ -474,6 +509,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Enchanted Hatchet (d)"
+RECIPE.category = "woodcutting-diamond"
 RECIPE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
 RECIPE.item_cost = { diamond = 24 }
 RECIPE.lvl_reqs = { smithing = 70}
@@ -494,6 +530,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Stone Pickaxe (s)"
+RECIPE.category = "mining-sapphire"
 RECIPE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
 RECIPE.item_cost = { sapphire = 1 }
 RECIPE.lvl_reqs = { smithing = 40}
@@ -508,6 +545,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Iron Pickaxe (s)"
+RECIPE.category = "mining-sapphire"
 RECIPE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
 RECIPE.item_cost = { sapphire = 2 }
 RECIPE.lvl_reqs = { smithing = 44}
@@ -521,6 +559,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Steel Pickaxe (s)"
+RECIPE.category = "mining-sapphire"
 RECIPE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 15"
 RECIPE.item_cost = { sapphire = 3 }
 RECIPE.lvl_reqs = { smithing = 48}
@@ -534,6 +573,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Silver Pickaxe (s)"
+RECIPE.category = "mining-sapphire"
 RECIPE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 25"
 RECIPE.item_cost = { sapphire = 4 }
 RECIPE.lvl_reqs = { smithing = 52}
@@ -547,6 +587,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Trinium Pickaxe (s)"
+RECIPE.category = "mining-sapphire"
 RECIPE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 35"
 RECIPE.item_cost = { sapphire = 5 }
 RECIPE.lvl_reqs = { smithing = 56}
@@ -560,6 +601,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Naquadah Pickaxe (s)"
+RECIPE.category = "mining-sapphire"
 RECIPE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 45"
 RECIPE.item_cost = { sapphire = 6 }
 RECIPE.lvl_reqs = { smithing = 60}
@@ -573,6 +615,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Mithril Pickaxe (s)"
+RECIPE.category = "mining-sapphire"
 RECIPE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 55"
 RECIPE.item_cost = { sapphire = 8 }
 RECIPE.lvl_reqs = { smithing = 65}
@@ -586,6 +629,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Platinum Pickaxe (s)"
+RECIPE.category = "mining-sapphire"
 RECIPE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 65"
 RECIPE.item_cost = { sapphire = 8 }
 RECIPE.lvl_reqs = { smithing = 71}
@@ -599,6 +643,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Enchanted Pickaxe (s)"
+RECIPE.category = "mining-sapphire"
 RECIPE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
 RECIPE.item_cost = { sapphire = 24 }
 RECIPE.lvl_reqs = { smithing = 70}
@@ -616,6 +661,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Stone Pickaxe (e)"
+RECIPE.category = "mining-emerald"
 RECIPE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
 RECIPE.item_cost = { emerald = 1 }
 RECIPE.lvl_reqs = { smithing = 40}
@@ -629,6 +675,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Iron Pickaxe (e)"
+RECIPE.category = "mining-emerald"
 RECIPE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
 RECIPE.item_cost = { emerald = 2 }
 RECIPE.lvl_reqs = { smithing = 44}
@@ -642,6 +689,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Steel Pickaxe (e)"
+RECIPE.category = "mining-emerald"
 RECIPE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 15"
 RECIPE.item_cost = { emerald = 3 }
 RECIPE.lvl_reqs = { smithing = 48}
@@ -655,6 +703,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Silver Pickaxe (e)"
+RECIPE.category = "mining-emerald"
 RECIPE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 25"
 RECIPE.item_cost = { emerald = 4 }
 RECIPE.lvl_reqs = { smithing = 52}
@@ -668,6 +717,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Trinium Pickaxe (e)"
+RECIPE.category = "mining-emerald"
 RECIPE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 35"
 RECIPE.item_cost = { emerald = 5 }
 RECIPE.lvl_reqs = { smithing = 56}
@@ -681,6 +731,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Naquadah Pickaxe (e)"
+RECIPE.category = "mining-emerald"
 RECIPE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 45"
 RECIPE.item_cost = { emerald = 6 }
 RECIPE.lvl_reqs = { smithing = 60}
@@ -694,6 +745,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Mithril Pickaxe (e)"
+RECIPE.category = "mining-emerald"
 RECIPE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 55"
 RECIPE.item_cost = { emerald = 8 }
 RECIPE.lvl_reqs = { smithing = 65}
@@ -707,6 +759,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Platinum Pickaxe (e)"
+RECIPE.category = "mining-emerald"
 RECIPE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 65"
 RECIPE.item_cost = { emerald = 8 }
 RECIPE.lvl_reqs = { smithing = 71}
@@ -720,6 +773,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Enchanted Pickaxe (e)"
+RECIPE.category = "mining-emerald"
 RECIPE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
 RECIPE.item_cost = { emerald = 24 }
 RECIPE.lvl_reqs = { smithing = 70}
@@ -737,6 +791,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Stone Pickaxe (r)"
+RECIPE.category = "mining-ruby"
 RECIPE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
 RECIPE.item_cost = { ruby = 1 }
 RECIPE.lvl_reqs = { smithing = 40}
@@ -750,6 +805,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Iron Pickaxe (r)"
+RECIPE.category = "mining-ruby"
 RECIPE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
 RECIPE.item_cost = { ruby = 2 }
 RECIPE.lvl_reqs = { smithing = 44}
@@ -763,6 +819,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Steel Pickaxe (r)"
+RECIPE.category = "mining-ruby"
 RECIPE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 15"
 RECIPE.item_cost = { ruby = 3 }
 RECIPE.lvl_reqs = { smithing = 48}
@@ -776,6 +833,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Silver Pickaxe (r)"
+RECIPE.category = "mining-ruby"
 RECIPE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 25"
 RECIPE.item_cost = { ruby = 4 }
 RECIPE.lvl_reqs = { smithing = 52}
@@ -789,6 +847,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Trinium Pickaxe (r)"
+RECIPE.category = "mining-ruby"
 RECIPE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 35"
 RECIPE.item_cost = { ruby = 5 }
 RECIPE.lvl_reqs = { smithing = 56}
@@ -802,6 +861,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Naquadah Pickaxe (r)"
+RECIPE.category = "mining-ruby"
 RECIPE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 45"
 RECIPE.item_cost = { ruby = 6 }
 RECIPE.lvl_reqs = { smithing = 60}
@@ -815,6 +875,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Mithril Pickaxe (r)"
+RECIPE.category = "mining-ruby"
 RECIPE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 55"
 RECIPE.item_cost = { ruby = 8 }
 RECIPE.lvl_reqs = { smithing = 65}
@@ -828,6 +889,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Platinum Pickaxe (r)"
+RECIPE.category = "mining-ruby"
 RECIPE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 65"
 RECIPE.item_cost = { ruby = 8 }
 RECIPE.lvl_reqs = { smithing = 71}
@@ -841,6 +903,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Enchanted Pickaxe (r)"
+RECIPE.category = "mining-ruby"
 RECIPE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
 RECIPE.item_cost = { ruby = 24 }
 RECIPE.lvl_reqs = { smithing = 70}
@@ -859,6 +922,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Stone Pickaxe (d)"
+RECIPE.category = "mining-diamond"
 RECIPE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
 RECIPE.item_cost = { diamond = 1 }
 RECIPE.lvl_reqs = { smithing = 40}
@@ -872,6 +936,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Iron Pickaxe (d)"
+RECIPE.category = "mining-diamond"
 RECIPE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
 RECIPE.item_cost = { diamond = 2 }
 RECIPE.lvl_reqs = { smithing = 44}
@@ -885,6 +950,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Steel Pickaxe (d)"
+RECIPE.category = "mining-diamond"
 RECIPE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 15"
 RECIPE.item_cost = { diamond = 3 }
 RECIPE.lvl_reqs = { smithing = 48}
@@ -898,6 +964,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Silver Pickaxe (d)"
+RECIPE.category = "mining-diamond"
 RECIPE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 25"
 RECIPE.item_cost = { diamond = 4 }
 RECIPE.lvl_reqs = { smithing = 52}
@@ -911,6 +978,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Trinium Pickaxe (d)"
+RECIPE.category = "mining-diamond"
 RECIPE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 35"
 RECIPE.item_cost = { diamond = 5 }
 RECIPE.lvl_reqs = { smithing = 56}
@@ -924,6 +992,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Naquadah Pickaxe (d)"
+RECIPE.category = "mining-diamond"
 RECIPE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 45"
 RECIPE.item_cost = { diamond = 6 }
 RECIPE.lvl_reqs = { smithing = 60}
@@ -937,6 +1006,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Mithril Pickaxe (d)"
+RECIPE.category = "mining-diamond"
 RECIPE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 55"
 RECIPE.item_cost = { diamond = 8 }
 RECIPE.lvl_reqs = { smithing = 65}
@@ -950,6 +1020,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Platinum Pickaxe (d)"
+RECIPE.category = "mining-diamond"
 RECIPE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 65"
 RECIPE.item_cost = { diamond = 8 }
 RECIPE.lvl_reqs = { smithing = 71}
@@ -963,6 +1034,7 @@ SGS_RegisterRecipe( "gms_gemtable", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Enchanted Pickaxe (d)"
+RECIPE.category = "mining-diamond"
 RECIPE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
 RECIPE.item_cost = { diamond = 24 }
 RECIPE.lvl_reqs = { smithing = 70}

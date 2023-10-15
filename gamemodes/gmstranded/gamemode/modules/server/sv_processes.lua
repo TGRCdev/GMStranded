@@ -2601,22 +2601,9 @@ function SGS_GemTool_Stop(ply, tool, modi)
 		return
 	end
 	
-	if not ply:HasToolInventory( tool.entity2 ) then
-		can = false
-		ply:SendMessage("If it's equipped make sure to unequip it first", 60, Color(255, 0, 0, 255))
-		ply:SendMessage("You need a(n) " .. SGS_ReverseToolLookup( tool.entity2 ).title .. " in your inventory.", 60, Color(255, 0, 0, 255))
-		return
-	end
-	
 	ply:SendMessage("You created a " .. CapAll(string.gsub(tool.title, "_", " ")) .. "!", 60, Color(0, 255, 0, 255))
-	ply:AddExp( "smithing", tool.xp )
-	
-	ply:AddTool( tool.entity )
-	
-	ply:RemTool( tool.entity2 )
-	for k, v in pairs( tool.cost ) do
-		ply:SubResource( k, v )
-	end
+	SGS_CompleteCrafting(ply, tool)
+
 	ply:RandomFindChance()
 	
 end

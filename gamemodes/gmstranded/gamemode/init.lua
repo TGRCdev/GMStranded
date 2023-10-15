@@ -2910,6 +2910,7 @@ function SGS_ConSmith( ply, com, args )
 			return
 		end
 
+		-- TODO: Better smithcheck using recipe.gives_items and recipe.gives_tools
 		if recipe.smithcheck and ply.smithcheck then
 			if SGS_CheckOwnership( ply, args[1] ) == true or ply.equippedtool == args[1] then
 				ply:SendMessage("You are already carrying one of this tool.", 60, Color(255, 0, 0, 255))
@@ -2986,7 +2987,7 @@ function PlayerMeta:CanCraft( recipe, printErr )
 
 	for tool, amount in pairs( recipe.tool_cost ) do
 		-- TODO: Fix tool inventory and then fix this
-		if not player:HasTool(tool) then
+		if not self:HasTool(tool) then
 			if printErr then
 				self:SendMessage("You do not have the required tool.", 60, Color(255,0,0,255))
 			end
@@ -3015,12 +3016,15 @@ function SGS_ConGemTool( ply, com, args )
 			return
 		end
 
-		if not SGS_ReverseToolLookup( args[1] ) then
+		local recipe = SGS_QueryRecipe(args[1])
+
+		if not recipe then
 			ply:SendMessage("Invalid item!", 60, Color(255, 0, 0, 255))
 			return
 		end
 
-		if ply.smithcheck == true then
+		-- TODO: Better smithcheck using recipe.gives_items and recipe.gives_tools
+		if recipe.smithcheck and ply.smithcheck then
 			if SGS_CheckOwnership( ply, args[1] ) == true or ply.equippedtool == args[1] then
 				ply:SendMessage("You are already carrying one of this tool.", 60, Color(255, 0, 0, 255))
 				ply:SendMessage("Type !checksmith in chat to disable this check.", 60, Color(255, 0, 0, 255))
@@ -3028,48 +3032,16 @@ function SGS_ConGemTool( ply, com, args )
 			end
 		end
 
-        ply:GemTool( SGS_ReverseToolLookup( args[1] ) )
+        ply:GemTool( recipe )
 
 
 end
 concommand.Add( "sgs_gemtool", SGS_ConGemTool )
 
 function PlayerMeta:GemTool( tool )
-
-	local can = true
 	local modi = 1
 
-	for k, v in pairs( tool.cost ) do
-		local iinv = self.resource[ k ] or 0
-		if iinv < v then
-			can = false
-			self:SendMessage("You do not have the required resources.", 60, Color(255, 0, 0, 255))
-			return
-		end
-	end
-
-	for k, v in pairs( tool.reqlvl ) do
-		if self:GetLevel( k ) < v then
-			can = false
-			self:SendMessage("You do not have the required level.", 60, Color(255, 0, 0, 255))
-			return
-		end
-	end
-
-	if IsValid(self:GetActiveWeapon()) and self:GetActiveWeapon():GetClass() == tool.entity2 then
-		can = false
-		self:SendMessage("You must unequip this tool before you gem it.", 60, Color(255, 0, 0, 255))
-		return
-	end
-
-	if not self:HasTool( tool.entity2 ) then
-		can = false
-		self:SendMessage("If it's equipped make sure to unequip it first", 60, Color(255, 0, 0, 255))
-		self:SendMessage("You need a " .. SGS_ReverseToolLookup( tool.entity2 ).title .. " in your inventory.", 60, Color(255, 0, 0, 255))
-		return
-	end
-
-	if can then
+	if self:CanCraft(tool, true) then
 		SGS_GemTool_Start(self, 4, tool, modi)
 	end
 
