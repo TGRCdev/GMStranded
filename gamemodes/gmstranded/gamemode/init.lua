@@ -2952,33 +2952,56 @@ function SGS_ChatSmithCheck( ply, text, public )
 end
 hook.Add( "PlayerSay", "SGS_ChatSmithCheck", SGS_ChatSmithCheck)
 
-function PlayerMeta:Craft( recipe )
+function PlayerMeta:CanCraft( recipe, printErr )
+	if printErr == nil then printErr = true end
 
-	local can = true
-	local modi = 1
+	for skill, level in pairs( recipe.lvl_reqs ) do
+		if self:GetLevel( skill ) < level then
+			if printErr then
+				self:SendMessage("You do not have the required level.", 60, Color(255, 0, 0, 255))
+			end
+			return false
+		end
+	end
 
-	for item, amount in pairs( tool.item_cost ) do
+	for item, amount in pairs( recipe.item_cost ) do
 		local iinv = self.resource[ item ] or 0
 		if iinv < amount then
-			can = false
-			self:SendMessage("You do not have the required resources.", 60, Color(255, 0, 0, 255))
-			return
+			if printErr then
+				self:SendMessage("You do not have the required resources.", 60, Color(255, 0, 0, 255))
+			end
+			return false
 		end
 	end
 
-	for tool, amount in pairs( tool.tool_cost ) do
-		
-	end
-
-	for skill, level in pairs( tool.lvl_reqs ) do
-		if self:GetLevel( skill ) < level then
-			can = false
-			self:SendMessage("You do not have the required level.", 60, Color(255, 0, 0, 255))
-			return
+	for item, amount in pairs( recipe.item_cost ) do
+		local iinv = self.resource[ item ] or 0
+		if iinv < amount then
+			if printErr then
+				self:SendMessage("You do not have the required resources.", 60, Color(255, 0, 0, 255))
+			end
+			return false
 		end
 	end
 
-	if can then
+	for tool, amount in pairs( recipe.tool_cost ) do
+		-- TODO: Fix tool inventory and then fix this
+		if not player:HasTool(tool) then
+			if printErr then
+				self:SendMessage("You do not have the required tool.", 60, Color(255,0,0,255))
+			end
+			return false
+		end
+	end
+
+	return true
+end
+
+function PlayerMeta:Smith( tool )
+
+	local modi = 1
+
+	if self:CanCraft(tool, true) then
 		SGS_Smith_Start(self, 4, tool, modi)
 	end
 

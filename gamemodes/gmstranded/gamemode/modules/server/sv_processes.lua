@@ -2485,6 +2485,33 @@ function SGS_Smith_Start(ply, len, tool, modi)
 
 end
 
+function SGS_CompleteCrafting(ply, recipe)
+	for item, amount in pairs(recipe.item_cost) do
+		ply:SubResource(item, amount)
+	end
+
+	for tool, amount in pairs(recipe.tool_cost) do
+		-- TODO: Fix tool inventory and then this
+		ply:RemTool(tool)
+	end
+
+	for item, amount in pairs(recipe.gives_items) do
+		ply:AddResource(item, amount)
+	end
+
+	for tool, amount in pairs(recipe.gives_tools) do
+		-- TODO: Fix tool inventory and then this
+		ply:AddTool(tool)
+	end
+
+	for skill, amount in pairs(recipe.gives_xp) do
+		ply:AddExp(skill, amount)
+	end
+
+	-- TODO: Give recipes stats to track
+	-- i.e. tools smithed
+end
+
 function SGS_Smith_Stop(ply, tool, modi)
 
 	if not ply:IsValid() then return end
@@ -2505,19 +2532,9 @@ function SGS_Smith_Stop(ply, tool, modi)
 	end
 	
 	ply:SendMessage("You created a " .. CapAll(string.gsub(tool.title, "_", " ")) .. "!", 60, Color(0, 255, 0, 255))
-	for skill, amount in pairs(tool.gives_xp) do
-		ply:AddExp( skill, amount )
-	end
 	
-	for tool_id, amount in pairs(tool.gives_tools) do
-		print("Giving tool " .. tool_id)
-		ply:AddTool( tool_id )
-		ply:AddStat( "smithing1", 1 )
-	end
-	
-	for item, amount in pairs( tool.item_cost ) do
-		ply:SubResource( item, amount )
-	end
+	SGS_CompleteCrafting(ply, tool)
+
 	ply:RandomFindChance()
 	
 end
@@ -2562,9 +2579,6 @@ function SGS_GemTool_Start(ply, len, tool, modi)
 	else
 		ply:SendMessage("You need to be at a gemming table to gem a tool!", 60, Color(255, 0, 0, 255))
 	end
-	
-
-
 end
 
 function SGS_GemTool_Stop(ply, tool, modi)
