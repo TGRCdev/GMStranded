@@ -32,6 +32,14 @@ function ResetRecipeTables()
     sql.Commit()
     initialized = false
     EnsureRecipeTables()
+
+    -- Load Recipe Tables
+    local files, _ = file.Find("gmstranded/gamemode/modules/recipes/*.lua", "LUA")
+    for _, filename in ipairs(files) do
+        print("Stranded: Loading recipes (" .. filename .. ")")
+        include( "gmstranded/gamemode/modules/recipes/" .. filename )
+        AddCSLuaFile( "gmstranded/gamemode/modules/recipes/" .. filename )
+    end
 end
 
 function EnsureRecipeTables()
@@ -204,11 +212,9 @@ function SGS_QueryRecipe(recipe_id)
         FROM sgs_recipe_level_req
         WHERE RecipeId == %s
     ]], recipe_id))
-    if lvl_reqs then
-        recipe.lvl_reqs = {}
-        for _, row in ipairs(lvl_reqs) do
-            recipe.lvl_reqs[row.Skill] = tonumber(row.Level)
-        end
+    recipe.lvl_reqs = {}
+    for _, row in ipairs(lvl_reqs or {}) do
+        recipe.lvl_reqs[row.Skill] = tonumber(row.Level)
     end
 
     -- Item costs
@@ -218,11 +224,9 @@ function SGS_QueryRecipe(recipe_id)
         FROM sgs_recipe_item_cost
         WHERE RecipeId == %s
     ]], recipe_id))
-    if item_cost then
-        recipe.item_cost = {}
-        for _, row in ipairs(item_cost) do
-            recipe.item_cost[row.ResourceId] = tonumber(row.Amount)
-        end
+    recipe.item_cost = {}
+    for _, row in ipairs(item_cost or {}) do
+        recipe.item_cost[row.ResourceId] = tonumber(row.Amount)
     end
 
     -- Tool costs
@@ -232,11 +236,9 @@ function SGS_QueryRecipe(recipe_id)
         FROM sgs_recipe_tool_cost
         WHERE RecipeId == %s
     ]], recipe_id))
-    if tool_cost then
-        recipe.tool_cost = {}
-        for _, row in ipairs(tool_cost) do
-            recipe.tool_cost[row.ToolId] = tonumber(row.Amount)
-        end
+    recipe.tool_cost = {}
+    for _, row in ipairs(tool_cost or {}) do
+        recipe.tool_cost[row.ToolId] = tonumber(row.Amount)
     end
 
     -- Gives Items
@@ -246,11 +248,9 @@ function SGS_QueryRecipe(recipe_id)
         FROM sgs_recipe_gives_item
         WHERE RecipeId == %s
     ]], recipe_id))
-    if gives_item then
-        recipe.gives_items = {}
-        for _, row in ipairs(gives_item) do
-            recipe.gives_items[row.ResourceId] = tonumber(row.Amount)
-        end
+    recipe.gives_items = {}
+    for _, row in ipairs(gives_item or {}) do
+        recipe.gives_items[row.ResourceId] = tonumber(row.Amount)
     end
 
     -- Gives Tools
@@ -260,11 +260,9 @@ function SGS_QueryRecipe(recipe_id)
         FROM sgs_recipe_gives_tool
         WHERE RecipeId == %s
     ]], recipe_id))
-    if gives_tool then
-        recipe.gives_tools = {}
-        for _, row in ipairs(gives_tool) do
-            recipe.gives_tools[row.ToolId] = tonumber(row.Amount)
-        end
+    recipe.gives_tools = {}
+    for _, row in ipairs(gives_tool or {}) do
+        recipe.gives_tools[row.ToolId] = tonumber(row.Amount)
     end
 
     -- Gives XP
@@ -274,11 +272,9 @@ function SGS_QueryRecipe(recipe_id)
         FROM sgs_recipe_gives_xp
         WHERE RecipeId == %s
     ]], recipe_id))
-    if gives_xp then
-        recipe.gives_xp = {}
-        for _, row in ipairs(gives_xp) do
-            recipe.gives_xp[row.Skill] = tonumber(row.Amount)
-        end
+    recipe.gives_xp = {}
+    for _, row in ipairs(gives_xp or {}) do
+        recipe.gives_xp[row.Skill] = tonumber(row.Amount)
     end
 
     return recipe
@@ -392,12 +388,12 @@ function SGS_StructureRecipes(structure_id)
 
     -- Final assembly of recipe list
     for _, recipe in ipairs(recipes) do
-        recipe.lvl_reqs = lvl_reqs[recipe.id]
-        recipe.item_cost = item_costs[recipe.id]
-        recipe.tool_cost = tool_costs[recipe.id]
-        recipe.gives_items = gives_items[recipe.id]
-        recipe.gives_tools = gives_tools[recipe.id]
-        recipe.gives_xp = gives_xp[recipe.id]
+        recipe.lvl_reqs = lvl_reqs[recipe.id] or {}
+        recipe.item_cost = item_costs[recipe.id] or {}
+        recipe.tool_cost = tool_costs[recipe.id] or {}
+        recipe.gives_items = gives_items[recipe.id] or {}
+        recipe.gives_tools = gives_tools[recipe.id] or {}
+        recipe.gives_xp = gives_xp[recipe.id] or {}
     end
 
     return recipes
@@ -419,11 +415,3 @@ function _TestRecipe()
 end
 
 ResetRecipeTables()
-
--- Load Recipe Tables
-local files, _ = file.Find("gmstranded/gamemode/modules/recipes/*.lua", "LUA")
-for _, filename in ipairs(files) do
-    print("Stranded: Loading recipes (" .. filename .. ")")
-    include( "gmstranded/gamemode/modules/recipes/" .. filename )
-    AddCSLuaFile( "gmstranded/gamemode/modules/recipes/" .. filename )
-end

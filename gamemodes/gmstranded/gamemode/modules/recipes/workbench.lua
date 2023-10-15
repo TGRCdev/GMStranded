@@ -19,6 +19,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Iron Rod"
+RECIPE.category = "combat"
 RECIPE.description = "Use with caution!\nRequired Combat Level: 10"
 RECIPE.item_cost = { iron = 10, wood = 10 }
 RECIPE.lvl_reqs = { smithing = 10 }
@@ -30,6 +31,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Steel Rod"
+RECIPE.category = "combat"
 RECIPE.description = "Use with caution!\nRequired Combat Level: 20"
 RECIPE.item_cost = { steel = 10, oak_wood = 10}
 RECIPE.lvl_reqs = { smithing = 25 }
@@ -41,6 +43,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Silver Rod"
+RECIPE.category = "combat"
 RECIPE.description = "Use with caution!\nRequired Combat Level: 30"
 RECIPE.item_cost = { silver = 10, oak_wood = 15}
 RECIPE.lvl_reqs = { smithing = 35 }
@@ -52,6 +55,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Trinium Rod"
+RECIPE.category = "combat"
 RECIPE.description = "Use with caution!\nRequired Combat Level: 40"
 RECIPE.item_cost = { trinium = 10, maple_wood = 10}
 RECIPE.lvl_reqs = { smithing = 45 }
@@ -63,6 +67,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Naquadah Rod"
+RECIPE.category = "combat"
 RECIPE.description = "Use with caution!\nRequired Combat Level: 50"
 RECIPE.item_cost = { naquadah = 10, yew_wood = 10}
 RECIPE.lvl_reqs = { smithing = 58 }
@@ -74,6 +79,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Mithril Rod"
+RECIPE.category = "combat"
 RECIPE.description = "Use with caution!\nRequired Combat Level: 60"
 RECIPE.item_cost = { mithril = 10, buckeye_wood = 10}
 RECIPE.lvl_reqs = { smithing = 65 }
@@ -85,6 +91,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Platinum Rod"
+RECIPE.category = "combat"
 RECIPE.description = "Use with caution!\nRequired Combat Level: 70"
 RECIPE.item_cost = { platinum = 10, palm_wood = 10}
 RECIPE.lvl_reqs = { smithing = 71 }
@@ -94,49 +101,13 @@ RECIPE.id = "weapon_melee8"
 RECIPE.icon = "vgui/tools/platinum_melee.png"
 SGS_RegisterRecipe( "workbench", RECIPE )
 
-------------------
----construction---
-------------------
-
-RECIPE = {}
-RECIPE.title = "Remover Tool"
-RECIPE.description = "Primary: Remove props and items you own!"
-RECIPE.gives_tools = { gms_remover = 1 }
-RECIPE.id = "gms_remover"
-RECIPE.icon = "vgui/tools/remover.png"
-SGS_RegisterRecipe( "workbench", RECIPE )
-
-RECIPE = {}
-RECIPE.title = "Prop Share Tool"
-RECIPE.description = "Primary: Disowns an item allowing someone else to own it!\nSecondary: Take control of an ownerless item!\nReload: Allow anyone to use the structure without sharing ownership."
-RECIPE.gives_tools = { gms_sppshare = 1 }
-RECIPE.id = "gms_sppshare"
-RECIPE.icon = "vgui/tools/propshare.png"
-SGS_RegisterRecipe( "workbench", RECIPE )
-
-RECIPE = {}
-RECIPE.title = "Structure Packager"
-RECIPE.description = "Primary: Packs a structure you own for later use or trade!"
-RECIPE.gives_tools = { gms_packager = 1 }
-RECIPE.id = "gms_packager"
-RECIPE.icon = "vgui/tools/packager.png"
-SGS_RegisterRecipe( "workbench", RECIPE )
-
-RECIPE = {}
-RECIPE.title = "Prop Locker"
-RECIPE.description = "Primary: Select up to 10 items.\nSecondary: Locks all selected props, making them unmovable\nReload: Unlocks all selected props"
-RECIPE.gives_tools = { gms_proplocker = 1 }
-RECIPE.id = "gms_proplocker"
-RECIPE.icon = "vgui/tools/welder.png"
-SGS_RegisterRecipe( "workbench", RECIPE )
-
-
 ---------------------
 -----woodcutting-----
 ---------------------
 
 RECIPE = {}
 RECIPE.title = "Stone Hatchet"
+RECIPE.category = "woodcutting"
 RECIPE.description = "Makes cutting down trees easy!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
 RECIPE.item_cost = { stone = 5, wood = 6}
 RECIPE.lvl_reqs = { smithing = 1}
@@ -148,6 +119,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Iron Hatchet"
+RECIPE.category = "woodcutting"
 RECIPE.description = "Makes cutting down trees easy!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
 RECIPE.item_cost = { iron = 5, wood = 8}
 RECIPE.lvl_reqs = { smithing = 10}
@@ -159,6 +131,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Steel Hatchet"
+RECIPE.category = "woodcutting"
 RECIPE.description = "Makes cutting down trees easy!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 15"
 RECIPE.item_cost = { steel = 5, oak_wood = 10}
 RECIPE.lvl_reqs = { smithing = 25}
@@ -170,6 +143,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Silver Hatchet"
+RECIPE.category = "woodcutting"
 RECIPE.description = "Makes cutting down trees easy!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 25"
 RECIPE.item_cost = { silver = 5, maple_wood = 12}
 RECIPE.lvl_reqs = { smithing = 40}
@@ -181,6 +155,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Trinium Hatchet"
+RECIPE.category = "woodcutting"
 RECIPE.description = "Makes cutting down trees easy!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 35"
 RECIPE.item_cost = { trinium = 5, pine_wood = 14}
 RECIPE.lvl_reqs = { smithing = 50}
@@ -192,6 +167,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Naquadah Hatchet"
+RECIPE.category = "woodcutting"
 RECIPE.description = "Makes cutting down trees easy!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 45"
 RECIPE.item_cost = { naquadah = 5, yew_wood = 12}
 RECIPE.lvl_reqs = { smithing = 53}
@@ -203,6 +179,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Mithril Hatchet"
+RECIPE.category = "woodcutting"
 RECIPE.description = "Makes cutting down trees easy!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 55"
 RECIPE.item_cost = { mithril = 5, buckeye_wood = 12}
 RECIPE.lvl_reqs = { smithing = 65}
@@ -214,6 +191,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Platinum Hatchet"
+RECIPE.category = "woodcutting"
 RECIPE.description = "Makes cutting down trees easy!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 65"
 RECIPE.item_cost = { platinum = 5, palm_wood = 12}
 RECIPE.lvl_reqs = { smithing = 71}
@@ -231,6 +209,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Stone Pickaxe"
+RECIPE.category = "mining"
 RECIPE.description = "Makes mining ore easy!\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
 RECIPE.item_cost = { stone = 6, wood = 6}
 RECIPE.lvl_reqs = { smithing = 1}
@@ -242,6 +221,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Iron Pickaxe"
+RECIPE.category = "mining"
 RECIPE.description = "Makes mining ore easy!\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
 RECIPE.item_cost = { iron = 6, oak_wood = 8}
 RECIPE.lvl_reqs = { smithing = 15}
@@ -253,6 +233,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Steel Pickaxe"
+RECIPE.category = "mining"
 RECIPE.description = "Makes mining ore easy!\nPrimary: Mine Ore\nRequired Mining Lvl: 15"
 RECIPE.item_cost = { steel = 6, maple_wood = 10}
 RECIPE.lvl_reqs = { smithing = 30}
@@ -264,6 +245,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Silver Pickaxe"
+RECIPE.category = "mining"
 RECIPE.description = "Makes mining ore easy!\nPrimary: Mine Ore\nRequired Mining Lvl: 25"
 RECIPE.item_cost = { silver = 6, pine_wood = 12}
 RECIPE.lvl_reqs = { smithing = 45}
@@ -275,6 +257,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Trinium Pickaxe"
+RECIPE.category = "mining"
 RECIPE.description = "Makes mining ore easy!\nPrimary: Mine Ore\nRequired Mining Lvl: 35"
 RECIPE.item_cost = { trinium = 6, pine_wood = 14}
 RECIPE.lvl_reqs = { smithing = 50}
@@ -286,6 +269,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Naquadah Pickaxe"
+RECIPE.category = "mining"
 RECIPE.description = "Makes mining ore easy!\nPrimary: Mine Ore\nRequired Mining Lvl: 45"
 RECIPE.item_cost = { naquadah = 6, yew_wood = 10}
 RECIPE.lvl_reqs = { smithing = 55}
@@ -297,6 +281,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Mithril Pickaxe"
+RECIPE.category = "mining"
 RECIPE.description = "Makes mining ore easy!\nPrimary: Mine Ore\nRequired Mining Lvl: 55"
 RECIPE.item_cost = { mithril = 6, buckeye_wood = 10}
 RECIPE.lvl_reqs = { smithing = 65}
@@ -308,6 +293,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Platinum Pickaxe"
+RECIPE.category = "mining"
 RECIPE.description = "Makes mining ore easy!\nPrimary: Mine Ore\nRequired Mining Lvl: 65"
 RECIPE.item_cost = { platinum = 6, palm_wood = 10}
 RECIPE.lvl_reqs = { smithing = 71}
@@ -326,6 +312,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Wooden Fishing Rod"
+RECIPE.category = "fishing"
 RECIPE.description = "Makes fishing easy!\nPrimary: Fish\nRequired Fishing Lvl: 1"
 RECIPE.item_cost = { wood = 12}
 RECIPE.lvl_reqs = { smithing = 1}
@@ -337,6 +324,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Iron Fishing Rod"
+RECIPE.category = "fishing"
 RECIPE.description = "Makes fishing easy!\nPrimary: Fish\nRequired Fishing Lvl: 1"
 RECIPE.item_cost = { iron = 4, wood = 8}
 RECIPE.lvl_reqs = { smithing = 10}
@@ -348,6 +336,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Steel Fishing Rod"
+RECIPE.category = "fishing"
 RECIPE.description = "Makes fishing easy!\nPrimary: Fish\nRequired Fishing Lvl: 15"
 RECIPE.item_cost = { steel = 4, oak_wood = 10}
 RECIPE.lvl_reqs = { smithing = 25}
@@ -359,6 +348,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Silver Fishing Rod"
+RECIPE.category = "fishing"
 RECIPE.description = "Makes fishing easy!\nPrimary: Fish\nRequired Fishing Lvl: 25"
 RECIPE.item_cost = { silver = 4, maple_wood = 12}
 RECIPE.lvl_reqs = { smithing = 41}
@@ -370,6 +360,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Trinium Fishing Rod"
+RECIPE.category = "fishing"
 RECIPE.description = "Makes fishing easy!\nPrimary: Fish\nRequired Fishing Lvl: 35"
 RECIPE.item_cost = { trinium = 4, pine_wood = 14}
 RECIPE.lvl_reqs = { smithing = 50}
@@ -381,6 +372,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Naquadah Fishing Rod"
+RECIPE.category = "fishing"
 RECIPE.description = "Makes fishing easy!\nPrimary: Fish\nRequired Fishing Lvl: 45"
 RECIPE.item_cost = { naquadah = 4, yew_wood = 10}
 RECIPE.lvl_reqs = { smithing = 58}
@@ -392,6 +384,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Mithril Fishing Rod"
+RECIPE.category = "fishing"
 RECIPE.description = "Makes fishing easy!\nPrimary: Fish\nRequired Fishing Lvl: 55"
 RECIPE.item_cost = { mithril = 4, buckeye_wood = 10}
 RECIPE.lvl_reqs = { smithing = 65}
@@ -403,6 +396,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Platinum Fishing Rod"
+RECIPE.category = "fishing"
 RECIPE.description = "Makes fishing easy!\nPrimary: Fish\nRequired Fishing Lvl: 65"
 RECIPE.item_cost = { platinum = 4, palm_wood = 10}
 RECIPE.lvl_reqs = { smithing = 71}
@@ -414,6 +408,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Advanced Fishing Rod"
+RECIPE.category = "fishing"
 RECIPE.description = "For the more advanced fishers!\nPrimary: Fish\nRequired Fishing Lvl: 50"
 RECIPE.item_cost = { naquadah = 6, pine_wood = 10}
 RECIPE.lvl_reqs = { smithing = 54}
@@ -431,6 +426,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Stone Hoe"
+RECIPE.category = "farming"
 RECIPE.description = "Makes farming easy!\nPrimary: Forage\nRequired Farming Lvl: 1"
 RECIPE.item_cost = { stone = 5, wood = 6}
 RECIPE.lvl_reqs = { smithing = 1}
@@ -442,6 +438,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Iron Hoe"
+RECIPE.category = "farming"
 RECIPE.description = "Makes farming easy!\nPrimary: Forage\nRequired Farming Lvl: 1"
 RECIPE.item_cost = { iron = 5, oak_wood = 8}
 RECIPE.lvl_reqs = { smithing = 15}
@@ -453,6 +450,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Steel Hoe"
+RECIPE.category = "farming"
 RECIPE.description = "Makes farming easy!\nPrimary: Forage\nRequired Farming Lvl: 15"
 RECIPE.item_cost = { steel = 5, oak_wood = 10}
 RECIPE.lvl_reqs = { smithing = 28}
@@ -464,6 +462,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Silver Hoe"
+RECIPE.category = "farming"
 RECIPE.description = "Makes farming easy!\nPrimary: Forage\nRequired Farming Lvl: 25"
 RECIPE.item_cost = { silver = 5, maple_wood = 12}
 RECIPE.lvl_reqs = { smithing = 38}
@@ -475,6 +474,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Trinium Hoe"
+RECIPE.category = "farming"
 RECIPE.description = "Makes farming easy!\nPrimary: Forage\nRequired Farming Lvl: 35"
 RECIPE.item_cost = { trinium = 5, pine_wood = 14}
 RECIPE.lvl_reqs = { smithing = 50}
@@ -486,6 +486,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Naquadah Hoe"
+RECIPE.category = "farming"
 RECIPE.description = "Makes farming easy!\nPrimary: Forage\nRequired Farming Lvl: 45"
 RECIPE.item_cost = { naquadah = 5, yew_wood = 10}
 RECIPE.lvl_reqs = { smithing = 56}
@@ -497,6 +498,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Mithril Hoe"
+RECIPE.category = "farming"
 RECIPE.description = "Makes farming easy!\nPrimary: Forage\nRequired Farming Lvl: 55"
 RECIPE.item_cost = { mithril = 5, buckeye_wood = 10}
 RECIPE.lvl_reqs = { smithing = 65}
@@ -508,6 +510,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Platinum Hoe"
+RECIPE.category = "farming"
 RECIPE.description = "Makes farming easy!\nPrimary: Forage\nRequired Farming Lvl: 65"
 RECIPE.item_cost = { platinum = 5, palm_wood = 10}
 RECIPE.lvl_reqs = { smithing = 71}
@@ -524,6 +527,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Iron Sifter"
+RECIPE.category = "sifting"
 RECIPE.description = "Sift the ground to collect sand!\nPrimary: Sift"
 RECIPE.item_cost = { iron = 5, stone = 10}
 RECIPE.lvl_reqs = { smithing = 5}
@@ -535,6 +539,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Steel Sifter"
+RECIPE.category = "sifting"
 RECIPE.description = "Sift the ground to collect sand!\nPrimary: Sift"
 RECIPE.item_cost = { steel = 5, stone = 20}
 RECIPE.lvl_reqs = { smithing = 30}
@@ -546,6 +551,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Trinium Sifter"
+RECIPE.category = "sifting"
 RECIPE.description = "Sift the ground to collect sand!\nPrimary: Sift"
 RECIPE.item_cost = { trinium = 5, stone = 30}
 RECIPE.lvl_reqs = { smithing = 53}
@@ -557,6 +563,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Mithril Sifter"
+RECIPE.category = "sifting"
 RECIPE.description = "Sift the ground to collect sand!\nPrimary: Sift"
 RECIPE.item_cost = { mithril = 5, stone = 30}
 RECIPE.lvl_reqs = { smithing = 65}
@@ -572,6 +579,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Grinding Stone"
+RECIPE.category = "misc"
 RECIPE.description = "Used to grind ores into dust!\nPrimary: Open Grinding Menu"
 RECIPE.item_cost = { stone = 20 }
 RECIPE.lvl_reqs = { smithing = 5}
@@ -583,6 +591,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Alchemist's Stone"
+RECIPE.category = "misc"
 RECIPE.description = "Used for transmutations!\nPrimary: Open Transmutation Menu"
 RECIPE.item_cost = { emerald = 1, sapphire = 1, burned_fish = 10}
 RECIPE.lvl_reqs = { smithing = 5}
@@ -594,6 +603,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Frying Pan"
+RECIPE.category = "misc"
 RECIPE.description = "Equip while cooking for better results!"
 RECIPE.item_cost = { iron = 10, oak_wood = 10}
 RECIPE.lvl_reqs = { smithing = 12}
@@ -605,6 +615,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Handheld Torch"
+RECIPE.category = "misc"
 RECIPE.description = "Light!\nRight click to place torch."
 RECIPE.item_cost = { wood = 20 }
 RECIPE.lvl_reqs = { smithing = 1}
@@ -616,6 +627,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Construction Hammer"
+RECIPE.category = "misc"
 RECIPE.description = "Equip while building for better results!\nLeft Click: Deconstructs a prop, returning a portion of the materials used to make it.\nRight Click: Repairs the damage to a prop or structure."
 RECIPE.item_cost = { iron = 12, oak_wood = 8}
 RECIPE.lvl_reqs = { smithing = 8}
@@ -632,6 +644,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Iron Seed Extractor"
+RECIPE.category = "extractor"
 RECIPE.description = "Remove the seeds from a fruit\nThis process destroys the fruit!"
 RECIPE.item_cost = { iron = 8, oak_wood = 6}
 RECIPE.lvl_reqs = { smithing = 16}
@@ -643,6 +656,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Silver Seed Extractor"
+RECIPE.category = "extractor"
 RECIPE.description = "Remove the seeds from a fruit\nThis process destroys the fruit!"
 RECIPE.item_cost = { silver = 8, maple_wood = 6}
 RECIPE.lvl_reqs = { smithing = 41}
@@ -654,6 +668,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Trinium Seed Extractor"
+RECIPE.category = "extractor"
 RECIPE.description = "Remove the seeds from a fruit\nThis process destroys the fruit!"
 RECIPE.item_cost = { trinium = 8, pine_wood = 6}
 RECIPE.lvl_reqs = { smithing = 52}
@@ -665,6 +680,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Mithril Seed Extractor"
+RECIPE.category = "extractor"
 RECIPE.description = "Remove the seeds from a fruit\nThis process destroys the fruit!"
 RECIPE.item_cost = { mithril = 8, buckeye_wood = 6}
 RECIPE.lvl_reqs = { smithing = 65}
@@ -680,6 +696,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Enchanted Hatchet"
+RECIPE.category = "enchanted"
 RECIPE.description = "Very powerful tree cutting tool!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
 RECIPE.item_cost = { enchanted_wood = 12, enchanted_axehead = 1}
 RECIPE.lvl_reqs = { smithing = 50}
@@ -691,6 +708,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Enchanted Pickaxe"
+RECIPE.category = "enchanted"
 RECIPE.description = "Very powerful mining tool!\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
 RECIPE.item_cost = { enchanted_wood = 12, enchanted_pickhead = 1}
 RECIPE.lvl_reqs = { smithing = 50}
@@ -702,6 +720,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Enchanted Fishing Rod"
+RECIPE.category = "enchanted"
 RECIPE.description = "Very powerful fishing rod!\nPrimary: Cast Line\nRequired Fishing Lvl: 1"
 RECIPE.item_cost = { enchanted_wood = 12, enchanted_reel = 1}
 RECIPE.lvl_reqs = { smithing = 50}
@@ -713,6 +732,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Enchanted Hoe"
+RECIPE.category = "enchanted"
 RECIPE.description = "Very powerful farming tool!\nPrimary: Forage/Harvest\nRequired Farming Lvl: 1"
 RECIPE.item_cost = { enchanted_wood = 12, enchanted_hoe_blade = 1}
 RECIPE.lvl_reqs = { smithing = 50}
@@ -728,6 +748,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Boss Hatchet"
+RECIPE.category = "boss"
 RECIPE.description = "Very powerful tree cutting tool!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
 RECIPE.item_cost = { boss_hatchet_head = 1, yew_wood = 10}
 RECIPE.lvl_reqs = { smithing = 50}
@@ -739,6 +760,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Boss Pickaxe"
+RECIPE.category = "boss"
 RECIPE.description = "Very powerful mining tool!\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
 RECIPE.item_cost = { boss_pick_head = 1, yew_wood = 10}
 RECIPE.lvl_reqs = { smithing = 50}
@@ -750,6 +772,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Boss Rod"
+RECIPE.category = "boss"
 RECIPE.description = "Very powerful combat weapon!\nPrimary: Attack\nRequired Combat Lvl: 35"
 RECIPE.item_cost = { boss_rod_core = 1, yew_wood = 10}
 RECIPE.lvl_reqs = { smithing = 50}
@@ -765,6 +788,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Void Hatchet"
+RECIPE.category = "void"
 RECIPE.description = "Very powerful tree cutting tool!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
 RECIPE.item_cost = { void_hatchet_head = 1, buckeye_wood = 50}
 RECIPE.lvl_reqs = { smithing = 60}
@@ -776,6 +800,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Void Pickaxe"
+RECIPE.category = "void"
 RECIPE.description = "Very powerful mining tool!\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
 RECIPE.item_cost = { void_pickaxe_head = 1, buckeye_wood = 50}
 RECIPE.lvl_reqs = { smithing = 60}
@@ -787,6 +812,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Void Fishing Rod"
+RECIPE.category = "void"
 RECIPE.description = "Very powerful fishing tool!\nPrimary: Fish\nRequired Fishing Lvl: 1"
 RECIPE.item_cost = { void_fishing_reel = 1, buckeye_wood = 50}
 RECIPE.lvl_reqs = { smithing = 60}
@@ -798,6 +824,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Void Hoe"
+RECIPE.category = "void"
 RECIPE.description = "Very powerful farming tool!\nPrimary: Forage/Harvest\nRequired Farming Lvl: 1"
 RECIPE.item_cost = { void_hoe_blade = 1, buckeye_wood = 50}
 RECIPE.lvl_reqs = { smithing = 50}
@@ -813,6 +840,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Meteoric Pickaxe"
+RECIPE.category = "meteoric"
 RECIPE.description = "Very powerful mining tool!\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
 RECIPE.item_cost = { meteoric_iron = 5, palm_wood = 50}
 RECIPE.lvl_reqs = { smithing = 65}
@@ -824,6 +852,7 @@ SGS_RegisterRecipe( "workbench", RECIPE )
 
 RECIPE = {}
 RECIPE.title = "Refined Meteoric Pick"
+RECIPE.category = "meteoric"
 RECIPE.description = "Very powerful mining tool!\nPrimary: Mine Ore\nRequired Mining Lvl: 1\nUnbreakable!"
 RECIPE.item_cost = { refined_meteoric_iron = 6, enchanted_wood = 12}
 RECIPE.lvl_reqs = { smithing = 65}

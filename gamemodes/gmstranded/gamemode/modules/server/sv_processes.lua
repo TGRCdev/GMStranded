@@ -2505,13 +2505,18 @@ function SGS_Smith_Stop(ply, tool, modi)
 	end
 	
 	ply:SendMessage("You created a " .. CapAll(string.gsub(tool.title, "_", " ")) .. "!", 60, Color(0, 255, 0, 255))
-	ply:AddExp( "smithing", tool.xp )
+	for skill, amount in pairs(tool.gives_xp) do
+		ply:AddExp( skill, amount )
+	end
 	
-	ply:AddTool( tool.entity )
-	ply:AddStat( "smithing1", 1 )
+	for tool_id, amount in pairs(tool.gives_tools) do
+		print("Giving tool " .. tool_id)
+		ply:AddTool( tool_id )
+		ply:AddStat( "smithing1", 1 )
+	end
 	
-	for k, v in pairs( tool.cost ) do
-		ply:SubResource( k, v )
+	for item, amount in pairs( tool.item_cost ) do
+		ply:SubResource( item, amount )
 	end
 	ply:RandomFindChance()
 	

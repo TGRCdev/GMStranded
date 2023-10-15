@@ -2897,12 +2897,22 @@ function SGS_ConSmith( ply, com, args )
 			return
 		end
 
-		if not SGS_ReverseToolLookup( args[1] ) then
+		local recipe = SGS_QueryRecipe(args[1])
+
+		if not recipe then
 			ply:SendMessage("Invalid item!", 60, Color(255, 0, 0, 255))
 			return
 		end
 
-        ply:Smith( SGS_ReverseToolLookup( args[1] ) )
+		if ply.smithcheck == true then
+			if SGS_CheckOwnership( ply, args[1] ) == true or ply.equippedtool == args[1] then
+				ply:SendMessage("You are already carrying one of this tool.", 60, Color(255, 0, 0, 255))
+				ply:SendMessage("Type !checksmith in chat to disable this check.", 60, Color(255, 0, 0, 255))
+				return
+			end
+		end
+
+        ply:Smith( recipe )
 
 
 end
@@ -2938,29 +2948,22 @@ hook.Add( "PlayerSay", "SGS_ChatSmithCheck", SGS_ChatSmithCheck)
 
 function PlayerMeta:Smith( tool )
 
+	PrintTable(tool)
+
 	local can = true
 	local modi = 1
 
-	if not tool.nosmith then
-		tool.nosmith = false
-	end
-
-	if tool.nosmith == true then
-		self:SendMessage("ERROR: You are trying to make a gemmed tool at a regular workbench!", 60, Color(255, 0, 0, 255))
-		return
-	end
-
-	for k, v in pairs( tool.cost ) do
-		local iinv = self.resource[ k ] or 0
-		if iinv < v then
+	for item, amount in pairs( tool.item_cost ) do
+		local iinv = self.resource[ item ] or 0
+		if iinv < amount then
 			can = false
 			self:SendMessage("You do not have the required resources.", 60, Color(255, 0, 0, 255))
 			return
 		end
 	end
 
-	for k, v in pairs( tool.reqlvl ) do
-		if self:GetLevel( k ) < v then
+	for skill, level in pairs( tool.lvl_reqs ) do
+		if self:GetLevel( skill ) < level then
 			can = false
 			self:SendMessage("You do not have the required level.", 60, Color(255, 0, 0, 255))
 			return
@@ -2988,7 +2991,7 @@ function SGS_ConGemTool( ply, com, args )
 
 		if ply.smithcheck == true then
 			if SGS_CheckOwnership( ply, args[1] ) == true or ply.equippedtool == args[1] then
-				ply:SendMessage("You are already carrying this tool. The created tool will be lost.", 60, Color(255, 0, 0, 255))
+				ply:SendMessage("You are already carrying one of this tool.", 60, Color(255, 0, 0, 255))
 				ply:SendMessage("Type !checksmith in chat to disable this check.", 60, Color(255, 0, 0, 255))
 				return
 			end

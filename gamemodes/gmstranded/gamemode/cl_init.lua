@@ -1337,6 +1337,34 @@ function SGS_ToolTip(item)
 
 end
 
+function SGS_RecipeToolTip(item)
+	local tt = ""
+
+	tt = tt .. item.title
+	tt = tt .. "\n"
+	tt = tt .. item.description
+	tt = tt .. "\n\n"
+	tt = tt .. "Item Requirements\n-----------------\n"
+
+	for k, v in pairs(item.item_cost) do
+		tt = tt .. CapAll(string.gsub(k, "_", " ")) .. ": " .. tostring(v) .. "\n"
+	end
+	for k, v in pairs(item.tool_cost) do
+		tt = tt .. CapAll(string.gsub(k, "_", " ")) .. ": " .. tostring(v) .. "\n"
+	end
+	tt = tt .. "\n"
+
+	tt = tt .. "Level Requirements\n------------------\n"
+
+	for k, v in pairs(item.lvl_reqs) do
+		tt = tt .. CapAll(string.gsub(k, "_", " ")) .. ": " .. tostring(v) .. "\n"
+	end
+
+
+
+	return tt
+end
+
 function SGS_SpellToolTip(item)
 
 	local tt = ""

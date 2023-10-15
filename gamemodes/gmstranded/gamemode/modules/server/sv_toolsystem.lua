@@ -241,7 +241,7 @@ end
 hook.Add( "PlayerSay", "SGS_ChatEnequipTool", SGS_ChatEnequipTool )
 
 function PlayerMeta:AddTool( tEnt )
-
+	print("Adding tool " .. tEnt)
 	if tEnt == "NONE" then return end
 	--if not SGS_CheckOwnership( self, tEnt ) then
 	table.insert( self.inventory, tEnt )

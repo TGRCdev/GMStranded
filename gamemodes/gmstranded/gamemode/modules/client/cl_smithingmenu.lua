@@ -15,59 +15,69 @@ function SGS_SmithingMenu()
 	CatList:SetPos( 10, 30 )
 	CatList:SetPadding( 3 )
 	CatList:SetSpacing( 3 )
-	
-	
-	
-	for k, v in pairs( SGS.Tools ) do
-		if k == "main" then continue end
-		if k == "construction" then continue end
-		if k == "enchanted" then continue end
-		if k == "woodcutting-sapphire" then continue end
-		if k == "woodcutting-emerald" then continue end
-		if k == "woodcutting-ruby" then continue end
-		if k == "woodcutting-diamond" then continue end
-		if k == "mining-sapphire" then continue end
-		if k == "mining-emerald" then continue end
-		if k == "mining-ruby" then continue end
-		if k == "mining-diamond" then continue end
-		
-		local IconList = vgui.Create( "DIconLayout")
-		local CollapseCat = vgui.Create( "DCollapsibleCategory" )
-		CatList:AddItem(CollapseCat)
-		
-		CollapseCat:SetSize( 335, 50 )
-		CollapseCat:SetExpanded( 1 )
-		CollapseCat:SetLabel( Cap(k) .. " Tools" )
-	
 
-		CollapseCat:SetContents( IconList )
+	local recipes = SGS_StructureRecipes("workbench")
+	table.sort(recipes, function(a, b)
+		return (a.lvl_reqs.smithing or 0) < (b.lvl_reqs.smithing or 0)
+	end)
+	local categories = {}
 
-		IconList:SetSpaceY( 4 )
-		IconList:SetSpaceX( 4 )
+	for _, recipe in ipairs( recipes ) do
+		if not categories[recipe.category] then
+			local IconList = vgui.Create( "DIconLayout")
+			local CollapseCat = vgui.Create( "DCollapsibleCategory" )
+			CatList:AddItem(CollapseCat)
 
-		
-		for k2, v2 in pairs(SGS.Tools[k]) do
-			local icon = vgui.Create( "DImageButton", IconList )
-			icon:SetMaterial( v2.icon )
-			icon:SetTooltip( SGS_ToolTip(v2) )
-			icon:SetSize( 64, 64 )
-			IconList:Add( icon )
-			icon.PaintOver = function()
-				for k3, v3 in pairs( v2.reqlvl ) do
-					local plvl = SGS.levels[ k3 ] or 0
-					if plvl < v3 then
-						draw.RoundedBoxEx( 2, 5, 5, 54, 20, Color(255, 80, 80, 150), false, false, false, false )
-						draw.SimpleText("INSUFFICIENT", "proplisticons", 7, 7, Color(0, 0, 0, 255), 0, 0)
-						draw.SimpleText("SKILL", "proplisticons", 25, 15, Color(0, 0, 0, 255), 0, 0)
-						icon.OnCursorEntered = function()
-							return true
-						end
-						break
+			CollapseCat:SetSize( 335, 50 )
+			CollapseCat:SetExpanded( 1 )
+			CollapseCat:SetLabel( Cap(recipe.category) .. " Tools" )
+
+
+			CollapseCat:SetContents( IconList )
+
+			IconList:SetSpaceY( 4 )
+			IconList:SetSpaceX( 4 )
+			categories[recipe.category] = IconList
+		end
+
+		local IconList = categories[recipe.category]
+
+		local icon = vgui.Create( "DImageButton", IconList )
+		icon:SetMaterial( recipe.icon )
+		icon:SetTooltip( SGS_RecipeToolTip(recipe) )
+		icon:SetSize( 64, 64 )
+		IconList:Add( icon )
+		icon.PaintOver = function()
+			for skill, level in pairs( recipe.lvl_reqs or {} ) do
+				local plvl = SGS.levels[ skill ] or 0
+				if plvl < level then
+					draw.RoundedBoxEx( 2, 5, 5, 54, 20, Color(255, 80, 80, 150), false, false, false, false )
+					draw.SimpleText("INSUFFICIENT", "proplisticons", 7, 7, Color(0, 0, 0, 255), 0, 0)
+					draw.SimpleText("SKILL", "proplisticons", 25, 15, Color(0, 0, 0, 255), 0, 0)
+					icon.OnCursorEntered = function()
+						return true
 					end
+					break
 				end
-				for k3, v3 in pairs( v2.cost ) do
-					local pamt = SGS.resources[ k3 ] or 0
-					if pamt < v3 then
+			end
+			local insuf_resources = false
+			for item, amount in pairs( recipe.item_cost or {} ) do
+				local pamt = SGS.resources[ item ] or 0
+				if pamt < amount then
+					draw.RoundedBoxEx( 2, 5, 39, 54, 20, Color(255, 255, 50, 150), false, false, false, false )
+					draw.SimpleText("INSUFFICIENT", "proplisticons", 7, 41, Color(0, 0, 0, 255), 0, 0)
+					draw.SimpleText("RESOURCES", "proplisticons", 8, 49, Color(0, 0, 0, 255), 0, 0)
+					icon.OnCursorEntered = function()
+						return true
+					end
+					insuf_resources = true
+					break
+				end
+			end
+			if not insuf_resources then
+				for tool, amount in pairs( recipe.tool_cost) do
+					local pamt = SGS.resources[ item ] or 0
+					if pamt < amount then
 						draw.RoundedBoxEx( 2, 5, 39, 54, 20, Color(255, 255, 50, 150), false, false, false, false )
 						draw.SimpleText("INSUFFICIENT", "proplisticons", 7, 41, Color(0, 0, 0, 255), 0, 0)
 						draw.SimpleText("RESOURCES", "proplisticons", 8, 49, Color(0, 0, 0, 255), 0, 0)
@@ -78,11 +88,11 @@ function SGS_SmithingMenu()
 					end
 				end
 			end
-			icon.DoClick = function ( icon ) 
-				surface.PlaySound( "ui/buttonclickrelease.wav" )
-				RunConsoleCommand("sgs_smith", v2.entity)
-				--SGS.smithingmenu:SetVisible(false)
-			end
+		end
+		icon.DoClick = function () 
+			surface.PlaySound( "ui/buttonclickrelease.wav" )
+			RunConsoleCommand("sgs_smith", recipe.id)
+			--SGS.smithingmenu:SetVisible(false)
 		end
 	end
 	SGS.smithingmenu:MakePopup()
