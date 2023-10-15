@@ -16,6 +16,7 @@ RECIPE.gives_tools = { weapon_melee1 = 1 }
 RECIPE.id = "weapon_melee1"
 RECIPE.icon = "vgui/tools/wood_melee.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -29,6 +30,7 @@ RECIPE.gives_tools = { weapon_melee2 = 1 }
 RECIPE.id = "weapon_melee2"
 RECIPE.icon = "vgui/tools/iron_melee.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -42,6 +44,7 @@ RECIPE.gives_tools = { weapon_melee3 = 1 }
 RECIPE.id = "weapon_melee3"
 RECIPE.icon = "vgui/tools/steel_melee.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -55,6 +58,7 @@ RECIPE.gives_tools = { weapon_melee4 = 1 }
 RECIPE.id = "weapon_melee4"
 RECIPE.icon = "vgui/tools/silver_melee.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -68,6 +72,7 @@ RECIPE.gives_tools = { weapon_melee5 = 1 }
 RECIPE.id = "weapon_melee5"
 RECIPE.icon = "vgui/tools/trinium_melee.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -81,6 +86,7 @@ RECIPE.gives_tools = { weapon_melee6 = 1 }
 RECIPE.id = "weapon_melee6"
 RECIPE.icon = "vgui/tools/naquadah_melee.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -94,6 +100,7 @@ RECIPE.gives_tools = { weapon_melee7 = 1 }
 RECIPE.id = "weapon_melee7"
 RECIPE.icon = "vgui/tools/mithril_melee.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -107,6 +114,7 @@ RECIPE.gives_tools = { weapon_melee8 = 1 }
 RECIPE.id = "weapon_melee8"
 RECIPE.icon = "vgui/tools/platinum_melee.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 ---------------------
@@ -124,6 +132,7 @@ RECIPE.gives_tools = { gms_hatchet1 = 1 }
 RECIPE.id = "gms_hatchet1"
 RECIPE.icon = "vgui/tools/stone_hatchet.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -137,6 +146,7 @@ RECIPE.gives_tools = { gms_hatchet2 = 1 }
 RECIPE.id = "gms_hatchet2"
 RECIPE.icon = "vgui/tools/iron_hatchet.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -150,6 +160,7 @@ RECIPE.gives_tools = { gms_hatchet3 = 1 }
 RECIPE.id = "gms_hatchet3"
 RECIPE.icon = "vgui/tools/steel_hatchet.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -163,6 +174,7 @@ RECIPE.gives_tools = { gms_hatchet4 = 1 }
 RECIPE.id = "gms_hatchet4"
 RECIPE.icon = "vgui/tools/silver_hatchet.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -176,6 +188,7 @@ RECIPE.gives_tools = { gms_hatchet5 = 1 }
 RECIPE.id = "gms_hatchet5"
 RECIPE.icon = "vgui/tools/trinium_hatchet.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -189,6 +202,7 @@ RECIPE.gives_tools = { gms_hatchet6 = 1 }
 RECIPE.id = "gms_hatchet6"
 RECIPE.icon = "vgui/tools/naquadah_hatchet.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -202,6 +216,7 @@ RECIPE.gives_tools = { gms_hatchet7 = 1 }
 RECIPE.id = "gms_hatchet7"
 RECIPE.icon = "vgui/tools/mithril_hatchet.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -215,6 +230,7 @@ RECIPE.gives_tools = { gms_hatchet8 = 1 }
 RECIPE.id = "gms_hatchet8"
 RECIPE.icon = "vgui/tools/platinum_hatchet.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 
@@ -234,6 +250,7 @@ RECIPE.gives_tools = { gms_pickaxe1 = 1 }
 RECIPE.id = "gms_pickaxe1"
 RECIPE.icon = "vgui/tools/stone_pickaxe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -247,6 +264,7 @@ RECIPE.gives_tools = { gms_pickaxe2 = 1 }
 RECIPE.id = "gms_pickaxe2"
 RECIPE.icon = "vgui/tools/iron_pickaxe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -260,6 +278,7 @@ RECIPE.gives_tools = { gms_pickaxe3 = 1 }
 RECIPE.id = "gms_pickaxe3"
 RECIPE.icon = "vgui/tools/steel_pickaxe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -273,6 +292,7 @@ RECIPE.gives_tools = { gms_pickaxe4 = 1 }
 RECIPE.id = "gms_pickaxe4"
 RECIPE.icon = "vgui/tools/silver_pickaxe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -286,6 +306,7 @@ RECIPE.gives_tools = { gms_pickaxe5 = 1 }
 RECIPE.id = "gms_pickaxe5"
 RECIPE.icon = "vgui/tools/trinium_pickaxe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -299,6 +320,7 @@ RECIPE.gives_tools = { gms_pickaxe6 = 1 }
 RECIPE.id = "gms_pickaxe6"
 RECIPE.icon = "vgui/tools/naquadah_pickaxe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -312,6 +334,7 @@ RECIPE.gives_tools = { gms_pickaxe7 = 1 }
 RECIPE.id = "gms_pickaxe7"
 RECIPE.icon = "vgui/tools/mithril_pickaxe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -325,6 +348,7 @@ RECIPE.gives_tools = { gms_pickaxe8 = 1 }
 RECIPE.id = "gms_pickaxe8"
 RECIPE.icon = "vgui/tools/platinum_pickaxe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 
@@ -345,6 +369,7 @@ RECIPE.gives_tools = { gms_fishingrod1 = 1 }
 RECIPE.id = "gms_fishingrod1"
 RECIPE.icon = "vgui/tools/wood_rod.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -358,6 +383,7 @@ RECIPE.gives_tools = { gms_fishingrod2 = 1 }
 RECIPE.id = "gms_fishingrod2"
 RECIPE.icon = "vgui/tools/iron_rod.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -371,6 +397,7 @@ RECIPE.gives_tools = { gms_fishingrod3 = 1 }
 RECIPE.id = "gms_fishingrod3"
 RECIPE.icon = "vgui/tools/steel_rod.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -384,6 +411,7 @@ RECIPE.gives_tools = { gms_fishingrod4 = 1 }
 RECIPE.id = "gms_fishingrod4"
 RECIPE.icon = "vgui/tools/silver_rod.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -397,6 +425,7 @@ RECIPE.gives_tools = { gms_fishingrod5 = 1 }
 RECIPE.id = "gms_fishingrod5"
 RECIPE.icon = "vgui/tools/trinium_rod.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -410,6 +439,7 @@ RECIPE.gives_tools = { gms_fishingrod6 = 1 }
 RECIPE.id = "gms_fishingrod6"
 RECIPE.icon = "vgui/tools/naquadah_rod.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -423,6 +453,7 @@ RECIPE.gives_tools = { gms_fishingrod7 = 1 }
 RECIPE.id = "gms_fishingrod7"
 RECIPE.icon = "vgui/tools/mithril_rod.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -436,6 +467,7 @@ RECIPE.gives_tools = { gms_fishingrod8 = 1 }
 RECIPE.id = "gms_fishingrod8"
 RECIPE.icon = "vgui/tools/platinum_rod.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -449,6 +481,7 @@ RECIPE.gives_tools = { gms_afishingrod = 1 }
 RECIPE.id = "gms_afishingrod"
 RECIPE.icon = "vgui/tools/adv_rod.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 
@@ -468,6 +501,7 @@ RECIPE.gives_tools = { gms_hoe1 = 1 }
 RECIPE.id = "gms_hoe1"
 RECIPE.icon = "vgui/tools/stone_hoe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -481,6 +515,7 @@ RECIPE.gives_tools = { gms_hoe2 = 1 }
 RECIPE.id = "gms_hoe2"
 RECIPE.icon = "vgui/tools/iron_hoe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -494,6 +529,7 @@ RECIPE.gives_tools = { gms_hoe3 = 1 }
 RECIPE.id = "gms_hoe3"
 RECIPE.icon = "vgui/tools/steel_hoe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -507,6 +543,7 @@ RECIPE.gives_tools = { gms_hoe4 = 1 }
 RECIPE.id = "gms_hoe4"
 RECIPE.icon = "vgui/tools/silver_hoe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -520,6 +557,7 @@ RECIPE.gives_tools = { gms_hoe5 = 1 }
 RECIPE.id = "gms_hoe5"
 RECIPE.icon = "vgui/tools/trinium_hoe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -533,6 +571,7 @@ RECIPE.gives_tools = { gms_hoe6 = 1 }
 RECIPE.id = "gms_hoe6"
 RECIPE.icon = "vgui/tools/naquadah_hoe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -546,6 +585,7 @@ RECIPE.gives_tools = { gms_hoe7 = 1 }
 RECIPE.id = "gms_hoe7"
 RECIPE.icon = "vgui/tools/mithril_hoe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -559,6 +599,7 @@ RECIPE.gives_tools = { gms_hoe8 = 1 }
 RECIPE.id = "gms_hoe8"
 RECIPE.icon = "vgui/tools/platinum_hoe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 
@@ -577,6 +618,7 @@ RECIPE.gives_tools = { gms_sifter = 1 }
 RECIPE.id = "gms_sifter"
 RECIPE.icon = "vgui/tools/iron_sifter.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -590,6 +632,7 @@ RECIPE.gives_tools = { gms_sifter2 = 1 }
 RECIPE.id = "gms_sifter2"
 RECIPE.icon = "vgui/tools/steel_sifter.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -603,6 +646,7 @@ RECIPE.gives_tools = { gms_sifter3 = 1 }
 RECIPE.id = "gms_sifter3"
 RECIPE.icon = "vgui/tools/trinium_sifter.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -616,6 +660,7 @@ RECIPE.gives_tools = { gms_sifter4 = 1 }
 RECIPE.id = "gms_sifter4"
 RECIPE.icon = "vgui/tools/mithril_sifter.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 --------------------
@@ -633,6 +678,7 @@ RECIPE.gives_tools = { gms_grindingstone = 1 }
 RECIPE.id = "gms_grindingstone"
 RECIPE.icon = "vgui/tools/grindingstone.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -646,6 +692,7 @@ RECIPE.gives_tools = { gms_alchemystone = 1 }
 RECIPE.id = "gms_alchemystone"
 RECIPE.icon = "vgui/tools/alchstone.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -659,6 +706,7 @@ RECIPE.gives_tools = { gms_fryingpan = 1 }
 RECIPE.id = "gms_fryingpan"
 RECIPE.icon = "vgui/tools/fryingpan.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -672,6 +720,7 @@ RECIPE.gives_tools = { gms_handtorch = 1 }
 RECIPE.id = "gms_handtorch"
 RECIPE.icon = "vgui/tools/torch.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -685,6 +734,7 @@ RECIPE.gives_tools = { gms_hammer = 1 }
 RECIPE.id = "gms_hammer"
 RECIPE.icon = "vgui/tools/hammer.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 
@@ -703,6 +753,7 @@ RECIPE.gives_tools = { gms_seedextractor = 1 }
 RECIPE.id = "gms_seedextractor"
 RECIPE.icon = "vgui/tools/iron_seedextractor.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -716,6 +767,7 @@ RECIPE.gives_tools = { gms_seedextractor2 = 1 }
 RECIPE.id = "gms_seedextractor2"
 RECIPE.icon = "vgui/tools/silver_seedextractor.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -729,6 +781,7 @@ RECIPE.gives_tools = { gms_seedextractor3 = 1 }
 RECIPE.id = "gms_seedextractor3"
 RECIPE.icon = "vgui/tools/trinium_seedextractor.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -742,6 +795,7 @@ RECIPE.gives_tools = { gms_seedextractor4 = 1 }
 RECIPE.id = "gms_seedextractor4"
 RECIPE.icon = "vgui/tools/mithril_seedextractor.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 --------------
@@ -759,6 +813,7 @@ RECIPE.gives_tools = { gms_bosshatchet = 1 }
 RECIPE.id = "gms_bosshatchet"
 RECIPE.icon = "vgui/tools/boss_hatchet.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -772,6 +827,7 @@ RECIPE.gives_tools = { gms_bosspickaxe = 1 }
 RECIPE.id = "gms_bosspickaxe"
 RECIPE.icon = "vgui/tools/boss_pickaxe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -785,6 +841,7 @@ RECIPE.gives_tools = { weapon_bossmelee = 1 }
 RECIPE.id = "weapon_bossmelee"
 RECIPE.icon = "vgui/tools/boss_melee.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 --------------
@@ -802,6 +859,7 @@ RECIPE.gives_tools = { gms_voidhatchet = 1 }
 RECIPE.id = "gms_voidhatchet"
 RECIPE.icon = "vgui/tools/void_hatchet.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -815,6 +873,7 @@ RECIPE.gives_tools = { gms_voidpickaxe = 1 }
 RECIPE.id = "gms_voidpickaxe"
 RECIPE.icon = "vgui/tools/void_pickaxe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -828,6 +887,7 @@ RECIPE.gives_tools = { gms_voidfishingrod = 1 }
 RECIPE.id = "gms_voidfishingrod"
 RECIPE.icon = "vgui/tools/void_rod.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -841,6 +901,7 @@ RECIPE.gives_tools = { gms_voidhoe = 1 }
 RECIPE.id = "gms_voidhoe"
 RECIPE.icon = "vgui/tools/void_hoe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 ------------------
@@ -858,6 +919,7 @@ RECIPE.gives_tools = { gms_mpickaxe = 1 }
 RECIPE.id = "gms_mpickaxe"
 RECIPE.icon = "vgui/tools/meteoric_pickaxe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 RECIPE = {}
@@ -871,6 +933,7 @@ RECIPE.gives_tools = { gms_rmpickaxe = 1 }
 RECIPE.id = "gms_rmpickaxe"
 RECIPE.icon = "vgui/tools/meteoric_pickaxe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
 
 SGS_EndRecipeCommit()

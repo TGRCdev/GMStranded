@@ -2508,8 +2508,9 @@ function SGS_CompleteCrafting(ply, recipe)
 		ply:AddExp(skill, amount)
 	end
 
-	-- TODO: Give recipes stats to track
-	-- i.e. tools smithed
+	for stat, amount in pairs(recipe.stats) do
+		ply:AddStat(stat, amount)
+	end
 end
 
 function SGS_Smith_Stop(ply, tool, modi)

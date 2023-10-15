@@ -37,6 +37,7 @@ function ResetRecipeTables()
     sql.Query("DROP TABLE IF EXISTS sgs_recipe_level_req")
     sql.Query("DROP TABLE IF EXISTS sgs_structure_recipe")
     sql.Query("DROP TABLE IF EXISTS sgs_recipe")
+    sql.Query("DROP TABLE IF EXISTS sgs_recipe_stat")
     sql.Commit()
     initialized = false
     EnsureRecipeTables()
@@ -60,13 +61,13 @@ function EnsureRecipeTables()
             Icon TEXT,
             Title TEXT,
             Description TEXT,
-            SortKey INTEGER,
+            SortKey INTEGER DEFAULT(0) NOT NULL,
             SmithCheck BOOLEAN DEFAULT(FALSE) NOT NULL
         ) WITHOUT ROWID
     ]])
     sql.Query([[
         CREATE TABLE IF NOT EXISTS sgs_structure_recipe (
-            StructureId TEXT,
+            StructureId TEXT NOT NULL,
             RecipeId TEXT,
             Primary Key(StructureId, RecipeId),
             Foreign Key(RecipeId) References sgs_recipe(RecipeId) ON DELETE CASCADE ON UPDATE CASCADE
@@ -76,7 +77,7 @@ function EnsureRecipeTables()
         CREATE TABLE IF NOT EXISTS sgs_recipe_level_req (
             RecipeId TEXT,
             Skill TEXT,
-            Level INTEGER,
+            Level INTEGER NOT NULL,
             Primary Key(RecipeId, Skill),
             Foreign Key(RecipeId) References sgs_recipe(RecipeId) ON DELETE CASCADE ON UPDATE CASCADE
         ) WITHOUT ROWID
@@ -85,7 +86,7 @@ function EnsureRecipeTables()
         CREATE TABLE IF NOT EXISTS sgs_recipe_item_cost (
             RecipeId TEXT,
             ResourceId TEXT,
-            Amount INTEGER DEFAULT(1),
+            Amount INTEGER DEFAULT(1) NOT NULL,
             Primary Key(RecipeId, ResourceId),
             Foreign Key(RecipeId) References sgs_recipe(RecipeId) ON DELETE CASCADE ON UPDATE CASCADE
         ) WITHOUT ROWID
@@ -94,7 +95,7 @@ function EnsureRecipeTables()
         CREATE TABLE IF NOT EXISTS sgs_recipe_tool_cost (
             RecipeId TEXT,
             ToolId TEXT,
-            Amount INTEGER DEFAULT(1),
+            Amount INTEGER DEFAULT(1) NOT NULL,
             Primary Key(RecipeId, ToolId),
             Foreign Key(RecipeId) References sgs_recipe(RecipeId) ON DELETE CASCADE ON UPDATE CASCADE
         ) WITHOUT ROWID
@@ -103,7 +104,7 @@ function EnsureRecipeTables()
         CREATE TABLE IF NOT EXISTS sgs_recipe_gives_item (
             RecipeId TEXT,
             ResourceId TEXT,
-            Amount INTEGER DEFAULT(1),
+            Amount INTEGER DEFAULT(1) NOT NULL,
             Primary Key(RecipeId, ResourceId),
             Foreign Key(RecipeId) References sgs_recipe(RecipeId) ON DELETE CASCADE ON UPDATE CASCADE
         ) WITHOUT ROWID
@@ -112,7 +113,7 @@ function EnsureRecipeTables()
         CREATE TABLE IF NOT EXISTS sgs_recipe_gives_tool (
             RecipeId TEXT,
             ToolId TEXT,
-            Amount INTEGER DEFAULT(1),
+            Amount INTEGER DEFAULT(1) NOT NULL,
             Primary Key(RecipeId, ToolId),
             Foreign Key(RecipeId) References sgs_recipe(RecipeId) ON DELETE CASCADE ON UPDATE CASCADE
         ) WITHOUT ROWID
@@ -121,8 +122,17 @@ function EnsureRecipeTables()
         CREATE TABLE IF NOT EXISTS sgs_recipe_gives_xp (
             RecipeId TEXT,
             Skill TEXT,
-            Amount INTEGER,
+            Amount INTEGER NOT NULL,
             Primary Key(RecipeId, Skill),
+            Foreign Key(RecipeId) References sgs_recipe(RecipeId) ON DELETE CASCADE ON UPDATE CASCADE
+        ) WITHOUT ROWID
+    ]])
+    sql.Query([[
+        CREATE TABLE IF NOT EXISTS sgs_recipe_stat (
+            RecipeId TEXT,
+            StatId TEXT,
+            Amount INTEGER NOT NULL,
+            Primary Key(RecipeId, StatId),
             Foreign Key(RecipeId) References sgs_recipe(RecipeId) ON DELETE CASCADE ON UPDATE CASCADE
         ) WITHOUT ROWID
     ]])
@@ -179,6 +189,9 @@ function SGS_RegisterRecipe(structure_id, recipe)
     end
     for skill, gives in pairs(recipe.gives_xp or {}) do
         sql.Query(Format("INSERT OR REPLACE INTO sgs_recipe_gives_xp (RecipeId, Skill, Amount) VALUES (%s, %s, %s)", recipe_id, sql.SQLStr(skill), sql.SQLStr(gives)))
+    end
+    for stat, amount in pairs(recipe.stats or {}) do
+        sql.Query(Format("INSERT OR REPLACE INTO sgs_recipe_stat (RecipeId, StatId, Amount) VALUES (%s, %s, %s)", recipe_id, sql.SQLStr(stat), sql.SQLStr(amount)))
     end
 
     if internal_commit then
@@ -303,6 +316,18 @@ function SGS_QueryRecipe(recipe_id)
         recipe.gives_xp[row.Skill] = tonumber(row.Amount)
     end
 
+    -- Stats
+    local stats = sql.Query(Format([[
+        SELECT
+            StatId, Amount
+        FROM sgs_recipe_stat
+        WHERE RecipeId == %s
+    ]], recipe_id))
+    recipe.stats = {}
+    for _, row in ipairs(stats or {}) do
+        recipe.stats[row.StatId] = tonumber(row.Amount)
+    end
+
     return recipe
 end
 
@@ -419,6 +444,20 @@ function SGS_StructureRecipes(structure_id)
         gives_xp[row.RecipeId][row.Skill] = tonumber(row.Amount)
     end
 
+    -- Stats
+    local stat_rows = sql.Query(Format([[
+        SELECT
+            RecipeId, StatId, Amount
+        FROM sgs_recipe_stat
+            NATURAL JOIN sgs_structure_recipe
+        WHERE StructureId == %s
+    ]], structure_id))
+    local stats = {}
+    for _, row in ipairs(stat_rows or {}) do
+        stats[row.RecipeId] = stats[row.RecipeId] or {}
+        stats[row.RecipeId][row.StatId] = tonumber(row.Amount)
+    end
+
     -- Final assembly of recipe list
     for _, recipe in ipairs(recipes) do
         recipe.lvl_reqs = lvl_reqs[recipe.id] or {}
@@ -427,6 +466,7 @@ function SGS_StructureRecipes(structure_id)
         recipe.gives_items = gives_items[recipe.id] or {}
         recipe.gives_tools = gives_tools[recipe.id] or {}
         recipe.gives_xp = gives_xp[recipe.id] or {}
+        recipe.stats = stats[recipe.id] or {}
     end
 
     return recipes
@@ -442,6 +482,7 @@ function _TestRecipe()
         gives_items = { gtoken = 15, sapphire = 3 },
         gives_tools = { gms_fryingpan = 1, gms_fishingrod = 1 },
         gives_xp = { woodcutting = 500, mining = 200, smithing = 300 },
+        stats = { fakestat = 1 }
     }
 
     SGS_RegisterRecipe("gms_workbench", RECIPE)

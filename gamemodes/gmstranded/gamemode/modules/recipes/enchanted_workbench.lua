@@ -15,6 +15,7 @@ RECIPE.gives_tools = { gms_ehatchet = 1 }
 RECIPE.id = "gms_ehatchet"
 RECIPE.icon = "vgui/tools/enchanted_hatchet.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench2", RECIPE )
 
 RECIPE = {}
@@ -28,6 +29,7 @@ RECIPE.gives_tools = { gms_epickaxe = 1 }
 RECIPE.id = "gms_epickaxe"
 RECIPE.icon = "vgui/tools/enchanted_pickaxe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench2", RECIPE )
 
 RECIPE = {}
@@ -41,6 +43,7 @@ RECIPE.gives_tools = { gms_efishingrod = 1 }
 RECIPE.id = "gms_efishingrod"
 RECIPE.icon = "vgui/tools/enchanted_rod.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench2", RECIPE )
 
 RECIPE = {}
@@ -54,6 +57,7 @@ RECIPE.gives_tools = { gms_ehoe = 1 }
 RECIPE.id = "gms_ehoe"
 RECIPE.icon = "vgui/tools/enchanted_hoe.png"
 RECIPE.smithcheck = true
+RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench2", RECIPE )
 
 SGS_EndRecipeCommit()
