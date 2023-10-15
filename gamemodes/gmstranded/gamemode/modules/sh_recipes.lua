@@ -10,6 +10,14 @@ local function SqlOrNull(val)
     return SqlOrDefault(val, "NULL")
 end
 
+local function SqlBool(val)
+    if val then
+        return "TRUE"
+    else
+        return "FALSE"
+    end
+end
+
 if SERVER then
 sql.m_strError = nil -- This is required to invoke __newindex
 setmetatable(sql, { __newindex = function( table, k, v )
@@ -52,7 +60,8 @@ function EnsureRecipeTables()
             Icon TEXT,
             Title TEXT,
             Description TEXT,
-            SortKey INTEGER
+            SortKey INTEGER,
+            SmithCheck BOOLEAN DEFAULT(FALSE) NOT NULL
         ) WITHOUT ROWID
     ]])
     sql.Query([[
@@ -150,7 +159,7 @@ function SGS_RegisterRecipe(structure_id, recipe)
     end
 
     local recipe_id = sql.SQLStr(recipe.id)
-    sql.Query(Format("INSERT OR REPLACE INTO sgs_recipe (RecipeId, Category, Icon, Title, Description, SortKey) VALUES (%s, %s, %s, %s, %s, %s)", recipe_id, SqlOrDefault(recipe.category, "'misc'"), SqlOrNull(recipe.icon), SqlOrNull(recipe.title), SqlOrNull(recipe.description), SGS.sortkey))
+    sql.Query(Format("INSERT OR REPLACE INTO sgs_recipe (RecipeId, Category, Icon, Title, Description, SortKey, SmithCheck) VALUES (%s, %s, %s, %s, %s, %s, %s)", recipe_id, SqlOrDefault(recipe.category, "'misc'"), SqlOrNull(recipe.icon), SqlOrNull(recipe.title), SqlOrNull(recipe.description), SGS.sortkey, SqlBool(recipe.smithcheck)))
     SGS.sortkey = SGS.sortkey + 1
     sql.Query(Format("INSERT OR REPLACE INTO sgs_structure_recipe (StructureId, RecipeId) VALUES (%s, %s)", sql.SQLStr(structure_id), recipe_id))
     for skill, req in pairs(recipe.lvl_reqs or {}) do
@@ -202,11 +211,25 @@ function SGS_QueryRecipe(recipe_id)
             Category as category,
             Icon as icon,
             Title as title,
-            Description as description
+            Description as description,
+            SmithCheck as smithcheck
         FROM sgs_recipe
         WHERE id == %s
     ]], recipe_id))
     ConvertSqlNulls(recipe)
+    recipe.smithcheck = tobool(recipe.smithcheck)
+
+    -- Allowed structures
+    local structures = sql.Query(Format([[
+        SELECT
+            StructureId
+        FROM sgs_structure_recipe
+        WHERE RecipeId == %s
+    ]], recipe_id))
+    recipe.structures = {}
+    for _, row in ipairs(structures) do
+        recipe.structures[row.StructureId] = true
+    end
 
     -- Level requirements
     local lvl_reqs = sql.Query(Format([[
@@ -308,6 +331,8 @@ function SGS_StructureRecipes(structure_id)
     for _, recipe in ipairs(recipes) do
         -- Fix sortkey's type
         recipe.sortkey = tonumber(recipe.sortkey)
+        -- Fix smithcheck's type
+        recipe.smithcheck = tobool(recipe.smithcheck)
     end
 
     -- Level requirements
@@ -419,7 +444,7 @@ function _TestRecipe()
         gives_xp = { woodcutting = 500, mining = 200, smithing = 300 },
     }
 
-    SGS_RegisterRecipe("workbench", RECIPE)
+    SGS_RegisterRecipe("gms_workbench", RECIPE)
 end
 
 ResetRecipeTables()

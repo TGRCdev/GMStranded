@@ -2904,7 +2904,13 @@ function SGS_ConSmith( ply, com, args )
 			return
 		end
 
-		if ply.smithcheck == true then
+		local structure = ply:TraceFromEyes(100).Entity
+		if not IsValid(structure) or not recipe.structures[structure:GetClass()] then
+			ply:SendMessage("You must be looking at the relevant crafting structure to craft this.", 60, Color(255,0,0,255))
+			return
+		end
+
+		if recipe.smithcheck and ply.smithcheck then
 			if SGS_CheckOwnership( ply, args[1] ) == true or ply.equippedtool == args[1] then
 				ply:SendMessage("You are already carrying one of this tool.", 60, Color(255, 0, 0, 255))
 				ply:SendMessage("Type !checksmith in chat to disable this check.", 60, Color(255, 0, 0, 255))
@@ -2946,9 +2952,7 @@ function SGS_ChatSmithCheck( ply, text, public )
 end
 hook.Add( "PlayerSay", "SGS_ChatSmithCheck", SGS_ChatSmithCheck)
 
-function PlayerMeta:Smith( tool )
-
-	PrintTable(tool)
+function PlayerMeta:Craft( recipe )
 
 	local can = true
 	local modi = 1
@@ -2960,6 +2964,10 @@ function PlayerMeta:Smith( tool )
 			self:SendMessage("You do not have the required resources.", 60, Color(255, 0, 0, 255))
 			return
 		end
+	end
+
+	for tool, amount in pairs( tool.tool_cost ) do
+		
 	end
 
 	for skill, level in pairs( tool.lvl_reqs ) do

@@ -16,7 +16,7 @@ function SGS_SmithingMenu()
 	CatList:SetPadding( 3 )
 	CatList:SetSpacing( 3 )
 
-	local recipes = SGS_StructureRecipes("workbench")
+	local recipes = SGS_StructureRecipes("gms_workbench")
 	table.SortByMember(recipes, "sortkey", true)
 	local categories = {}
 
