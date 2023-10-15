@@ -17,9 +17,7 @@ function SGS_SmithingMenu()
 	CatList:SetSpacing( 3 )
 
 	local recipes = SGS_StructureRecipes("workbench")
-	table.sort(recipes, function(a, b)
-		return (a.lvl_reqs.smithing or 0) < (b.lvl_reqs.smithing or 0)
-	end)
+	table.SortByMember(recipes, "sortkey", true)
 	local categories = {}
 
 	for _, recipe in ipairs( recipes ) do

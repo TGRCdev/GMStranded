@@ -48,11 +48,12 @@ function EnsureRecipeTables()
     sql.Query([[
         CREATE TABLE IF NOT EXISTS sgs_recipe (
             RecipeId TEXT PRIMARY KEY,
-            Category TEXT DEFAULT('misc'),
+            Category TEXT DEFAULT('misc') NOT NULL,
             Icon TEXT,
             Title TEXT,
-            Description TEXT
-        )
+            Description TEXT,
+            SortKey INTEGER
+        ) WITHOUT ROWID
     ]])
     sql.Query([[
         CREATE TABLE IF NOT EXISTS sgs_structure_recipe (
@@ -60,7 +61,7 @@ function EnsureRecipeTables()
             RecipeId TEXT,
             Primary Key(StructureId, RecipeId),
             Foreign Key(RecipeId) References sgs_recipe(RecipeId) ON DELETE CASCADE ON UPDATE CASCADE
-        )
+        ) WITHOUT ROWID
     ]])
     sql.Query([[
         CREATE TABLE IF NOT EXISTS sgs_recipe_level_req (
@@ -69,7 +70,7 @@ function EnsureRecipeTables()
             Level INTEGER,
             Primary Key(RecipeId, Skill),
             Foreign Key(RecipeId) References sgs_recipe(RecipeId) ON DELETE CASCADE ON UPDATE CASCADE
-        )
+        ) WITHOUT ROWID
     ]])
     sql.Query([[
         CREATE TABLE IF NOT EXISTS sgs_recipe_item_cost (
@@ -78,7 +79,7 @@ function EnsureRecipeTables()
             Amount INTEGER DEFAULT(1),
             Primary Key(RecipeId, ResourceId),
             Foreign Key(RecipeId) References sgs_recipe(RecipeId) ON DELETE CASCADE ON UPDATE CASCADE
-        )
+        ) WITHOUT ROWID
     ]])
     sql.Query([[
         CREATE TABLE IF NOT EXISTS sgs_recipe_tool_cost (
@@ -87,7 +88,7 @@ function EnsureRecipeTables()
             Amount INTEGER DEFAULT(1),
             Primary Key(RecipeId, ToolId),
             Foreign Key(RecipeId) References sgs_recipe(RecipeId) ON DELETE CASCADE ON UPDATE CASCADE
-        )
+        ) WITHOUT ROWID
     ]])
     sql.Query([[
         CREATE TABLE IF NOT EXISTS sgs_recipe_gives_item (
@@ -96,7 +97,7 @@ function EnsureRecipeTables()
             Amount INTEGER DEFAULT(1),
             Primary Key(RecipeId, ResourceId),
             Foreign Key(RecipeId) References sgs_recipe(RecipeId) ON DELETE CASCADE ON UPDATE CASCADE
-        )
+        ) WITHOUT ROWID
     ]])
     sql.Query([[
         CREATE TABLE IF NOT EXISTS sgs_recipe_gives_tool (
@@ -105,7 +106,7 @@ function EnsureRecipeTables()
             Amount INTEGER DEFAULT(1),
             Primary Key(RecipeId, ToolId),
             Foreign Key(RecipeId) References sgs_recipe(RecipeId) ON DELETE CASCADE ON UPDATE CASCADE
-        )
+        ) WITHOUT ROWID
     ]])
     sql.Query([[
         CREATE TABLE IF NOT EXISTS sgs_recipe_gives_xp (
@@ -114,7 +115,7 @@ function EnsureRecipeTables()
             Amount INTEGER,
             Primary Key(RecipeId, Skill),
             Foreign Key(RecipeId) References sgs_recipe(RecipeId) ON DELETE CASCADE ON UPDATE CASCADE
-        )
+        ) WITHOUT ROWID
     ]])
     sql.Commit()
     initialized = true
@@ -139,6 +140,7 @@ function SGS_EndRecipeCommit()
     in_commit = false
 end
 
+SGS.sortkey = SGS.sortkey or 0
 function SGS_RegisterRecipe(structure_id, recipe)
     local internal_commit = false
     if not in_commit then
@@ -148,7 +150,8 @@ function SGS_RegisterRecipe(structure_id, recipe)
     end
 
     local recipe_id = sql.SQLStr(recipe.id)
-    sql.Query(Format("INSERT OR REPLACE INTO sgs_recipe (RecipeId, Category, Icon, Title, Description) VALUES (%s, %s, %s, %s, %s)", recipe_id, SqlOrDefault(recipe.category, "'misc'"), SqlOrNull(recipe.icon), SqlOrNull(recipe.title), SqlOrNull(recipe.description)))
+    sql.Query(Format("INSERT OR REPLACE INTO sgs_recipe (RecipeId, Category, Icon, Title, Description, SortKey) VALUES (%s, %s, %s, %s, %s, %s)", recipe_id, SqlOrDefault(recipe.category, "'misc'"), SqlOrNull(recipe.icon), SqlOrNull(recipe.title), SqlOrNull(recipe.description), SGS.sortkey))
+    SGS.sortkey = SGS.sortkey + 1
     sql.Query(Format("INSERT OR REPLACE INTO sgs_structure_recipe (StructureId, RecipeId) VALUES (%s, %s)", sql.SQLStr(structure_id), recipe_id))
     for skill, req in pairs(recipe.lvl_reqs or {}) do
         sql.Query(Format("INSERT OR REPLACE INTO sgs_recipe_level_req (RecipeId, Skill, Level) VALUES (%s, %s, %s)", recipe_id, sql.SQLStr(skill), sql.SQLStr(req)))
@@ -297,10 +300,15 @@ function SGS_StructureRecipes(structure_id)
             Icon as icon,
             Category as category,
             Title as title,
-            Description as description
+            Description as description,
+            SortKey as sortkey
         FROM sgs_recipe NATURAL JOIN sgs_structure_recipe
         WHERE StructureId == %s
     ]], structure_id))
+    for _, recipe in ipairs(recipes) do
+        -- Fix sortkey's type
+        recipe.sortkey = tonumber(recipe.sortkey)
+    end
 
     -- Level requirements
     local lvl_reqs_rows = sql.Query(Format([[
