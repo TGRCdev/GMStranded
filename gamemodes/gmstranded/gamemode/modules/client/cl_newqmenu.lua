@@ -624,14 +624,26 @@ function TOOLS_TAB:DrawFrame()
 		GAMEMODE.newQMenu.toolsListScrollPanel:Dock( FILL )
 
 		local categories = {}
-		
+
+		local inv_details = {}
 		for toolid, amount in pairs(SGS.inventory) do
 			local tool = SGS_ReverseToolLookup(toolid)
 			if not tool then
 				ErrorNoHaltWithStack("Inventory contains invalid tool \"" .. toolid .. "\"")
 				continue
 			end
-
+			tool.amount = amount
+			table.insert(inv_details, tool)
+		end
+		table.sort(inv_details, function(a, b)
+			if a.category == b.category then
+				return a.title < b.title
+			else
+				return a.category < b.category
+			end
+		end)
+		
+		for _, tool in ipairs(inv_details) do
 			local cat = tool.category or "misc"
 
 			if not categories[cat] then
@@ -657,8 +669,8 @@ function TOOLS_TAB:DrawFrame()
 			icon.dropType = "tool"
 			icon.tool = tool.entity
 			icon.PaintOver = function()
-				if amount > 1 then
-					local tool_count = tostring(amount) .. "x"
+				if tool.amount > 1 then
+					local tool_count = tostring(tool.amount) .. "x"
 					surface.SetFont( "SGS_HUD2" )
 					local x, y = surface.GetTextSize( tool_count )
 					draw.SimpleText(tool_count, "SGS_HUD2", 60 - x/2, 11, Color(255, 255, 255, 255), 0, 0)
@@ -823,7 +835,7 @@ function PROPS_TAB:DrawFrame()
 		GAMEMODE.newQMenu.propsListScrollPanel = vgui.Create( "DScrollPanel", GAMEMODE.newQMenu.propsListPanel )
 		GAMEMODE.newQMenu.propsListScrollPanel:Dock( FILL )
 		
-		for k, v in pairs( SGS_ReturnSortedTable( SGS.props ) ) do
+		for k, v in pairs( SGS.props ) do
 			
 			local MenuLabel = vgui.Create( "menu_qLabelBar", GAMEMODE.newQMenu.propsListScrollPanel )
 			MenuLabel:SetButtonText( Cap(k) .. " Items" )
@@ -835,7 +847,7 @@ function PROPS_TAB:DrawFrame()
 			PropContainerButtons:Dock(TOP)
 			PropContainerButtons:DockMargin( 4, 4, 4, 4 )
 			
-			for _, prop in pairs( SGS.props[k] ) do
+			for _, prop in ipairs( SGS.props[k] ) do
 		
 				local icon = vgui.Create( "menu_qPropButton", PropContainerButtons)
 				icon:SetSize( 186, 30 )
@@ -912,7 +924,7 @@ function STRUCTURES_TAB:DrawFrame()
 		GAMEMODE.newQMenu.propsListScrollPanel = vgui.Create( "DScrollPanel", GAMEMODE.newQMenu.propsListPanel )
 		GAMEMODE.newQMenu.propsListScrollPanel:Dock( FILL )
 		
-		for k, v in pairs( SGS_ReturnSortedTable( SGS.structures ) ) do
+		for k, v in pairs( SGS.structures ) do
 			
 			local MenuLabel = vgui.Create( "menu_qLabelBar", GAMEMODE.newQMenu.propsListScrollPanel )
 			MenuLabel:SetButtonText( Cap(k) .. " Structures" )
