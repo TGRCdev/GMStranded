@@ -2637,43 +2637,18 @@ function SGS_ConBrew( ply, com, args )
 			return
 		end
 
-		if not SGS_ReversePotionLookup( args[1] ) then
-			ply:SendMessage("Invalid item!", 60, Color(0, 255, 0, 255))
-			return
-		end
+		local recipe = SGS_QueryRecipe( args[1] )
 
-        ply:Brew( SGS_ReversePotionLookup( args[1] ) )
-
-
+        ply:Brew( recipe )
 end
 concommand.Add( "sgs_brew", SGS_ConBrew )
 
-function PlayerMeta:Brew( potion )
-
-	local can = true
+function PlayerMeta:Brew( recipe )
 	local modi = 1
 
-	for k, v in pairs( potion.cost ) do
-		local iinv = self.resource[ k ] or 0
-		if iinv < v then
-			can = false
-			self:SendMessage("You do not have the required resources.", 60, Color(255, 0, 0, 255))
-			return
-		end
+	if self:CanCraft(recipe) then
+		SGS_Brew_Start(self, 3, recipe, modi)
 	end
-
-	for k, v in pairs( potion.reqlvl ) do
-		if self:GetLevel( k ) < v then
-			can = false
-			self:SendMessage("You do not have the required level.", 60, Color(255, 0, 0, 255))
-			return
-		end
-	end
-
-	if can then
-		SGS_Brew_Start(self, 3, potion, modi)
-	end
-
 end
 
 function SGS_ConAidCraft( ply, com, args )

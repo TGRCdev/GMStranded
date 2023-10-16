@@ -333,8 +333,13 @@ function SGS_QueryRecipe(recipe_id)
     return recipe
 end
 
-function SGS_StructureRecipes(structure_id)
+function SGS_StructureRecipes(structure_id, useSortkey)
     EnsureRecipeTables()
+
+    local sortkey = ""
+    if useSortkey then
+        sortkey = " ORDER BY SortKey ASC"
+    end
 
     local structure_id = sql.SQLStr(structure_id)
 
@@ -354,13 +359,7 @@ function SGS_StructureRecipes(structure_id)
             SortKey as sortkey
         FROM sgs_recipe NATURAL JOIN sgs_structure_recipe
         WHERE StructureId == %s
-    ]], structure_id))
-    for _, recipe in ipairs(recipes) do
-        -- Fix sortkey's type
-        recipe.sortkey = tonumber(recipe.sortkey)
-        -- Fix smithcheck's type
-        recipe.smithcheck = tobool(recipe.smithcheck)
-    end
+    ]], structure_id) .. sortkey)
 
     -- Level requirements
     local lvl_reqs_rows = sql.Query(Format([[
@@ -462,6 +461,10 @@ function SGS_StructureRecipes(structure_id)
 
     -- Final assembly of recipe list
     for _, recipe in ipairs(recipes) do
+        -- Fix sortkey's type
+        recipe.sortkey = tonumber(recipe.sortkey)
+        -- Fix smithcheck's type
+        recipe.smithcheck = tobool(recipe.smithcheck)
         recipe.lvl_reqs = lvl_reqs[recipe.id] or {}
         recipe.item_cost = item_costs[recipe.id] or {}
         recipe.tool_cost = tool_costs[recipe.id] or {}

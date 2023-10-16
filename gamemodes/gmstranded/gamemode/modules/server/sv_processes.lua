@@ -2154,30 +2154,16 @@ function SGS_Brew_Start(ply, len, potion, modi)
 		return
 	end
 	
-	trace = ply:TraceFromEyes(100)
+	ply:Freeze( true )
+	ply.inprocess = true
+	ply.sound = CreateSound(ply, "ambient/fire/fire_big_loop1.wav")
+	ply.sound:Play()
+	ply.processtype = "brewing"
 	
-	if not IsValid(trace.Entity) then
-		ply:SendMessage("You need to be at a potions lab to brew!", 60, Color(255, 0, 0, 255))
-		return
-	end
-	
-	if trace.Entity:GetClass() == "gms_alchlab" then
-		ply:Freeze( true )
-		ply.inprocess = true
-		ply.sound = CreateSound(ply, "ambient/fire/fire_big_loop1.wav")
-		ply.sound:Play()
-		ply.processtype = "brewing"
-		
-		local txt = "Brewing..."
-		ply:SetNWString("action", txt)
-		SGS_StartTimer( ply, txt, len, "alchemy" )
-		timer.Create( ply:UniqueID() .. "processtimer", len, 1, function() SGS_Brew_Stop( ply, potion, modi ) end )
-	else
-		ply:SendMessage("You need to be at a potions lab to brew!", 60, Color(255, 0, 0, 255))
-	end
-	
-
-
+	local txt = "Brewing..."
+	ply:SetNWString("action", txt)
+	SGS_StartTimer( ply, txt, len, "alchemy" )
+	timer.Create( ply:UniqueID() .. "processtimer", len, 1, function() SGS_Brew_Stop( ply, potion, modi ) end )
 end
 
 function SGS_Brew_Stop(ply, potion, modi)
@@ -2205,18 +2191,11 @@ function SGS_Brew_Stop(ply, potion, modi)
 	
 	if chance > 20 then
 		ply:SendMessage("You brewed a/an " .. CapAll(string.gsub(potion.title, "_", " ")) .. "!", 60, Color(0, 255, 0, 255))
-		ply:AddExp( "alchemy", potion.xp )
-		ply:AddStat( "alchemy1", 1 )
-		for k, v in pairs(potion.gives) do
-			ply:AddResource( k, v )
-		end
-		for k, v in pairs( potion.cost ) do
-			ply:SubResource( k, v )
-		end	
+		SGS_CompleteCrafting(ply, potion)
 	else
 		ply:SendMessage("The " .. CapAll(string.gsub(potion.title, "_", " ")) .. " failed to brew!", 60, Color(255, 0, 0, 255))
-		for k, v in pairs( potion.cost ) do
-			ply:SubResource( k, math.random(math.ceil(v/2), v) )
+		for item, amount in pairs( potion.item_cost ) do
+			ply:SubResource( item, math.random(math.ceil(amount/2), amount) )
 		end
 	end
 	ply:RandomFindChance()
