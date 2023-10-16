@@ -188,12 +188,108 @@ Menu_RegisterTool( TOOLTABLE )
 TOOLTABLE = {}
 TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
 TOOLTABLE.skin = 1
+TOOLTABLE.title = "Stone Hatchet (s)"
+TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
+TOOLTABLE.uselevel = { woodcutting = 1}
+TOOLTABLE.entity = "gms_hatchet1s"
+TOOLTABLE.color = Vector(.6, .6, .6)
+TOOLTABLE.icon = "vgui/tools/stone_hatchet_s.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Stone Hatchet (e)"
+TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
+TOOLTABLE.uselevel = { woodcutting = 1}
+TOOLTABLE.entity = "gms_hatchet1e"
+TOOLTABLE.color = Vector(.6, .6, .6)
+TOOLTABLE.icon = "vgui/tools/stone_hatchet_e.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Stone Hatchet (r)"
+TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
+TOOLTABLE.uselevel = { woodcutting = 1}
+TOOLTABLE.entity = "gms_hatchet1r"
+TOOLTABLE.color = Vector(.6, .6, .6)
+TOOLTABLE.icon = "vgui/tools/stone_hatchet_r.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Stone Hatchet (d)"
+TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
+TOOLTABLE.uselevel = { woodcutting = 1}
+TOOLTABLE.entity = "gms_hatchet1d"
+TOOLTABLE.color = Vector(.6, .6, .6)
+TOOLTABLE.icon = "vgui/tools/stone_hatchet_d.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
 TOOLTABLE.title = "Iron Hatchet"
 TOOLTABLE.description = "Makes cutting down trees easy!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
 TOOLTABLE.uselevel = { woodcutting = 1}
 TOOLTABLE.entity = "gms_hatchet2"
 TOOLTABLE.color = Vector(.45, .3, .3)
 TOOLTABLE.icon = "vgui/tools/iron_hatchet.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Iron Hatchet (s)"
+TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
+TOOLTABLE.uselevel = { woodcutting = 1}
+TOOLTABLE.entity = "gms_hatchet2s"
+TOOLTABLE.color = Vector(.45, .3, .3)
+TOOLTABLE.icon = "vgui/tools/iron_hatchet_s.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Iron Hatchet (e)"
+TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
+TOOLTABLE.uselevel = { woodcutting = 1}
+TOOLTABLE.entity = "gms_hatchet2e"
+TOOLTABLE.color = Vector(.45, .3, .3)
+TOOLTABLE.icon = "vgui/tools/iron_hatchet_e.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Iron Hatchet (r)"
+TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
+TOOLTABLE.uselevel = { woodcutting = 1}
+TOOLTABLE.entity = "gms_hatchet2r"
+TOOLTABLE.color = Vector(.45, .3, .3)
+TOOLTABLE.icon = "vgui/tools/iron_hatchet_r.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Iron Hatchet (d)"
+TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
+TOOLTABLE.uselevel = { woodcutting = 1}
+TOOLTABLE.entity = "gms_hatchet2d"
+TOOLTABLE.color = Vector(.45, .3, .3)
+TOOLTABLE.icon = "vgui/tools/iron_hatchet_d.png"
 TOOLTABLE.category = "woodcutting"
 Menu_RegisterTool( TOOLTABLE )
 
@@ -212,12 +308,108 @@ Menu_RegisterTool( TOOLTABLE )
 TOOLTABLE = {}
 TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
 TOOLTABLE.skin = 1
+TOOLTABLE.title = "Steel Hatchet (s)"
+TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 15"
+TOOLTABLE.uselevel = { woodcutting = 15}
+TOOLTABLE.entity = "gms_hatchet3s"
+TOOLTABLE.color = Vector(.6, .6, .8)
+TOOLTABLE.icon = "vgui/tools/steel_hatchet_s.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Steel Hatchet (e)"
+TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 15"
+TOOLTABLE.uselevel = { woodcutting = 15}
+TOOLTABLE.entity = "gms_hatchet3e"
+TOOLTABLE.color = Vector(.6, .6, .8)
+TOOLTABLE.icon = "vgui/tools/steel_hatchet_e.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Steel Hatchet (r)"
+TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 15"
+TOOLTABLE.uselevel = { woodcutting = 15}
+TOOLTABLE.entity = "gms_hatchet3r"
+TOOLTABLE.color = Vector(.6, .6, .8)
+TOOLTABLE.icon = "vgui/tools/steel_hatchet_r.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Steel Hatchet (d)"
+TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 15"
+TOOLTABLE.uselevel = { woodcutting = 15}
+TOOLTABLE.entity = "gms_hatchet3d"
+TOOLTABLE.color = Vector(.6, .6, .8)
+TOOLTABLE.icon = "vgui/tools/steel_hatchet_d.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
 TOOLTABLE.title = "Silver Hatchet"
 TOOLTABLE.description = "Makes cutting down trees easy!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 25"
 TOOLTABLE.uselevel = { woodcutting = 25}
 TOOLTABLE.entity = "gms_hatchet4"
 TOOLTABLE.color = Vector(1, 1, 1)
 TOOLTABLE.icon = "vgui/tools/silver_hatchet.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Silver Hatchet (s)"
+TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 25"
+TOOLTABLE.uselevel = { woodcutting = 25}
+TOOLTABLE.entity = "gms_hatchet4s"
+TOOLTABLE.color = Vector(1, 1, 1)
+TOOLTABLE.icon = "vgui/tools/silver_hatchet_s.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Silver Hatchet (e)"
+TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 25"
+TOOLTABLE.uselevel = { woodcutting = 25}
+TOOLTABLE.entity = "gms_hatchet4e"
+TOOLTABLE.color = Vector(1, 1, 1)
+TOOLTABLE.icon = "vgui/tools/silver_hatchet_e.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Silver Hatchet (r)"
+TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 25"
+TOOLTABLE.uselevel = { woodcutting = 25}
+TOOLTABLE.entity = "gms_hatchet4r"
+TOOLTABLE.color = Vector(1, 1, 1)
+TOOLTABLE.icon = "vgui/tools/silver_hatchet_r.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Silver Hatchet (d)"
+TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 25"
+TOOLTABLE.uselevel = { woodcutting = 25}
+TOOLTABLE.entity = "gms_hatchet4d"
+TOOLTABLE.color = Vector(1, 1, 1)
+TOOLTABLE.icon = "vgui/tools/silver_hatchet_d.png"
 TOOLTABLE.category = "woodcutting"
 Menu_RegisterTool( TOOLTABLE )
 
@@ -236,12 +428,108 @@ Menu_RegisterTool( TOOLTABLE )
 TOOLTABLE = {}
 TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
 TOOLTABLE.skin = 1
+TOOLTABLE.title = "Trinium Hatchet (s)"
+TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 35"
+TOOLTABLE.uselevel = { woodcutting = 35}
+TOOLTABLE.entity = "gms_hatchet5s"
+TOOLTABLE.color = Vector(.1, .3, .1)
+TOOLTABLE.icon = "vgui/tools/trinium_hatchet_s.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Trinium Hatchet (e)"
+TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 35"
+TOOLTABLE.uselevel = { woodcutting = 35}
+TOOLTABLE.entity = "gms_hatchet5e"
+TOOLTABLE.color = Vector(.1, .3, .1)
+TOOLTABLE.icon = "vgui/tools/trinium_hatchet_e.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Trinium Hatchet (r)"
+TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 35"
+TOOLTABLE.uselevel = { woodcutting = 35}
+TOOLTABLE.entity = "gms_hatchet5r"
+TOOLTABLE.color = Vector(.1, .3, .1)
+TOOLTABLE.icon = "vgui/tools/trinium_hatchet_r.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Trinium Hatchet (d)"
+TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 35"
+TOOLTABLE.uselevel = { woodcutting = 35}
+TOOLTABLE.entity = "gms_hatchet5d"
+TOOLTABLE.color = Vector(.1, .3, .1)
+TOOLTABLE.icon = "vgui/tools/trinium_hatchet_d.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
 TOOLTABLE.title = "Naquadah Hatchet"
 TOOLTABLE.description = "Makes cutting down trees easy!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 45"
 TOOLTABLE.uselevel = { woodcutting = 45}
 TOOLTABLE.entity = "gms_hatchet6"
 TOOLTABLE.color = Vector(.3, .1, .1)
 TOOLTABLE.icon = "vgui/tools/naquadah_hatchet.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Naquadah Hatchet (s)"
+TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 45"
+TOOLTABLE.uselevel = { woodcutting = 45}
+TOOLTABLE.entity = "gms_hatchet6s"
+TOOLTABLE.color = Vector(.3, .1, .1)
+TOOLTABLE.icon = "vgui/tools/naquadah_hatchet_s.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Naquadah Hatchet (e)"
+TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 45"
+TOOLTABLE.uselevel = { woodcutting = 45}
+TOOLTABLE.entity = "gms_hatchet6e"
+TOOLTABLE.color = Vector(.3, .1, .1)
+TOOLTABLE.icon = "vgui/tools/naquadah_hatchet_e.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Naquadah Hatchet (r)"
+TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 45"
+TOOLTABLE.uselevel = { woodcutting = 45}
+TOOLTABLE.entity = "gms_hatchet6r"
+TOOLTABLE.color = Vector(.3, .1, .1)
+TOOLTABLE.icon = "vgui/tools/naquadah_hatchet_r.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Naquadah Hatchet (d)"
+TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 45"
+TOOLTABLE.uselevel = { woodcutting = 45}
+TOOLTABLE.entity = "gms_hatchet6d"
+TOOLTABLE.color = Vector(.3, .1, .1)
+TOOLTABLE.icon = "vgui/tools/naquadah_hatchet_d.png"
 TOOLTABLE.category = "woodcutting"
 Menu_RegisterTool( TOOLTABLE )
 
@@ -260,12 +548,108 @@ Menu_RegisterTool( TOOLTABLE )
 TOOLTABLE = {}
 TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
 TOOLTABLE.skin = 1
+TOOLTABLE.title = "Mithril Hatchet (s)"
+TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 55"
+TOOLTABLE.uselevel = { woodcutting = 55}
+TOOLTABLE.entity = "gms_hatchet7s"
+TOOLTABLE.color = Vector(.1, .1, .4)
+TOOLTABLE.icon = "vgui/tools/mithril_hatchet_s.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Mithril Hatchet (e)"
+TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 55"
+TOOLTABLE.uselevel = { woodcutting = 55}
+TOOLTABLE.entity = "gms_hatchet7e"
+TOOLTABLE.color = Vector(.1, .1, .4)
+TOOLTABLE.icon = "vgui/tools/mithril_hatchet_e.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Mithril Hatchet (r)"
+TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 55"
+TOOLTABLE.uselevel = { woodcutting = 55}
+TOOLTABLE.entity = "gms_hatchet7r"
+TOOLTABLE.color = Vector(.1, .1, .4)
+TOOLTABLE.icon = "vgui/tools/mithril_hatchet_r.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Mithril Hatchet (d)"
+TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 55"
+TOOLTABLE.uselevel = { woodcutting = 55}
+TOOLTABLE.entity = "gms_hatchet7d"
+TOOLTABLE.color = Vector(.1, .1, .4)
+TOOLTABLE.icon = "vgui/tools/mithril_hatchet_d.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
 TOOLTABLE.title = "Platinum Hatchet"
 TOOLTABLE.description = "Makes cutting down trees easy!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 65"
 TOOLTABLE.uselevel = { woodcutting = 65}
 TOOLTABLE.entity = "gms_hatchet8"
 TOOLTABLE.color = Vector(.8, .8, .8)
 TOOLTABLE.icon = "vgui/tools/platinum_hatchet.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Platinum Hatchet (s)"
+TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 65"
+TOOLTABLE.uselevel = { woodcutting = 65}
+TOOLTABLE.entity = "gms_hatchet8s"
+TOOLTABLE.color = Vector(.8, .8, .8)
+TOOLTABLE.icon = "vgui/tools/platinum_hatchet_s.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Platinum Hatchet (e)"
+TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 65"
+TOOLTABLE.uselevel = { woodcutting = 65}
+TOOLTABLE.entity = "gms_hatchet8e"
+TOOLTABLE.color = Vector(.8, .8, .8)
+TOOLTABLE.icon = "vgui/tools/platinum_hatchet_e.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Platinum Hatchet (r)"
+TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 65"
+TOOLTABLE.uselevel = { woodcutting = 65}
+TOOLTABLE.entity = "gms_hatchet8r"
+TOOLTABLE.color = Vector(.8, .8, .8)
+TOOLTABLE.icon = "vgui/tools/platinum_hatchet_r.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Platinum Hatchet (d)"
+TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 65"
+TOOLTABLE.uselevel = { woodcutting = 65}
+TOOLTABLE.entity = "gms_hatchet8d"
+TOOLTABLE.color = Vector(.8, .8, .8)
+TOOLTABLE.icon = "vgui/tools/platinum_hatchet_d.png"
 TOOLTABLE.category = "woodcutting"
 Menu_RegisterTool( TOOLTABLE )
 
@@ -290,12 +674,108 @@ Menu_RegisterTool( TOOLTABLE )
 TOOLTABLE = {}
 TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
 TOOLTABLE.skin = 1
+TOOLTABLE.title = "Stone Pickaxe (s)"
+TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
+TOOLTABLE.uselevel = { mining = 1}
+TOOLTABLE.entity = "gms_pickaxe1s"
+TOOLTABLE.color = Vector(.6, .6, .6)
+TOOLTABLE.icon = "vgui/tools/stone_pickaxe_s.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Stone Pickaxe (e)"
+TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
+TOOLTABLE.uselevel = { mining = 1}
+TOOLTABLE.entity = "gms_pickaxe1e"
+TOOLTABLE.color = Vector(.6, .6, .6)
+TOOLTABLE.icon = "vgui/tools/stone_pickaxe_e.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Stone Pickaxe (r)"
+TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
+TOOLTABLE.uselevel = { mining = 1}
+TOOLTABLE.entity = "gms_pickaxe1r"
+TOOLTABLE.color = Vector(.6, .6, .6)
+TOOLTABLE.icon = "vgui/tools/stone_pickaxe_r.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Stone Pickaxe (d)"
+TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
+TOOLTABLE.uselevel = { mining = 1}
+TOOLTABLE.entity = "gms_pickaxe1d"
+TOOLTABLE.color = Vector(.6, .6, .6)
+TOOLTABLE.icon = "vgui/tools/stone_pickaxe_d.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
 TOOLTABLE.title = "Iron Pickaxe"
 TOOLTABLE.description = "Makes mining ore easy!\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
 TOOLTABLE.uselevel = { mining = 1}
 TOOLTABLE.entity = "gms_pickaxe2"
 TOOLTABLE.color = Vector(.45, .3, .3)
 TOOLTABLE.icon = "vgui/tools/iron_pickaxe.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Iron Pickaxe (s)"
+TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
+TOOLTABLE.uselevel = { mining = 1}
+TOOLTABLE.entity = "gms_pickaxe2s"
+TOOLTABLE.color = Vector(.45, .3, .3)
+TOOLTABLE.icon = "vgui/tools/iron_pickaxe_s.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Iron Pickaxe (e)"
+TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
+TOOLTABLE.uselevel = { mining = 1}
+TOOLTABLE.entity = "gms_pickaxe2e"
+TOOLTABLE.color = Vector(.45, .3, .3)
+TOOLTABLE.icon = "vgui/tools/iron_pickaxe_e.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Iron Pickaxe (r)"
+TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
+TOOLTABLE.uselevel = { mining = 1}
+TOOLTABLE.entity = "gms_pickaxe2r"
+TOOLTABLE.color = Vector(.45, .3, .3)
+TOOLTABLE.icon = "vgui/tools/iron_pickaxe_r.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Iron Pickaxe (d)"
+TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
+TOOLTABLE.uselevel = { mining = 1}
+TOOLTABLE.entity = "gms_pickaxe2d"
+TOOLTABLE.color = Vector(.45, .3, .3)
+TOOLTABLE.icon = "vgui/tools/iron_pickaxe_d.png"
 TOOLTABLE.category = "mining"
 Menu_RegisterTool( TOOLTABLE )
 
@@ -314,12 +794,108 @@ Menu_RegisterTool( TOOLTABLE )
 TOOLTABLE = {}
 TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
 TOOLTABLE.skin = 1
+TOOLTABLE.title = "Steel Pickaxe (s)"
+TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 15"
+TOOLTABLE.uselevel = { mining = 15}
+TOOLTABLE.entity = "gms_pickaxe3s"
+TOOLTABLE.color = Vector(.6, .6, .8)
+TOOLTABLE.icon = "vgui/tools/steel_pickaxe_s.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Steel Pickaxe (e)"
+TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 15"
+TOOLTABLE.uselevel = { mining = 15}
+TOOLTABLE.entity = "gms_pickaxe3e"
+TOOLTABLE.color = Vector(.6, .6, .8)
+TOOLTABLE.icon = "vgui/tools/steel_pickaxe_e.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Steel Pickaxe (r)"
+TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 15"
+TOOLTABLE.uselevel = { mining = 15}
+TOOLTABLE.entity = "gms_pickaxe3r"
+TOOLTABLE.color = Vector(.6, .6, .8)
+TOOLTABLE.icon = "vgui/tools/steel_pickaxe_r.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Steel Pickaxe (d)"
+TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 15"
+TOOLTABLE.uselevel = { mining = 15}
+TOOLTABLE.entity = "gms_pickaxe3d"
+TOOLTABLE.color = Vector(.6, .6, .8)
+TOOLTABLE.icon = "vgui/tools/steel_pickaxe_d.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
 TOOLTABLE.title = "Silver Pickaxe"
 TOOLTABLE.description = "Makes mining ore easy!\nPrimary: Mine Ore\nRequired Mining Lvl: 25"
 TOOLTABLE.uselevel = { mining = 25}
 TOOLTABLE.entity = "gms_pickaxe4"
 TOOLTABLE.color = Vector(1, 1, 1)
 TOOLTABLE.icon = "vgui/tools/silver_pickaxe.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Silver Pickaxe (s)"
+TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 25"
+TOOLTABLE.uselevel = { mining = 25}
+TOOLTABLE.entity = "gms_pickaxe4s"
+TOOLTABLE.color = Vector(1, 1, 1)
+TOOLTABLE.icon = "vgui/tools/silver_pickaxe_s.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Silver Pickaxe (e)"
+TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 25"
+TOOLTABLE.uselevel = { mining = 25}
+TOOLTABLE.entity = "gms_pickaxe4e"
+TOOLTABLE.color = Vector(1, 1, 1)
+TOOLTABLE.icon = "vgui/tools/silver_pickaxe_e.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Silver Pickaxe (r)"
+TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 25"
+TOOLTABLE.uselevel = { mining = 25}
+TOOLTABLE.entity = "gms_pickaxe4r"
+TOOLTABLE.color = Vector(1, 1, 1)
+TOOLTABLE.icon = "vgui/tools/silver_pickaxe_r.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Silver Pickaxe (d)"
+TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 25"
+TOOLTABLE.uselevel = { mining = 25}
+TOOLTABLE.entity = "gms_pickaxe4d"
+TOOLTABLE.color = Vector(1, 1, 1)
+TOOLTABLE.icon = "vgui/tools/silver_pickaxe_d.png"
 TOOLTABLE.category = "mining"
 Menu_RegisterTool( TOOLTABLE )
 
@@ -338,12 +914,108 @@ Menu_RegisterTool( TOOLTABLE )
 TOOLTABLE = {}
 TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
 TOOLTABLE.skin = 1
+TOOLTABLE.title = "Trinium Pickaxe (s)"
+TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 35"
+TOOLTABLE.uselevel = { mining = 35}
+TOOLTABLE.entity = "gms_pickaxe5s"
+TOOLTABLE.color = Vector(.1, .3, .1)
+TOOLTABLE.icon = "vgui/tools/trinium_pickaxe_s.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Trinium Pickaxe (e)"
+TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 35"
+TOOLTABLE.uselevel = { mining = 35}
+TOOLTABLE.entity = "gms_pickaxe5e"
+TOOLTABLE.color = Vector(.1, .3, .1)
+TOOLTABLE.icon = "vgui/tools/trinium_pickaxe_e.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Trinium Pickaxe (r)"
+TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 35"
+TOOLTABLE.uselevel = { mining = 35}
+TOOLTABLE.entity = "gms_pickaxe5r"
+TOOLTABLE.color = Vector(.1, .3, .1)
+TOOLTABLE.icon = "vgui/tools/trinium_pickaxe_r.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Trinium Pickaxe (d)"
+TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 35"
+TOOLTABLE.uselevel = { mining = 35}
+TOOLTABLE.entity = "gms_pickaxe5d"
+TOOLTABLE.color = Vector(.1, .3, .1)
+TOOLTABLE.icon = "vgui/tools/trinium_pickaxe_d.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
 TOOLTABLE.title = "Naquadah Pickaxe"
 TOOLTABLE.description = "Makes mining ore easy!\nPrimary: Mine Ore\nRequired Mining Lvl: 45"
 TOOLTABLE.uselevel = { mining = 45}
 TOOLTABLE.entity = "gms_pickaxe6"
 TOOLTABLE.color = Vector(.3, .1, .1)
 TOOLTABLE.icon = "vgui/tools/naquadah_pickaxe.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Naquadah Pickaxe (s)"
+TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 45"
+TOOLTABLE.uselevel = { mining = 45}
+TOOLTABLE.entity = "gms_pickaxe6s"
+TOOLTABLE.color = Vector(.3, .1, .1)
+TOOLTABLE.icon = "vgui/tools/naquadah_pickaxe_s.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Naquadah Pickaxe (e)"
+TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 45"
+TOOLTABLE.uselevel = { mining = 45}
+TOOLTABLE.entity = "gms_pickaxe6e"
+TOOLTABLE.color = Vector(.3, .1, .1)
+TOOLTABLE.icon = "vgui/tools/naquadah_pickaxe_e.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Naquadah Pickaxe (r)"
+TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 45"
+TOOLTABLE.uselevel = { mining = 45}
+TOOLTABLE.entity = "gms_pickaxe6r"
+TOOLTABLE.color = Vector(.3, .1, .1)
+TOOLTABLE.icon = "vgui/tools/naquadah_pickaxe_r.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Naquadah Pickaxe (d)"
+TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 45"
+TOOLTABLE.uselevel = { mining = 45}
+TOOLTABLE.entity = "gms_pickaxe6d"
+TOOLTABLE.color = Vector(.3, .1, .1)
+TOOLTABLE.icon = "vgui/tools/naquadah_pickaxe_d.png"
 TOOLTABLE.category = "mining"
 Menu_RegisterTool( TOOLTABLE )
 
@@ -362,6 +1034,54 @@ Menu_RegisterTool( TOOLTABLE )
 TOOLTABLE = {}
 TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
 TOOLTABLE.skin = 1
+TOOLTABLE.title = "Mithril Pickaxe (s)"
+TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 55"
+TOOLTABLE.uselevel = { mining = 55}
+TOOLTABLE.entity = "gms_pickaxe7s"
+TOOLTABLE.color = Vector(.1, .1, .4)
+TOOLTABLE.icon = "vgui/tools/mithril_pickaxe_s.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Mithril Pickaxe (e)"
+TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 55"
+TOOLTABLE.uselevel = { mining = 55}
+TOOLTABLE.entity = "gms_pickaxe7e"
+TOOLTABLE.color = Vector(.1, .1, .4)
+TOOLTABLE.icon = "vgui/tools/mithril_pickaxe_e.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Mithril Pickaxe (r)"
+TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 55"
+TOOLTABLE.uselevel = { mining = 55}
+TOOLTABLE.entity = "gms_pickaxe7r"
+TOOLTABLE.color = Vector(.1, .1, .4)
+TOOLTABLE.icon = "vgui/tools/mithril_pickaxe_r.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Mithril Pickaxe (d)"
+TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 55"
+TOOLTABLE.uselevel = { mining = 55}
+TOOLTABLE.entity = "gms_pickaxe7d"
+TOOLTABLE.color = Vector(.1, .1, .4)
+TOOLTABLE.icon = "vgui/tools/mithril_pickaxe_d.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
 TOOLTABLE.title = "Platinum Pickaxe"
 TOOLTABLE.description = "Makes mining ore easy!\nPrimary: Mine Ore\nRequired Mining Lvl: 65"
 TOOLTABLE.uselevel = { mining = 65}
@@ -371,8 +1091,53 @@ TOOLTABLE.icon = "vgui/tools/platinum_pickaxe.png"
 TOOLTABLE.category = "mining"
 Menu_RegisterTool( TOOLTABLE )
 
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Platinum Pickaxe (s)"
+TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 65"
+TOOLTABLE.uselevel = { mining = 65}
+TOOLTABLE.entity = "gms_pickaxe8s"
+TOOLTABLE.color = Vector(.8, .8, .8)
+TOOLTABLE.icon = "vgui/tools/platinum_pickaxe_s.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
 
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Platinum Pickaxe (e)"
+TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 65"
+TOOLTABLE.uselevel = { mining = 65}
+TOOLTABLE.entity = "gms_pickaxe8e"
+TOOLTABLE.color = Vector(.8, .8, .8)
+TOOLTABLE.icon = "vgui/tools/platinum_pickaxe_e.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
 
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Platinum Pickaxe (r)"
+TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 65"
+TOOLTABLE.uselevel = { mining = 65}
+TOOLTABLE.entity = "gms_pickaxe8r"
+TOOLTABLE.color = Vector(.8, .8, .8)
+TOOLTABLE.icon = "vgui/tools/platinum_pickaxe_r.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Platinum Pickaxe (d)"
+TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 65"
+TOOLTABLE.uselevel = { mining = 65}
+TOOLTABLE.entity = "gms_pickaxe8d"
+TOOLTABLE.color = Vector(.8, .8, .8)
+TOOLTABLE.icon = "vgui/tools/platinum_pickaxe_d.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
 
 -----------------
 -----fishing-----
@@ -737,6 +1502,54 @@ TOOLTABLE.category = "enchanted"
 Menu_RegisterTool( TOOLTABLE )
 
 TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Enchanted Hatchet (s)"
+TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
+TOOLTABLE.uselevel = { woodcutting = 1}
+TOOLTABLE.entity = "gms_ehatchets"
+TOOLTABLE.color = Vector(.6, .1, .6)
+TOOLTABLE.icon = "vgui/tools/enchanted_hatchet_s.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Enchanted Hatchet (e)"
+TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
+TOOLTABLE.uselevel = { woodcutting = 1}
+TOOLTABLE.entity = "gms_ehatchete"
+TOOLTABLE.color = Vector(.6, .1, .6)
+TOOLTABLE.icon = "vgui/tools/enchanted_hatchet_e.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Enchanted Hatchet (r)"
+TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
+TOOLTABLE.uselevel = { woodcutting = 1}
+TOOLTABLE.entity = "gms_ehatchetr"
+TOOLTABLE.color = Vector(.6, .1, .6)
+TOOLTABLE.icon = "vgui/tools/enchanted_hatchet_r.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Enchanted Hatchet (d)"
+TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
+TOOLTABLE.uselevel = { woodcutting = 1}
+TOOLTABLE.entity = "gms_ehatchetd"
+TOOLTABLE.color = Vector(.6, .1, .6)
+TOOLTABLE.icon = "vgui/tools/enchanted_hatchet_d.png"
+TOOLTABLE.category = "woodcutting"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
 TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
 TOOLTABLE.skin = 1
 TOOLTABLE.title = "Enchanted Pickaxe"
@@ -746,6 +1559,53 @@ TOOLTABLE.entity = "gms_epickaxe"
 TOOLTABLE.color = Vector(.6, .1, .6)
 TOOLTABLE.icon = "vgui/tools/enchanted_pickaxe.png"
 TOOLTABLE.category = "enchanted"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Enchanted Pickaxe (s)"
+TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
+TOOLTABLE.uselevel = { mining = 1}
+TOOLTABLE.entity = "gms_epickaxes"
+TOOLTABLE.color = Vector(.6, .1, .6)
+TOOLTABLE.icon = "vgui/tools/enchanted_pickaxe_s.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Enchanted Pickaxe (e)"
+TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
+TOOLTABLE.uselevel = { mining = 1}
+TOOLTABLE.entity = "gms_epickaxee"
+TOOLTABLE.color = Vector(.6, .1, .6)
+TOOLTABLE.icon = "vgui/tools/enchanted_pickaxe_e.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Enchanted Pickaxe (r)"
+TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
+TOOLTABLE.entity = "gms_epickaxer"
+TOOLTABLE.color = Vector(.6, .1, .6)
+TOOLTABLE.icon = "vgui/tools/enchanted_pickaxe_r.png"
+TOOLTABLE.category = "mining"
+Menu_RegisterTool( TOOLTABLE )
+
+TOOLTABLE = {}
+TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
+TOOLTABLE.skin = 1
+TOOLTABLE.title = "Enchanted Pickaxe (d)"
+TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
+TOOLTABLE.uselevel = { mining = 1}
+TOOLTABLE.entity = "gms_epickaxed"
+TOOLTABLE.color = Vector(.6, .1, .6)
+TOOLTABLE.icon = "vgui/tools/enchanted_pickaxe_d.png"
+TOOLTABLE.category = "mining"
 Menu_RegisterTool( TOOLTABLE )
 
 TOOLTABLE = {}
@@ -771,911 +1631,6 @@ TOOLTABLE.icon = "vgui/tools/enchanted_hoe.png"
 TOOLTABLE.color = Vector(.6, .1, .6)
 TOOLTABLE.category = "enchanted"
 Menu_RegisterTool( TOOLTABLE )
-
-
---------------------------------
-------woodcutting-sapphire------
---------------------------------
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Stone Hatchet (s)"
-TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
-TOOLTABLE.uselevel = { woodcutting = 1}
-TOOLTABLE.entity = "gms_hatchet1s"
-TOOLTABLE.color = Vector(.6, .6, .6)
-TOOLTABLE.icon = "vgui/tools/stone_hatchet_s.png"
-TOOLTABLE.category = "woodcutting-sapphire"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Iron Hatchet (s)"
-TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
-TOOLTABLE.uselevel = { woodcutting = 1}
-TOOLTABLE.entity = "gms_hatchet2s"
-TOOLTABLE.color = Vector(.45, .3, .3)
-TOOLTABLE.icon = "vgui/tools/iron_hatchet_s.png"
-TOOLTABLE.category = "woodcutting-sapphire"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Steel Hatchet (s)"
-TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 15"
-TOOLTABLE.uselevel = { woodcutting = 15}
-TOOLTABLE.entity = "gms_hatchet3s"
-TOOLTABLE.color = Vector(.6, .6, .8)
-TOOLTABLE.icon = "vgui/tools/steel_hatchet_s.png"
-TOOLTABLE.category = "woodcutting-sapphire"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Silver Hatchet (s)"
-TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 25"
-TOOLTABLE.uselevel = { woodcutting = 25}
-TOOLTABLE.entity = "gms_hatchet4s"
-TOOLTABLE.color = Vector(1, 1, 1)
-TOOLTABLE.icon = "vgui/tools/silver_hatchet_s.png"
-TOOLTABLE.category = "woodcutting-sapphire"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Trinium Hatchet (s)"
-TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 35"
-TOOLTABLE.uselevel = { woodcutting = 35}
-TOOLTABLE.entity = "gms_hatchet5s"
-TOOLTABLE.color = Vector(.1, .3, .1)
-TOOLTABLE.icon = "vgui/tools/trinium_hatchet_s.png"
-TOOLTABLE.category = "woodcutting-sapphire"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Naquadah Hatchet (s)"
-TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 45"
-TOOLTABLE.uselevel = { woodcutting = 45}
-TOOLTABLE.entity = "gms_hatchet6s"
-TOOLTABLE.color = Vector(.3, .1, .1)
-TOOLTABLE.icon = "vgui/tools/naquadah_hatchet_s.png"
-TOOLTABLE.category = "woodcutting-sapphire"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Mithril Hatchet (s)"
-TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 55"
-TOOLTABLE.uselevel = { woodcutting = 55}
-TOOLTABLE.entity = "gms_hatchet7s"
-TOOLTABLE.color = Vector(.1, .1, .4)
-TOOLTABLE.icon = "vgui/tools/mithril_hatchet_s.png"
-TOOLTABLE.category = "woodcutting-sapphire"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Platinum Hatchet (s)"
-TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 65"
-TOOLTABLE.uselevel = { woodcutting = 65}
-TOOLTABLE.entity = "gms_hatchet8s"
-TOOLTABLE.color = Vector(.8, .8, .8)
-TOOLTABLE.icon = "vgui/tools/platinum_hatchet_s.png"
-TOOLTABLE.category = "woodcutting-sapphire"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Enchanted Hatchet (s)"
-TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
-TOOLTABLE.uselevel = { woodcutting = 1}
-TOOLTABLE.entity = "gms_ehatchets"
-TOOLTABLE.color = Vector(.6, .1, .6)
-TOOLTABLE.icon = "vgui/tools/enchanted_hatchet_s.png"
-TOOLTABLE.category = "woodcutting-sapphire"
-Menu_RegisterTool( TOOLTABLE )
-
-
--------------------------------
-------woodcutting-emerald------
--------------------------------
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Stone Hatchet (e)"
-TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
-TOOLTABLE.uselevel = { woodcutting = 1}
-TOOLTABLE.entity = "gms_hatchet1e"
-TOOLTABLE.color = Vector(.6, .6, .6)
-TOOLTABLE.icon = "vgui/tools/stone_hatchet_e.png"
-TOOLTABLE.category = "woodcutting-emerald"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Iron Hatchet (e)"
-TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
-TOOLTABLE.uselevel = { woodcutting = 1}
-TOOLTABLE.entity = "gms_hatchet2e"
-TOOLTABLE.color = Vector(.45, .3, .3)
-TOOLTABLE.icon = "vgui/tools/iron_hatchet_e.png"
-TOOLTABLE.category = "woodcutting-emerald"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Steel Hatchet (e)"
-TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 15"
-TOOLTABLE.uselevel = { woodcutting = 15}
-TOOLTABLE.entity = "gms_hatchet3e"
-TOOLTABLE.color = Vector(.6, .6, .8)
-TOOLTABLE.icon = "vgui/tools/steel_hatchet_e.png"
-TOOLTABLE.category = "woodcutting-emerald"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Silver Hatchet (e)"
-TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 25"
-TOOLTABLE.uselevel = { woodcutting = 25}
-TOOLTABLE.entity = "gms_hatchet4e"
-TOOLTABLE.color = Vector(1, 1, 1)
-TOOLTABLE.icon = "vgui/tools/silver_hatchet_e.png"
-TOOLTABLE.category = "woodcutting-emerald"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Trinium Hatchet (e)"
-TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 35"
-TOOLTABLE.uselevel = { woodcutting = 35}
-TOOLTABLE.entity = "gms_hatchet5e"
-TOOLTABLE.color = Vector(.1, .3, .1)
-TOOLTABLE.icon = "vgui/tools/trinium_hatchet_e.png"
-TOOLTABLE.category = "woodcutting-emerald"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Naquadah Hatchet (e)"
-TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 45"
-TOOLTABLE.uselevel = { woodcutting = 45}
-TOOLTABLE.entity = "gms_hatchet6e"
-TOOLTABLE.color = Vector(.3, .1, .1)
-TOOLTABLE.icon = "vgui/tools/naquadah_hatchet_e.png"
-TOOLTABLE.category = "woodcutting-emerald"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Mithril Hatchet (e)"
-TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 55"
-TOOLTABLE.uselevel = { woodcutting = 55}
-TOOLTABLE.entity = "gms_hatchet7e"
-TOOLTABLE.color = Vector(.1, .1, .4)
-TOOLTABLE.icon = "vgui/tools/mithril_hatchet_e.png"
-TOOLTABLE.category = "woodcutting-emerald"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Platinum Hatchet (e)"
-TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 65"
-TOOLTABLE.uselevel = { woodcutting = 65}
-TOOLTABLE.entity = "gms_hatchet8e"
-TOOLTABLE.color = Vector(.8, .8, .8)
-TOOLTABLE.icon = "vgui/tools/platinum_hatchet_e.png"
-TOOLTABLE.category = "woodcutting-emerald"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Enchanted Hatchet (e)"
-TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
-TOOLTABLE.uselevel = { woodcutting = 1}
-TOOLTABLE.entity = "gms_ehatchete"
-TOOLTABLE.color = Vector(.6, .1, .6)
-TOOLTABLE.icon = "vgui/tools/enchanted_hatchet_e.png"
-TOOLTABLE.category = "woodcutting-emerald"
-Menu_RegisterTool( TOOLTABLE )
-
-
-----------------------------
-------woodcutting-ruby------
-----------------------------
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Stone Hatchet (r)"
-TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
-TOOLTABLE.uselevel = { woodcutting = 1}
-TOOLTABLE.entity = "gms_hatchet1r"
-TOOLTABLE.color = Vector(.6, .6, .6)
-TOOLTABLE.icon = "vgui/tools/stone_hatchet_r.png"
-TOOLTABLE.category = "woodcutting-ruby"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Iron Hatchet (r)"
-TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
-TOOLTABLE.uselevel = { woodcutting = 1}
-TOOLTABLE.entity = "gms_hatchet2r"
-TOOLTABLE.color = Vector(.45, .3, .3)
-TOOLTABLE.icon = "vgui/tools/iron_hatchet_r.png"
-TOOLTABLE.category = "woodcutting-ruby"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Steel Hatchet (r)"
-TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 15"
-TOOLTABLE.uselevel = { woodcutting = 15}
-TOOLTABLE.entity = "gms_hatchet3r"
-TOOLTABLE.color = Vector(.6, .6, .8)
-TOOLTABLE.icon = "vgui/tools/steel_hatchet_r.png"
-TOOLTABLE.category = "woodcutting-ruby"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Silver Hatchet (r)"
-TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 25"
-TOOLTABLE.uselevel = { woodcutting = 25}
-TOOLTABLE.entity = "gms_hatchet4r"
-TOOLTABLE.color = Vector(1, 1, 1)
-TOOLTABLE.icon = "vgui/tools/silver_hatchet_r.png"
-TOOLTABLE.category = "woodcutting-ruby"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Trinium Hatchet (r)"
-TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 35"
-TOOLTABLE.uselevel = { woodcutting = 35}
-TOOLTABLE.entity = "gms_hatchet5r"
-TOOLTABLE.color = Vector(.1, .3, .1)
-TOOLTABLE.icon = "vgui/tools/trinium_hatchet_r.png"
-TOOLTABLE.category = "woodcutting-ruby"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Naquadah Hatchet (r)"
-TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 45"
-TOOLTABLE.uselevel = { woodcutting = 45}
-TOOLTABLE.entity = "gms_hatchet6r"
-TOOLTABLE.color = Vector(.3, .1, .1)
-TOOLTABLE.icon = "vgui/tools/naquadah_hatchet_r.png"
-TOOLTABLE.category = "woodcutting-ruby"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Mithril Hatchet (r)"
-TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 55"
-TOOLTABLE.uselevel = { woodcutting = 55}
-TOOLTABLE.entity = "gms_hatchet7r"
-TOOLTABLE.color = Vector(.1, .1, .4)
-TOOLTABLE.icon = "vgui/tools/mithril_hatchet_r.png"
-TOOLTABLE.category = "woodcutting-ruby"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Platinum Hatchet (r)"
-TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 65"
-TOOLTABLE.uselevel = { woodcutting = 65}
-TOOLTABLE.entity = "gms_hatchet8r"
-TOOLTABLE.color = Vector(.8, .8, .8)
-TOOLTABLE.icon = "vgui/tools/platinum_hatchet_r.png"
-TOOLTABLE.category = "woodcutting-ruby"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Enchanted Hatchet (r)"
-TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
-TOOLTABLE.uselevel = { woodcutting = 1}
-TOOLTABLE.entity = "gms_ehatchetr"
-TOOLTABLE.color = Vector(.6, .1, .6)
-TOOLTABLE.icon = "vgui/tools/enchanted_hatchet_r.png"
-TOOLTABLE.category = "woodcutting-ruby"
-Menu_RegisterTool( TOOLTABLE )
-
--------------------------------
-------woodcutting-diamond------
--------------------------------
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Stone Hatchet (d)"
-TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
-TOOLTABLE.uselevel = { woodcutting = 1}
-TOOLTABLE.entity = "gms_hatchet1d"
-TOOLTABLE.color = Vector(.6, .6, .6)
-TOOLTABLE.icon = "vgui/tools/stone_hatchet_d.png"
-TOOLTABLE.category = "woodcutting-diamond"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Iron Hatchet (d)"
-TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
-TOOLTABLE.uselevel = { woodcutting = 1}
-TOOLTABLE.entity = "gms_hatchet2d"
-TOOLTABLE.color = Vector(.45, .3, .3)
-TOOLTABLE.icon = "vgui/tools/iron_hatchet_d.png"
-TOOLTABLE.category = "woodcutting-diamond"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Steel Hatchet (d)"
-TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 15"
-TOOLTABLE.uselevel = { woodcutting = 15}
-TOOLTABLE.entity = "gms_hatchet3d"
-TOOLTABLE.color = Vector(.6, .6, .8)
-TOOLTABLE.icon = "vgui/tools/steel_hatchet_d.png"
-TOOLTABLE.category = "woodcutting-diamond"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Silver Hatchet (d)"
-TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 25"
-TOOLTABLE.uselevel = { woodcutting = 25}
-TOOLTABLE.entity = "gms_hatchet4d"
-TOOLTABLE.color = Vector(1, 1, 1)
-TOOLTABLE.icon = "vgui/tools/silver_hatchet_d.png"
-TOOLTABLE.category = "woodcutting-diamond"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Trinium Hatchet (d)"
-TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 35"
-TOOLTABLE.uselevel = { woodcutting = 35}
-TOOLTABLE.entity = "gms_hatchet5d"
-TOOLTABLE.color = Vector(.1, .3, .1)
-TOOLTABLE.icon = "vgui/tools/trinium_hatchet_d.png"
-TOOLTABLE.category = "woodcutting-diamond"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Naquadah Hatchet (d)"
-TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 45"
-TOOLTABLE.uselevel = { woodcutting = 45}
-TOOLTABLE.entity = "gms_hatchet6d"
-TOOLTABLE.color = Vector(.3, .1, .1)
-TOOLTABLE.icon = "vgui/tools/naquadah_hatchet_d.png"
-TOOLTABLE.category = "woodcutting-diamond"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Mithril Hatchet (d)"
-TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 55"
-TOOLTABLE.uselevel = { woodcutting = 55}
-TOOLTABLE.entity = "gms_hatchet7d"
-TOOLTABLE.color = Vector(.1, .1, .4)
-TOOLTABLE.icon = "vgui/tools/mithril_hatchet_d.png"
-TOOLTABLE.category = "woodcutting-diamond"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Platinum Hatchet (d)"
-TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 65"
-TOOLTABLE.uselevel = { woodcutting = 65}
-TOOLTABLE.entity = "gms_hatchet8d"
-TOOLTABLE.color = Vector(.8, .8, .8)
-TOOLTABLE.icon = "vgui/tools/platinum_hatchet_d.png"
-TOOLTABLE.category = "woodcutting-diamond"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/world_hatchet/world_hatchet.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Enchanted Hatchet (d)"
-TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Chop Tree\nRequired Woodcutting Lvl: 1"
-TOOLTABLE.uselevel = { woodcutting = 1}
-TOOLTABLE.entity = "gms_ehatchetd"
-TOOLTABLE.color = Vector(.6, .1, .6)
-TOOLTABLE.icon = "vgui/tools/enchanted_hatchet_d.png"
-TOOLTABLE.category = "woodcutting-diamond"
-Menu_RegisterTool( TOOLTABLE )
-
-
-
-
----------------------------
-------mining-sapphire------
----------------------------
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Stone Pickaxe (s)"
-TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
-TOOLTABLE.uselevel = { mining = 1}
-TOOLTABLE.entity = "gms_pickaxe1s"
-TOOLTABLE.color = Vector(.6, .6, .6)
-TOOLTABLE.icon = "vgui/tools/stone_pickaxe_s.png"
-TOOLTABLE.category = "mining-sapphire"
-Menu_RegisterTool( TOOLTABLE )
-
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Iron Pickaxe (s)"
-TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
-TOOLTABLE.uselevel = { mining = 1}
-TOOLTABLE.entity = "gms_pickaxe2s"
-TOOLTABLE.color = Vector(.45, .3, .3)
-TOOLTABLE.icon = "vgui/tools/iron_pickaxe_s.png"
-TOOLTABLE.category = "mining-sapphire"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Steel Pickaxe (s)"
-TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 15"
-TOOLTABLE.uselevel = { mining = 15}
-TOOLTABLE.entity = "gms_pickaxe3s"
-TOOLTABLE.color = Vector(.6, .6, .8)
-TOOLTABLE.icon = "vgui/tools/steel_pickaxe_s.png"
-TOOLTABLE.category = "mining-sapphire"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Silver Pickaxe (s)"
-TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 25"
-TOOLTABLE.uselevel = { mining = 25}
-TOOLTABLE.entity = "gms_pickaxe4s"
-TOOLTABLE.color = Vector(1, 1, 1)
-TOOLTABLE.icon = "vgui/tools/silver_pickaxe_s.png"
-TOOLTABLE.category = "mining-sapphire"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Trinium Pickaxe (s)"
-TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 35"
-TOOLTABLE.uselevel = { mining = 35}
-TOOLTABLE.entity = "gms_pickaxe5s"
-TOOLTABLE.color = Vector(.1, .3, .1)
-TOOLTABLE.icon = "vgui/tools/trinium_pickaxe_s.png"
-TOOLTABLE.category = "mining-sapphire"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Naquadah Pickaxe (s)"
-TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 45"
-TOOLTABLE.uselevel = { mining = 45}
-TOOLTABLE.entity = "gms_pickaxe6s"
-TOOLTABLE.color = Vector(.3, .1, .1)
-TOOLTABLE.icon = "vgui/tools/naquadah_pickaxe_s.png"
-TOOLTABLE.category = "mining-sapphire"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Mithril Pickaxe (s)"
-TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 55"
-TOOLTABLE.uselevel = { mining = 55}
-TOOLTABLE.entity = "gms_pickaxe7s"
-TOOLTABLE.color = Vector(.1, .1, .4)
-TOOLTABLE.icon = "vgui/tools/mithril_pickaxe_s.png"
-TOOLTABLE.category = "mining-sapphire"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Platinum Pickaxe (s)"
-TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 65"
-TOOLTABLE.uselevel = { mining = 65}
-TOOLTABLE.entity = "gms_pickaxe8s"
-TOOLTABLE.color = Vector(.8, .8, .8)
-TOOLTABLE.icon = "vgui/tools/platinum_pickaxe_s.png"
-TOOLTABLE.category = "mining-sapphire"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Enchanted Pickaxe (s)"
-TOOLTABLE.description = "This tool has the sapphire enchantment\nSometimes will earn you more experience\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
-TOOLTABLE.uselevel = { mining = 1}
-TOOLTABLE.entity = "gms_epickaxes"
-TOOLTABLE.color = Vector(.6, .1, .6)
-TOOLTABLE.icon = "vgui/tools/enchanted_pickaxe_s.png"
-TOOLTABLE.category = "mining-sapphire"
-Menu_RegisterTool( TOOLTABLE )
-
---------------------------
-------mining-emerald------
---------------------------
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Stone Pickaxe (e)"
-TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
-TOOLTABLE.uselevel = { mining = 1}
-TOOLTABLE.entity = "gms_pickaxe1e"
-TOOLTABLE.color = Vector(.6, .6, .6)
-TOOLTABLE.icon = "vgui/tools/stone_pickaxe_e.png"
-TOOLTABLE.category = "mining-emerald"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Iron Pickaxe (e)"
-TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
-TOOLTABLE.uselevel = { mining = 1}
-TOOLTABLE.entity = "gms_pickaxe2e"
-TOOLTABLE.color = Vector(.45, .3, .3)
-TOOLTABLE.icon = "vgui/tools/iron_pickaxe_e.png"
-TOOLTABLE.category = "mining-emerald"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Steel Pickaxe (e)"
-TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 15"
-TOOLTABLE.uselevel = { mining = 15}
-TOOLTABLE.entity = "gms_pickaxe3e"
-TOOLTABLE.color = Vector(.6, .6, .8)
-TOOLTABLE.icon = "vgui/tools/steel_pickaxe_e.png"
-TOOLTABLE.category = "mining-emerald"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Silver Pickaxe (e)"
-TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 25"
-TOOLTABLE.uselevel = { mining = 25}
-TOOLTABLE.entity = "gms_pickaxe4e"
-TOOLTABLE.color = Vector(1, 1, 1)
-TOOLTABLE.icon = "vgui/tools/silver_pickaxe_e.png"
-TOOLTABLE.category = "mining-emerald"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Trinium Pickaxe (e)"
-TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 35"
-TOOLTABLE.uselevel = { mining = 35}
-TOOLTABLE.entity = "gms_pickaxe5e"
-TOOLTABLE.color = Vector(.1, .3, .1)
-TOOLTABLE.icon = "vgui/tools/trinium_pickaxe_e.png"
-TOOLTABLE.category = "mining-emerald"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Naquadah Pickaxe (e)"
-TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 45"
-TOOLTABLE.uselevel = { mining = 45}
-TOOLTABLE.entity = "gms_pickaxe6e"
-TOOLTABLE.color = Vector(.3, .1, .1)
-TOOLTABLE.icon = "vgui/tools/naquadah_pickaxe_e.png"
-TOOLTABLE.category = "mining-emerald"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Mithril Pickaxe (e)"
-TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 55"
-TOOLTABLE.uselevel = { mining = 55}
-TOOLTABLE.entity = "gms_pickaxe7e"
-TOOLTABLE.color = Vector(.1, .1, .4)
-TOOLTABLE.icon = "vgui/tools/mithril_pickaxe_e.png"
-TOOLTABLE.category = "mining-emerald"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Platinum Pickaxe (e)"
-TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 65"
-TOOLTABLE.uselevel = { mining = 65}
-TOOLTABLE.entity = "gms_pickaxe8e"
-TOOLTABLE.color = Vector(.8, .8, .8)
-TOOLTABLE.icon = "vgui/tools/platinum_pickaxe_e.png"
-TOOLTABLE.category = "mining-emerald"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Enchanted Pickaxe (e)"
-TOOLTABLE.description = "This tool has the emerald enchantment\nOccasionally will be faster\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
-TOOLTABLE.uselevel = { mining = 1}
-TOOLTABLE.entity = "gms_epickaxee"
-TOOLTABLE.color = Vector(.6, .1, .6)
-TOOLTABLE.icon = "vgui/tools/enchanted_pickaxe_e.png"
-TOOLTABLE.category = "mining-emerald"
-Menu_RegisterTool( TOOLTABLE )
-
------------------------
-------mining-ruby------
------------------------
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Stone Pickaxe (r)"
-TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
-TOOLTABLE.uselevel = { mining = 1}
-TOOLTABLE.entity = "gms_pickaxe1r"
-TOOLTABLE.color = Vector(.6, .6, .6)
-TOOLTABLE.icon = "vgui/tools/stone_pickaxe_r.png"
-TOOLTABLE.category = "mining-ruby"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Iron Pickaxe (r)"
-TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
-TOOLTABLE.uselevel = { mining = 1}
-TOOLTABLE.entity = "gms_pickaxe2r"
-TOOLTABLE.color = Vector(.45, .3, .3)
-TOOLTABLE.icon = "vgui/tools/iron_pickaxe_r.png"
-TOOLTABLE.category = "mining-ruby"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Steel Pickaxe (r)"
-TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 15"
-TOOLTABLE.uselevel = { mining = 15}
-TOOLTABLE.entity = "gms_pickaxe3r"
-TOOLTABLE.color = Vector(.6, .6, .8)
-TOOLTABLE.icon = "vgui/tools/steel_pickaxe_r.png"
-TOOLTABLE.category = "mining-ruby"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Silver Pickaxe (r)"
-TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 25"
-TOOLTABLE.uselevel = { mining = 25}
-TOOLTABLE.entity = "gms_pickaxe4r"
-TOOLTABLE.color = Vector(1, 1, 1)
-TOOLTABLE.icon = "vgui/tools/silver_pickaxe_r.png"
-TOOLTABLE.category = "mining-ruby"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Trinium Pickaxe (r)"
-TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 35"
-TOOLTABLE.uselevel = { mining = 35}
-TOOLTABLE.entity = "gms_pickaxe5r"
-TOOLTABLE.color = Vector(.1, .3, .1)
-TOOLTABLE.icon = "vgui/tools/trinium_pickaxe_r.png"
-TOOLTABLE.category = "mining-ruby"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Naquadah Pickaxe (r)"
-TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 45"
-TOOLTABLE.uselevel = { mining = 45}
-TOOLTABLE.entity = "gms_pickaxe6r"
-TOOLTABLE.color = Vector(.3, .1, .1)
-TOOLTABLE.icon = "vgui/tools/naquadah_pickaxe_r.png"
-TOOLTABLE.category = "mining-ruby"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Mithril Pickaxe (r)"
-TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 55"
-TOOLTABLE.uselevel = { mining = 55}
-TOOLTABLE.entity = "gms_pickaxe7r"
-TOOLTABLE.color = Vector(.1, .1, .4)
-TOOLTABLE.icon = "vgui/tools/mithril_pickaxe_r.png"
-TOOLTABLE.category = "mining-ruby"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Platinum Pickaxe (r)"
-TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 65"
-TOOLTABLE.uselevel = { mining = 65}
-TOOLTABLE.entity = "gms_pickaxe8r"
-TOOLTABLE.color = Vector(.8, .8, .8)
-TOOLTABLE.icon = "vgui/tools/platinum_pickaxe_r.png"
-TOOLTABLE.category = "mining-ruby"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Enchanted Pickaxe (r)"
-TOOLTABLE.description = "This tool has the ruby enchantment\nSometimes you'll receive twice the drops\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
-TOOLTABLE.entity = "gms_epickaxer"
-TOOLTABLE.color = Vector(.6, .1, .6)
-TOOLTABLE.icon = "vgui/tools/enchanted_pickaxe_r.png"
-TOOLTABLE.category = "mining-ruby"
-Menu_RegisterTool( TOOLTABLE )
-
-
---------------------------
-------mining-diamond------
---------------------------
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Stone Pickaxe (d)"
-TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
-TOOLTABLE.uselevel = { mining = 1}
-TOOLTABLE.entity = "gms_pickaxe1d"
-TOOLTABLE.color = Vector(.6, .6, .6)
-TOOLTABLE.icon = "vgui/tools/stone_pickaxe_d.png"
-TOOLTABLE.category = "mining-diamond"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Iron Pickaxe (d)"
-TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
-TOOLTABLE.uselevel = { mining = 1}
-TOOLTABLE.entity = "gms_pickaxe2d"
-TOOLTABLE.color = Vector(.45, .3, .3)
-TOOLTABLE.icon = "vgui/tools/iron_pickaxe_d.png"
-TOOLTABLE.category = "mining-diamond"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Steel Pickaxe (d)"
-TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 15"
-TOOLTABLE.uselevel = { mining = 15}
-TOOLTABLE.entity = "gms_pickaxe3d"
-TOOLTABLE.color = Vector(.6, .6, .8)
-TOOLTABLE.icon = "vgui/tools/steel_pickaxe_d.png"
-TOOLTABLE.category = "mining-diamond"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Silver Pickaxe (d)"
-TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 25"
-TOOLTABLE.uselevel = { mining = 25}
-TOOLTABLE.entity = "gms_pickaxe4d"
-TOOLTABLE.color = Vector(1, 1, 1)
-TOOLTABLE.icon = "vgui/tools/silver_pickaxe_d.png"
-TOOLTABLE.category = "mining-diamond"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Trinium Pickaxe (d)"
-TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 35"
-TOOLTABLE.uselevel = { mining = 35}
-TOOLTABLE.entity = "gms_pickaxe5d"
-TOOLTABLE.color = Vector(.1, .3, .1)
-TOOLTABLE.icon = "vgui/tools/trinium_pickaxe_d.png"
-TOOLTABLE.category = "mining-diamond"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Naquadah Pickaxe (d)"
-TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 45"
-TOOLTABLE.uselevel = { mining = 45}
-TOOLTABLE.entity = "gms_pickaxe6d"
-TOOLTABLE.color = Vector(.3, .1, .1)
-TOOLTABLE.icon = "vgui/tools/naquadah_pickaxe_d.png"
-TOOLTABLE.category = "mining-diamond"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Mithril Pickaxe (d)"
-TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 55"
-TOOLTABLE.uselevel = { mining = 55}
-TOOLTABLE.entity = "gms_pickaxe7d"
-TOOLTABLE.color = Vector(.1, .1, .4)
-TOOLTABLE.icon = "vgui/tools/mithril_pickaxe_d.png"
-TOOLTABLE.category = "mining-diamond"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Platinum Pickaxe (d)"
-TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 65"
-TOOLTABLE.uselevel = { mining = 65}
-TOOLTABLE.entity = "gms_pickaxe8d"
-TOOLTABLE.color = Vector(.8, .8, .8)
-TOOLTABLE.icon = "vgui/tools/platinum_pickaxe_d.png"
-TOOLTABLE.category = "mining-diamond"
-Menu_RegisterTool( TOOLTABLE )
-
-TOOLTABLE = {}
-TOOLTABLE.model = "models/c_pickaxe/c_pickaxe.mdl"
-TOOLTABLE.skin = 1
-TOOLTABLE.title = "Enchanted Pickaxe (d)"
-TOOLTABLE.description = "This tool has the diamond enchantment\nFinding rare items is a little easier!\nPrimary: Mine Ore\nRequired Mining Lvl: 1"
-TOOLTABLE.uselevel = { mining = 1}
-TOOLTABLE.entity = "gms_epickaxed"
-TOOLTABLE.color = Vector(.6, .1, .6)
-TOOLTABLE.icon = "vgui/tools/enchanted_pickaxe_d.png"
-TOOLTABLE.category = "mining-diamond"
-Menu_RegisterTool( TOOLTABLE )
-
-
 
 --------------
 -----boss-----
