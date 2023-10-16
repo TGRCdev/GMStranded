@@ -626,6 +626,7 @@ function TOOLS_TAB:DrawFrame()
 		local categories = {}
 
 		local inv_details = {}
+		local foundEquipped = false
 		for toolid, amount in pairs(SGS.inventory) do
 			local tool = SGS_ReverseToolLookup(toolid)
 			if not tool then
@@ -633,7 +634,21 @@ function TOOLS_TAB:DrawFrame()
 				continue
 			end
 			tool.amount = amount
+			tool.equipped = false
+			if LocalPlayer():CurrentEquippedTool() == toolid then
+				tool.amount = tool.amount + 1
+				tool.equipped = true
+				foundEquipped = true
+			end
 			table.insert(inv_details, tool)
+		end
+		if not foundEquipped and LocalPlayer():CurrentEquippedTool() then
+			local equipped = SGS_ReverseToolLookup(LocalPlayer():CurrentEquippedTool())
+			equipped.amount = 1
+			equipped.equipped = true
+			if equipped then
+				table.insert(inv_details, equipped)
+			end
 		end
 		table.sort(inv_details, function(a, b)
 			if a.category == b.category then
@@ -661,21 +676,22 @@ function TOOLS_TAB:DrawFrame()
 			end
 			local ToolContainerButtons = categories[cat]
 
-			local icon = vgui.Create( "menu_qButton2", ToolContainerButtons)
-			icon:SetSize( 120, 24 )
-			icon:SetTooltip( SGS_ToolTipShort(tool) )
-			icon:SetButtonText( tool.title )
-			icon:Droppable("HotbarDrop")
-			icon.dropType = "tool"
+			local icon = vgui.Create( "menu_toolbutton", ToolContainerButtons)
+			icon:SetTool(tool)
 			icon.tool = tool.entity
 			icon.PaintOver = function()
 				if tool.amount > 1 then
 					local tool_count = tostring(tool.amount) .. "x"
 					surface.SetFont( "SGS_HUD2" )
 					local x, y = surface.GetTextSize( tool_count )
-					draw.SimpleText(tool_count, "SGS_HUD2", 60 - x/2, 11, Color(255, 255, 255, 255), 0, 0)
+					draw.SimpleText(tool_count, "SGS_HUD2", 0, 0, Color(255, 255, 255, 255), 0, 0)
+				end
+				if tool.equipped then
+					surface.SetDrawColor(Color(180,180,0,255))
+					icon:DrawOutlinedRect()
 				end
 			end
+			
 			
 			ToolContainerButtons:Add( icon )
 			
@@ -1987,6 +2003,39 @@ function BUTTON:Disable( bool )
 	end
 end
 vgui.Register("menu_qButton2", BUTTON, "DButton")
+
+local BUTTON = {}
+function BUTTON:Init()
+	self:SetSize( 64,64 )
+	self:SetCursor( "hand" )
+	self:SetText("")
+	self:SetPaintBackground(true)
+	self:SetBackgroundColor(Color(255,255,255,10))
+	self.iconpanel = vgui.Create("DImageButton", self)
+	self.iconpanel:Dock(FILL)
+	self.iconpanel:Droppable("HotbarDrop")
+	self.iconpanel.dropType = "tool"
+	function self.iconpanel:DoClick()
+		local realbutton = self:GetParent()
+		if realbutton.DoClick then
+			realbutton:DoClick()
+		end
+	end
+end
+
+function BUTTON:SetTool(tool)
+	self.iconpanel:SetTooltip( SGS_ToolTipShort(tool) )
+	self.iconpanel.tool = tool.entity
+	if tool.icon then
+		self.iconpanel:SetImage(tool.icon)
+		self.iconpanel:SetImageVisible(true)
+		self.iconpanel:SetText("")
+	else
+		self.iconpanel:SetImageVisible(false)
+		self.iconpanel:SetText(tool.title)
+	end
+end
+vgui.Register("menu_toolbutton", BUTTON, "DPanel")
 
 
 local BUTTON = {}

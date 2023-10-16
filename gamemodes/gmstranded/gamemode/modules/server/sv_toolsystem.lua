@@ -81,6 +81,7 @@ function SGS_DropTool( ply, com, args )
 			ply:StripWeapons()
 			ply.equippedtool = nil
 			ply:ConCommand("sgs_refreshhotbar")
+			ply:ConCommand("sgs_refreshtools")
 			
 			SGS_EquipTools( ply, _, {curclass} )
 		end
