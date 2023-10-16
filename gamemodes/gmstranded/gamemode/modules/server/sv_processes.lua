@@ -1969,10 +1969,10 @@ function SGS_Smelt_Stop(ply, recipe, modi)
 		--ply:AddStat( "smithing2", v )
 		ply:CheckForAchievements("smithingmaster")
 	else
-		ply:SendMessage("The " .. CapAll(string.gsub(ore.title, "_", " ")) .. " came out too impure!", 60, Color(255, 0, 0, 255))
-		for k, v in pairs( ore.item_cost ) do
-			local tolose = math.random(math.ceil(v / 2), v)
-			ply:SubResource( k, tolose )
+		ply:SendMessage("The " .. CapAll(string.gsub(recipe.title, "_", " ")) .. " came out too impure!", 60, Color(255, 0, 0, 255))
+		for item, amount in pairs( recipe.item_cost ) do
+			local tolose = math.random(math.ceil(amount / 2), amount)
+			ply:SubResource( item, tolose )
 			ply:AddStat( "smithing3", tolose )
 		end
 	end
@@ -2433,36 +2433,22 @@ function SGS_Smith_Start(ply, len, tool, modi)
 	if ply.amode then
 		return
 	end
-	
-	trace = ply:TraceFromEyes(100)
-	
-	if not IsValid(trace.Entity) then
-		ply:SendMessage("You need to be at a workbench to smith!", 60, Color(255, 0, 0, 255))
-		return
-	end
 		
 	if ply.equippedtool == "gms_hammer" then
 		len = math.floor(len / 2)
 	end
 	
-	if trace.Entity:GetClass() == "gms_workbench" or trace.Entity:GetClass() == "gms_workbench2" then
-		ply:Freeze( true )
-		ply.inprocess = true
-		ply.stable = { "physics/metal/metal_solid_impact_soft1.wav", "physics/metal/metal_solid_impact_soft2.wav", "physics/metal/metal_solid_impact_soft3.wav" }
-		ply:EmitSound(ply.stable[math.random(#ply.stable)], 60, math.random(80,120))
-		ply.ps = true
-		ply.processtype = "smithing"
-		
-		local txt = "Smithing..."
-		ply:SetNWString("action", txt)
-		SGS_StartTimer( ply, txt, len, "smithing" )
-		timer.Create( ply:UniqueID() .. "processtimer", len, 1, function() SGS_Smith_Stop( ply, tool, modi ) end )
-	else
-		ply:SendMessage("You need to be at a workbench to smith!", 60, Color(255, 0, 0, 255))
-	end
+	ply:Freeze( true )
+	ply.inprocess = true
+	ply.stable = { "physics/metal/metal_solid_impact_soft1.wav", "physics/metal/metal_solid_impact_soft2.wav", "physics/metal/metal_solid_impact_soft3.wav" }
+	ply:EmitSound(ply.stable[math.random(#ply.stable)], 60, math.random(80,120))
+	ply.ps = true
+	ply.processtype = "smithing"
 	
-
-
+	local txt = "Smithing..."
+	ply:SetNWString("action", txt)
+	SGS_StartTimer( ply, txt, len, "smithing" )
+	timer.Create( ply:UniqueID() .. "processtimer", len, 1, function() SGS_Smith_Stop( ply, tool, modi ) end )
 end
 
 function SGS_CompleteCrafting(ply, recipe)
