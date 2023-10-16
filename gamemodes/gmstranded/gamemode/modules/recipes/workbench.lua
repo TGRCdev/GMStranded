@@ -1,6 +1,3 @@
-
-SGS_BeginRecipeCommit()
-
 ---------------------
 -------combat-------
 ---------------------
@@ -935,5 +932,3 @@ RECIPE.icon = "vgui/tools/meteoric_pickaxe.png"
 RECIPE.smithcheck = true
 RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench", RECIPE )
-
-SGS_EndRecipeCommit()

@@ -111,7 +111,7 @@ function PANEL:RedrawRecipes()
 
 			CollapseCat:SetSize( 335, 50 )
 			CollapseCat:SetExpanded( 1 )
-			CollapseCat:SetLabel( Cap(recipe.category) .. " Tools" )
+			CollapseCat:SetLabel( Cap(recipe.category) )
 
 
 			CollapseCat:SetContents( IconList )

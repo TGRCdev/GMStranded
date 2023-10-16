@@ -1914,7 +1914,7 @@ end
 ---Smelting---
 --------------
 
-function SGS_Smelt_Start(ply, len, ore, modi)
+function SGS_Smelt_Start(ply, len, recipe, modi)
 	if ply.inprocess == true then
 		return
 	end
@@ -1928,33 +1928,19 @@ function SGS_Smelt_Start(ply, len, ore, modi)
 		return
 	end
 	
-	trace = ply:TraceFromEyes(100)
+	ply:Freeze( true )
+	ply.inprocess = true
+	ply.sound = CreateSound(ply, "ambient/fire/fire_big_loop1.wav")
+	ply.sound:Play()
+	ply.processtype = "smelting"
 	
-	if not IsValid(trace.Entity) then
-		ply:SendMessage("You need to be at a furnace to smelt!", 60, Color(255, 0, 0, 255))
-		return
-	end
-	
-	if trace.Entity:GetClass() == "gms_furnace" then
-		ply:Freeze( true )
-		ply.inprocess = true
-		ply.sound = CreateSound(ply, "ambient/fire/fire_big_loop1.wav")
-		ply.sound:Play()
-		ply.processtype = "smelting"
-		
-		local txt = "Smelting..."
-		ply:SetNWString("action", txt)
-		SGS_StartTimer( ply, txt, len, "smithing" )
-		timer.Create( ply:UniqueID() .. "processtimer", len, 1, function() SGS_Smelt_Stop( ply, ore, modi ) end )
-	else
-		ply:SendMessage("You need to be at a furnace to smelt!", 60, Color(255, 0, 0, 255))
-	end
-	
-
-
+	local txt = "Smelting..."
+	ply:SetNWString("action", txt)
+	SGS_StartTimer( ply, txt, len, "smithing" )
+	timer.Create( ply:UniqueID() .. "processtimer", len, 1, function() SGS_Smelt_Stop( ply, recipe, modi ) end )
 end
 
-function SGS_Smelt_Stop(ply, ore, modi)
+function SGS_Smelt_Stop(ply, recipe, modi)
 
 	if not ply:IsValid() then return end
 	
@@ -1978,20 +1964,14 @@ function SGS_Smelt_Stop(ply, ore, modi)
 	local chance = ( math.random( 1, 100 ) * modi ) * lvlmodi
 	
 	if chance > 25 then
-		ply:SendMessage("You smelted " .. CapAll(string.gsub(ore.title, "_", " ")) .. "!", 60, Color(0, 255, 0, 255))
-		ply:AddExp( "smithing", ore.xp )
-		for k, v in pairs(ore.gives) do
-			ply:AddResource( k, v )
-			ply:AddStat( "smithing2", v )
-			ply:CheckForAchievements("smithingmaster")
-		end
-		for k, v in pairs( ore.cost ) do
-			ply:SubResource( k, v )
-		end	
+		ply:SendMessage("You smelted " .. CapAll(string.gsub(recipe.title, "_", " ")) .. "!", 60, Color(0, 255, 0, 255))
+		SGS_CompleteCrafting(ply, recipe)
+		--ply:AddStat( "smithing2", v )
+		ply:CheckForAchievements("smithingmaster")
 	else
 		ply:SendMessage("The " .. CapAll(string.gsub(ore.title, "_", " ")) .. " came out too impure!", 60, Color(255, 0, 0, 255))
-		for k, v in pairs( ore.cost ) do
-			local tolose = math.random(math.ceil(v/2), v)
+		for k, v in pairs( ore.item_cost ) do
+			local tolose = math.random(math.ceil(v / 2), v)
 			ply:SubResource( k, tolose )
 			ply:AddStat( "smithing3", tolose )
 		end

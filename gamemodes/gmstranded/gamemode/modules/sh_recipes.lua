@@ -44,11 +44,13 @@ function ResetRecipeTables()
 
     -- Load Recipe Tables
     local files, _ = file.Find("gmstranded/gamemode/modules/recipes/*.lua", "LUA")
+    SGS_BeginRecipeCommit()
     for _, filename in ipairs(files) do
         print("Stranded: Loading recipes (" .. filename .. ")")
         include( "gmstranded/gamemode/modules/recipes/" .. filename )
         AddCSLuaFile( "gmstranded/gamemode/modules/recipes/" .. filename )
     end
+    SGS_EndRecipeCommit()
 end
 
 function EnsureRecipeTables()

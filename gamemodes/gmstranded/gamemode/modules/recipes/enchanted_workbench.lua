@@ -1,5 +1,3 @@
-SGS_BeginRecipeCommit()
-
 -------------------
 -----enchanted-----
 -------------------
@@ -59,5 +57,3 @@ RECIPE.icon = "vgui/tools/enchanted_hoe.png"
 RECIPE.smithcheck = true
 RECIPE.stats = { smithing1 = 1 }
 SGS_RegisterRecipe( "gms_workbench2", RECIPE )
-
-SGS_EndRecipeCommit()

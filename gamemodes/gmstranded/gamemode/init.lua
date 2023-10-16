@@ -2552,66 +2552,22 @@ end
 hook.Add( "PlayerSay", "SGS_ChatBurnToggle", SGS_ChatBurnToggle)
 
 
-
-
 function SGS_ConSmelt( ply, com, args )
+	if #args > 1 then
+		ply:SendMessage("Too many arguments.", 60, Color(0, 255, 0, 255))
+		return
+	end
 
-		if #args > 1 then
-			ply:SendMessage("Too many arguments.", 60, Color(0, 255, 0, 255))
-			return
-		end
-
-		if not SGS_ReverseOreLookup( args[1] ) then
-			ply:SendMessage("Invalid item!", 60, Color(0, 255, 0, 255))
-			return
-		end
-
-        ply:Smelt( SGS_ReverseOreLookup( args[1] ) )
-
-
+	ply:Smelt( SGS_QueryRecipe( args[1] ) )
 end
 concommand.Add( "sgs_smelt", SGS_ConSmelt )
 
-function PlayerMeta:Smelt( ore )
-
-	local can = true
+function PlayerMeta:Smelt( recipe )
 	local modi = 1
 
-	for k, v in pairs( ore.cost ) do
-		local iinv = self.resource[ k ] or 0
-		if iinv < v then
-			can = false
-			self:SendMessage("You do not have the required resources.", 60, Color(255, 0, 0, 255))
-			return
-		end
+	if self:CanCraft(recipe, true) then
+		SGS_Smelt_Start(self, 2, recipe, modi)
 	end
-
-	for k, v in pairs( ore.reqlvl ) do
-		if self:GetLevel( k ) < v then
-			can = false
-			self:SendMessage("You do not have the required level.", 60, Color(255, 0, 0, 255))
-			return
-		end
-	end
-
-	if can then
-		SGS_Smelt_Start(self, 2, ore, modi)
-	end
-
-end
-
-function SGS_ReverseOreLookup( tEnt )
-
-	for k, v in pairs( SGS.Smelting ) do
-		for k2, v2 in pairs( SGS.Smelting[k] ) do
-			if v2.uid == tEnt then
-				return v2
-			end
-		end
-	end
-
-	return nil
-
 end
 
 function SGS_ConArcaneForge( ply, com, args )
@@ -2899,26 +2855,6 @@ function SGS_ConSmith( ply, com, args )
 
 		local recipe = SGS_QueryRecipe(args[1])
 
-		if not recipe then
-			ply:SendMessage("Invalid item!", 60, Color(255, 0, 0, 255))
-			return
-		end
-
-		local structure = ply:TraceFromEyes(100).Entity
-		if not IsValid(structure) or not recipe.structures[structure:GetClass()] then
-			ply:SendMessage("You must be looking at the relevant crafting structure to craft this.", 60, Color(255,0,0,255))
-			return
-		end
-
-		-- TODO: Better smithcheck using recipe.gives_items and recipe.gives_tools
-		if recipe.smithcheck and ply.smithcheck then
-			if ply:HasTool( args[1], true ) then
-				ply:SendMessage("You are already carrying one of this tool.", 60, Color(255, 0, 0, 255))
-				ply:SendMessage("Type !checksmith in chat to disable this check.", 60, Color(255, 0, 0, 255))
-				return
-			end
-		end
-
         ply:Smith( recipe )
 
 
@@ -2956,6 +2892,19 @@ hook.Add( "PlayerSay", "SGS_ChatSmithCheck", SGS_ChatSmithCheck)
 function PlayerMeta:CanCraft( recipe, printErr )
 	if printErr == nil then printErr = true end
 
+	if not recipe then
+		self:SendMessage("Invalid item!", 60, Color(255, 0, 0, 255))
+		return false
+	end
+
+	if not table.IsEmpty(recipe.structures) then
+		local structure = self:TraceFromEyes(100).Entity
+		if not IsValid(structure) or not recipe.structures[structure:GetClass()] then
+			self:SendMessage("You must be looking at the relevant crafting structure to craft this.", 60, Color(255,0,0,255))
+			return false
+		end
+	end
+
 	for skill, level in pairs( recipe.lvl_reqs ) do
 		if self:GetLevel( skill ) < level then
 			if printErr then
@@ -2985,12 +2934,18 @@ function PlayerMeta:CanCraft( recipe, printErr )
 		end
 	end
 
-	for tool, amount in pairs( recipe.tool_cost ) do
-		-- TODO: Fix tool inventory and then fix this
-		if not self:HasTool(tool) then
-			if printErr then
-				self:SendMessage("You do not have the required tool.", 60, Color(255,0,0,255))
-			end
+	if not self:HasTools(recipe.tool_cost) then
+		if printErr then
+			self:SendMessage("You do not have the required tool.", 60, Color(255,0,0,255))
+		end
+		return false
+	end
+
+	-- TODO: Better smithcheck using recipe.gives_items and recipe.gives_tools
+	if recipe.smithcheck and ply.smithcheck then
+		if self:HasTool( args[1], true ) then
+			self:SendMessage("You are already carrying one of this tool.", 60, Color(255, 0, 0, 255))
+			self:SendMessage("Type !checksmith in chat to disable this check.", 60, Color(255, 0, 0, 255))
 			return false
 		end
 	end
@@ -3010,31 +2965,14 @@ end
 
 
 function SGS_ConGemTool( ply, com, args )
+	if #args > 1 then
+		ply:SendMessage("Too many arguments.", 60, Color(255, 0, 0, 255))
+		return
+	end
 
-		if #args > 1 then
-			ply:SendMessage("Too many arguments.", 60, Color(255, 0, 0, 255))
-			return
-		end
+	local recipe = SGS_QueryRecipe(args[1])
 
-		local recipe = SGS_QueryRecipe(args[1])
-
-		if not recipe then
-			ply:SendMessage("Invalid item!", 60, Color(255, 0, 0, 255))
-			return
-		end
-
-		-- TODO: Better smithcheck using recipe.gives_items and recipe.gives_tools
-		if recipe.smithcheck and ply.smithcheck then
-			if ply:HasTool( args[1], true ) then
-				ply:SendMessage("You are already carrying one of this tool.", 60, Color(255, 0, 0, 255))
-				ply:SendMessage("Type !checksmith in chat to disable this check.", 60, Color(255, 0, 0, 255))
-				return
-			end
-		end
-
-        ply:GemTool( recipe )
-
-
+	ply:GemTool( recipe )
 end
 concommand.Add( "sgs_gemtool", SGS_ConGemTool )
 
@@ -3044,7 +2982,6 @@ function PlayerMeta:GemTool( tool )
 	if self:CanCraft(tool, true) then
 		SGS_GemTool_Start(self, 4, tool, modi)
 	end
-
 end
 
 

@@ -1,4 +1,3 @@
-SGS_BeginRecipeCommit()
 --------------------------------
 ------woodcutting-sapphire------
 --------------------------------
@@ -1045,5 +1044,3 @@ RECIPE.id = "gms_epickaxed"
 RECIPE.icon = "vgui/tools/enchanted_pickaxe_d.png"
 RECIPE.smithcheck = true
 SGS_RegisterRecipe( "gms_gemtable", RECIPE )
-
-SGS_EndRecipeCommit()
