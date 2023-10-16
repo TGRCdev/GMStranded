@@ -1966,7 +1966,6 @@ function SGS_Smelt_Stop(ply, recipe, modi)
 	if chance > 25 then
 		ply:SendMessage("You smelted " .. CapAll(string.gsub(recipe.title, "_", " ")) .. "!", 60, Color(0, 255, 0, 255))
 		SGS_CompleteCrafting(ply, recipe)
-		--ply:AddStat( "smithing2", v )
 		ply:CheckForAchievements("smithingmaster")
 	else
 		ply:SendMessage("The " .. CapAll(string.gsub(recipe.title, "_", " ")) .. " came out too impure!", 60, Color(255, 0, 0, 255))
