@@ -13,8 +13,6 @@ end
 function PANEL:DrawFrame()
 	local recipes = SGS.recipemenu.recipes
 	local con_command = SGS.recipemenu.con_command
-	print("RECIPES:")
-	PrintTable(recipes)
 
 	local CatList = vgui.Create( "DPanelList", self)
 

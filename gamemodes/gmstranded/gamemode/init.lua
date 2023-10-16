@@ -529,7 +529,7 @@ function GM:PlayerSpawn( ply )
 
 		SGS_SetNeeds(ply)
 
-		ply.equippedtool = "NONE"
+		ply.equippedtool = nil
 		ply.spawnloc = ply:GetPos()
 
 		ply:CheckDefaultTools()
@@ -592,7 +592,7 @@ function SGS_PlayerDies( ply, weapon, killer )
 	ply.sick = 0
 	
 	ply:SendLua("LocalPlayer().melonitis = false")
-	ply.equippedtool = "NONE"
+	ply.equippedtool = nil
 	SGS_CancelProcess(ply, _, _)
 	ply:AddStat( "general5", 1 )
 
@@ -2912,7 +2912,7 @@ function SGS_ConSmith( ply, com, args )
 
 		-- TODO: Better smithcheck using recipe.gives_items and recipe.gives_tools
 		if recipe.smithcheck and ply.smithcheck then
-			if SGS_CheckOwnership( ply, args[1] ) == true or ply.equippedtool == args[1] then
+			if ply:HasTool( args[1], true ) then
 				ply:SendMessage("You are already carrying one of this tool.", 60, Color(255, 0, 0, 255))
 				ply:SendMessage("Type !checksmith in chat to disable this check.", 60, Color(255, 0, 0, 255))
 				return
@@ -3025,7 +3025,7 @@ function SGS_ConGemTool( ply, com, args )
 
 		-- TODO: Better smithcheck using recipe.gives_items and recipe.gives_tools
 		if recipe.smithcheck and ply.smithcheck then
-			if SGS_CheckOwnership( ply, args[1] ) == true or ply.equippedtool == args[1] then
+			if ply:HasTool( args[1], true ) then
 				ply:SendMessage("You are already carrying one of this tool.", 60, Color(255, 0, 0, 255))
 				ply:SendMessage("Type !checksmith in chat to disable this check.", 60, Color(255, 0, 0, 255))
 				return
@@ -5796,36 +5796,36 @@ function SGS_DayPhase()
 
 end
 
-function PlayerMeta:HasTool( tool )
+function PlayerMeta:HasTool( tool, includeEquipped )
 
 	if not self.inventory then return false end
 
-	for k, v in pairs(self.inventory) do
-		if v == tool then
-			return true
-		end
+	if (self.inventory[tool] or 0) > 0 then
+		return true
 	end
 
-	if self:GetActiveWeapon() ~= NULL then
-		if self:GetActiveWeapon():GetClass() == tool then
-			return true
-		end
+	if includeEquipped and self:CurrentEquippedTool() == tool then
+		return true
 	end
 
 	return false
 end
 
-function PlayerMeta:HasToolInventory( tool )
-
+function PlayerMeta:HasTools(tools, includeEquipped)
 	if not self.inventory then return false end
 
-	for k, v in pairs(self.inventory) do
-		if v == tool then
-			return true
+	for tool, amount in pairs(tools) do
+		local amt = self.inventory[tool] or 0
+		if includeEquipped and self:CurrentEquippedTool() == tool then
+			amt = amt + 1
+		end
+
+		if amt < amount then
+			return false
 		end
 	end
 
-	return false
+	return true
 end
 
 function GM:PlayerSwitchWeapon( self, oldwep, newwep )
@@ -6698,7 +6698,7 @@ function PlayerMeta:DeathTwo()
 
 	local tbl_drop, tbl_destroy = self:DeathDropResources()
 	local tbl_droptools = self:LoseTools()
-	self.equippedtool = "NONE"
+	self.equippedtool = nil
 	self:RefreshMenus()
 
 	net.Start("sgs_deathreport")

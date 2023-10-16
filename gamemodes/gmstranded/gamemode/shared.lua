@@ -103,6 +103,13 @@ function PlayerMeta:IsMember()
 
 end
 
+function PlayerMeta:CurrentEquippedTool()
+	if IsValid( self:GetActiveWeapon() ) then
+		return self:GetActiveWeapon():GetClass()
+	end
+	return nil
+end
+
 function meta:IsNextBot()
 	if self.Base == "base_nextbot" then return true end
 	return false
@@ -132,33 +139,8 @@ function SGS_DateStep()
 
 end
 
-function SGS_ReturnSortedTable( tbl )
-
-	table.sort( tbl, function(a,b)
-		local a_cat, a_info = SGS_FindTool( a )
-		local b_cat, b_info = SGS_FindTool( b )
-		
-		if a_cat == b_cat then
-			return a_info.title < b_info.title
-		end
-		
-		return string.lower(a_cat) < string.lower(b_cat)
-	end )
-	
-	return tbl
-
-end
-
-function SGS_ReverseToolLookup( tEnt )
-
-	for k, v in pairs( SGS.Tools ) do
-		for k2, v2 in pairs( SGS.Tools[ k ] ) do
-			if v2.entity == tEnt then
-				return v2
-			end
-		end
-	end
-	
+function SGS_ReverseToolLookup( tool )
+	return SGS.Tools[tool]
 end
 
 function SGS_ReverseSpellLookup( spell )

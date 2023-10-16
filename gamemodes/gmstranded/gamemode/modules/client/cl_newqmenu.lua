@@ -591,13 +591,6 @@ function TOOLS_TAB:DrawFrame()
 		GAMEMODE.newQMenu.toolsListPanel:Dock( FILL )
 		GAMEMODE.newQMenu.toolsListPanel:SetPaintBackground(false)
 		
-		local header = vgui.Create( "menu_qLabelBar", GAMEMODE.newQMenu.toolsListPanel )
-		header:Dock( TOP )
-		header:SetButtonText( "Current Equipped: " .. LocalPlayer():CurrentEquippedTool())
-		header:DockMargin( 0, 0, 0, 6 )
-		
-		
-		
 		local ToolOptions = vgui.Create( "DIconLayout", GAMEMODE.newQMenu.toolsListPanel)
 		ToolOptions:SetSpaceY( 4 )
 		ToolOptions:SetSpaceX( 4 )
@@ -625,18 +618,25 @@ function TOOLS_TAB:DrawFrame()
 				RunConsoleCommand("SGS_DropTool")
 			end
 		end
-		
-		
+
 
 		GAMEMODE.newQMenu.toolsListScrollPanel = vgui.Create( "DScrollPanel", GAMEMODE.newQMenu.toolsListPanel )
 		GAMEMODE.newQMenu.toolsListScrollPanel:Dock( FILL )
-		
-		for k, v in SortedPairs( SGS_ReturnSortedTable( SGS.Tools ) ) do
-			
-			if LocalPlayer():PlayerHasToolInGroup(k) then
 
+		local categories = {}
+		
+		for toolid, amount in pairs(SGS.inventory) do
+			local tool = SGS_ReverseToolLookup(toolid)
+			if not tool then
+				ErrorNoHaltWithStack("Inventory contains invalid tool \"" .. toolid .. "\"")
+				continue
+			end
+
+			local cat = tool.category or "misc"
+
+			if not categories[cat] then
 				local MenuLabel = vgui.Create( "menu_qLabelBar", GAMEMODE.newQMenu.toolsListScrollPanel )
-				MenuLabel:SetButtonText( Cap(k) .. " Tools" )
+				MenuLabel:SetButtonText( Cap(cat) .. " Tools" )
 				MenuLabel:Dock(TOP)
 
 				local ToolContainerButtons = vgui.Create( "DIconLayout", GAMEMODE.newQMenu.toolsListScrollPanel)
@@ -644,34 +644,33 @@ function TOOLS_TAB:DrawFrame()
 				ToolContainerButtons:SetSpaceX( 4 )
 				ToolContainerButtons:Dock(TOP)
 				ToolContainerButtons:DockMargin( 4, 4, 4, 4 )
-				
-				for k2, v2 in pairs( SGS.Tools[k] ) do
-			
-					if SGS_CheckTool( v2.entity ) then
 
-						local icon = vgui.Create( "menu_qButton2", ToolContainerButtons)
-						icon:SetSize( 120, 24 )
-						icon:SetTooltip( SGS_ToolTipShort(v2) )
-						icon:SetButtonText( v2.title )
-						icon:Droppable("HotbarDrop")
-						icon.dropType = "tool"
-						icon.tool = v2.entity
-						icon.PaintOver = function()
-							local tool_count = SGS_CountTools( v2.entity ) .. "x"
-							surface.SetFont( "SGS_HUD2" )
-							local x, y = surface.GetTextSize( tool_count )
-							draw.SimpleText(tool_count, "SGS_HUD2", 60 - x/2, 11, Color(255, 255, 255, 255), 0, 0)
-						end
-						
-						ToolContainerButtons:Add( icon )
-						
-						icon:SetMouseInputEnabled( true )
-						function icon:DoClick()
-							surface.PlaySound( "ui/buttonclickrelease.wav" ) 
-							RunConsoleCommand("SGS_EquipTools", v2.entity)
-						end
-					end
+				categories[cat] = ToolContainerButtons
+			end
+			local ToolContainerButtons = categories[cat]
+
+			local icon = vgui.Create( "menu_qButton2", ToolContainerButtons)
+			icon:SetSize( 120, 24 )
+			icon:SetTooltip( SGS_ToolTipShort(tool) )
+			icon:SetButtonText( tool.title )
+			icon:Droppable("HotbarDrop")
+			icon.dropType = "tool"
+			icon.tool = tool.entity
+			icon.PaintOver = function()
+				if amount > 1 then
+					local tool_count = tostring(amount) .. "x"
+					surface.SetFont( "SGS_HUD2" )
+					local x, y = surface.GetTextSize( tool_count )
+					draw.SimpleText(tool_count, "SGS_HUD2", 60 - x/2, 11, Color(255, 255, 255, 255), 0, 0)
 				end
+			end
+			
+			ToolContainerButtons:Add( icon )
+			
+			icon:SetMouseInputEnabled( true )
+			function icon:DoClick()
+				surface.PlaySound( "ui/buttonclickrelease.wav" ) 
+				RunConsoleCommand("SGS_EquipTools", tool.entity)
 			end
 		end
 

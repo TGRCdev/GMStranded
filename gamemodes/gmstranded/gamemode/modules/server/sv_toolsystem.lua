@@ -4,11 +4,7 @@ local EntityMeta = FindMetaTable("Entity")
 function PlayerMeta:SynchTools( tbl )
 	
 	if table.Count( tbl ) == 0 then return end
-	for k, v in pairs( tbl ) do
-		--if not SGS_CheckOwnership( self, string.lower(v) ) then
-		table.insert( self.inventory, string.lower(v) )
-		--end
-	end
+	self.inventory = tbl
 	
 	net.Start( "sgs_sendtoolsstable" )
 		net.WriteTable( self.inventory )
@@ -17,9 +13,7 @@ function PlayerMeta:SynchTools( tbl )
 end
 
 function PlayerMeta:SetInventory()
-
-	self.inventory = { "weapon_physgun", "weapon_physcannon", "gms_remover", "gms_proplocker", "gms_sppshare", "gms_packager", "gmod_camera" }
-
+	self.inventory = { weapon_physgun = 1, weapon_physcannon = 1, gms_remover = 1, gms_proplocker = 1, gms_sppshare = 1, gms_packager = 1, gmod_camera = 1 }
 end
 
 --TOOLS--
@@ -34,13 +28,12 @@ function SGS_EquipTools( ply, com, args )
 
 	if ply:Alive() then
 
-		local tEnt = args[ 1 ]
-		local tool = SGS_ReverseToolLookup( tEnt )
+		local toolid = args[ 1 ]
+		local tool = SGS_ReverseToolLookup( toolid )
 		
-		
-		if SGS_CheckOwnership( ply, tEnt ) then
-			ply:RemTool( tEnt )
-			if ply.equippedtool == "NONE" then
+		if tool and ply:HasTool( toolid ) then
+			ply:RemTool( toolid )
+			if not ply.equippedtool then
 				ply:StripWeapons()
 				ply:Give( tool.entity )
 			else
@@ -56,7 +49,7 @@ function SGS_EquipTools( ply, com, args )
 			end
 			
 			ply.tpmode = false
-			ply.equippedtool = tEnt
+			ply.equippedtool = toolid
 		end
 		
 	else
@@ -77,7 +70,7 @@ function SGS_DropTool( ply, com, args )
 		if IsValid(ply:GetActiveWeapon()) then
 		
 			local curclass = ply:GetActiveWeapon():GetClass()
-			local nodrop = { "weapon_physgun", "weapon_physcannon", "gms_remover", "gms_nocollider", "gms_sppshare", "gms_proplocker", "gms_packager", "gmod_camera" }
+			local nodrop = { "weapon_physgun", "weapon_physcannon", "gms_remover", "gms_sppshare", "gms_proplocker", "gms_packager", "gmod_camera" }
 			for k, v in pairs(nodrop) do
 				if curclass == v then
 					ply:SendMessage("You can't drop this tool!", 60, Color(255, 0, 0, 255))
@@ -86,7 +79,7 @@ function SGS_DropTool( ply, com, args )
 			end
 			ply:DropMyWeapon(ply:GetActiveWeapon())
 			ply:StripWeapons()
-			ply.equippedtool = "NONE"
+			ply.equippedtool = nil
 			ply:ConCommand("sgs_refreshhotbar")
 			
 			SGS_EquipTools( ply, _, {curclass} )
@@ -150,7 +143,7 @@ function SGS_UnEquipTool( ply, _, _ )
 		if IsValid(ply:GetActiveWeapon()) then
 			ply:AddTool( ply.equippedtool )
 			ply:StripWeapons()
-			ply.equippedtool = "NONE"
+			ply.equippedtool = nil
 		end
 	else
 		ply:SendMessage("You are dead!", 60, Color(255, 0, 0, 255))
@@ -158,77 +151,6 @@ function SGS_UnEquipTool( ply, _, _ )
 
 end
 concommand.Add( "SGS_UnEquipTool", SGS_UnEquipTool )
-
-function SGS_NextTool( ply, _, args )
-
-	local ct = ply.equippedtool
-	
-	if ct == "weapon_physgun" and ply.isgrab then
-		return
-	end
-	
-	SGS_UnEquipTool( ply, _, _ )
-	
-	local tmax = #ply.inventory
-	local ctid = 1
-	
-	for k, v in pairs( SGS_ReturnSortedTable( ply.inventory ) ) do
-		if ct == v then
-			ctid = k
-			break
-		end
-	end
-	
-	local ntid = 1
-	
-	if ctid >= tmax then 
-		ntid = 1
-	else
-		ntid = ctid + 1
-	end
-	
-	local nt = SGS_ReturnSortedTable( ply.inventory )[ntid]
-	
-	SGS_EquipTools( ply, _, { nt } )
-	
-	
-end
-concommand.Add( "sgs_nexttool", SGS_NextTool )
-
-function SGS_PrevTool( ply, _, args )
-
-	local ct = ply.equippedtool
-	
-	if ct == "weapon_physgun" and ply.isgrab then
-		return
-	end
-	
-	SGS_UnEquipTool( ply, _, _ )
-	
-	local tmax = #ply.inventory
-	local ctid = 1
-	
-	for k, v in pairs( SGS_ReturnSortedTable( ply.inventory ) ) do
-		if ct == v then
-			ctid = k
-			break
-		end
-	end
-	
-	local ntid = 1
-	
-	if ctid <= 1 then 
-		ntid = tmax
-	else
-		ntid = ctid - 1
-	end
-	
-	local nt = SGS_ReturnSortedTable( ply.inventory )[ntid]
-	
-	SGS_EquipTools( ply, _, { nt } )
-	
-end
-concommand.Add( "sgs_previoustool", SGS_PrevTool )
 
 function SGS_ChatEnequipTool( ply, text, public )
 
@@ -240,46 +162,34 @@ function SGS_ChatEnequipTool( ply, text, public )
 end
 hook.Add( "PlayerSay", "SGS_ChatEnequipTool", SGS_ChatEnequipTool )
 
-function PlayerMeta:AddTool( tEnt )
-	print("Adding tool " .. tEnt)
-	if tEnt == "NONE" then return end
-	--if not SGS_CheckOwnership( self, tEnt ) then
-	table.insert( self.inventory, tEnt )
+function PlayerMeta:AddTool( tool )
+	if not tool then return end
+	
+	self.inventory[tool] = (self.inventory[tool] or 0) + 1
 	net.Start("sgs_addtool")
-		net.WriteString( tEnt )
+		net.WriteString( tool )
 	net.Send( self )
-	--end
 
 end
 
-function PlayerMeta:RemTool( tEnt )
+function PlayerMeta:RemTool( tool )
 
-	if SGS_CheckOwnership( self, tEnt ) then
-		for k, v in pairs( self.inventory ) do
-			if v == tEnt then
-				self.lastremove = tEnt
-				net.Start("sgs_remtool")
-					net.WriteString( tostring( self.inventory[ k ] ) )
-				net.Send( self )
-				table.remove( self.inventory, k )
-				break
+	if self:HasTool( tool, true ) then
+		if not self.inventory[tool] then
+			-- Player is holding it
+			self:StripWeapon(tool)
+		else
+			self.inventory[tool] = self.inventory[tool] - 1
+			if self.inventory[tool] == 0 then
+				self.inventory[tool] = nil
 			end
+			net.Start("sgs_remtool")
+				net.WriteString( tool )
+			net.Send( self )
 		end
 	end
 
 end
-
-function SGS_ResendLastRemove( ply, com, args )
-
-	local tEnt = ply.lastremove
-	
-	ply.lastremove = tEnt
-	net.Start("sgs_remtool")
-		net.WriteString( tostring( self.inventory[ k ] ) )
-	net.Send( ply )
-
-end
-concommand.Add( "SGS_ResendLastRemove", SGS_ResendLastRemove )
 
 function SGS_PickedUpTool( ply, wep )
 
@@ -299,16 +209,11 @@ function SGS_PickedUpTool( ply, wep )
 end
 hook.Add("PlayerCanPickupWeapon", "SGS_PickedUpTool", SGS_PickedUpTool)
 
-function SGS_CheckOwnership( ply, tEnt )
-	if not ply.inventory then return false end
-	return table.HasValue( ply.inventory, tEnt )
-end
-
 function PlayerMeta:CheckDefaultTools()
 
-	for k, v in pairs(SGS.startinginventory) do
-		if not SGS_CheckOwnership( self, v ) then
-			self:AddTool( v )
+	for tool, _ in pairs(SGS.startinginventory) do
+		if not self:HasTool( tool ) then
+			self:AddTool( tool )
 		end
 	end
 
@@ -317,29 +222,14 @@ end
 function PlayerMeta:LoseTools()
 	local tbl3 = {}
 	local dropped_tools = {}
-	for k, v in pairs(self.inventory) do
-		local found = false
-		for k2, v2 in pairs(SGS.startinginventory) do
-			if v == v2 then
-				found = true
-				break
-			end
-		end
-		if not found then
+	for tool, amount in pairs(self.inventory) do
+		if not SGS.startinginventory[tool] then
 			table.insert(tbl3, v)
 		end
 	end
 	
-	if self.equippedtool == "NONE" then
-	else
-		local found = false
-		for k, v in pairs(SGS.startinginventory) do
-			if v == self.equippedtool then
-				found = true
-				break
-			end
-		end
-		if not found then
+	if self.equippedtool then
+		if not SGS.startinginventory[self.equippedtool] then
 			table.insert(tbl3, self.equippedtool)
 		end
 	end

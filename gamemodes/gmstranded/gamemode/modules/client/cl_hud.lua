@@ -126,7 +126,7 @@ function PANEL:DrawOthers()
 		if SGS.HotBarcontents[i] then
 			if SGS_HotBarReturnType( SGS.HotBarcontents[i] ) == "tool" then
 				HotBarSlot:SetUpSlot( i, ugroup, "tool" )
-				if SGS_CheckOwnership(SGS.HotBarcontents[i]) then
+				if SGS_HasTool(SGS.HotBarcontents[i], true) then
 					local item = SGS_ReverseToolLookup(SGS.HotBarcontents[i])
 					local HotBarButton = vgui.Create( "sgs_HotBarbutton", HotBarSlot)
 					HotBarButton:SetupButton( 0, 0, 48, 48, item, i, "tool" )

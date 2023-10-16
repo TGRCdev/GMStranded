@@ -105,7 +105,7 @@ function SGS_SetDefaultClientVariables()
 	for k, v in pairs( SGS.props ) do
 		SGS.propmenucats[ k ] = true
 	end
-	SGS.inventory = { "weapon_physgun", "weapon_physcannon", "gms_remover", "gms_welder", "gms_sppshare", "gms_packager", "gmod_camera" }
+	SGS.inventory = { weapon_physgun = 1, weapon_physcannon = 1, gms_remover = 1, gms_welder = 1, gms_sppshare = 1, gms_packager = 1, gmod_camera = 1 }
 	SGS.dropmenu = ""
 	SGS.fps = 0
 	SGS.fnum = 0

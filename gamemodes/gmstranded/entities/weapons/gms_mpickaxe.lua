@@ -66,7 +66,7 @@ function SWEP:PrimaryAttack()
 	if break_chance == 1 then
 		ply:SendMessage("The pickaxe crumbles", 60, Color(255, 0, 0, 255))
 		ply:StripWeapon("gms_mpickaxe")
-		ply.equippedtool = "NONE"
+		ply.equippedtool = nil
 		ply:RemTool( "gms_mpickaxe" )
 		ply:AddResource( "meteoric_iron", math.random(2) )
 	end

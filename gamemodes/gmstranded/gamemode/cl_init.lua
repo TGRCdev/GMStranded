@@ -228,7 +228,7 @@ function PlayerInit()
 		SGS.propmenucats[ k ] = true
 	end
 
-	SGS.inventory = { "weapon_physgun", "weapon_physcannon", "gms_remover", "gms_sppshare", "gms_proplocker", "gms_packager", "gmod_camera" }
+	SGS.inventory = { weapon_physgun = 1, weapon_physcannon = 1, gms_remover = 1, gms_sppshare = 1, gms_proplocker = 1, gms_packager = 1, gmod_camera = 1 }
 
 	SGS.dropmenu = ""
 
@@ -512,7 +512,7 @@ end)
 
 function SGS_AssignHotBar( slot, tool, refresh )
 
-	if SGS_CheckOwnership( tool ) then
+	if SGS_HasTool( tool, true ) then
 
 		SGS.HotBarcontents[slot] = tool
 		LocalPlayer():SetPData("sgs13HotBar_slot" .. tostring(slot), tool)
@@ -577,8 +577,8 @@ end
 
 function SGS_HotBarReturnType( item )
 
-	for k, v in pairs( SGS.inventory ) do
-		if item == v then
+	for k, v in pairs( SGS.Tools ) do
+		if item == k then
 			return "tool"
 		end
 
@@ -612,9 +612,8 @@ end
 function SGS_LoadHotBar()
 	SGS.HotBarcontents = SGS.HotBarcontents or {}
 	for i = 1, 10 do
-		local item = LocalPlayer():GetPData("sgs13HotBar_slot" .. tostring(i), "NONE")
-		if item == "NONE" then
-		else
+		local item = LocalPlayer():GetPData("sgs13HotBar_slot" .. tostring(i), nil)
+		if item then
 			if SGS_HotBarReturnType( item ) == "tool" then
 				SGS_AssignHotBar( i, item, false )
 			elseif SGS_HotBarReturnType( item ) == "edible" then
@@ -638,22 +637,6 @@ function SGS_RemoveFromHotBar( slot )
 	if SGS.hotbarinit then
 		RunConsoleCommand("sgs_refreshhotbar")
 	end
-
-end
-
-function SGS_CheckOwnership( tEnt )
-
-	for k, v in pairs( SGS.inventory ) do
-		if tEnt == v then
-			return true
-		end
-	end
-
-	if LocalPlayer():GetActiveWeapon():GetClass() == tEnt then
-		return true
-	end
-
-	return false
 
 end
 
@@ -702,57 +685,26 @@ function SGS_CheckForPendingRDrops()
 end
 hook.Add("Think","SGS_CheckForPendingRDrops",SGS_CheckForPendingRDrops)
 
-function SGS_AddTool( tEnt )
+function SGS_AddTool( tool )
+	SGS.inventory[tool] = (SGS.inventory[tool] or 0) + 1
 
-	table.insert( SGS.inventory, tEnt )
 	if (LocalPlayer():GetInitialized() == INITSTATE_OK) then
 		RunConsoleCommand("sgs_refreshtools")
 	end
 
 end
 
-function SGS_RemTool( tEnt )
-
-	local found = false
-	for k, v in pairs( SGS.inventory ) do
-		if tEnt == v then
-			found = true
-			table.remove( SGS.inventory, k )
-			if (LocalPlayer():GetInitialized() == INITSTATE_OK) then
-				RunConsoleCommand("sgs_refreshtools")
-			end
-			return
-		end
+function SGS_RemTool( tool )
+	if SGS.inventory[tool] > 1 then
+		SGS.inventory[tool] = SGS.inventory[tool] - 1
+	elseif SGS.inventory[tool] == 1 then
+		SGS.inventory[tool] = nil
 	end
 
-	if found == false then
-		SGS_RemTool( tEnt )
+	if (LocalPlayer():GetInitialized() == INITSTATE_OK) then
+		RunConsoleCommand("sgs_refreshtools")
 	end
-
 end
-
-function SGS_CheckTool( tEnt )
-
-	for _, v in pairs( SGS.inventory ) do
-		if v == tEnt then
-			return true
-		end
-	end
-	return false
-
-end
-
-function SGS_CountTools( tEnt )
-	local count = 0
-	for k, v in pairs( SGS.inventory ) do
-		if v == tEnt then
-			count = count + 1
-		end
-	end
-	return count
-end
-
-
 
 net.Receive("SGS_OpenTOS", function(length )
 
@@ -1068,14 +1020,7 @@ end )
 
 
 net.Receive( "sgs_remtool", function( length )
-
-	local txt = net.ReadString()
-	if txt == nil or txt == NULL or txt == "" then
-		LocalPlayer():ConCommand("SGS_ResendLastRemove")
-		return
-	end
-	SGS_RemTool( txt )
-
+	SGS_RemTool( net.ReadString() )
 end )
 
 
@@ -2088,14 +2033,6 @@ function surface.SetTexture( id, ... )
     return g_OldTex( id, ... )
 end
 
-
-function PlayerMeta:PlayerHasToolInGroup( group )
-	for k, v in pairs( SGS.Tools[group] ) do
-		if SGS_CheckTool(v.entity) then return true end
-	end
-	return false
-end
-
 function PlayerMeta:HowManyCasts( spell )
 	local times = 100000
 	for k, v in pairs( spell.cost ) do
@@ -2115,14 +2052,6 @@ function PlayerMeta:HasSeedsOfType( stype )
 	return false
 end
 
-function PlayerMeta:CurrentEquippedTool()
-	local tool = "None"
-	if IsValid( self:GetActiveWeapon() ) then
-		tool = SGS_ReverseToolLookup( self:GetActiveWeapon():GetClass()).title
-	end
-	return tool
-end
-
 function PlayerMeta:GetMaxProps()
 	local maxP = SGS.maxguestprops
 	if self:IsMember() then maxP = SGS.maxmemberprops end
@@ -2135,6 +2064,38 @@ function PlayerMeta:GetMaxStructures()
 	if self:IsMember() then maxS = SGS.maxmemberstructures end
 	if self:IsDonator() then maxS = SGS.maxdonatorstructures end
 	return maxS
+end
+
+function SGS_HasTool( tool, includeEquipped )
+
+	if not SGS.inventory then return false end
+
+	if (SGS.inventory[tool] or 0) > 0 then
+			return true
+		end
+
+	if includeEquipped and LocalPlayer():CurrentEquippedTool() == tool then
+			return true
+		end
+
+	return false
+end
+
+function SGS_HasTools(tools, includeEquipped)
+	if not SGS.inventory then return false end
+
+	for tool, amount in pairs(tools) do
+		local amt = SGS.inventory[tool] or 0
+		if includeEquipped and LocalPlayer():CurrentEquippedTool() == tool then
+			amt = amt + 1
+	end
+
+		if amt < amount then
+	return false
+end
+	end
+
+	return true
 end
 
 net.Receive("GAT_ColorMessage", function(length )

@@ -54,7 +54,7 @@ function SWEP:SecondaryAttack()
 		
 		--ply:RemTool( ply:GetActiveWeapon():GetClass() )
 		ply:StripWeapons()
-		ply.equippedtool = "NONE"
+		ply.equippedtool = nil
 		SGS_EquipTools( ply, _, {"gms_handtorch"} )
 	else
 		ply:SendMessage("You must place the torch on a world surface.", 60, Color(255, 0, 0, 255))

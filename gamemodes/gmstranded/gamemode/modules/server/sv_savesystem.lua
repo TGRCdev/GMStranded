@@ -172,31 +172,14 @@ function PlayerMeta:SaveCharacter()
 	
 	tbl.inventory.resources = self.resource
 	tbl.inventory.tools = {}
-	for k, v in pairs(self.inventory) do
-		local found = false
-		for k2, v2 in pairs(SGS.startinginventory) do
-			if v == v2 then
-				found = true
-				break
-			end
-		end
-		if not found then
-			table.insert(tbl.inventory.tools, v)
+	for tool, amount in pairs(self.inventory) do
+		if not SGS.startinginventory[tool] then
+			tbl.inventory.tools[tool] = amount
 		end
 	end
 	
-	if self.equippedtool == "NONE" then
-	else
-		local found = false
-		for k, v in pairs(SGS.startinginventory) do
-			if v == self.equippedtool then
-				found = true
-				break
-			end
-		end
-		if not found then
-			table.insert(tbl.inventory.tools, self.equippedtool)
-		end
+	if self.equippedtool and not SGS.startinginventory[self.equippedtool] then
+		tbl.inventory.tools[self.equippedtool] = (tbl.inventory.tools[self.equippedtool] or 0) + 1
 	end
 	
 	SGS_CleanInventories( self )
@@ -334,6 +317,24 @@ function SGS_LoadPlayer( ply )
 	ply:SetGTokens( ply.gtokens["tokens"] or 0)
 	
 	if tbl.inventory.tools ~= nil then
+		-- Convert older inventory tables in saves
+		if table.IsSequential(tbl.inventory.tools) then
+			print(ply:GetName() .. " has a sequential tool inventory. Converting to a table...")
+			local newtable = {}
+			for _, tool in ipairs(tbl.inventory.tools) do
+				newtable[tool] = (newtable[tool] or 0) + 1
+			end
+			tbl.inventory.tools = newtable
+		end
+
+		-- Check for invalid tools
+		for tool, _ in pairs(tbl.inventory.tools) do
+			if not SGS_ReverseToolLookup(tool) then
+				print(ply:GetName() .. " has an invalid tool \"" .. tool .. "\". Removing...")
+				tbl.inventory.tools[tool] = nil
+			end
+		end
+
 		ply:SynchTools( tbl.inventory.tools )
 	end
 	

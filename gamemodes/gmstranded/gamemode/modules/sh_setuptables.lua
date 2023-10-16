@@ -72,14 +72,13 @@ function SGS_SetUpTablesShared()
 	}
 
 	SGS.startinginventory = {
-		"weapon_physgun",
-		"weapon_physcannon",
-		"gms_remover",
-		"gms_proplocker",
-		"gms_nocollider",
-		"gms_sppshare",
-		"gms_packager",
-		"gmod_camera"
+		weapon_physgun = true,
+		weapon_physcannon = true,
+		gms_remover = true,
+		gms_proplocker = true,
+		gms_sppshare = true,
+		gms_packager = true,
+		gmod_camera = true
 	}
 
 	SGS.AllowedRemove = {
