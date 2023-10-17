@@ -411,23 +411,43 @@ SPELL.func = function( self )
 
 	if not IsValid( self ) then return end
 	
-	for k, v in pairs(ents.FindInSphere(self:GetPos(), 500)) do
-		for k2, v2 in pairs( SGS.collectibles ) do
-			if v:GetClass() == v2 then
-				if v:CPPICanTool(self, true) then
-					local ED = EffectData()
-					ED:SetOrigin( v:GetPos() )
-					local effect = util.Effect( 'magic_pickupdrops', ED, true, true )
-					timer.Simple( 1.1, function()
-						if IsValid( v ) then
-							self:AddResource( v.gives, v.level )
-							SafeRemoveEntity(v)
-						end
-					end )
-				end
+	local objects = ents.FindInSphere(self:GetPos(), 500)
+	for k, v in pairs(objects) do
+		if SGS.collectibles[v:GetClass()] then
+			if v:CPPICanTool(self, true) then
+				local ED = EffectData()
+				ED:SetOrigin( v:GetPos() )
+				local effect = util.Effect( 'magic_pickupdrops', ED, true, true )
+				continue
 			end
 		end
+		objects[k] = nil // Object wasnt selected for pickup
 	end
+
+	timer.Simple( 1.1, function()
+		local resources = {}
+		for _, v in pairs(objects) do
+			if IsValid( v ) then
+				local res = v:GetResource()
+				local res_id = res.rgives
+				local amt = v.amount
+				local stat = res.stat
+				resources[res_id] = resources[res_id] or { amount = 0 }
+				resources[res_id].amount = resources[res_id].amount + amt
+				resources[res_id].stat = stat
+				v:Remove()
+			end
+		end
+
+		for res_id, res in pairs(resources) do
+			self:AddResource(res_id, res.amount)
+			if res.stat then
+				self:AddStat(res.stat, res.amount)
+			end
+		end
+	end )
+	
+	
 	
 	return true	
 end

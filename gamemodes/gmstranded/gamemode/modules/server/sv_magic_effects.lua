@@ -194,13 +194,12 @@ function SGS_TestMagic3( ply, _, args )
 	if not ply:IsSuperAdmin() then return end
 
 	for k, v in pairs(ents.FindInSphere(ply:GetPos(), 300)) do
-		for k2, v2 in pairs( SGS.collectibles ) do
-			if v:GetClass() == v2 then
-				if v:CPPICanTool(ply, true) then
-					local ED = EffectData()
-					ED:SetOrigin( v:GetPos() )
-					local effect = util.Effect( 'magic_pickupdrops', ED, true, true )
-				end
+		if SGS.collectibles[v:GetClass()] then
+			if v:CPPICanTool(ply, true) then
+				local ED = EffectData()
+				ED:SetOrigin( v:GetPos() )
+				local effect = util.Effect( 'magic_pickupdrops', ED, true, true )
+				continue
 			end
 		end
 	end

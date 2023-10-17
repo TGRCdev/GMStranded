@@ -2,12 +2,6 @@ function SGS_SetUpTablesShared()
 
 	SGS.savedentities = { 	
 		"gms_tree", 
-		"gms_tree2", 
-		"gms_tree3", 
-		"gms_tree4",
-		"gms_tree5",
-		"gms_tree6",
-		"gms_tree7",
 		"gms_orenode",
 		"npc_vortigaunt",
 		"npc_breen",
@@ -17,23 +11,11 @@ function SGS_SetUpTablesShared()
 	}
 						
 	SGS.trees = {
-		"gms_tree",
-		"gms_tree2",
-		"gms_tree3",
-		"gms_tree4",
-		"gms_tree5",
-		"gms_tree6",
-		"gms_tree7"
+		"gms_tree"
 	}		
 
 	SGS.restrictedphysgun = { 	
 		"gms_tree", 
-		"gms_tree2", 
-		"gms_tree3", 
-		"gms_tree4",
-		"gms_tree5",
-		"gms_tree6",
-		"gms_tree7",
 		"gms_orenode",
 		"gms_fruit", 
 		"gms_seed",
@@ -46,16 +28,8 @@ function SGS_SetUpTablesShared()
 	}
 							
 	SGS.collectibles = {
-		"gms_wood",
-		"gms_stone",
-		"gms_iron",
-		"gms_coal",
-		"gms_silver",
-		"gms_trinium",
-		"gms_naquadah",
-		"gms_gold",
-		"gms_platinum",
-		"gms_mithril"
+		gms_wood = true,
+		gms_ore = true
 	}
 
 	SGS.skills = { 	

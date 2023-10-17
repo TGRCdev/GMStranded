@@ -42,16 +42,17 @@ function ENT:GetResource()
 end
 
 function ENT:Use( ply )
-
 	if CurTime() > ply.lastuse + 0.333 then
-		local res = self:GetResource()
-		ply:AddResource( res.rgives, self.amount )
-		ply:AddStat( res.stat, self.amount )
-		self:Remove()
+		self:PickUp(ply)
 		ply.lastuse = CurTime()
-		
 	end
-	
+end
+
+function ENT:PickUp( ply )
+	local res = self:GetResource()
+	ply:AddResource( res.rgives, self.amount )
+	ply:AddStat( res.stat, self.amount )
+	self:Remove()
 end
 
 function ENT:AcceptInput(input, ply)

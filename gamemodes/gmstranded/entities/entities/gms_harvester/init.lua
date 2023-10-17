@@ -88,7 +88,7 @@ end
 
 function ENT:MoveToRock()
 
-	local dent = self:FindNearest( "gms_stonenode" )
+	local dent = self:FindNearest( "gms_orenode" )
 	local entxy = dent:LocalToWorld(dent:OBBCenter())
 	self.dest = Vector(entxy.x, entxy.y, entxy.z) + Vector(0,0,dent:OBBMaxs().z) + Vector( 0, 0, 120)
 
