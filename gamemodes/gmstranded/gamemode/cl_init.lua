@@ -2088,11 +2088,35 @@ function SGS_HasTools(tools, includeEquipped)
 		local amt = SGS.inventory[tool] or 0
 		if includeEquipped and LocalPlayer():CurrentEquippedTool() == tool then
 			amt = amt + 1
-	end
+		end
 
 		if amt < amount then
-	return false
+			return false
+		end
+	end
+
+	return true
 end
+
+function SGS_HasResources(resources)
+	if not SGS.resources then return false end
+
+	for res_id, amount in pairs(resources) do
+		if (SGS.resources[res_id] or 0) < amount then
+			return false
+		end
+	end
+
+	return true
+end
+
+function SGS_HasLevels(levels)
+	if not SGS.levels then return false end
+
+	for skill, level in pairs(levels) do
+		if (SGS.levels[skill] or 0) < level then
+			return false
+		end
 	end
 
 	return true

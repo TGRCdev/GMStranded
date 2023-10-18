@@ -2880,33 +2880,18 @@ function PlayerMeta:CanCraft( recipe, printErr )
 		end
 	end
 
-	for skill, level in pairs( recipe.lvl_reqs ) do
-		if self:GetLevel( skill ) < level then
-			if printErr then
-				self:SendMessage("You do not have the required level.", 60, Color(255, 0, 0, 255))
-			end
-			return false
+	if not self:HasLevels(recipe.lvl_reqs) then
+		if printErr then
+			self:SendMessage("You do not have the required level.", 60, Color(255, 0, 0, 255))
 		end
+		return false
 	end
 
-	for item, amount in pairs( recipe.item_cost ) do
-		local iinv = self.resource[ item ] or 0
-		if iinv < amount then
-			if printErr then
-				self:SendMessage("You do not have the required resources.", 60, Color(255, 0, 0, 255))
-			end
-			return false
+	if not self:HasResources(recipe.item_cost) then
+		if printErr then
+			self:SendMessage("You do not have the required resources.", 60, Color(255, 0, 0, 255))
 		end
-	end
-
-	for item, amount in pairs( recipe.item_cost ) do
-		local iinv = self.resource[ item ] or 0
-		if iinv < amount then
-			if printErr then
-				self:SendMessage("You do not have the required resources.", 60, Color(255, 0, 0, 255))
-			end
-			return false
-		end
+		return false
 	end
 
 	if not self:HasTools(recipe.tool_cost) then
@@ -2916,13 +2901,13 @@ function PlayerMeta:CanCraft( recipe, printErr )
 		return false
 	end
 
-	-- TODO: Better smithcheck using recipe.gives_items and recipe.gives_tools
-	if recipe.smithcheck and ply.smithcheck then
-		if self:HasTool( args[1], true ) then
-			self:SendMessage("You are already carrying one of this tool.", 60, Color(255, 0, 0, 255))
-			self:SendMessage("Type !checksmith in chat to disable this check.", 60, Color(255, 0, 0, 255))
-			return false
-		end
+	if recipe.smithcheck and self.smithcheck and (
+		(not table.IsEmpty(recipe.gives_tools) and self:HasTools(recipe.gives_tools)) or
+		(not table.IsEmpty(recipe.gives_items) and self:HasResources(recipe.gives_items))
+	) then
+		self:SendMessage("You are already carrying this item.", 60, Color(255, 0, 0, 255))
+		self:SendMessage("Type !checksmith in chat to disable this check.", 60, Color(255, 0, 0, 255))
+		return false
 	end
 
 	return true
@@ -5737,6 +5722,35 @@ function PlayerMeta:HasTools(tools, includeEquipped)
 		end
 	end
 
+	return true
+end
+
+
+function PlayerMeta:GetResourceCount(res_id)
+	return self.resource[res_id] or 0
+end
+
+-- Checks what resources from the given table that the player does not have
+-- Returns a table of resources that the player does not have
+-- Returns an empty table if the player has all the resources
+function PlayerMeta:QueryMissingResources(resources)
+	for res_id, amount in pairs(resources) do
+		local ply_amt = self:GetResourceCount(res_id)
+		if ply_amt >= amount then
+			resources[res_id] = nil
+		else
+			resources[res_id] = amount - ply_amt
+		end
+	end
+	return resources
+end
+
+function PlayerMeta:HasResources(resources)
+	for res_id, amount in pairs(resources) do
+		if amount > self:GetResourceCount(res_id) then
+			return false
+		end
+	end
 	return true
 end
 

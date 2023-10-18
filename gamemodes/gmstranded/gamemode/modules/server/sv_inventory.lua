@@ -122,7 +122,16 @@ function PlayerMeta:AddResourceSilent( res, amt )
 	self.curinv = self.curinv + amt
 	--self:SendMessage("" .. amt .. "x " .. CapAll(string.gsub(res, "_", " ")) .. " added.", 60, Color(180, 255, 0, 255))
 	self:SetResource( res, nAmt )
-	
+end
+
+function PlayerMeta:AddResources( resources, silent )
+	for res_id, amount in pairs(resources) do
+		if silent then
+			self:AddResourceSilent(res_id, amount)
+		else
+			self:AddResource(res_id, amount)
+		end
+	end
 end
 
 function PlayerMeta:SubResource( res, amt )
@@ -132,6 +141,12 @@ function PlayerMeta:SubResource( res, amt )
 	end
 	self.curinv = self.curinv - amt
 	self:SetResource( res, nAmt )
+end
+
+function PlayerMeta:SubResources( resources )
+	for res_id, amount in pairs(resources) do
+		self:SubResource(res_id, amount)
+	end
 end
 
 function PlayerMeta:SetResource( res, amt )

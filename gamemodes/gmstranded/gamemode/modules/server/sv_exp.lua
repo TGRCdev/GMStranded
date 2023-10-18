@@ -45,6 +45,26 @@ function PlayerMeta:GetLevel(skill)
 	return self.level[ skill ]
 end
 
+function PlayerMeta:QueryMissingLevels(levels)
+	for skill, level in pairs(levels) do
+		if level <= self:GetLevel(skill) then
+			levels[skill] = nil
+		else
+			levels[skill] = level - self:GetLevel(skill)
+		end
+	end
+	return levels
+end
+
+function PlayerMeta:HasLevels(levels)
+	for skill, level in pairs(levels) do
+		if level > self:GetLevel(skill) then
+			return false
+		end
+	end
+	return true
+end
+
 function PlayerMeta:SetSurvivalLevel()
 	local nslvl = 1
 	local tlvl =  0

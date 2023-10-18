@@ -74,35 +74,11 @@ function PANEL:RedrawRecipes()
 	local categories = {}
 	for _, recipe in ipairs( recipes ) do
 		
-		if SGS.hide_level then
-			local levellocked = false
-			for skill, level in pairs(recipe.lvl_reqs) do
-				if (SGS.levels[skill] or 0) < level then
-					levellocked = true
-					break
-				end
-			end
-			if levellocked then continue end
-		end
-
-		if SGS.hide_resource then
-			local reslocked = false
-			for item, amount in pairs(recipe.item_cost) do
-				if (SGS.resources[ item ] or 0) < amount then
-					reslocked = true
-					break
-				end
-			end
-			if not reslocked then
-				for tool, amount in pairs(recipe.tool_cost) do
-					if (SGS.inventory[ tool ] or 0) < amount then
-						reslocked = true
-						break
-					end
-				end
-			end
-			if reslocked then continue end
-		end
+		if SGS.hide_level and not SGS_HasLevels(recipe.lvl_reqs) then continue end
+		if SGS.hide_resource and (
+			not SGS_HasResources(recipe.item_cost) or
+			not SGS_HasTools(recipe.tool_cost)
+		) then continue end
 
 		if not categories[recipe.category] then
 			local IconList = vgui.Create( "DIconLayout")
@@ -129,46 +105,22 @@ function PANEL:RedrawRecipes()
 		icon:SetSize( 64, 64 )
 		IconList:Add( icon )
 		icon.PaintOver = function()
-			for skill, level in pairs( recipe.lvl_reqs or {} ) do
-				local plvl = SGS.levels[ skill ] or 0
-				if plvl < level then
-					draw.RoundedBoxEx( 2, 5, 5, 54, 20, Color(255, 80, 80, 150), false, false, false, false )
-					draw.SimpleText("INSUFFICIENT", "proplisticons", 7, 7, Color(0, 0, 0, 255), 0, 0)
-					draw.SimpleText("SKILL", "proplisticons", 25, 15, Color(0, 0, 0, 255), 0, 0)
-					icon.OnCursorEntered = function()
-						return true
-					end
-					break
+			if not SGS_HasLevels(recipe.lvl_reqs) then
+				draw.RoundedBoxEx( 2, 5, 5, 54, 20, Color(255, 80, 80, 150), false, false, false, false )
+				draw.SimpleText("INSUFFICIENT", "proplisticons", 7, 7, Color(0, 0, 0, 255), 0, 0)
+				draw.SimpleText("SKILL", "proplisticons", 25, 15, Color(0, 0, 0, 255), 0, 0)
+				icon.OnCursorEntered = function()
+					return true
 				end
 			end
-			local reslocked = false
-			for item, amount in pairs( recipe.item_cost ) do
-				local pamt = SGS.resources[ item ] or 0
-				if pamt < amount then
-					draw.RoundedBoxEx( 2, 5, 39, 54, 20, Color(255, 255, 50, 150), false, false, false, false )
-					draw.SimpleText("INSUFFICIENT", "proplisticons", 7, 41, Color(0, 0, 0, 255), 0, 0)
-					draw.SimpleText("RESOURCES", "proplisticons", 8, 49, Color(0, 0, 0, 255), 0, 0)
-					icon.OnCursorEntered = function()
-						return true
-					end
-					reslocked = true
-					break
+			if not SGS_HasResources(recipe.item_cost) or not SGS_HasTools(recipe.tool_cost) then
+				draw.RoundedBoxEx( 2, 5, 39, 54, 20, Color(255, 255, 50, 150), false, false, false, false )
+				draw.SimpleText("INSUFFICIENT", "proplisticons", 7, 41, Color(0, 0, 0, 255), 0, 0)
+				draw.SimpleText("RESOURCES", "proplisticons", 8, 49, Color(0, 0, 0, 255), 0, 0)
+				icon.OnCursorEntered = function()
+					return true
 				end
 			end
-			if not reslocked then
-				for tool, amount in pairs( recipe.tool_cost ) do
-					if (SGS.inventory[ tool ] or 0) < amount then
-						draw.RoundedBoxEx( 2, 5, 39, 54, 20, Color(255, 255, 50, 150), false, false, false, false )
-						draw.SimpleText("INSUFFICIENT", "proplisticons", 7, 41, Color(0, 0, 0, 255), 0, 0)
-						draw.SimpleText("RESOURCES", "proplisticons", 8, 49, Color(0, 0, 0, 255), 0, 0)
-						icon.OnCursorEntered = function()
-							return true
-						end
-						break
-					end
-				end
-			end
-			-- TODO: Fix tool inventory and then add tool_cost to the insufficient resource check
 		end
 		icon.DoClick = function () 
 			surface.PlaySound( "ui/buttonclickrelease.wav" )
