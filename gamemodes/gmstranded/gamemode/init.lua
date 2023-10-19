@@ -2571,63 +2571,23 @@ function PlayerMeta:Smelt( recipe )
 end
 
 function SGS_ConArcaneForge( ply, com, args )
-
 		if not #args == 1 then
 			ply:SendMessage("Wrong Number of Arguments.", 60, Color(0, 255, 0, 255))
 			return
 		end
 
-		if not SGS_ReverseStoneLookup( args[1] ) then
-			ply:SendMessage("Invalid item!", 60, Color(0, 255, 0, 255))
-			return
-		end
+		local recipe = SGS_QueryRecipe( args[1] )
 
-        ply:ArcaneForge( SGS_ReverseStoneLookup( args[1] ) )
-
-
+        ply:ArcaneForge( recipe )
 end
 concommand.Add( "sgs_arcaneforge", SGS_ConArcaneForge )
 
 function PlayerMeta:ArcaneForge( stone )
-
-	local can = true
 	local modi = 1
 
-	for k, v in pairs( stone.cost ) do
-		local iinv = self.resource[ k ] or 0
-		if iinv < v then
-			can = false
-			self:SendMessage("You do not have the required resources.", 60, Color(255, 0, 0, 255))
-			return
-		end
-	end
-
-	for k, v in pairs( stone.reqlvl ) do
-		if self:GetLevel( k ) < v then
-			can = false
-			self:SendMessage("You do not have the required level.", 60, Color(255, 0, 0, 255))
-			return
-		end
-	end
-
-	if can then
+	if self:CanCraft(stone, true) then
 		SGS_ArcaneForge_Start(self, 2, stone, modi)
 	end
-
-end
-
-function SGS_ReverseStoneLookup( tEnt )
-
-	for k, v in pairs( SGS.MagicForge ) do
-		for k2, v2 in pairs( SGS.MagicForge[k] ) do
-			if v2.uid == tEnt then
-				return v2
-			end
-		end
-	end
-
-	return nil
-
 end
 
 function SGS_ConBrew( ply, com, args )

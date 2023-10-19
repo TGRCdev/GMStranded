@@ -1996,35 +1996,20 @@ function SGS_ArcaneForge_Start(ply, len, stone, modi)
 		return
 	end
 	
-	trace = ply:TraceFromEyes(100)
+	ply:Freeze( true )
+	ply.inprocess = true
+	ply.sound = CreateSound(ply, "ambient/fire/fire_big_loop1.wav")
+	ply.sound:Play()
+	ply.processtype = "forging"
+	trace.Entity:CreateForgeEffect( len - 0.3 ) 
 	
-	if not IsValid(trace.Entity) then
-		ply:SendMessage("You need to be at an arcane forge!", 60, Color(255, 0, 0, 255))
-		return
-	end
-	
-	if trace.Entity:GetClass() == "gms_arcaneforge" then
-		ply:Freeze( true )
-		ply.inprocess = true
-		ply.sound = CreateSound(ply, "ambient/fire/fire_big_loop1.wav")
-		ply.sound:Play()
-		ply.processtype = "forging"
-		trace.Entity:CreateForgeEffect( len - 0.3 ) 
-		
-		local txt = "Forging..."
-		ply:SetNWString("action", txt)
-		SGS_StartTimer( ply, txt, len, "arcane" )
-		timer.Create( ply:UniqueID() .. "processtimer", len, 1, function() SGS_ArcaneForge_Stop( ply, stone, modi ) end )
-	else
-		ply:SendMessage("You need to be at an arcane forge!", 60, Color(255, 0, 0, 255))
-	end
-	
-
-
+	local txt = "Forging..."
+	ply:SetNWString("action", txt)
+	SGS_StartTimer( ply, txt, len, "arcane" )
+	timer.Create( ply:UniqueID() .. "processtimer", len, 1, function() SGS_ArcaneForge_Stop( ply, stone, modi ) end )
 end
 
 function SGS_ArcaneForge_Stop(ply, stone, modi)
-
 	if not ply:IsValid() then return end
 	
 	ply:Freeze( false )
@@ -2043,21 +2028,20 @@ function SGS_ArcaneForge_Stop(ply, stone, modi)
 	end
 
 	ply:SendMessage("You performed " .. CapAll(string.gsub(stone.title, "_", " ")) .. "!", 60, Color(0, 255, 0, 255))
-	ply:AddExp( "arcane", stone.xp )
-	
 	
 	local mply = 1
-	if ply:GetLevel( "arcane" ) >= stone.spclvl[ "double" ] then mply = 2 end
-	if ply:GetLevel( "arcane" ) >= stone.spclvl[ "triple" ] then mply = 3 end
-	
-	for k, v in pairs(stone.gives) do
-		ply:AddResource( k, v * mply )
-		ply:AddStat( "arcane4", v * mply )
+	for _, mult in ipairs(SGS.arcane_multipliers[stone.id] or {}) do
+		if mult.level <= ply:GetLevel("arcane") then
+			mply = mult.multiplier
+			break
+		end
 	end
 	
-	for k, v in pairs( stone.cost ) do
-		ply:SubResource( k, v )
-	end	
+	for item_id, amount in pairs(stone.gives_items) do
+		stone.gives_items[item_id] = amount * mply
+	end
+
+	SGS_CompleteCrafting(ply, stone)
 
 	ply:RandomFindChance()
 end
