@@ -167,23 +167,9 @@ function SGS_PreCacheMessage()
 	util.AddNetworkString("sgs_readytoload")
 	util.AddNetworkString("sgs_updateresourcebox")
 	util.AddNetworkString("cl_fromcache")
-	util.AddNetworkString("cl_frompcache1")
-	util.AddNetworkString("cl_frompcache2")
-	util.AddNetworkString("cl_frompcache3")
-	util.AddNetworkString("cl_frompcache4")
-	util.AddNetworkString("cl_frompcacheboss")
-	util.AddNetworkString("cl_fromtcache")
-	util.AddNetworkString("cl_fromptcache")
 	util.AddNetworkString("cl_fromtribecache")
 
-	util.AddNetworkString("cl_torcache")
-	util.AddNetworkString("cl_topcache1")
-	util.AddNetworkString("cl_topcache2")
-	util.AddNetworkString("cl_topcache3")
-	util.AddNetworkString("cl_topcache4")
-	util.AddNetworkString("cl_topcacheboss")
-	util.AddNetworkString("cl_totcache")
-	util.AddNetworkString("cl_toptcache")
+	util.AddNetworkString("cl_tocache")
 	util.AddNetworkString("cl_totribecache")
 
 end
@@ -3057,126 +3043,59 @@ function SGS_CacheAmtCheck(ply, res, amt, ent)
 end
 
 
-net.Receive( "cl_torcache", function( l, ply )
-	local res = net.ReadString()
-	local amt = net.ReadInt( 16 )
-	local ent = SGS_CacheValidCheck(ply, amt)
+net.Receive( "cl_tocache", function( l, ply )
+	local byte_count = net.ReadUInt(32)
+	local data = net.ReadData(byte_count)
+	local transfer_request = util.JSONToTable(util.Decompress(data))
+
+	print("Received cache store request")
+	PrintTable(transfer_request)
+
+	local ent = SGS_CacheValidCheck(ply)
 
 	if not ent then return end
+	local contents = ent:GetContents()
+	if not contents then return end
 
-	amt = SGS_CacheAmtCheck(ply, res, amt, ent)
+	if(SPropProtection.PlayerUse(ply, ent) == false) then return end
 
-	ent:SetResourceDropInfo( res, amt )
-	ply:SubResource( res, amt )
+	if ent:GetFreeSpace() <= 0 then
+		ply:SendMessage("This cache is full!", 60, Color(255,0,0,255))
+		return
+	end
 
+	local transfer_error = nil
+	for item, amount in pairs(transfer_request) do
+		if (ply.resource[item] or 0) < amount then
+			transfer_error = "player"
+			amount = (ply.resource[item] or 0)
+		end
+
+		if ent:GetFreeSpace() < amount then
+			transfer_error = "cache"
+			amount = ent:GetFreeSpace()
+		end
+
+		ent:SetResourceDropInfo( item, amount )
+		ply:SubResource( item, amount )
+
+		-- Out of inventory space, no point in continuing
+		if transfer_error == "cache" then break end
+	end
+	ent:EmitSound(Sound("items/battery_pickup.wav"), 60, math.random(70, 130))
+
+	if transfer_error == "cache" then
+		ply:SendMessage("You couldn't deposit all of the requested resources.", 60, Color(255,255,80,255))
+	elseif transfer_error == "player" then
+		ply:SendMessage("The cache couldn't hold all requested resources. Stored max.", 60, Color(255,255,80,255))
+	end
 
 	net.Start("UpdateCacheTable")
-		net.WriteTable( ent.contents )
+		net.WriteTable( contents )
 	net.Send( ply )
 
 	timer.Simple( 0.2, function() ply:ConCommand("sgs_refreshrcachelist") end )
 end )
-
-net.Receive( "cl_topcache1", function( l, ply )
-	local res = net.ReadString()
-	local amt = net.ReadInt( 16 )
-	local ent = SGS_CacheValidCheck(ply, amt)
-
-	if not ent or not ent.enabled then return end
-
-	amt = SGS_CacheAmtCheck(ply, res, amt, ent)
-
-	ent:SetResourceDropInfo( res, amt )
-	ply:SubResource( res, amt )
-
-
-	net.Start("UpdateCacheTable")
-		net.WriteTable( ent.POwner.pcontents )
-	net.Send( ply )
-
-	timer.Simple( 0.2, function() ply:ConCommand("sgs_refreshrcachelist") end )
-end )
-
-net.Receive( "cl_topcache2", function( l, ply )
-	local res = net.ReadString()
-	local amt = net.ReadInt( 16 )
-  local ent = SGS_CacheValidCheck(ply, amt)
-
-	if not ent or not ent.enabled then return end
-
-	amt = SGS_CacheAmtCheck(ply, res, amt, ent)
-
-	ent:SetResourceDropInfo( res, amt )
-	ply:SubResource( res, amt )
-
-
-	net.Start("UpdateCacheTable")
-		net.WriteTable( ent.POwner.p2contents )
-	net.Send( ply )
-
-	timer.Simple( 0.2, function() ply:ConCommand("sgs_refreshrcachelist") end )
-end )
-
-net.Receive( "cl_topcache3", function( l, ply )
-	local res = net.ReadString()
-  local amt = net.ReadInt( 16 )
-  local ent = SGS_CacheValidCheck(ply, amt)
-
-  if not ent or not ent.enabled then return end
-
-  amt = SGS_CacheAmtCheck(ply, res, amt, ent)
-
-  ent:SetResourceDropInfo( res, amt )
-  ply:SubResource( res, amt )
-
-
-	net.Start("UpdateCacheTable")
-		net.WriteTable( ent.POwner.p3contents )
-	net.Send( ply )
-
-	timer.Simple( 0.2, function() ply:ConCommand("sgs_refreshrcachelist") end )
-end )
-
-net.Receive( "cl_topcache4", function( l, ply )
-	local res = net.ReadString()
-  local amt = net.ReadInt( 16 )
-  local ent = SGS_CacheValidCheck(ply, amt)
-
-  if not ent or not ent.enabled then return end
-
-  amt = SGS_CacheAmtCheck(ply, res, amt, ent)
-
-  ent:SetResourceDropInfo( res, amt )
-  ply:SubResource( res, amt )
-
-
-	net.Start("UpdateCacheTable")
-		net.WriteTable( ent.POwner.p4contents )
-	net.Send( ply )
-
-	timer.Simple( 0.2, function() ply:ConCommand("sgs_refreshrcachelist") end )
-end )
-
-net.Receive( "cl_topcacheboss", function( l, ply )
-	local res = net.ReadString()
-  local amt = net.ReadInt( 16 )
-  local ent = SGS_CacheValidCheck(ply, amt)
-
-  if not ent or not ent.enabled then return end
-
-  amt = SGS_CacheAmtCheck(ply, res, amt, ent)
-
-  ent:SetResourceDropInfo( res, amt )
-  ply:SubResource( res, amt )
-
-
-	net.Start("UpdateCacheTable")
-		net.WriteTable( ent.POwner.pbosscontents )
-	net.Send( ply )
-
-	timer.Simple( 0.2, function() ply:ConCommand("sgs_refreshrcachelist") end )
-end )
-
 
 net.Receive( "cl_totribecache", function( l, ply )
 	local res = net.ReadString()
@@ -3189,7 +3108,7 @@ net.Receive( "cl_totribecache", function( l, ply )
 
 	ent:SetResourceDropInfo( res, amt )
 	ply:SubResource( res, amt )
-
+	ent:EmitSound(Sound("items/battery_pickup.wav"), 60, math.random(70, 130))
 
 	net.Start("UpdateCacheTable")
 		net.WriteTable( GAMEMODE.Tribes.tblTribes[ ent.tribeid ].cachecontents or {} )
@@ -3226,6 +3145,7 @@ net.Receive( "cl_fromtribecache", function( l, ply )
 
 	ent:SetResourceDropInfo( string.lower(res), amt * -1 )
 	ply:AddResource( string.lower(res), amt )
+	ent:EmitSound(Sound("items/battery_pickup.wav"), 60, math.random(70, 130))
 
 	net.Start("UpdateCacheTable")
 		net.WriteTable( GAMEMODE.Tribes.tblTribes[ ent.tribeid ].cachecontents )
@@ -3245,11 +3165,12 @@ net.Receive( "cl_fromcache", function( l, ply )
 	local ent = SGS_CacheValidCheck(ply)
 
 	if not ent then return end
-	if not ent.contents then return end
+	local contents = ent:GetContents()
+	if not contents then return end
 
 	if(SPropProtection.PlayerUse(ply, ent) == false) then return end
 
-	if (ply.maxinv - ply.curinv) == 0 then
+	if (ply.maxinv - ply.curinv) <= 0 then
 		ply:SendMessage("Your inventory is full!", 60, Color(255,0,0,255))
 		return
 	end
@@ -3257,10 +3178,12 @@ net.Receive( "cl_fromcache", function( l, ply )
 	local transfer_error = nil
 
 	for item, amount in pairs(transfer_request) do
-		if (ent.contents[item] or 0) < amount then
+		if (contents[item] or 0) < amount then
 			transfer_error = "cache"
-			amount = (ent.contents[item] or 0)
-		elseif ply.maxinv - ply.curinv < amount then
+			amount = (contents[item] or 0)
+		end
+
+		if ply.maxinv - ply.curinv < amount then
 			transfer_error = "player"
 			amount = (ply.maxinv - ply.curinv)
 		end
@@ -3271,6 +3194,7 @@ net.Receive( "cl_fromcache", function( l, ply )
 		-- Out of inventory space, no point in continuing
 		if transfer_error == "player" then break end
 	end
+	ent:EmitSound(Sound("items/battery_pickup.wav"), 60, math.random(70, 130))
 
 	if transfer_error == "cache" then
 		ply:SendMessage("Cache didn't have all requested resources.", 60, Color(255,255,80,255))
@@ -3279,227 +3203,7 @@ net.Receive( "cl_fromcache", function( l, ply )
 	end
 
 	net.Start("UpdateCacheTable")
-		net.WriteTable( ent.contents )
-	net.Send( ply )
-
-	timer.Simple( 0.2, function() ply:ConCommand("sgs_refreshrcachelist") end )
-end )
-
-net.Receive( "cl_frompcache1", function( l, ply )
-	local res = net.ReadString()
-	local amt = net.ReadInt( 16 )
-	local ent = SGS_CacheValidCheck(ply, amt)
-
-	if not ent or not ent:GetClass() == "gms_pcache" then return end
-	if not ent.POwner.pcontents then return end
-
-	if(SPropProtection.PlayerUse(ply, ent) == false) then return end
-
-	if not IsValid( ent.POwner ) then return end
-
-	if not ent.POwner.pcontents[res] then
-		ply:SendMessage("The cache doesn't have any of that.", 60, Color(255, 255, 80, 255))
-		return
-	end
-
-	if ent.POwner.pcontents[res] < amt then
-		ply:SendMessage("Cache doesn't have that many, taking max.", 60, Color(255, 255, 80, 255))
-		amt = ent.POwner.pcontents[res]
-	end
-
-	if ( ply.maxinv - ply.curinv ) < amt then
-		ply:SendMessage("You can't withdraw that many, taking max.", 60, Color(255, 255, 80, 255))
-		amt = ply.maxinv - ply.curinv
-	end
-
-	if amt <= 0 then return end
-
-	ent:SetResourceDropInfo( string.lower(res), amt * -1 )
-	ply:AddResource( string.lower(res), amt )
-
-	if not ( SPropProtection.Props[ent:EntIndex()].SteamID64 == ply:GetPlayerID() ) then
-		SGS.Log("** " .. ply:Nick() .. " (" .. ply:GetPlayerID() .. ") removed " .. amt .. "x of item " .. res .. " from the pcache owned by: " .. SPropProtection.Props[ent:EntIndex()].Name .. " (" .. SPropProtection.Props[ent:EntIndex()].SteamID64 .. ")**" )
-	end
-
-
-	net.Start("UpdateCacheTable")
-		net.WriteTable( ent.POwner.pcontents )
-	net.Send( ply )
-
-	timer.Simple( 0.2, function() ply:ConCommand("sgs_refreshrcachelist") end )
-end )
-
-net.Receive( "cl_frompcache2", function( l, ply )
-	local res = net.ReadString()
-	local amt = net.ReadInt( 16 )
-	local ent = SGS_CacheValidCheck(ply, amt)
-
-	if not ent or not ent:GetClass() == "gms_pcache2" then return end
-	if not ent.POwner.p2contents then return end
-
-	if(SPropProtection.PlayerUse(ply, ent) == false) then return end
-
-	if not IsValid( ent.POwner ) then return end
-
-	if not ent.POwner.p2contents[res] then
-		ply:SendMessage("The cache doesn't have any of that.", 60, Color(255, 255, 80, 255))
-		return
-	end
-
-	if ent.POwner.p2contents[res] < amt then
-		ply:SendMessage("Cache doesn't have that many, taking max.", 60, Color(255, 255, 80, 255))
-		amt = ent.POwner.p2contents[res]
-	end
-
-	if ( ply.maxinv - ply.curinv ) < amt then
-		ply:SendMessage("You can't withdraw that many, taking max.", 60, Color(255, 255, 80, 255))
-		amt = ply.maxinv - ply.curinv
-	end
-
-	if amt <= 0 then return end
-
-	ent:SetResourceDropInfo( string.lower(res), amt * -1 )
-	ply:AddResource( string.lower(res), amt )
-
-	if not ( SPropProtection.Props[ent:EntIndex()].SteamID64 == ply:GetPlayerID() ) then
-		SGS.Log("** " .. ply:Nick() .. " (" .. ply:GetPlayerID() .. ") removed " .. amt .. "x of item " .. res .. " from the pcache2 owned by: " .. SPropProtection.Props[ent:EntIndex()].Name .. " (" .. SPropProtection.Props[ent:EntIndex()].SteamID64 .. ")**" )
-	end
-
-
-	net.Start("UpdateCacheTable")
-		net.WriteTable( ent.POwner.p2contents )
-	net.Send( ply )
-
-	timer.Simple( 0.2, function() ply:ConCommand("sgs_refreshrcachelist") end )
-end )
-
-net.Receive( "cl_frompcache3", function( l, ply )
-	local res = net.ReadString()
-	local amt = net.ReadInt( 16 )
-	local ent = SGS_CacheValidCheck(ply, amt)
-
-	if not ent or not ent:GetClass() == "gms_pcache3" then return end
-	if not ent.POwner.p3contents then return end
-
-	if(SPropProtection.PlayerUse(ply, ent) == false) then return end
-
-	if not IsValid( ent.POwner ) then return end
-
-	if not ent.POwner.p3contents[res] then
-		ply:SendMessage("The cache doesn't have any of that.", 60, Color(255, 255, 80, 255))
-		return
-	end
-
-	if ent.POwner.p3contents[res] < amt then
-		ply:SendMessage("Cache doesn't have that many, taking max.", 60, Color(255, 255, 80, 255))
-		amt = ent.POwner.p3contents[res]
-	end
-
-	if ( ply.maxinv - ply.curinv ) < amt then
-		ply:SendMessage("You can't withdraw that many, taking max.", 60, Color(255, 255, 80, 255))
-		amt = ply.maxinv - ply.curinv
-	end
-
-	if amt <= 0 then return end
-
-	ent:SetResourceDropInfo( string.lower(res), amt * -1 )
-	ply:AddResource( string.lower(res), amt )
-
-	if not ( SPropProtection.Props[ent:EntIndex()].SteamID64 == ply:GetPlayerID() ) then
-		SGS.Log("** " .. ply:Nick() .. " (" .. ply:GetPlayerID() .. ") removed " .. amt .. "x of item " .. res .. " from the pcache3 owned by: " .. SPropProtection.Props[ent:EntIndex()].Name .. " (" .. SPropProtection.Props[ent:EntIndex()].SteamID64 .. ")**" )
-	end
-
-
-	net.Start("UpdateCacheTable")
-		net.WriteTable( ent.POwner.p3contents )
-	net.Send( ply )
-
-	timer.Simple( 0.2, function() ply:ConCommand("sgs_refreshrcachelist") end )
-end )
-
-net.Receive( "cl_frompcache4", function( l, ply )
-	local res = net.ReadString()
-  local amt = net.ReadInt( 16 )
-  local ent = SGS_CacheValidCheck(ply, amt)
-
-  if not ent or not ent:GetClass() == "gms_pcache4" then return end
-	if not ent.POwner.p4contents then return end
-
-  if(SPropProtection.PlayerUse(ply, ent) == false) then return end
-
-  if not IsValid( ent.POwner ) then return end
-
-	if not ent.POwner.p4contents[res] then
-		ply:SendMessage("The cache doesn't have any of that.", 60, Color(255, 255, 80, 255))
-		return
-	end
-
-	if ent.POwner.p4contents[res] < amt then
-		ply:SendMessage("Cache doesn't have that many, taking max.", 60, Color(255, 255, 80, 255))
-		amt = ent.POwner.p4contents[res]
-	end
-
-	if ( ply.maxinv - ply.curinv ) < amt then
-		ply:SendMessage("You can't withdraw that many, taking max.", 60, Color(255, 255, 80, 255))
-		amt = ply.maxinv - ply.curinv
-	end
-
-	if amt <= 0 then return end
-
-	ent:SetResourceDropInfo( string.lower(res), amt * -1 )
-	ply:AddResource( string.lower(res), amt )
-
-	if not ( SPropProtection.Props[ent:EntIndex()].SteamID64 == ply:GetPlayerID() ) then
-		SGS.Log("** " .. ply:Nick() .. " (" .. ply:GetPlayerID() .. ") removed " .. amt .. "x of item " .. res .. " from the pcache4 owned by: " .. SPropProtection.Props[ent:EntIndex()].Name .. " (" .. SPropProtection.Props[ent:EntIndex()].SteamID64 .. ")**" )
-	end
-
-
-	net.Start("UpdateCacheTable")
-		net.WriteTable( ent.POwner.p4contents )
-	net.Send( ply )
-
-	timer.Simple( 0.2, function() ply:ConCommand("sgs_refreshrcachelist") end )
-end )
-
-net.Receive( "cl_frompcacheboss", function( l, ply )
-	local res = net.ReadString()
-	local amt = net.ReadInt( 16 )
-	local ent = SGS_CacheValidCheck(ply, amt)
-
-	if not ent or not ent:GetClass() == "gms_pcacheboss" then return end
-	if not ent.POwner.pbosscontents then return end
-
-	if(SPropProtection.PlayerUse(ply, ent) == false) then return end
-
-	if not IsValid( ent.POwner ) then return end
-
-	if not ent.POwner.pbosscontents[res] then
-		ply:SendMessage("The cache doesn't have any of that.", 60, Color(255, 255, 80, 255))
-		return
-	end
-
-	if ent.POwner.pbosscontents[res] < amt then
-		ply:SendMessage("Cache doesn't have that many, taking max.", 60, Color(255, 255, 80, 255))
-		amt = ent.POwner.pbosscontents[res]
-	end
-
-	if ( ply.maxinv - ply.curinv ) < amt then
-		ply:SendMessage("You can't withdraw that many, taking max.", 60, Color(255, 255, 80, 255))
-		amt = ply.maxinv - ply.curinv
-	end
-
-	if amt <= 0 then return end
-
-	ent:SetResourceDropInfo( string.lower(res), amt * -1 )
-	ply:AddResource( string.lower(res), amt )
-
-	if not ( SPropProtection.Props[ent:EntIndex()].SteamID64 == ply:GetPlayerID() ) then
-		SGS.Log("** " .. ply:Nick() .. " (" .. ply:GetPlayerID() .. ") removed " .. amt .. "x of item " .. res .. " from the pcacheboss owned by: " .. SPropProtection.Props[ent:EntIndex()].Name .. " (" .. SPropProtection.Props[ent:EntIndex()].SteamID64 .. ")**" )
-	end
-
-
-	net.Start("UpdateCacheTable")
-		net.WriteTable( ent.POwner.pbosscontents )
+		net.WriteTable( contents )
 	net.Send( ply )
 
 	timer.Simple( 0.2, function() ply:ConCommand("sgs_refreshrcachelist") end )

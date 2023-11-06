@@ -39,7 +39,6 @@ function ENT:SetResourceDropInfo( rType, rAmt )
 	
 	GAMEMODE.Tribes.tblTribes[ self.tribeid ].cachecontents[rType] = ( GAMEMODE.Tribes.tblTribes[ self.tribeid ].cachecontents[rType] or 0 ) + rAmt
 	if GAMEMODE.Tribes.tblTribes[ self.tribeid ].cachecontents[rType] == 0 then GAMEMODE.Tribes.tblTribes[ self.tribeid ].cachecontents[rType] = nil end
-	self:EmitSound(Sound("items/battery_pickup.wav"), 60, math.random(70, 130))
 
 end
 

@@ -38,7 +38,6 @@ end
 function ENT:SetResourceDropInfo( rType, rAmt )
 
 	self.POwner.pcontents[rType] = (self.POwner.pcontents[rType] or 0) + rAmt
-	self:EmitSound(Sound("items/battery_pickup.wav"), 60, math.random(70, 130))
 
 end
 
@@ -80,6 +79,10 @@ function ENT:Use( ply )
 	
 	ply.lastuse = CurTime()
 
+end
+
+function ENT:GetContents()
+	return self.POwner.pcontents
 end
 
 function ENT:AcceptInput(input, ply)

@@ -72,6 +72,10 @@ function ENT:Use( ply )
 
 end
 
+function ENT:GetContents()
+	return self.contents
+end
+
 function ENT:AcceptInput(input, ply)
 end
 

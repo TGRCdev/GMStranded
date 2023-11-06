@@ -17,6 +17,14 @@ function SendCacheTakeRequest(items)
 	net.SendToServer()
 end
 
+function SendCacheStoreRequest(items)
+	local data = util.Compress( util.TableToJSON( items ) )
+	net.Start( "cl_tocache" )
+		net.WriteUInt(#data, 32)
+		net.WriteData(data)
+	net.SendToServer()
+end
+
 --[[
 Resource Cache Menu
 ]]--
@@ -156,10 +164,21 @@ function PANEL:DrawFrame()
 	PlayertoCacheButton:SetPos( 304, 304 )
 	PlayertoCacheButton:SetText( "<<--" )
 	PlayertoCacheButton.DoClick = function( PlayertoCacheButton )
-		if PlayerInventory:GetSelectedLine() == nil then return end
-		SGS.temprType = PlayerInventory:GetLine(PlayerInventory:GetSelectedLine()):GetValue(1)
-		SGS.temprAmt = PlayerInventory:GetLine(PlayerInventory:GetSelectedLine()):GetValue(2)
-		SGS_RCacheMenuSmall()
+		local selected = PlayerInventory:GetSelected()
+		if #selected == 0 then return
+		elseif #selected == 1 then
+			SGS.temprType = PlayerInventory:GetLine(PlayerInventory:GetSelectedLine()):GetValue(1)
+			SGS.temprAmt = PlayerInventory:GetLine(PlayerInventory:GetSelectedLine()):GetValue(2)
+			SGS.cache_request = {}
+			SGS.cache_request[SGS.temprType] = SGS.temprAmt
+			SGS_RCacheMenuSmall()
+		else
+			local request = {}
+			for _, line in pairs(selected) do
+				request[line:GetValue(1)] = tonumber(line:GetValue(2))
+			end
+			SendCacheStoreRequest(request)
+		end
 	end
 	
 	
@@ -237,21 +256,7 @@ function PANEL:DrawFrame()
 	TransferButton:SetPos( 10, 68 )
 	TransferButton:SetText( "Transfer" )
 	TransferButton.DoClick = function( TransferButton )
-		if SGS.ctype == "p" then
-			net.Start( "cl_topcache1" ) net.WriteString( SGS.temprType ) net.WriteInt( tonumber(TextEntry:GetValue()), 16 ) net.SendToServer()
-		elseif SGS.ctype == "p2" then
-			net.Start( "cl_topcache2" ) net.WriteString( SGS.temprType ) net.WriteInt( tonumber(TextEntry:GetValue()), 16 ) net.SendToServer()
-		elseif SGS.ctype == "p3" then
-			net.Start( "cl_topcache3" ) net.WriteString( SGS.temprType ) net.WriteInt( tonumber(TextEntry:GetValue()), 16 ) net.SendToServer()
-		elseif SGS.ctype == "p4" then
-			net.Start( "cl_topcache4" ) net.WriteString( SGS.temprType ) net.WriteInt( tonumber(TextEntry:GetValue()), 16 ) net.SendToServer()
-		elseif SGS.ctype == "pb" then
-			net.Start( "cl_topcacheboss" ) net.WriteString( SGS.temprType ) net.WriteInt( tonumber(TextEntry:GetValue()), 16 ) net.SendToServer()
-		elseif SGS.ctype == "tribe" then
-			net.Start( "cl_totribecache" ) net.WriteString( SGS.temprType ) net.WriteInt( tonumber(TextEntry:GetValue()), 16 ) net.SendToServer()
-		else
-			net.Start( "cl_torcache" ) net.WriteString( SGS.temprType ) net.WriteInt( tonumber(TextEntry:GetValue()), 16 ) net.SendToServer()
-		end
+		SendCacheStoreRequest( SGS.cache_request )
 		self:Remove()
 	end
 	
@@ -280,25 +285,13 @@ vgui.Register("sgs_rcachemenusmall", PANEL, "EditablePanel")
 function DClickTransfer( rType, rAmt )
 	local request = {}
 	request[rType] = rAmt
-	SendCacheTakeRequest(request)
+	SendCacheTakeRequest( request )
 end
 
 function DClickTransfer2( rType, rAmt )
-	if SGS.ctype == "p" then
-		net.Start( "cl_topcache1" ) net.WriteString( rType ) net.WriteInt( tonumber(rAmt), 16 ) net.SendToServer()
-	elseif SGS.ctype == "p2" then
-		net.Start( "cl_topcache2" ) net.WriteString( rType ) net.WriteInt( tonumber(rAmt), 16 ) net.SendToServer()
-	elseif SGS.ctype == "p3" then
-		net.Start( "cl_topcache3" ) net.WriteString( rType ) net.WriteInt( tonumber(rAmt), 16 ) net.SendToServer()
-	elseif SGS.ctype == "p4" then
-		net.Start( "cl_topcache4" ) net.WriteString( rType ) net.WriteInt( tonumber(rAmt), 16 ) net.SendToServer()
-	elseif SGS.ctype == "pb" then
-		net.Start( "cl_topcacheboss" ) net.WriteString( rType ) net.WriteInt( tonumber(rAmt), 16 ) net.SendToServer()
-	elseif SGS.ctype == "tribe" then
-		net.Start( "cl_totribecache" ) net.WriteString( rType ) net.WriteInt( tonumber(rAmt), 16 ) net.SendToServer()
-	else
-		net.Start( "cl_torcache" ) net.WriteString( rType ) net.WriteInt( tonumber(rAmt), 16 ) net.SendToServer()
-	end
+	local request = {}
+	request[rType] = rAmt
+	SendCacheStoreRequest( request )
 end
 
 
