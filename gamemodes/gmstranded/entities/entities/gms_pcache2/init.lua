@@ -76,8 +76,7 @@ function ENT:Use( ply )
 	
 	ply.openpcache = ent
 	
-	net.Start("sgs_openrcache")
-		net.WriteString( "p2" )
+	net.Start("sgs_opencache")
 	net.Send( ply )
 	
 	ply.lastuse = CurTime()

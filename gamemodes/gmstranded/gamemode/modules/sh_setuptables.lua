@@ -637,5 +637,34 @@ function SGS_SetUpTablesShared()
 	SGS.pmlistm = {"combine", "combineelite", "combineprison", "police", "policefem", "barney"}
 	SGS.pmlista = {"mossmanarctic", "breen", "gman", "hostage04"}
 
-	SGS.cache_entities = { "gms_rcache", "gms_pcache", "gms_pcache2", "gms_pcache3", "gms_pcache4", "gms_pcacheboss", "gms_tribecache" }
+	SGS.cache_entities = {
+		gms_rcache = {
+			capacity = 10000,
+			persistent = false
+		},
+		gms_pcache = {
+			capacity = 500,
+			persistent = true
+		},
+		gms_pcache2 = {
+			capacity = 1500,
+			persistent = true
+		},
+		gms_pcache3 = {
+			capacity = 2500,
+			persistent = true
+		},
+		gms_pcache4 = {
+			capacity = 2000,
+			persistent = true
+		},
+		gms_pcacheboss = {
+			capacity = 4000,
+			persistent = true
+		},
+		gms_tribecache = {
+			capacity = 5000,
+			persistent = true
+		}
+	}
 end

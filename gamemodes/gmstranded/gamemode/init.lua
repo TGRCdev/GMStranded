@@ -141,7 +141,7 @@ function SGS_PreCacheMessage()
 	util.AddNetworkString("sgs_remtool")
 	util.AddNetworkString("gms_sendmessage")
 	util.AddNetworkString("gms_sendxpmessage")
-	util.AddNetworkString("sgs_openrcache")
+	util.AddNetworkString("sgs_opencache")
 	util.AddNetworkString("sgs_opentcache")
 	util.AddNetworkString("sgs_sendo2")
 	util.AddNetworkString("UpdateVoiceChannels")
@@ -166,7 +166,7 @@ function SGS_PreCacheMessage()
 	--Client to Server
 	util.AddNetworkString("sgs_readytoload")
 	util.AddNetworkString("sgs_updateresourcebox")
-	util.AddNetworkString("cl_fromrcache")
+	util.AddNetworkString("cl_fromcache")
 	util.AddNetworkString("cl_frompcache1")
 	util.AddNetworkString("cl_frompcache2")
 	util.AddNetworkString("cl_frompcache3")
@@ -3023,18 +3023,7 @@ concommand.Add( "sgs_resetallskills", SGS_ConCommandResetAllSkills )
 
 
 local valid_cache_entities = { "gms_rcache", "gms_pcache", "gms_pcache2", "gms_pcache3", "gms_pcache4", "gms_pcacheboss", "gms_tribecache",  }
-function SGS_CacheValidCheck(ply, amt)
-	if tostring(amt) == tostring(tonumber("nan")) then
-		SGS_Log( "!!!!!!!!!!!" .. ply:Nick() .. " is trying to 'nan' dupe an item.")
-		ply:SendMessage("This is a known exploit. This action has been logged!!", 60, Color(255, 0, 0, 255))
-		return false
-	end
-
-	if amt <= 0 then
-		ply:SendMessage("You can not deposit a value of 0 or less.", 60, Color(255, 255, 80, 255))
-		return false
-	end
-
+function SGS_CacheValidCheck(ply)
 	local trace = ply:TraceFromEyes(100)
     if not IsValid(trace.Entity) then
 		return false
@@ -3245,36 +3234,49 @@ net.Receive( "cl_fromtribecache", function( l, ply )
 	timer.Simple( 0.2, function() ply:ConCommand("sgs_refreshrcachelist") end )
 end )
 
-net.Receive( "cl_fromrcache", function( l, ply )
-	local res = net.ReadString()
-	local amt = net.ReadInt( 16 )
-	local ent = SGS_CacheValidCheck(ply, amt)
+net.Receive( "cl_fromcache", function( l, ply )
+	local byte_count = net.ReadUInt(32)
+	local data = net.ReadData(byte_count)
+	local transfer_request = util.JSONToTable(util.Decompress(data))
 
-	if not ent or not ent:GetClass() == "gms_rcache" then return end
+	print("Received cache take request")
+	PrintTable(transfer_request)
+
+	local ent = SGS_CacheValidCheck(ply)
+
+	if not ent then return end
 	if not ent.contents then return end
 
 	if(SPropProtection.PlayerUse(ply, ent) == false) then return end
 
-	if not ent.contents[res] then
-		ply:SendMessage("The cache doesn't have any of that.", 60, Color(255, 255, 80, 255))
+	if (ply.maxinv - ply.curinv) == 0 then
+		ply:SendMessage("Your inventory is full!", 60, Color(255,0,0,255))
 		return
 	end
 
-	if ent.contents[res] < amt then
-		ply:SendMessage("Cache doesn't have that many, taking max.", 60, Color(255, 255, 80, 255))
-		amt = ent.contents[res]
+	local transfer_error = nil
+
+	for item, amount in pairs(transfer_request) do
+		if (ent.contents[item] or 0) < amount then
+			transfer_error = "cache"
+			amount = (ent.contents[item] or 0)
+		elseif ply.maxinv - ply.curinv < amount then
+			transfer_error = "player"
+			amount = (ply.maxinv - ply.curinv)
+		end
+
+		ent:SetResourceDropInfo( item, -amount )
+		ply:AddResource( item, amount )
+
+		-- Out of inventory space, no point in continuing
+		if transfer_error == "player" then break end
 	end
 
-	if ( ply.maxinv - ply.curinv ) < amt then
-		ply:SendMessage("You can't withdraw that many, taking max.", 60, Color(255, 255, 80, 255))
-		amt = ply.maxinv - ply.curinv
+	if transfer_error == "cache" then
+		ply:SendMessage("Cache didn't have all requested resources.", 60, Color(255,255,80,255))
+	elseif transfer_error == "player" then
+		ply:SendMessage("Your inventory couldn't hold all requested resources. Took max.", 60, Color(255,255,80,255))
 	end
-
-  if amt <= 0 then return end
-
-	ent:SetResourceDropInfo( string.lower(res), amt * -1 )
-	ply:AddResource( string.lower(res), amt )
-
 
 	net.Start("UpdateCacheTable")
 		net.WriteTable( ent.contents )

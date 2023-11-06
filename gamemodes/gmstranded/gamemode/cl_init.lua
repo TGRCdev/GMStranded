@@ -1234,9 +1234,8 @@ function GM:HUDAmmoPickedUp( ItemName, Amount )
 	return
 end
 
-net.Receive( "sgs_openrcache", function( length )
+net.Receive( "sgs_opencache", function( length )
 
-	SGS.ctype = net.ReadString()
 	SGS_RCacheMenu()
 
 end )

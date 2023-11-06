@@ -65,8 +65,7 @@ function ENT:Use( ply )
 		net.WriteTable( self.contents )
 	net.Send( ply )
 	
-	net.Start("sgs_openrcache")
-		net.WriteString( "r" )
+	net.Start("sgs_opencache")
 	net.Send( ply )
 	
 	ply.lastuse = CurTime()

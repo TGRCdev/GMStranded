@@ -1,9 +1,20 @@
 function SGS_RCacheMenu()
 
+	local cache = LocalPlayer():GetEyeTrace().Entity
+	if not IsValid(cache) or not SGS.cache_entities[cache:GetClass()] then return end
+	SGS.curcache = cache
 	SGS.rcachemenu = vgui.Create( "sgs_rcachemenu" )
 	SGS.rcachemenu:MakePopup()
 	SGS.rcachemenu:SetVisible(true)
 
+end
+
+function SendCacheTakeRequest(items)
+	local data = util.Compress( util.TableToJSON( items ) )
+	net.Start( "cl_fromcache" )
+		net.WriteUInt(#data, 32)
+		net.WriteData(data)
+	net.SendToServer()
 end
 
 --[[
@@ -75,18 +86,19 @@ function PANEL:DrawFrame()
 	CacheInventory:SetParent( self )
 	CacheInventory:SetPos( 8, 28 )
 	CacheInventory:SetSize( 284, 550 )
-	CacheInventory:SetMultiSelect( false )
+	CacheInventory:SetMultiSelect( true )
 	CacheInventory:AddColumn( "Resource Type" )
 	CacheInventory:AddColumn( "Amount" )
 	CacheInventory.DoDoubleClick = function( CacheInventory )
-		DClickTransfer(CacheInventory:GetLine(CacheInventory:GetSelectedLine()):GetValue(1), CacheInventory:GetLine(CacheInventory:GetSelectedLine()):GetValue(2))
+		local line = CacheInventory:GetLine(CacheInventory:GetSelectedLine())
+		DClickTransfer(line:GetValue(1), line:GetValue(2))
 	end
 	
 	local PlayerInventory = vgui.Create( "DListView" )
 	PlayerInventory:SetParent( self )
 	PlayerInventory:SetPos( 358, 28 )
 	PlayerInventory:SetSize( 284, 550 )
-	PlayerInventory:SetMultiSelect( false )
+	PlayerInventory:SetMultiSelect( true )
 	PlayerInventory:AddColumn( "Resource Type" )
 	PlayerInventory:AddColumn( "Amount" )
 	PlayerInventory.DoDoubleClick = function( PlayerInventory )
@@ -103,22 +115,10 @@ function PANEL:DrawFrame()
 			CacheInventory:AddLine( k, v )
 			rcachelimit = rcachelimit + v
 		end
-		
-		if SGS.ctype == "p" then
-			RCacheLimitLabel:SetText(rcachelimit .. " / 500") // Text
-		elseif SGS.ctype == "p2" then
-			RCacheLimitLabel:SetText(rcachelimit .. " / 1500") // Text
-		elseif SGS.ctype == "p3" then
-			RCacheLimitLabel:SetText(rcachelimit .. " / 2500") // Text
-		elseif SGS.ctype == "p4" then
-			RCacheLimitLabel:SetText(rcachelimit .. " / 2000") // Text
-		elseif SGS.ctype == "pb" then
-			RCacheLimitLabel:SetText(rcachelimit .. " / 4000") // Text
-		elseif SGS.ctype == "tribe" then
-			RCacheLimitLabel:SetText(rcachelimit .. " / 5000") // Text
-		else
-			RCacheLimitLabel:SetText(rcachelimit .. " / 10000") // Text
-		end
+
+		local cache_type = SGS.cache_entities[SGS.curcache:GetClass()]
+
+		RCacheLimitLabel:SetText(rcachelimit .. " / " .. cache_type.capacity)
 		YourInventoryLimitLabel:SetText(tostring( SGS.curinv ) .. " / " .. tostring( SGS.maxinv ) ) // Text
 		
 		PlayerInventory:Clear()
@@ -134,10 +134,21 @@ function PANEL:DrawFrame()
 	CachetoPlayerButton:SetPos( 304, 268 )
 	CachetoPlayerButton:SetText( "-->>" )
 	CachetoPlayerButton.DoClick = function( CachetoPlayerButton )
-		if CacheInventory:GetSelectedLine() == nil then return end
-		SGS.temprType = CacheInventory:GetLine(CacheInventory:GetSelectedLine()):GetValue(1)
-		SGS.temprAmt = CacheInventory:GetLine(CacheInventory:GetSelectedLine()):GetValue(2)
-		SGS_RCacheMenuSmall2()
+		local selected = CacheInventory:GetSelected()
+		if #selected == 0 then return
+		elseif #selected == 1 then
+			SGS.temprType = CacheInventory:GetLine(CacheInventory:GetSelectedLine()):GetValue(1)
+			SGS.temprAmt = CacheInventory:GetLine(CacheInventory:GetSelectedLine()):GetValue(2)
+			SGS.cache_request = {}
+			SGS.cache_request[SGS.temprType] = SGS.temprAmt
+			SGS_RCacheMenuSmall2()
+		else
+			local request = {}
+			for _, line in pairs(selected) do
+				request[line:GetValue(1)] = tonumber(line:GetValue(2))
+			end
+			SendCacheTakeRequest(request)
+		end
 	end
 	
 	local PlayertoCacheButton = vgui.Create( "DButton", self )
@@ -267,21 +278,9 @@ vgui.Register("sgs_rcachemenusmall", PANEL, "EditablePanel")
 
 
 function DClickTransfer( rType, rAmt )
-	if SGS.ctype == "p" then
-		net.Start( "cl_frompcache1" ) net.WriteString( rType ) net.WriteInt( tonumber(rAmt), 16 ) net.SendToServer()
-	elseif SGS.ctype == "p2" then
-		net.Start( "cl_frompcache2" ) net.WriteString( rType ) net.WriteInt( tonumber(rAmt), 16 ) net.SendToServer()
-	elseif SGS.ctype == "p3" then
-		net.Start( "cl_frompcache3" ) net.WriteString( rType ) net.WriteInt( tonumber(rAmt), 16 ) net.SendToServer()
-	elseif SGS.ctype == "p4" then
-		net.Start( "cl_frompcache4" ) net.WriteString( rType ) net.WriteInt( tonumber(rAmt), 16 ) net.SendToServer()
-	elseif SGS.ctype == "pb" then
-		net.Start( "cl_frompcacheboss" ) net.WriteString( rType ) net.WriteInt( tonumber(rAmt), 16 ) net.SendToServer()
-	elseif SGS.ctype == "tribe" then
-		net.Start( "cl_fromtribecache" ) net.WriteString( rType ) net.WriteInt( tonumber(rAmt), 16 ) net.SendToServer()
-	else
-		net.Start( "cl_fromrcache" ) net.WriteString( rType ) net.WriteInt( tonumber(rAmt), 16 ) net.SendToServer()
-	end
+	local request = {}
+	request[rType] = rAmt
+	SendCacheTakeRequest(request)
 end
 
 function DClickTransfer2( rType, rAmt )
@@ -371,21 +370,7 @@ function PANEL:DrawFrame()
 	TransferButton:SetPos( 10, 68 )
 	TransferButton:SetText( "Transfer" )
 	TransferButton.DoClick = function( TransferButton )
-		if SGS.ctype == "p" then
-			net.Start( "cl_frompcache1" ) net.WriteString( SGS.temprType ) net.WriteInt( tonumber(TextEntry:GetValue()), 16 ) net.SendToServer()
-		elseif SGS.ctype == "p2" then
-			net.Start( "cl_frompcache2" ) net.WriteString( SGS.temprType ) net.WriteInt( tonumber(TextEntry:GetValue()), 16 ) net.SendToServer()
-		elseif SGS.ctype == "p3" then
-			net.Start( "cl_frompcache3" ) net.WriteString( SGS.temprType ) net.WriteInt( tonumber(TextEntry:GetValue()), 16 ) net.SendToServer()
-		elseif SGS.ctype == "p4" then
-			net.Start( "cl_frompcache4" ) net.WriteString( SGS.temprType ) net.WriteInt( tonumber(TextEntry:GetValue()), 16 ) net.SendToServer()
-		elseif SGS.ctype == "pb" then
-			net.Start( "cl_frompcacheboss" ) net.WriteString( SGS.temprType ) net.WriteInt( tonumber(TextEntry:GetValue()), 16 ) net.SendToServer()
-		elseif SGS.ctype == "tribe" then
-			net.Start( "cl_fromtribecache" ) net.WriteString( SGS.temprType ) net.WriteInt( tonumber(TextEntry:GetValue()), 16 ) net.SendToServer()
-		else
-			net.Start( "cl_fromrcache" ) net.WriteString( SGS.temprType ) net.WriteInt( tonumber(TextEntry:GetValue()), 16 ) net.SendToServer()
-		end
+		SendCacheTakeRequest( SGS.cache_request )
 		self:Remove()
 	end
 	

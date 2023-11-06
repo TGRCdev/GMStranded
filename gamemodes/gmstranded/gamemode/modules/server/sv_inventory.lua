@@ -45,7 +45,7 @@ function PlayerMeta:AddResource( res, amt, ent )
 	local ovr = 0
 
 	if amt <= 0 then
-		self:SendMessage("You can't drop a negative amount!!!", 60, Color(255, 0, 0, 255))
+		--self:SendMessage("You can't drop a negative amount!!!", 60, Color(255, 0, 0, 255))
 		return
 	end
 
@@ -89,7 +89,7 @@ function PlayerMeta:AddResourceSilent( res, amt )
 	local ovr = 0
 
 	if amt <= 0 then
-		self:SendMessage("You can't drop a negative amount!!!", 60, Color(255, 0, 0, 255))
+		--self:SendMessage("You can't drop a negative amount!!!", 60, Color(255, 0, 0, 255))
 		return
 	end
 
