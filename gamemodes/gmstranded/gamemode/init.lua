@@ -167,9 +167,13 @@ function SGS_PreCacheMessage()
 	util.AddNetworkString("sgs_readytoload")
 	util.AddNetworkString("sgs_updateresourcebox")
 	util.AddNetworkString("cl_fromcache")
+	util.AddNetworkString("cl_fromtcache")
+	util.AddNetworkString("cl_fromptcache")
 	util.AddNetworkString("cl_fromtribecache")
 
 	util.AddNetworkString("cl_tocache")
+	util.AddNetworkString("cl_totcache")
+	util.AddNetworkString("cl_toptcache")
 	util.AddNetworkString("cl_totribecache")
 
 end
