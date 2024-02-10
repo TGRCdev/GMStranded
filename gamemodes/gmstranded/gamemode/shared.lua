@@ -1,8 +1,8 @@
 GM.Name		= "Garry's Mod Stranded"
-GM.Author	= "Zach Petty - Mr.President"
-GM.Email	= "mrp@g4p.org"
-GM.Website	= "http://www.g4p.org"
-GM.Version 	= "18.01.24"
+GM.Author	= "TGRCDev"
+GM.Email	= "tgrc@tgrc.dev"
+GM.Website	= "https://github.com/TGRCdev/GMStranded"
+GM.Version 	= "19.00.00"
 
 SGS = SGS or {}
 
@@ -28,13 +28,13 @@ GM.GroupData = {
 	["user"] 		= { name = "Guest", 		color = Color( 255, 75, 255, 255 ) }
 }
 
-SGS.maxguestprops = 50
-SGS.maxmemberprops = 90
-SGS.maxdonatorprops = 115
+SGS.maxguestprops = 100
+SGS.maxmemberprops = 180
+SGS.maxdonatorprops = 230
 
-SGS.maxgueststructures = 25
-SGS.maxmemberstructures = 50
-SGS.maxdonatorstructures = 75
+SGS.maxgueststructures = 50
+SGS.maxmemberstructures = 100
+SGS.maxdonatorstructures = 150
 
 team.SetUp (10000, "Survivors", Color (0, 0, 255, 255))
 
@@ -44,7 +44,7 @@ PrecacheParticleSystem( "waterfall_topsplash" )
 PrecacheParticleSystem( "waterfall_base_01" )
 
 
-SGS.version = "Stargate Stranded: v" .. GM.Version
+SGS.version = "Garry's Mod Stranded: v" .. GM.Version
 
 local files, dirs = file.Find("gmstranded/gamemode/modules/*.lua", "LUA")
 for k, v in pairs( files ) do
