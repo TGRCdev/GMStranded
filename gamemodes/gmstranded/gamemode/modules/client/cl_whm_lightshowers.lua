@@ -7,7 +7,7 @@
 
 rain_volume = GetConVar("sgs_rain_volume")
 if not rain_volume then
-	rain_volume = CreateClientConVar( "sgs_rain_volume", "1", true, false )
+	rain_volume = CreateClientConVar( "sgs_rain_volume", "0.2", true, false )
 end
 
 local vector_up, vector_down = Vector( 0, 0, 1 ), Vector( 0, 0, -1 )
