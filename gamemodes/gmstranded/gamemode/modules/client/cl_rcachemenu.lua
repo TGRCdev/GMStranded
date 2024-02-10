@@ -256,7 +256,11 @@ function PANEL:DrawFrame()
 	TransferButton:SetPos( 10, 68 )
 	TransferButton:SetText( "Transfer" )
 	TransferButton.DoClick = function( TransferButton )
-		SendCacheStoreRequest( SGS.cache_request )
+		local amt = TextEntry:GetInt()
+		if amt then
+			SGS.cache_request[SGS.temprType] = amt
+			SendCacheStoreRequest( SGS.cache_request )
+		end
 		self:Remove()
 	end
 	
@@ -353,6 +357,7 @@ function PANEL:DrawFrame()
 	PopupTitleRes:SizeToContents()
 	
 	local TextEntry = vgui.Create( "DTextEntry", self )
+	TextEntry:SetNumeric(true)
 	TextEntry:SetWide( 120 )
 	TextEntry:SetPos( 10, 44 )
 	TextEntry:SetText( SGS.temprAmt )
@@ -363,7 +368,11 @@ function PANEL:DrawFrame()
 	TransferButton:SetPos( 10, 68 )
 	TransferButton:SetText( "Transfer" )
 	TransferButton.DoClick = function( TransferButton )
-		SendCacheTakeRequest( SGS.cache_request )
+		local amt = TextEntry:GetInt()
+		if amt then
+			SGS.cache_request[SGS.temprType] = amt
+			SendCacheTakeRequest( SGS.cache_request )
+		end
 		self:Remove()
 	end
 	
