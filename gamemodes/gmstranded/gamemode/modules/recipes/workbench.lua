@@ -710,8 +710,8 @@ RECIPE = {}
 RECIPE.title = "Handheld Torch"
 RECIPE.category = "misc"
 RECIPE.description = "Light!\nRight click to place torch."
-RECIPE.item_cost = { wood = 20 }
-RECIPE.lvl_reqs = { smithing = 1}
+RECIPE.item_cost = { wood = 5 }
+RECIPE.lvl_reqs = { smithing = 1 }
 RECIPE.gives_xp = { smithing = 20 }
 RECIPE.gives_tools = { gms_handtorch = 1 }
 RECIPE.id = "gms_handtorch"
