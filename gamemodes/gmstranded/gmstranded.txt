@@ -1,8 +1,8 @@
-"Gamemode"
+"gmstranded"
 {
-	"base"		"base"
-	"title"		"Garry's Mod Stranded - Standalone"
-	"maps"		"^gms_"
+	"base"			"base"
+	"title"			"Garry's Mod Stranded - Standalone"
+	"maps"			"^gms_"
 	"menusystem"	"1"
-
+	"category"		"pve"
 }

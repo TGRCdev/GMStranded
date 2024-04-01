@@ -1,0 +1,11 @@
+{
+	"title"		:	"gmstranded",
+	"type"		:	"gamemode",
+	"tags"		:	[ "fun", "roleplay", "realism" ],
+	"ignore"	:
+	[
+		"maps",
+        "hammer_files",
+        ".vscode"
+	]
+}
